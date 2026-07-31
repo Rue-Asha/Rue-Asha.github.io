@@ -1,7 +1,6 @@
 ---
 title: Life Dashboard
 date: 2026-07-31
-draft: true
 type: docs
 weight: 2
 summary: 'A single self-hosted app for tasks, uni, notes and finances — built to replace a sprawling Notion workspace with something that survives a bad week.'

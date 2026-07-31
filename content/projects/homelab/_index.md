@@ -1,7 +1,6 @@
 ---
 title: Homelab
 date: 2026-07-31
-draft: true
 type: docs
 weight: 1
 summary: 'Ansible-managed Proxmox homelab where every service gets its own container and the playbook is the only way in.'

@@ -1,7 +1,6 @@
 ---
 title: Party Games
 date: 2026-07-31
-draft: true
 type: docs
 weight: 3
 summary: 'Self-hosted party games for one screen in a living room — and a study in how much architecture a clear constraint lets you delete.'
