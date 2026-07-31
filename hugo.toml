@@ -1,0 +1,136 @@
+baseURL = 'https://rue-asha.github.io/'
+title = 'Rue Asha'
+
+locale = 'en-us'
+defaultContentLanguage = 'en'
+hasCJKLanguage = false
+
+enableGitInfo = true
+enableRobotsTXT = true
+enableInlineShortcodes = true
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true          # allow raw HTML in Markdown (needed for some Hextra shortcodes)
+  [markup.goldmark.extensions.passthrough]
+    enable = true          # keep $...$ / $$...$$ intact for KaTeX
+    [markup.goldmark.extensions.passthrough.delimiters]
+      block  = [['\[', '\]'], ['$$', '$$']]
+      inline = [['\(', '\)']]
+  [markup.highlight]
+    noClasses = false      # required so the theme's light/dark syntax themes work
+    lineNos = false
+    codeFences = true
+    guessSyntax = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
+  platform = 'platforms'
+
+# ---------------------------------------------------------------- navigation
+[menu]
+  [[menu.main]]
+    name = 'Writeups'
+    pageRef = '/writeups'
+    weight = 1
+  [[menu.main]]
+    name = 'Projects'
+    pageRef = '/projects'
+    weight = 2
+  [[menu.main]]
+    name = 'Journal'
+    pageRef = '/blog'
+    weight = 3
+  [[menu.main]]
+    name = 'Tags'
+    pageRef = '/tags'
+    weight = 4
+  [[menu.main]]
+    name = 'About'
+    pageRef = '/about'
+    weight = 5
+  [[menu.main]]
+    name = 'Search'
+    weight = 6
+    [menu.main.params]
+      type = 'search'
+  [[menu.main]]
+    name = 'GitHub'
+    url = 'https://github.com/Rue-Asha'
+    weight = 7
+    [menu.main.params]
+      icon = 'github'
+
+# ------------------------------------------------------------------- params
+[params]
+  description = 'Cybersecurity writeups, project documentation and learning notes by Rue Asha.'
+
+  [params.author]
+    name = 'Rue Asha'
+    email = 'gant.cyber@proton.me'
+
+  [params.navbar]
+    displayTitle = true
+    displayLogo = false
+
+  [params.footer]
+    enable = true
+    displayCopyright = true
+    displayPoweredBy = true
+
+  [params.theme]
+    default = 'system'
+    displayToggle = true
+
+  [params.search]
+    enable = true
+    type = 'flexsearch'
+
+  [params.editURL]
+    enable = true
+    base = 'https://github.com/Rue-Asha/Rue-Asha.github.io/edit/main/content'
+
+  [params.blog]
+    [params.blog.list]
+      displayTags = true
+      sortBy = 'date'
+      sortOrder = 'desc'
+    [params.blog.article]
+      displayPagination = true
+
+  [params.highlight.copy]
+    enable = true
+    display = 'hover'
+
+  displayUpdatedDate = true
+  dateFormat = 'January 2, 2006'
+  enableImageLazyLoading = true
+  externalLinkDecoration = true
+
+  [params.imageZoom]
+    enable = true
+
+  [params.comments]
+    enable = false
+    type = 'giscus'
+    # Fill these in after enabling giscus.app on the repo, then set enable = true.
+    [params.comments.giscus]
+      repo = 'Rue-Asha/Rue-Asha.github.io'
+      repoId = ''
+      category = 'Comments'
+      categoryId = ''
+      mapping = 'pathname'
+      strict = '0'
+      reactionsEnabled = '1'
+      emitMetadata = '0'
+      inputPosition = 'top'
+      lang = 'en'
+
+# ------------------------------------------------------------------ modules
+[module]
+  [[module.imports]]
+    path = 'github.com/imfing/hextra'

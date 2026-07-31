@@ -1,0 +1,14 @@
+# Hugo build output
+/public/
+/resources/_gen/
+/.hugo_build.lock
+
+# Hugo module / asset caches
+hugo_stats.json
+.hugo_cache/
+
+# Editor / OS noise
+.DS_Store
+*.swp
+.idea/
+.vscode/
