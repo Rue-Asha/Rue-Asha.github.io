@@ -12,7 +12,9 @@ Documentation for the things I build. Each project gets its own folder, so it ca
 from a single page into a small handbook without reorganising anything.
 
 {{< cards >}}
-  {{< card link="homelab/" title="Homelab" icon="server" subtitle="Self-hosted infrastructure and how it is wired together." >}}
+  {{< card link="homelab/" title="Homelab" icon="server" subtitle="Ansible-managed Proxmox host. The platform the rest of these run on." >}}
+  {{< card link="life-dashboard/" title="Life Dashboard" icon="template" subtitle="One self-hosted app for tasks, uni, notes and finances." >}}
+  {{< card link="party-games/" title="Party Games" icon="puzzle" subtitle="Party games for a single screen — a study in deleting architecture." >}}
 {{< /cards >}}
 
 ## What these pages are, and aren't
