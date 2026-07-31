@@ -1,0 +1,75 @@
+# Controlled tag vocabulary.
+#
+# This file drives the grouping on /tags/. Any tag used in content but NOT listed
+# here shows up under "Unfiled" on that page — that is the drift alarm. When you
+# see something in Unfiled, either add it to a group below or fix the typo that
+# created it.
+#
+# Rules of thumb:
+#   - lowercase, hyphenated, singular  (privesc, not PrivEsc / privescs)
+#   - a tag earns its place at 3+ pages; below that it is noise
+#   - prefer an existing tag over a near-synonym
+
+groups:
+  - name: Access
+    description: Where in the kill chain the technique sits.
+    tags:
+      - recon
+      - initial-access
+      - privesc
+      - lateral-movement
+      - persistence
+      - exfiltration
+
+  - name: Surface
+    description: The service or protocol that was actually attacked.
+    tags:
+      - web
+      - smb
+      - ldap
+      - kerberos
+      - dns
+      - ssh
+      - smtp
+      - snmp
+      - database
+
+  - name: Technique
+    description: The specific class of flaw or method.
+    tags:
+      - sqli
+      - xss
+      - ssrf
+      - xxe
+      - lfi
+      - path-traversal
+      - deserialization
+      - command-injection
+      - credential-reuse
+      - password-cracking
+      - buffer-overflow
+      - misconfiguration
+      - sudo
+
+  - name: Environment
+    description: What the target was running.
+    tags:
+      - linux
+      - windows
+      - active-directory
+      - docker
+      - kubernetes
+      - cloud
+      - infrastructure
+      - selfhosted
+
+  - name: Craft
+    description: Tooling, methodology, and writing about the work itself.
+    tags:
+      - tooling
+      - scripting
+      - automation
+      - methodology
+      - note-taking
+      - meta
+      - notes

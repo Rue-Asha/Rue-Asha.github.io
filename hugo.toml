@@ -26,10 +26,10 @@ enableInlineShortcodes = true
     startLevel = 2
     endLevel = 3
 
+# Tags are the only taxonomy: sections already express "what kind of page this is"
+# and folders already express platform, so both would be redundant routes.
 [taxonomies]
   tag = 'tags'
-  category = 'categories'
-  platform = 'platforms'
 
 # ---------------------------------------------------------------- navigation
 [menu]

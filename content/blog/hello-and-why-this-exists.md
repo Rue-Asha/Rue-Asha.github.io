@@ -7,8 +7,6 @@ authors:
 summary: 'Starting a public log of the security work — what goes here, and what I want out of it.'
 tags:
   - meta
-categories:
-  - learning
 ---
 
 I keep solving things and then forgetting how. A box falls, I close the terminal, and two

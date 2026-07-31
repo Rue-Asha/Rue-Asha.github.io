@@ -8,8 +8,6 @@ summary: 'Self-hosted infrastructure — services, network layout, and the reaso
 tags:
   - selfhosted
   - infrastructure
-categories:
-  - project
 params:
   repo: 'https://github.com/Rue-Asha/Homelab-Managment'
   status: wip

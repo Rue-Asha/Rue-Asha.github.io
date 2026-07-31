@@ -5,14 +5,10 @@ draft: true
 type: docs
 weight: 1
 summary: 'Template writeup — copy this file as the starting shape for a real one.'
-platforms:
-  - hackthebox
 tags:
   - linux
   - web
   - sudo
-categories:
-  - writeup
 params:
   difficulty: easy
   status: solved

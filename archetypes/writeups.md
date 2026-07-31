@@ -4,12 +4,8 @@ date: {{ .Date }}
 draft: true
 type: docs
 summary: 'One line: what the box/challenge was and the core idea behind the solve.'
-platforms:
-  - hackthebox
 tags:
   - linux
-categories:
-  - writeup
 params:
   difficulty: easy
   status: solved

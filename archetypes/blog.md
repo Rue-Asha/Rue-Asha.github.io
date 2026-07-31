@@ -8,8 +8,6 @@ authors:
 summary: 'One or two sentences that show up in the Journal list and in link previews.'
 tags:
   - notes
-categories:
-  - learning
 ---
 
 ## What prompted this
