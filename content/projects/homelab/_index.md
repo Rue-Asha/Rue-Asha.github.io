@@ -5,9 +5,6 @@ draft: true
 type: docs
 weight: 1
 summary: 'Self-hosted infrastructure — services, network layout, and the reasoning behind both.'
-tags:
-  - selfhosted
-  - infrastructure
 params:
   repo: 'https://github.com/Rue-Asha/Homelab-Managment'
   status: wip

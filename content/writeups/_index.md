@@ -10,7 +10,7 @@ cascade:
 
 Walkthroughs of boxes, labs and CTF challenges. I write these mainly for myself —
 so the reasoning is left in, including the dead ends. Grouped by platform in the
-sidebar; use [tags](/tags/) to cut across by technique instead.
+sidebar; to cut across by technique, use the search box instead.
 
 {{< callout type="info" >}}
 Everything here targets machines I am authorised to attack — retired HackTheBox boxes,

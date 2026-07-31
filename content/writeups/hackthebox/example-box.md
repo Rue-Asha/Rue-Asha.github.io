@@ -5,10 +5,6 @@ draft: true
 type: docs
 weight: 1
 summary: 'Template writeup — copy this file as the starting shape for a real one.'
-tags:
-  - linux
-  - web
-  - sudo
 params:
   difficulty: easy
   status: solved

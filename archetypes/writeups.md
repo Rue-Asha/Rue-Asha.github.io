@@ -4,8 +4,6 @@ date: {{ .Date }}
 draft: true
 type: docs
 summary: 'One line: what the box/challenge was and the core idea behind the solve.'
-tags:
-  - linux
 params:
   difficulty: easy
   status: solved

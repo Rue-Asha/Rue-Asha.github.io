@@ -40,9 +40,9 @@ skeleton already in place. New pages start as `draft: true`; flip that to publis
 | `content/projects/` | Project documentation, one folder per project |
 | `content/blog/` | Journal — chronological essays and notes |
 | `archetypes/` | Templates used by `hugo new content` |
-| `hugo.toml` | Site config: menu, taxonomies, theme params |
+| `hugo.toml` | Site config: menu, theme params |
 
-Taxonomies: `tags`, `categories`, `platforms`.
+No taxonomies — full-text search covers cross-cutting lookups.
 
 ## Updating the theme
 

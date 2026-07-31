@@ -9,6 +9,13 @@ enableGitInfo = true
 enableRobotsTXT = true
 enableInlineShortcodes = true
 
+# No taxonomies. Sections say what kind of page it is, folders say which platform,
+# and full-text search covers "everything mentioning X" without a hand-kept vocabulary.
+# Hugo defaults to tags + categories, so this must be disabled explicitly rather than
+# just omitted. Must stay above the first [table] header — a bare key after one would
+# be parsed as belonging to that table.
+disableKinds = ['taxonomy', 'term']
+
 [markup]
   [markup.goldmark.renderer]
     unsafe = true          # allow raw HTML in Markdown (needed for some Hextra shortcodes)
@@ -26,11 +33,6 @@ enableInlineShortcodes = true
     startLevel = 2
     endLevel = 3
 
-# Tags are the only taxonomy: sections already express "what kind of page this is"
-# and folders already express platform, so both would be redundant routes.
-[taxonomies]
-  tag = 'tags'
-
 # ---------------------------------------------------------------- navigation
 [menu]
   [[menu.main]]
@@ -46,22 +48,18 @@ enableInlineShortcodes = true
     pageRef = '/blog'
     weight = 3
   [[menu.main]]
-    name = 'Tags'
-    pageRef = '/tags'
-    weight = 4
-  [[menu.main]]
     name = 'About'
     pageRef = '/about'
-    weight = 5
+    weight = 4
   [[menu.main]]
     name = 'Search'
-    weight = 6
+    weight = 5
     [menu.main.params]
       type = 'search'
   [[menu.main]]
     name = 'GitHub'
     url = 'https://github.com/Rue-Asha'
-    weight = 7
+    weight = 6
     [menu.main.params]
       icon = 'github'
 
@@ -96,7 +94,7 @@ enableInlineShortcodes = true
 
   [params.blog]
     [params.blog.list]
-      displayTags = true
+      displayTags = false
       sortBy = 'date'
       sortOrder = 'desc'
     [params.blog.article]

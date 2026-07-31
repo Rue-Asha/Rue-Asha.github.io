@@ -5,8 +5,6 @@ authors:
   - name: Rue Asha
     link: https://github.com/Rue-Asha
 summary: 'Starting a public log of the security work — what goes here, and what I want out of it.'
-tags:
-  - meta
 ---
 
 I keep solving things and then forgetting how. A box falls, I close the terminal, and two

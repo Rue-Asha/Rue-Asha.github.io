@@ -5,7 +5,6 @@ draft: true
 type: docs
 weight: 10
 summary: 'One line: what this project is and who it is for.'
-tags: []
 params:
   repo: 'https://github.com/Rue-Asha/'
   status: wip     # idea | wip | active | shelved | done
