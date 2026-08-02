@@ -14,7 +14,7 @@ aliases:
 | **Started** | July 2026                                |
 | **Architecture** | [The shared web-app stack]({{< relref ".." >}}) |
 | **Scale**   | 5 modules live · 17 migrations · ~3,800 lines of TS/Svelte |
-| **Source**  | Private repo                             |
+| **Source**  | [github.com/Rue-Asha/Life-Managment-Dashboard](https://github.com/Rue-Asha/Life-Managment-Dashboard) |
 
 The stack, deployment and architecture are the [shared ones]({{< relref ".." >}}). This page
 covers only what this app decides differently.
