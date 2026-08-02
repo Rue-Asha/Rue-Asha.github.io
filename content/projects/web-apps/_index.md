@@ -120,31 +120,6 @@ window where the app is half-updated.
 and builds happen on the host, so each app container needs a toolchain. The full reasoning,
 including what was rejected, is on the [homelab page]({{< relref "../homelab" >}}).
 
-## Threat model
-
-Both apps inherit the same one, because both sit at the same point in the network.
-
-**What I'm defending against.** Very little, deliberately. Neither app has a port forwarded
-to it; reaching either requires already being on the LAN or enrolled in the tailnet. The
-realistic threats are a lost device and my own bad migration, not an attacker.
-
-**What that buys, deliberately.** No auth system, no session handling, no password reset,
-no rate limiting, no CSRF tokens. The network already vouched for the request. Every one of
-those is a subsystem I don't write, don't test and can't leak — the cheapest security
-control available is not having the feature.
-
-**What I accept.**
-
-- **No authentication.** Anyone on the LAN can read and write everything, guests on the
-  wifi included. This is the weakest point in both apps and it is a known one.
-- **Plaintext HTTP.** No TLS, so anything on the path sees the data in the clear.
-- **A single SQLite file with no automated backup.** Losing the volume loses the data.
-
-**Where the line moves.** All of this holds *only* while the apps stay LAN-bound. The day
-either needs to be reachable from the internet it needs real auth, TLS and a session model
-— and that is a change to the trust assumption, not a feature to bolt on. Writing that down
-is what stops me from "just quickly" exposing one some evening.
-
 ## When this shape is wrong
 
 It is worth being explicit that this is a house style for a specific situation, not a
@@ -154,8 +129,9 @@ general recommendation. It stops working the moment any of these stop being true
   moment concurrent writes are real.
 - **One operator.** No CI, no image registry and manual rollback are all cheap at one
   person and expensive at three.
-- **A trusted network.** Every security decision above is downstream of "not on the
-  internet". Remove that and most of them invert.
+- **A trusted network.** Both apps are LAN-only, which is why neither carries auth, TLS or
+  a session model. Putting either on the public internet isn't a feature to add, it's a
+  different set of assumptions to rebuild against.
 - **Data that fits in a file.** The moment the database wants replication or a separate
   host, the one-process model goes with it.
 

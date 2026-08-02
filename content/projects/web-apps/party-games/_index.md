@@ -16,7 +16,7 @@ aliases:
 | **Scale**   | 6 games · 12 migrations · ~9,900 lines of TS/Svelte · 0 WebSockets |
 | **Source**  | Private repo                                |
 
-The stack, deployment and threat model are the [shared ones]({{< relref ".." >}}). This page
+The stack, deployment and architecture are the [shared ones]({{< relref ".." >}}). This page
 covers only what this app decides differently — which, given the whole project is an
 exercise in deleting architecture, is mostly a list of things it doesn't have.
 
@@ -83,22 +83,25 @@ assumed it.
 
 ## What the constraint deleted
 
-Worth listing explicitly, because these are the security and complexity properties the
-single-screen decision bought — none of them are controls I added, they're attack surface
-that never got created:
+Worth listing explicitly, because this is the actual return on getting the usage model
+right. None of these are things I built and then simplified — they are subsystems that
+never had to exist:
 
-- **No WebSocket layer** — no connection hijacking, no message injection into other
-  clients, no desync exploits. Verifiably zero: the string `socket` does not appear
+- **No real-time transport.** No connection lifecycle, no reconnection handling, no
+  server-authoritative state. Verifiably none of it: the string `socket` does not appear
   anywhere in the source.
-- **No lobby or room codes** — no room-guessing, no joining a game you weren't invited to.
-- **No accounts** — no session fixation, no credential storage, no password reset.
-- **No user-submitted content crossing between people** — prompts are seeded by migration,
-  not written by players, so there's no stored-XSS path from one person to another.
+- **No lobby, rooms or join codes.** No matchmaking, no room state to expire, no way for a
+  game to end up in an unreachable state because someone closed a tab.
+- **No accounts.** No sign-up, no sessions, no password reset — three screens and a table
+  that a "party game" is normally assumed to need.
+- **No user-submitted content.** Prompts and word banks are seeded by migration rather than
+  written by players, so there's no moderation surface and no content to sync between
+  people.
 
 **Where the line moves.** The moment phones become controllers, every item above comes back
-at once: real-time transport, room authorisation, and a server that can no longer trust the
-client. That isn't an incremental feature, it's a different threat model — which is the main
-reason the single-screen format is stated as the point rather than as a limitation.
+at once — and not incrementally: a server that can't trust its clients is a different
+program, not this one with a feature added. That's the main reason the single-screen format
+is stated as the point rather than as a limitation I'm working around.
 
 ## Where it stands
 

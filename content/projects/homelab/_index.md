@@ -90,43 +90,6 @@ session.
 **Trade-off:** only works on a single flat subnet, and breaks quietly if the network is
 ever segmented. Cheap to abandon when that happens.
 
-## Threat model
-
-Worth stating plainly, because most of the architecture decisions above are really answers
-to this and it's better to be explicit about what I'm defending against than to imply I'm
-defending against everything.
-
-**What I'm defending against.** Opportunistic internet-wide scanning, which is the only
-attacker that realistically finds a home IP. The answer is that there is nothing to find:
-no inbound port is forwarded, and the tunnel is established outbound, so from the outside
-the network has no listening service to fingerprint. Secondarily, my own mistakes — an
-unrepeatable box that nobody, including me, can reason about six months later.
-
-**What I trust.** Everything on the LAN, and every device enrolled in the tailnet. This is
-a flat network with no internal segmentation: a service container can reach any other. That
-is a real, deliberate concession — the alternative is VLANs and firewall rules whose upkeep
-cost I'd stop paying within a month, and a security control you stop maintaining is worse
-than one you never claimed.
-
-**What I accept.**
-
-- **Plaintext HTTP inside the LAN.** No TLS between nginx and the browser. The traffic is
-  game scores and my own task list, and the network boundary is the flat itself.
-- **A compromised enrolled device gets LAN-level reach.** The subnet router advertises the
-  whole LAN, so tailnet access is not per-service. Mitigated only by the tailnet being two
-  devices I control.
-- **A third-party coordination dependency.** Tailscale's control plane can see the tailnet's
-  topology and could, in principle, enrol a device. WireGuard keys stay on the endpoints, so
-  it isn't a traffic-interception risk — it is an availability and enrolment-trust risk.
-- **No secrets manager.** Secrets live in `ansible-vault` files in the inventory, decrypted
-  at play time. Fine for one operator; it doesn't rotate and it doesn't audit.
-
-**What I refuse to accept.** Secrets in git history, and privileged containers. Vault files
-hold every credential, deploy keys are read-only and installed `0600` under `no_log`,
-containers are unprivileged unless a specific role opts out, and a `clean`/`smudge` git
-filter strips real hostnames and addresses out of tracked files so the infrastructure repo
-can be published without a history rewrite.
-
 ## How it fits together
 
 ```mermaid

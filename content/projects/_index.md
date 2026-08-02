@@ -41,13 +41,6 @@ So each page follows the same shape:
 - **Why it exists** — the problem that justified building rather than installing something.
 - **Key decisions** — each as *chose / because / trade-off*. The trade-off is not optional;
   a decision with no cost is a decision I hadn't finished thinking about.
-- **Threat model** — who could attack it, what I chose to accept, and why that's defensible
-  at this scale.
 - **Where it stands** — what actually runs today. Not a roadmap: these pages document what
   exists, because a plan written down in public ages into a promise nobody asked me to make.
 - **What I learned** — including the parts that went badly.
-
-They also try not to repeat themselves. A decision is written once, at the level where it's
-true: anything shared by both applications is argued on the Web Apps page and not
-re-litigated underneath it. Two copies of an argument drift, and nothing warns you when
-they do.

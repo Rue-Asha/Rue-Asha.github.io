@@ -16,7 +16,7 @@ aliases:
 | **Scale**   | 5 modules live · 17 migrations · ~3,800 lines of TS/Svelte |
 | **Source**  | Private repo                             |
 
-The stack, deployment and threat model are the [shared ones]({{< relref ".." >}}). This page
+The stack, deployment and architecture are the [shared ones]({{< relref ".." >}}). This page
 covers only what this app decides differently.
 
 ## What it is
