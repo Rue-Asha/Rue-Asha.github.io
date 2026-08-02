@@ -33,22 +33,67 @@ Writing it as Ansible forces the configuration to be explicit and re-runnable. T
 secondary benefit turned out to be the bigger one: infrastructure-as-code is the same
 skill whether the target is a homelab or production, so the practice transfers.
 
+## What's running on it
+
+Five services, each in its own container, each built by one playbook out of shared roles.
+The right-hand column is the whole point of the layering: a new service writes one role and
+inherits the rest.
+
+| Service | What it does | Roles applied |
+| --- | --- | --- |
+| **Pi-hole** | Network-wide DNS filtering and ad-blocking for every device on the LAN, including the ones with no ad-blocker of their own | `common` · `pihole` |
+| **RetroPie** | Emulation box for retro games, wired to a TV | `common` · `retropie` |
+| **Life Dashboard** | [The self-hosted dashboard]({{< relref "../web-apps/life-dashboard" >}}) — tasks, uni, notes, projects | `common` · `nodejs` · `life-dashboard` · `nginx` |
+| **Party Games** | [Single-screen party games]({{< relref "../web-apps/party-games" >}}) for the living room | `common` · `nodejs` · `partygames` · `nginx` |
+| **Subnet router** | Advertises the LAN route into the tailnet over WireGuard — the only path in from outside the flat, and the reason no port is forwarded | `common` · `tailscale` |
+
+The two web apps are the same four roles in the same order, differing only in the
+service-specific one. That symmetry is what the [Web Apps]({{< relref "../web-apps" >}})
+page describes from the application side, and it's the thing that made the second app cheap
+to deploy.
+
+The subnet router is the one host that needs something unusual from Proxmox — a `/dev/net/tun`
+passthrough for the WireGuard interface — which is its own provisioning role rather than a
+manual tick in the UI.
+
 ## Key decisions
 
 ### App-per-container, built on the host — no container images
 
 **Chose:** each service gets its own LXC. Ansible converges it, systemd supervises the
-process. No Docker, no image registry, no CI pipeline.
+process. No Docker, no image registry.
 
-**Because:** the benefits of an image-based workflow scale with team size and service
-count, and both are approximately one here. Running Docker *inside* LXC also adds nesting
-and privilege complexity that buys nothing at this scale. The container is already the
-unit of isolation; adding a second containerisation layer inside it is pure cost.
+**Because:** an image-based workflow solves distribution — getting an identical artifact
+onto many hosts, run by people who didn't build it. Neither half applies here: there is one
+host and one operator. Running Docker *inside* LXC also adds nesting and privilege
+complexity that buys nothing at this scale. The container is already the unit of isolation;
+adding a second containerisation layer inside it is pure cost.
 
-**Trade-off:** builds happen on the host, so each service box needs a toolchain, and
-there's no portable artifact to ship elsewhere. If a host ever has to stay toolchain-free,
-or builds get slow enough to want CI, only the checkout-and-build step changes — the rest
-of the model stands.
+**Trade-off:** builds happen on the host, so each service box needs a toolchain, and there
+is no portable artifact to ship elsewhere. If a host ever has to stay toolchain-free, only
+the checkout-and-build step changes — the rest of the model stands.
+
+### No CI, which is a gap rather than a decision
+
+**Chose:** nothing runs automatically on push. Deployment is a human running the playbook
+with `--tags deploy`.
+
+**Because:** this is worth separating from the point above, because the two get bundled
+together and only one of them is actually justified. Image registries solve distribution,
+which I don't have; **CI solves verification, which I do**. The argument that "it's
+overkill for one person" is weaker for CI than for anything else in this repo — with no
+colleague reviewing changes, an automated check is the only reviewer there is.
+
+**What that costs today:** a tag with a type error deploys exactly as smoothly as a good
+one. The deploy is atomic and repeatable, but nothing between commit and production asks
+whether the code works. Both applications already have a `check` script that type-checks
+the whole project, and it only ever runs when I remember to run it. Neither has a test
+suite at all.
+
+**Trade-off:** the deployment model itself doesn't need to change to fix this. A workflow
+that builds, type-checks and applies migrations onto a scratch database would gate which
+tags are considered deployable, and the playbook would carry on doing exactly what it does
+now. That it isn't built yet is a fair thing to hold against this setup.
 
 ### A pinned git tag is the deployable unit
 
@@ -150,19 +195,20 @@ go-live is atomic and rollback is the same task pointed at an older release dire
 
 ## Where it stands
 
-Running, and doing real work. Containers and VMs are provisioned from a playbook, a
+Running, and doing real work. Containers and VMs are provisioned from a playbook, the
 `common` role applies base configuration across hosts, and a reverse-proxy role is opt-in
-per host. Five services are deployed this way — DNS filtering, a retro-games box, the two
-[web apps]({{< relref "../web-apps" >}}), and the subnet router that provides remote access.
-Secrets are vaulted, and a git filter keeps hostnames and addresses out of commits.
+per host. The five services above are all deployed this way. Secrets are vaulted, and a git
+filter keeps hostnames and addresses out of commits.
 
-The recovery position is worth stating exactly, because it's the one place the word
-"running" could be read too generously. There are no backups: no `vzdump` schedule on the
-Proxmox side, and nothing in the playbooks that configures one. What the repo provides is
-reproducibility — any container can be rebuilt from scratch by re-running its play — which
-restores configuration and not data. For the stateless services that is genuinely the whole
-recovery story. For anything holding a database it isn't, and no restore has been performed
-to prove otherwise.
+Two things a reader should weigh against that. There is no CI, as set out above — the
+deploy is automated but nothing verifies what it deploys.
+
+And the recovery position, which is the one place the word "running" could be read too
+generously: there are no backups. No `vzdump` schedule on the Proxmox side, and nothing in
+the playbooks that configures one. What the repo provides is reproducibility — any container
+can be rebuilt from scratch by re-running its play — which restores configuration and not
+data. For the stateless services that is genuinely the whole recovery story. For anything
+holding a database it isn't, and no restore has been performed to prove otherwise.
 
 ## What I learned
 
