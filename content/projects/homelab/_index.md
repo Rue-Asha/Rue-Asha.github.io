@@ -12,7 +12,7 @@ summary: 'Ansible-managed Proxmox homelab where every service gets its own conta
 | **Started** | April 2026                             |
 | **Stack**   | Ansible · Proxmox · Debian · systemd · nginx · Tailscale |
 | **Scale**   | 13 roles · 5 service hosts · ~2,650 lines of YAML |
-| **Source**  | Private repo                           |
+| **Source**  | [github.com/Rue-Asha/Homelab-Managment](https://github.com/Rue-Asha/Homelab-Managment) |
 
 ## What it is
 
