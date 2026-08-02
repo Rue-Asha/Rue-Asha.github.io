@@ -69,7 +69,7 @@ disableKinds = ['taxonomy', 'term']
 
   [params.author]
     name = 'Rue Asha'
-    email = 'gant.cyber@proton.me'
+    email = 'rue.asha@proton.me'
 
   [params.navbar]
     displayTitle = true

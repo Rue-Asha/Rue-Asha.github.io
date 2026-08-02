@@ -11,7 +11,7 @@ Everything here is written first for future-me and second for anyone who finds i
 ## Elsewhere
 
 - GitHub — [@Rue-Asha](https://github.com/Rue-Asha)
-- Email — [gant.cyber@proton.me](mailto:gant.cyber@proton.me)
+- Email — [rue.asha@proton.me](mailto:rue.asha@proton.me)
 
 ## Scope and ethics
 
