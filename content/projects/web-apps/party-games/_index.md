@@ -14,7 +14,7 @@ aliases:
 | **Started** | June 2026                                   |
 | **Architecture** | [The shared web-app stack]({{< relref ".." >}}) |
 | **Scale**   | 6 games · 12 migrations · ~9,900 lines of TS/Svelte · 0 WebSockets |
-| **Source**  | Private repo                                |
+| **Source**  | [github.com/Rue-Asha/Party-Games](https://github.com/Rue-Asha/Party-Games) |
 
 The stack, deployment and architecture are the [shared ones]({{< relref ".." >}}). This page
 covers only what this app decides differently — which, given the whole project is an
