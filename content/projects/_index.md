@@ -8,14 +8,21 @@ cascade:
   type: docs
 ---
 
-Documentation for the things I build. Each project gets its own folder, so it can grow
-from a single page into a small handbook without reorganising anything.
+Documentation for the things I build — organised by the level a decision is actually true
+at, rather than one page per repository.
+
+There are two of those levels. **Homelab** is the platform: what runs the machines and how
+anything gets deployed onto them. **Web Apps** is the architecture the self-hosted
+applications share, with each app underneath it carrying only what it decides differently.
 
 {{< cards >}}
   {{< card link="homelab/" title="Homelab" icon="server" subtitle="Ansible-managed Proxmox host. The platform the rest of these run on." >}}
-  {{< card link="life-dashboard/" title="Life Dashboard" icon="template" subtitle="One self-hosted app for tasks, uni, notes and finances." >}}
-  {{< card link="party-games/" title="Party Games" icon="puzzle" subtitle="Party games for a single screen — a study in deleting architecture." >}}
+  {{< card link="web-apps/" title="Web Apps" icon="template" subtitle="One stack, one process, one file — the shared architecture behind the self-hosted apps." >}}
 {{< /cards >}}
+
+New here? Read **Homelab** first — its deploy model is the decision everything else
+inherits — then **Web Apps** for the application shape. The individual apps are worth
+reading only if a specific one interests you.
 
 ## What these pages are, and aren't
 
@@ -28,9 +35,19 @@ WebSockets. Why the migrations are date-prefixed. That's what these pages record
 decisions and the trade-offs behind them, which stay true across refactors and can't be
 reconstructed from reading the source.
 
-So each page follows the same shape — what it is, why it exists, the key decisions, how
-the pieces fit, where it stands, and what it taught me:
+So each page follows the same shape:
 
-```bash
-hugo new content projects/my-project/_index.md --kind projects
-```
+- **What it is** — the one-paragraph version, no jargon.
+- **Why it exists** — the problem that justified building rather than installing something.
+- **Key decisions** — each as *chose / because / trade-off*. The trade-off is not optional;
+  a decision with no cost is a decision I hadn't finished thinking about.
+- **Threat model** — who could attack it, what I chose to accept, and why that's defensible
+  at this scale.
+- **Where it stands** — what actually runs today. Not a roadmap: these pages document what
+  exists, because a plan written down in public ages into a promise nobody asked me to make.
+- **What I learned** — including the parts that went badly.
+
+They also try not to repeat themselves. A decision is written once, at the level where it's
+true: anything shared by both applications is argued on the Web Apps page and not
+re-litigated underneath it. Two copies of an argument drift, and nothing warns you when
+they do.

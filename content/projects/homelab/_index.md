@@ -11,6 +11,7 @@ summary: 'Ansible-managed Proxmox homelab where every service gets its own conta
 | **Status**  | Running                                |
 | **Started** | April 2026                             |
 | **Stack**   | Ansible · Proxmox · Debian · systemd · nginx · Tailscale |
+| **Scale**   | 13 roles · 5 service hosts · ~2,650 lines of YAML |
 | **Source**  | Private repo                           |
 
 ## What it is
@@ -89,6 +90,43 @@ session.
 **Trade-off:** only works on a single flat subnet, and breaks quietly if the network is
 ever segmented. Cheap to abandon when that happens.
 
+## Threat model
+
+Worth stating plainly, because most of the architecture decisions above are really answers
+to this and it's better to be explicit about what I'm defending against than to imply I'm
+defending against everything.
+
+**What I'm defending against.** Opportunistic internet-wide scanning, which is the only
+attacker that realistically finds a home IP. The answer is that there is nothing to find:
+no inbound port is forwarded, and the tunnel is established outbound, so from the outside
+the network has no listening service to fingerprint. Secondarily, my own mistakes — an
+unrepeatable box that nobody, including me, can reason about six months later.
+
+**What I trust.** Everything on the LAN, and every device enrolled in the tailnet. This is
+a flat network with no internal segmentation: a service container can reach any other. That
+is a real, deliberate concession — the alternative is VLANs and firewall rules whose upkeep
+cost I'd stop paying within a month, and a security control you stop maintaining is worse
+than one you never claimed.
+
+**What I accept.**
+
+- **Plaintext HTTP inside the LAN.** No TLS between nginx and the browser. The traffic is
+  game scores and my own task list, and the network boundary is the flat itself.
+- **A compromised enrolled device gets LAN-level reach.** The subnet router advertises the
+  whole LAN, so tailnet access is not per-service. Mitigated only by the tailnet being two
+  devices I control.
+- **A third-party coordination dependency.** Tailscale's control plane can see the tailnet's
+  topology and could, in principle, enrol a device. WireGuard keys stay on the endpoints, so
+  it isn't a traffic-interception risk — it is an availability and enrolment-trust risk.
+- **No secrets manager.** Secrets live in `ansible-vault` files in the inventory, decrypted
+  at play time. Fine for one operator; it doesn't rotate and it doesn't audit.
+
+**What I refuse to accept.** Secrets in git history, and privileged containers. Vault files
+hold every credential, deploy keys are read-only and installed `0600` under `no_log`,
+containers are unprivileged unless a specific role opts out, and a `clean`/`smudge` git
+filter strips real hostnames and addresses out of tracked files so the infrastructure repo
+can be published without a history rewrite.
+
 ## How it fits together
 
 ```mermaid
@@ -108,15 +146,60 @@ Playbooks are layered rather than monolithic: provisioning creates the container
 deploy the app, and enable a reverse proxy. A new service reuses everything except its own
 role.
 
-## Status
+The deploy model is easiest to read as the task order of a service role. This is the whole
+of `roles/life-dashboard/tasks/main.yml` — every service role is this same spine:
 
-- [x] Container and VM provisioning from a playbook
-- [x] Base configuration role applied across hosts
-- [x] Reverse proxy role, opt-in per host
-- [x] DNS filtering, retro-games and two web app services deployed
-- [x] Subnet router for remote access
-- [ ] A dedicated base-configuration playbook layer — roles exist, the playbook doesn't
-- [ ] Backup and restore that has actually been tested by restoring
+```yaml
+- name: Ensure the service user and group exist
+  ansible.builtin.import_tasks: user.yml
+
+- name: Ensure the on-host directory layout exists
+  ansible.builtin.import_tasks: directories.yml
+
+- name: Install the read-only deploy key
+  ansible.builtin.import_tasks: deploy_key.yml
+
+- name: Check out the pinned application version
+  ansible.builtin.import_tasks: checkout.yml
+  tags: [deploy]
+
+- name: Build the release
+  ansible.builtin.import_tasks: build.yml
+  tags: [deploy]
+
+- name: Apply database migrations
+  ansible.builtin.import_tasks: migrate.yml
+  tags: [deploy]
+
+- name: Activate the new release      # single symlink swap
+  ansible.builtin.import_tasks: release.yml
+  tags: [deploy]
+
+- name: Prune old releases
+  ansible.builtin.import_tasks: prune.yml
+  tags: [deploy]
+```
+
+The `deploy` tag is the point of the split: a first run does the whole file, and every
+redeploy after that is `--tags deploy` — checkout, build, migrate, flip, prune — leaving
+users, directories and keys untouched. "Activate" is one `file: state=link` task, so
+go-live is atomic and rollback is the same task pointed at an older release directory.
+
+## Where it stands
+
+Running, and doing real work. Containers and VMs are provisioned from a playbook, a
+`common` role applies base configuration across hosts, and a reverse-proxy role is opt-in
+per host. Five services are deployed this way — DNS filtering, a retro-games box, the two
+[web apps]({{< relref "../web-apps" >}}), and the subnet router that provides remote access.
+Secrets are vaulted, and a git filter keeps hostnames and addresses out of commits.
+
+The recovery position is worth stating exactly, because it's the one place the word
+"running" could be read too generously. There are no backups: no `vzdump` schedule on the
+Proxmox side, and nothing in the playbooks that configures one. What the repo provides is
+reproducibility — any container can be rebuilt from scratch by re-running its play — which
+restores configuration and not data. For the stateless services that is genuinely the whole
+recovery story. For anything holding a database it isn't, and no restore has been performed
+to prove otherwise.
 
 ## What I learned
 
@@ -129,4 +212,5 @@ service without re-litigating the whole design.
 **The second service is where the abstraction gets tested.** The first role is always
 over-fitted to its one use case. Deploying a second app of the same shape immediately
 exposed which parts were genuinely service-agnostic and which had the first service's
-assumptions baked in.
+assumptions baked in — and the shape that survived that test is what the
+[Web Apps]({{< relref "../web-apps" >}}) page now describes.

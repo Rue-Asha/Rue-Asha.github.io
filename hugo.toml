@@ -67,6 +67,13 @@ disableKinds = ['taxonomy', 'term']
 [params]
   description = 'Cybersecurity writeups, project documentation and learning notes by Rue Asha.'
 
+  # Same TOML rule as disableKinds above: these are bare keys on [params], so they must
+  # stay above the first [params.*] sub-table or they get parsed into it silently.
+  displayUpdatedDate = true
+  dateFormat = 'January 2, 2006'
+  enableImageLazyLoading = true
+  externalLinkDecoration = true
+
   [params.author]
     name = 'Rue Asha'
     email = 'rue.asha@proton.me'
@@ -103,11 +110,6 @@ disableKinds = ['taxonomy', 'term']
   [params.highlight.copy]
     enable = true
     display = 'hover'
-
-  displayUpdatedDate = true
-  dateFormat = 'January 2, 2006'
-  enableImageLazyLoading = true
-  externalLinkDecoration = true
 
   [params.imageZoom]
     enable = true

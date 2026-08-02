@@ -8,6 +8,9 @@ boxes and CTFs, documentation for the things I build, and notes on what I'm lear
 
 Everything here is written first for future-me and second for anyone who finds it useful.
 
+The most detailed read on how I work is the [Projects](/projects/) section — each page is a
+decision record rather than a feature list.
+
 ## Elsewhere
 
 - GitHub — [@Rue-Asha](https://github.com/Rue-Asha)
