@@ -11,14 +11,14 @@ summary: 'Ansible-managed Proxmox homelab where every service gets its own conta
 | **Status**  | Running                                |
 | **Started** | April 2026                             |
 | **Stack**   | Ansible · Proxmox · Debian · systemd · nginx · Tailscale |
-| **Scale**   | 13 roles · 5 service hosts · ~2,650 lines of YAML |
+| **Scale**   | 13 roles · 4 service hosts · ~2,650 lines of YAML |
 | **Source**  | [github.com/Rue-Asha/Homelab-Managment](https://github.com/Rue-Asha/Homelab-Managment) |
 
 ## What it is
 
 A small Proxmox server at home, and the Ansible repository that configures every machine
-on it. Nothing is set up by hand: each service — DNS filtering, a retro-games box, a
-couple of self-hosted web apps — lives in its own lightweight container, and a playbook
+on it. Nothing is set up by hand: each service — DNS filtering, a couple of self-hosted
+web apps, remote access into the LAN — lives in its own lightweight container, and a playbook
 turns an empty container into that running service. If a box breaks, the fix is to re-run
 the playbook rather than to remember what I clicked.
 
@@ -35,14 +35,13 @@ skill whether the target is a homelab or production, so the practice transfers.
 
 ## What's running on it
 
-Five services, each in its own container, each built by one playbook out of shared roles.
+Four services, each in its own container, each built by one playbook out of shared roles.
 The right-hand column is the whole point of the layering: a new service writes one role and
 inherits the rest.
 
 | Service | What it does | Roles applied |
 | --- | --- | --- |
 | **Pi-hole** | Network-wide DNS filtering and ad-blocking for every device on the LAN, including the ones with no ad-blocker of their own | `common` · `pihole` |
-| **RetroPie** | Emulation box for retro games, wired to a TV | `common` · `retropie` |
 | **Life Dashboard** | [The self-hosted dashboard]({{< relref "../web-apps/life-dashboard" >}}) — tasks, uni, notes, projects | `common` · `nodejs` · `life-dashboard` · `nginx` |
 | **Party Games** | [Single-screen party games]({{< relref "../web-apps/party-games" >}}) for the living room | `common` · `nodejs` · `partygames` · `nginx` |
 | **Subnet router** | Advertises the LAN route into the tailnet over WireGuard — the only path in from outside the flat, and the reason no port is forwarded | `common` · `tailscale` |
@@ -55,6 +54,10 @@ to deploy.
 The subnet router is the one host that needs something unusual from Proxmox — a `/dev/net/tun`
 passthrough for the WireGuard interface — which is its own provisioning role rather than a
 manual tick in the UI.
+
+There used to be a fifth service: a RetroPie emulation box wired to the TV, the one VM in an
+otherwise all-container fleet. The box has since been retired, but its role and playbook stay
+in the repo, ready for the day it comes back.
 
 ## Key decisions
 
@@ -197,8 +200,8 @@ go-live is atomic and rollback is the same task pointed at an older release dire
 
 Running, and doing real work. Containers and VMs are provisioned from a playbook, the
 `common` role applies base configuration across hosts, and a reverse-proxy role is opt-in
-per host. The five services above are all deployed this way. Secrets are vaulted, and a git
-filter keeps hostnames and addresses out of commits.
+per host. The four services above are all deployed this way. Credentials never land in git
+unencrypted — every secret is an ansible-vault value.
 
 Two things a reader should weigh against that. There is no CI, as set out above — the
 deploy is automated but nothing verifies what it deploys.
