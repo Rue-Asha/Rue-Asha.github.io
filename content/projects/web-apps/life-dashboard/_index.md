@@ -13,7 +13,7 @@ aliases:
 | **Status**  | Building — five modules in daily use      |
 | **Started** | July 2026                                |
 | **Architecture** | [The shared web-app stack]({{< relref ".." >}}) |
-| **Scale**   | 5 modules live · 17 migrations · ~3,800 lines of TS/Svelte |
+| **Scale**   | 5 modules live · 16 migrations · ~3,900 lines of TS/Svelte |
 | **Source**  | [github.com/Rue-Asha/Life-Managment-Dashboard](https://github.com/Rue-Asha/Life-Managment-Dashboard) |
 
 The stack, deployment and architecture are the [shared ones]({{< relref ".." >}}). This page
@@ -103,7 +103,6 @@ by side, old below new, nothing renumbered:
 ```text
 migrations/
   0001_init.sql                    ← inherited from the budgeting app
-  0002_seed.sql
   0003_once_cadence.sql
   0004_waterfall.sql
   0005_savings_and_wiring.sql      ← last of the old sequential history
