@@ -10,7 +10,7 @@
   "scripts": {
     "build": "node --import tsx bin/build.ts",
     "check": "node --import tsx bin/check.ts",
-    "test": "vitest run tests/u1 tests/u2 --coverage",
+    "test": "vitest run --coverage",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

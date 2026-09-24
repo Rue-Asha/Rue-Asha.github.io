@@ -68,6 +68,31 @@ jobs:
       - name: Run the three blocking checks
         run: npm run check
 
+      # The remaining four checks from the author's pre-push set, added at
+      # ci-pipeline [Q1]. They are the backstop `team.md` § Deployment
+      # anticipated: "a backstop for a push that skipped the local checks".
+      # Each is blocking, and the deploy job below runs only if this one
+      # succeeds, so none of them can be skipped into a live deploy.
+      #
+      # `npm test` carries the 80% line-coverage floor from `org.md`, which
+      # `vitest.config.ts` enforces as `thresholds.lines: 80` — the "CI
+      # execution before merge" half of that scope floor runs here.
+      - name: Run the unit suite and the coverage floor
+        run: npm test
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      # Safe for content commits: `.prettierignore` excludes `content/`
+      # outright and `.prettierrc.json` sets `proseWrap: "preserve"`, so this
+      # step cannot block a post going live over prose style — the ceremony
+      # `team.md` § Code Style forbids.
+      - name: Check formatting
+        run: npm run format:check
+
       - name: Configure Pages
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
 
