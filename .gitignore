@@ -84,3 +84,11 @@ aidlc/diagnostics/
 # aidlc/spaces/*/intents/*/<phase>/<stage>/*.md (artifacts + diary).
 .claude/settings.local.json
 # END AI-DLC:gitignore
+
+# Site build (U1 — publishable site shell). The AI-DLC block above already
+# ignores `node_modules` and `dist`; these are the project's own explicit
+# entries, kept outside that managed block so a regeneration cannot drop them.
+node_modules/
+dist/
+coverage/
+.build/
