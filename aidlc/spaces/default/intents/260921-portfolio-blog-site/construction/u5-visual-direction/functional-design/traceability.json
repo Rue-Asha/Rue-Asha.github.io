@@ -1,0 +1,30 @@
+{
+  "stage": "functional-design",
+  "unit": "u5-visual-direction",
+  "upstream_ids": [
+    "NFR1",
+    "NFR3",
+    "NFR4",
+    "NFR6",
+    "NFR7"
+  ],
+  "coverage": [
+    { "id": "NFR1", "status": "OK", "target": "BR11.7, BR5.2" },
+    { "id": "NFR3", "status": "OK", "target": "BR11.3, BR11.4" },
+    { "id": "NFR4", "status": "OK", "target": "BR11.4, BR5.10" },
+    { "id": "NFR6", "status": "OK", "target": "BR11.6" },
+    { "id": "NFR7", "status": "OK", "target": "BR11.8, BR11.1" }
+  ],
+  "reverse": [
+    {
+      "id": "BR11.5",
+      "status": "N/A",
+      "target": "NFR1 — the WCAG 2.1 AA bar. NFR1's four conditions are keyboard conditions (skip link, tab order, no focus trap, visible focus indicator), all covered by BR11.7 and BR5.2, so BR11.5 has no acceptance criterion of its own to map to. It is an obligation on the author rather than on the system: re-measure the contrast table in refined-mockups/design-system-mapping.md whenever a colour token changes. It is listed rather than left as a derived orphan because the automated accessibility scan was declined at Practices Discovery, which makes this rule the only thing standing behind colour contrast on this site — see U5OQ2 in functional-spec.md."
+    },
+    {
+      "id": "BR11.2",
+      "status": "N/A",
+      "target": "NFR2 — pages served complete with no loading state. NFR2 is not assigned to U5 by the story map, but this unit is where a font request could introduce a hidden-text interval, so the rule exists here to prevent NFR2 being broken from a unit that does not own it."
+    }
+  ]
+}

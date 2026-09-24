@@ -1,0 +1,13 @@
+{
+  "stage": "code-generation",
+  "unit": "u4-about-page",
+  "version": 1,
+  "writes": [
+    { "path": "src/page-renderer/pages.ts" },
+    { "path": "src/page-renderer/shell.ts" },
+    { "path": "tests/u4/about.test.ts" },
+    { "path": "tests/u4/helpers.ts" },
+    { "path": "tests/u4/integration.test.ts" },
+    { "path": "tests/u4/fixtures/minimal-site/content/posts/a-post/index.md" }
+  ]
+}

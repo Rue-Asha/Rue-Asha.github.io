@@ -1,9 +1,14 @@
-# Team-Level Rules
+# Team Practices — Personal Portfolio & Blog Site
 
-> This team's affirmed practices and corrections. Loaded after `org.md` as
-> strict-additive guidance; contradictions with broader policy are rejected.
-> Populated by the practices-discovery affirmation gate. Edit at the gate,
-> not directly.
+> These are the affirmed practices for this project, settled at the
+> practices-discovery interview on 2026-09-23. "We" means Rue Asha, the only
+> participant (`ideation/approval-handoff/initiative-brief.md` § Team Plan).
+>
+> The five sections below are promoted into
+> `aidlc/spaces/default/memory/team.md`. Where a section departs from the
+> `aidlc/spaces/default/memory/org.md` default, it says so and says why: this
+> project has one person, one environment, and a publishing act that must be
+> nothing more than committing a file.
 
 ## Way of Working
 
@@ -208,10 +213,6 @@ during Construction.
 volume and types. Nothing in this section reduces it, and no check here may be
 weakened to make a step pass.
 
-## Change Control
-
-<!-- Affirmed by the team. Mode: strict or relaxed. Strict here holds for every intent and cannot be changed from chat. -->
-
 ## Deployment
 
 **`main` is production. There is no staging.** A GitHub Pages user site publishes
@@ -402,14 +403,3 @@ Topic search is deferred rather than excluded, so this is a live future trigger
 rather than a theoretical one. **The automated checks in this repository that
 actually protect something are not linters** — they are secret push protection, a
 committed lockfile, and SHA-pinned actions, and they live in § Deployment.
-## Forbidden
-
-<!-- Team-specific forbidden patterns -->
-
-## Mandated
-
-<!-- Team-specific mandates -->
-
-## Corrections
-
-<!-- Self-learning loop appends here. -->

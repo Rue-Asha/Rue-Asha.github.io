@@ -1,0 +1,96 @@
+# Publish the site to GitHub Pages.
+#
+# A push to `main` is the only thing that publishes this site (BR7.1), and no
+# action is required of the author after the push (BR7.2). Only a complete build
+# deploys: if the check run fails, nothing is deployed and the previously live
+# site keeps serving (BR7.3, BR4.5).
+#
+# The route runs the same `bin/check.ts` the author runs before a push, so the
+# local and remote check sets cannot drift (ADR-004, BR6.1).
+#
+# Four controls are required of any publishing workflow in this repository
+# (`unit-of-work.md` U1, `team.md` § Deployment). Each is marked below:
+#
+#   1. Permissions are declared explicitly: `contents: read` at the top level,
+#      with `pages: write` and `id-token: write` on the deploy job alone.
+#   2. Every third-party action is pinned to a full commit SHA, never a version
+#      tag. Tags are mutable and have been retargeted to malicious commits in the
+#      wild; the trailing comment records which release each SHA was.
+#   3. Nothing triggers on `pull_request_target`.
+#   4. Nothing is fetched at build time that is not in the committed lockfile —
+#      `npm ci` and nothing else. No `curl | sh`, no unpinned installer.
+#
+# This workflow requires the repository's Pages source to be set to
+# "GitHub Actions" rather than "Deploy from a branch". That is a repository
+# settings change no code here can make (ADR-005, assumption CA4).
+
+name: Publish
+
+# Control 1 of 4 — the only trigger (BR7.1). Note the absence of
+# `pull_request_target`, which is control 3 of 4.
+on:
+  push:
+    branches: [main]
+
+# Control 1 of 4 — read-only by default; the deploy job widens it for itself.
+permissions:
+  contents: read
+
+# Never publish two commits at once, and never cancel a run that is mid-deploy:
+# an interrupted deploy is the one way this site could end up serving a partial
+# build.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  check:
+    name: Build and run the three blocking checks
+    runs-on: ubuntu-latest
+    steps:
+      # Control 2 of 4 — pinned to a commit SHA, with the release in a comment.
+      - name: Check out the repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          cache: npm
+
+      # Control 4 of 4 — installs exactly what the committed lockfile names.
+      - name: Install dependencies from the lockfile
+        run: npm ci
+
+      # The same runner the author runs before a push. It builds the site as
+      # check 1, then confirms every content file produced a page and every
+      # internal link resolves, and exits non-zero if any of the three failed.
+      - name: Run the three blocking checks
+        run: npm run check
+
+      - name: Configure Pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+
+      - name: Upload the built site
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: dist
+
+  deploy:
+    name: Deploy to GitHub Pages
+    # Only a complete build deploys (BR7.3). If `check` failed, this job never
+    # runs, nothing is deployed, and the previously live site stays up.
+    needs: check
+    runs-on: ubuntu-latest
+    # Control 1 of 4 — the two write permissions are granted here and nowhere
+    # else.
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

@@ -1,0 +1,26 @@
+## Review
+
+**Verdict:** READY
+**Reviewer:** aidlc-architecture-reviewer-agent
+**Date:** 2026-09-24T12:14:47Z
+**Iteration:** 1
+
+### Findings
+
+| ID | Severity | Location | Finding | Required action | Status |
+|---|---|---|---|---|---|
+| R-01 | Minor | `construction/u3-projects/code-generation/traceability.json` > coverage row `NFR6` | NFR6's acceptance criterion (`requirements.md` line 169) is "Load each page type at a desktop width and at a phone width; each stated behaviour holds" — including that the project rail *stacks* above the body at phone width and the top bar stays visible at every width. The row is marked `status: "OK"` against `tests/u3/page-renderer.test.ts`, but that file (verified by reading it in full) contains no viewport-width assertion of any kind; its one NFR6-adjacent test (`BR9.5 — the rail sits beside the body`) only asserts the rail element precedes the body element in markup order, which is a BR9.5 structural precondition, not a verification that the responsive behaviour holds. The plan (`code-generation-plan.md` § What this plan does not do), `code-summary.md`, and `unit-test-instructions.md` all state explicitly that styling and responsive layout are U5's and out of scope here — which makes the sibling row for NFR7 (marked `"Deferred"` with the same reasoning) the internally-consistent treatment, and the NFR6 row's unqualified `"OK"` a real inconsistency within this unit's own artifacts. | Change the NFR6 coverage row to `"Deferred"` (or an equivalent partial-coverage status) with the same reasoning already given for NFR7: this unit supplies the structural precondition (rail precedes body in markup) that U5's CSS relies on to stack them at phone width, but the viewport-width behaviour itself is unverified until U5 lands and Build and Test runs the keyboard/visual walkthrough. | New |
+
+### Validation Tool Results
+
+| Tool | Result | Interpretation |
+|---|---|---|
+| `npx vitest run tests/u1 tests/u2 tests/u3` (no `--coverage`, per constraint) | 17 test files, 133 tests, all pass | Matches `code-summary.md`'s claimed 82+27+24=133; no regression in U1/U2 suites from the shared-file (`pages.ts`) edit |
+| `npx tsc --noEmit` | pass, exit 0 | Type-checks clean |
+| `npx eslint src/page-renderer/pages.ts tests/u3` | pass, exit 0 | Lint-clean on the changed file and the new test directory |
+| Read existing `coverage/coverage-summary.json` (not regenerated) | total lines 532/556 = 95.68% | Read-only inspection, not a fresh run; figure differs slightly from the 528/549=96.17% claimed in `code-summary.md`, consistent with the file on disk reflecting a later unit's state (this repo has since progressed past U3) rather than a discrepancy in U3's own claim. Both figures clear the 80% floor with room to spare, and `vitest.config.ts` confirms `thresholds.lines: 80` is unweakened, `coverage.include: ["src/**"]` with no `exclude` added |
+| Read existing `dist/` output (not rebuilt) | Inspected `dist/index.html`, `dist/projects/index.html`, `dist/projects/rue-asha-github-io/index.html`, `dist/projects/homelab/index.html` | Confirms on the actual built output, not just the source or the tests: Projects page emits `<h1>Projects</h1>` then `<h2>` rows (no skip); Home emits `<h1>` intro, `<h2>` section headings, `<h3>` project rows (no skip); a project page emits exactly one `<h1>` inside `project-body`, with `<dl class="project-rail">` and `<div class="project-body">` as siblings inside `<article class="project">`, in that order; both sampled projects (no `liveUrl`) show four rail rows (`Year`, `Type`, `Tools`, `Repo`) with no `Live` row and no blank row; repo anchors carry `aria-label="Repository for <name>"` (never a bare "repo") and `rel="noopener noreferrer"`; CSP meta tag present and restrictive (`script-src 'none'`, `default-src 'self'`); no `aidlc`/`.claude` paths reachable in `dist/`; no analytics/newsletter/comment markup anywhere in built HTML |
+
+### Summary
+
+The one finding is a traceability labelling inconsistency (NFR6 marked fully covered when only a structural precondition is tested, while the sibling NFR7 row is honestly marked `"Deferred"` for the identical reason), not a defect in the shipped behaviour — it does not block READY on its own since it is a single Minor item. Every attack surface named in the dispatch held: the heading-level fix is real, verified against both source and the actual built `dist/` output, with no skip on Home, Projects, or a project page and exactly one `h1` per page; BR9.1's fixed rail order and omit-on-absence, BR9.2's exactly-two-anchors and named accessible name, BR9.4's once-per-project rendering, and BR9.5's sibling structure are all implemented as claimed and independently confirmed against the on-disk build, not just the tests; BR9.3's "order never filter" claim is genuinely mutation-resistant — `ordering-parity.test.ts` declares projects out of order, moves `featured` mid-test, and asserts every project still appears on the Projects page regardless of `featured` value. `source-manifest.json` is complete and accurate against the files on disk. No forbidden scaffolding (comments, newsletter, analytics, CMS hooks) was introduced. TypeScript, ESLint, and the full regression suite (U1+U2+U3, 133 tests) are all clean.

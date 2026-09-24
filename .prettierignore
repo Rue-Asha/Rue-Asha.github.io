@@ -1,0 +1,20 @@
+# The formatter formats site code only. It never touches the text of a post.
+#
+# Automatic tidying rewrites line breaks, and where the author chose to break a
+# line in a post is usually deliberate; after it runs once, the diff of the next
+# real edit is unreadable. A formatter rewriting front matter can also change how
+# a post is parsed and published, which turns an ergonomic complaint into a
+# correctness one (`team.md` § Code Style).
+content/
+tests/u1/fixtures/
+tests/u2/fixtures/
+
+# Build output and installed packages.
+dist/
+coverage/
+node_modules/
+package-lock.json
+
+# The AI-DLC workspace and the tooling directories are not site code.
+aidlc/
+.claude/

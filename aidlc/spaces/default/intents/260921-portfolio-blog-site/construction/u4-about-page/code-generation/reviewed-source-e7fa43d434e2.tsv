@@ -1,0 +1,6 @@
+manifest	f289df54ef3d970baa71db615df4ba187a28f48191af082cf2703c72ab4ea9f0	-
+	src/page-renderer/pages.ts	100644	f2987815ccf51d224bd9c7ce0680811a7feff1d0117d00915ddf18dfea0ea277
+	tests/u4/about.test.ts	100644	11340007ad49941b96a74905a2c921fd901cc10aacb658c8f69b87c4304f428e
+	tests/u4/fixtures/minimal-site/content/posts/a-post/index.md	100644	46ae67ebfcf7964eab8a8027941c3b90208047ab9f6604d74ebcb506ca2241cf
+	tests/u4/helpers.ts	100644	5a8bc66611579a97aedb06ffe741acb993250944d33a7ccc9339d502c51b886b
+	tests/u4/integration.test.ts	100644	b163edfcf6d6d1b676e3a0f1c7e550715975c96b37b2a727a03e08be6c0dbeaa

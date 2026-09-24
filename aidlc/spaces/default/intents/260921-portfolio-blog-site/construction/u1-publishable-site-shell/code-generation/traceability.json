@@ -1,0 +1,86 @@
+{
+  "stage": "code-generation",
+  "unit": "u1-publishable-site-shell",
+  "upstream_ids": [
+    "BR1.1", "BR1.2", "BR1.3", "BR1.4", "BR1.5", "BR1.6", "BR1.7", "BR1.8", "BR1.9",
+    "BR2.1", "BR2.2", "BR2.3", "BR2.4",
+    "BR3.1", "BR3.2", "BR3.3", "BR3.4", "BR3.5", "BR3.6", "BR3.7",
+    "BR4.1", "BR4.2", "BR4.3", "BR4.4", "BR4.5",
+    "BR5.1", "BR5.2", "BR5.3", "BR5.4", "BR5.5", "BR5.6", "BR5.7", "BR5.8", "BR5.9", "BR5.10", "BR5.11",
+    "BR6.1", "BR6.2", "BR6.3", "BR6.4", "BR6.5",
+    "BR7.1", "BR7.2", "BR7.3",
+    "NFR1", "NFR2", "NFR3", "NFR4", "NFR8", "NFR9", "NFR10", "NFR11", "NFR12"
+  ],
+  "coverage": [
+    { "id": "BR1.1", "status": "OK", "target": "src/content-source.ts" },
+    { "id": "BR1.2", "status": "OK", "target": "src/content-source.ts" },
+    { "id": "BR1.3", "status": "OK", "target": "src/content-source.ts" },
+    { "id": "BR1.4", "status": "OK", "target": "src/content-source.ts" },
+    { "id": "BR1.5", "status": "OK", "target": "src/content-source.ts" },
+    { "id": "BR1.6", "status": "OK", "target": "src/content-source.ts" },
+    { "id": "BR1.7", "status": "OK", "target": "src/content-source.ts" },
+    { "id": "BR1.8", "status": "OK", "target": "tests/u1/integration.test.ts" },
+    { "id": "BR1.9", "status": "OK", "target": "src/content-source.ts" },
+
+    { "id": "BR2.1", "status": "OK", "target": "src/post-catalog.ts" },
+    { "id": "BR2.2", "status": "OK", "target": "src/post-catalog.ts" },
+    { "id": "BR2.3", "status": "OK", "target": "src/post-catalog.ts" },
+    { "id": "BR2.4", "status": "OK", "target": "src/content-transforms.ts" },
+
+    { "id": "BR3.1", "status": "OK", "target": "src/project-catalog.ts" },
+    { "id": "BR3.2", "status": "OK", "target": "src/project-catalog.ts" },
+    { "id": "BR3.3", "status": "OK", "target": "src/project-catalog.ts" },
+    { "id": "BR3.4", "status": "OK", "target": "src/project-catalog.ts" },
+    { "id": "BR3.5", "status": "OK", "target": "src/page-renderer/pages.ts" },
+    { "id": "BR3.6", "status": "OK", "target": "src/project-catalog.ts" },
+    { "id": "BR3.7", "status": "OK", "target": "src/content-transforms.ts" },
+
+    { "id": "BR4.1", "status": "OK", "target": "src/site-builder.ts" },
+    { "id": "BR4.2", "status": "OK", "target": "src/site-builder.ts" },
+    { "id": "BR4.3", "status": "OK", "target": "src/errors.ts" },
+    { "id": "BR4.4", "status": "OK", "target": "src/site-builder.ts" },
+    { "id": "BR4.5", "status": "OK", "target": "tests/u1/site-builder.test.ts" },
+
+    { "id": "BR5.1", "status": "OK", "target": "src/page-renderer/shell.ts" },
+    { "id": "BR5.2", "status": "OK", "target": "src/page-renderer/shell.ts" },
+    { "id": "BR5.3", "status": "OK", "target": "src/page-renderer/pages.ts" },
+    { "id": "BR5.4", "status": "OK", "target": "src/page-renderer/pages.ts" },
+    { "id": "BR5.5", "status": "OK", "target": "src/page-renderer/pages.ts" },
+    { "id": "BR5.6", "status": "OK", "target": "src/page-renderer/pages.ts" },
+    { "id": "BR5.7", "status": "OK", "target": "src/page-renderer/shell.ts" },
+    { "id": "BR5.8", "status": "OK", "target": "src/page-renderer/shell.ts" },
+    { "id": "BR5.9", "status": "OK", "target": "src/page-renderer/shell.ts" },
+    { "id": "BR5.10", "status": "OK", "target": "src/page-renderer/shell.ts" },
+    { "id": "BR5.11", "status": "OK", "target": "src/content-transforms.ts" },
+
+    { "id": "BR6.1", "status": "OK", "target": "src/check-runner.ts" },
+    { "id": "BR6.2", "status": "OK", "target": "src/check-runner.ts" },
+    { "id": "BR6.3", "status": "OK", "target": "src/check-runner.ts" },
+    { "id": "BR6.4", "status": "OK", "target": "src/check-runner.ts" },
+    { "id": "BR6.5", "status": "OK", "target": "src/check-runner.ts" },
+
+    { "id": "BR7.1", "status": "OK", "target": ".github/workflows/publish.yml" },
+    { "id": "BR7.2", "status": "OK", "target": ".github/workflows/publish.yml" },
+    { "id": "BR7.3", "status": "OK", "target": ".github/workflows/publish.yml" },
+
+    { "id": "NFR1", "status": "PARTIAL", "target": "src/page-renderer/shell.ts" },
+    { "id": "NFR2", "status": "OK", "target": "src/markup-renderer.ts" },
+    { "id": "NFR3", "status": "OK", "target": "src/page-renderer/shell.ts" },
+    { "id": "NFR4", "status": "OK", "target": "src/page-renderer/shell.ts" },
+    { "id": "NFR8", "status": "OK", "target": "src/content-transforms.ts" },
+    { "id": "NFR9", "status": "OK", "target": "bin/check.ts" },
+    { "id": "NFR10", "status": "OK", "target": "src/check-runner.ts" },
+    { "id": "NFR11", "status": "OK", "target": "src/check-runner.ts" },
+    { "id": "NFR12", "status": "OK", "target": "vitest.config.ts" }
+  ],
+  "notes": {
+    "revision": "The revision of the second pass changed no application code and therefore no coverage row. It verified the three source changes against inception/refined-mockups/mockups.md directly (§ Global Shell, § Home, § 404), counted tests/u1/page-renderer.test.ts at 18, and re-ran the full gate: tsc --noEmit, eslint ., prettier --check ., vitest run tests/u1, vitest run tests/u1 --coverage and bin/check.ts all exit zero, with line coverage at 95.72% (537/561) against the inherited 80% floor — identical to the first attempt's figure, which is the expected result of an attempt that changed no code. The two corrections it delivered are documentary: the stale per-file test count in the plan and in unit-test-instructions.md now reads the counted 15 to 18, and the two gate commands that write into the workspace are run before the review rather than by it, so the review receipt can be recorded. Both are described in code-summary.md § The revision.",
+    "second-pass": "The second pass changed no coverage row. It closed three gaps between the emitted markup and refined-mockups/mockups.md, all inside files this table already targets: the footer's two contact links and Home's contact row (src/page-renderer/shell.ts, src/page-renderer/pages.ts) and the class that distinguishes the 404 message from body prose (src/page-renderer/pages.ts). No rule moved from one delivering file to another and no rule changed status, so every row below still says what it said.",
+    "BR5.1": "Its logic says 'render the name on the left linking Home, the navigation links on the right, and the footer' (source FR4.2). Before the second pass the footer carried the copyright line alone while mockups.md § Global Shell draws '(c) 2026 · GitHub · email', so the shell the rule requires was emitted but not the footer the approved layout draws. The two contact links now come from one constant (SITE_LINKS in src/page-renderer/shell.ts) and are asserted on all seven page types in tests/u1/page-renderer.test.ts.",
+    "BR5.6": "Its logic requires 'the shell, a plain sentence, and links to Writing and Projects', all of which were already emitted and remain so. The second pass added a class to the sentence and to the route line. That is not a commitment BR5.6 makes and this row does not claim it: the class exists because mockups.md § 404 specifies 'sans 17 muted' for the sentence while About's paragraphs are body text, and both rendered as an unclassed main > p, which left U5 unable to style a difference the approved design asked for. The class is a styling hook; the values behind it are U5's and are not delivered here.",
+    "home-contact-row": "Home's contact row (mockups.md § Home, 'GitHub · email' beneath the intro) has NO rule in rules.md that establishes it — BR5.3 and BR5.4 govern Home's two list sections, not its intro block. It is delivered against the approved mockup directly, and it is recorded here as such rather than being attached to a near-miss rule. If the row is to be rule-governed, the rule is functional-design's to author.",
+    "NFR1": "PARTIAL by design, not by omission. This unit emits the markup the rule depends on — the skip link first in document order targeting the main landmark, aria-current on the current nav link, header/nav/main/footer landmarks, one h1 per page — and tests/u1/page-renderer.test.ts asserts each. The visible focus indicator is U5's styling, and the manual keyboard walkthrough on all seven page types is the rule's only verification (team.md § Testing Posture); both fall outside Code Generation.",
+    "BR7.1-BR7.3": "The workflow is written with its four required controls in place. It cannot take effect until the repository's Pages source is switched from 'branch' to 'GitHub Actions' — a manual settings change no code can make (ADR-005, assumption CA4). CI Pipeline (3.7) reviews and hardens this file rather than building it from nothing.",
+    "BR4.5": "Verified as a property of BR4.4: a failed build writes nothing, so no deploy occurs and the last deployed site remains live. Asserted against a pre-existing output tree in tests/u1/site-builder.test.ts and tests/u1/integration.test.ts. The live-site half is proved at Build and Test (condition 4)."
+  }
+}

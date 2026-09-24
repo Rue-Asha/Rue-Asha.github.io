@@ -1,0 +1,9 @@
+{
+  "stage": "code-generation",
+  "unit": "u3-projects",
+  "version": 1,
+  "writes": [
+    { "path": "src/page-renderer/pages.ts" },
+    { "path": "tests/u3/page-renderer.test.ts" }
+  ]
+}

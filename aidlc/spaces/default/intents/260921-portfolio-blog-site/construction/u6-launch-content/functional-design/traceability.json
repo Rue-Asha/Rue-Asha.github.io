@@ -1,0 +1,100 @@
+{
+  "stage": "functional-design",
+  "unit": "u6-launch-content",
+  "upstream_ids": [
+    "FR1.5",
+    "FR2.5",
+    "FR3.3",
+    "NFR8",
+    "NFR9"
+  ],
+  "coverage": [
+    {
+      "id": "FR1.5",
+      "status": "N/A",
+      "target": "Constrains this unit's files without being delivered by it. The build-time validation that fails loudly on malformed content is authored and enforced in U1 (BR4.2-BR4.4); U6's files are subject to it. unit-of-work-story-map.md section U6 records that U6 delivers no functional requirement."
+    },
+    {
+      "id": "FR2.5",
+      "status": "N/A",
+      "target": "Constrains this unit's files without being delivered by it. The post field set (title, one-line summary, date) is authored as BR2.1-BR2.3 in U1; U6's posts are instances that must satisfy it. Delivered by U1, not U6."
+    },
+    {
+      "id": "FR3.3",
+      "status": "N/A",
+      "target": "Constrains this unit's files without being delivered by it. The project field set (name, summary, year, type, tools, repo) is authored as BR3.1-BR3.4 in U1; U6's project write-ups are instances that must satisfy it. Delivered by U1, not U6."
+    },
+    {
+      "id": "NFR8",
+      "status": "N/A",
+      "target": "Constrains this unit's files without being delivered by it. Slug permanence is authored as BR1.4 in U1 and is why U6's directory names are chosen once and never changed. Enforced by U1's content discovery, not by anything U6 adds."
+    },
+    {
+      "id": "NFR9",
+      "status": "N/A",
+      "target": "Constrains this unit's files without being delivered by it. The three blocking pre-push checks apply to U6's content commits (team-practices.md section Testing Posture: content commits are exempt from branching, not from checking), but the checks themselves are built in U1. Delivered by U1, not U6."
+    }
+  ],
+  "reverse": [
+    {
+      "id": "BR1.2",
+      "status": "N/A",
+      "target": "Not authored by this unit. Authored in U1 (construction/u1-publishable-site-shell/functional-design/rules.md) and listed in this unit's rules.md only as an inherited obligation on U6's files: the file is index.md inside its own item directory. U6 introduces no business rule of its own."
+    },
+    {
+      "id": "BR1.4",
+      "status": "N/A",
+      "target": "Not authored by this unit. Authored in U1; listed here as an inherited obligation: the directory name is the slug, lowercase kebab-case ASCII. Traces to NFR8."
+    },
+    {
+      "id": "BR1.5",
+      "status": "N/A",
+      "target": "Not authored by this unit. Authored in U1; listed here as an inherited obligation: no two items of the same kind share a slug."
+    },
+    {
+      "id": "BR1.6",
+      "status": "N/A",
+      "target": "Not authored by this unit. Authored in U1; listed here as an inherited obligation: a draft marker and only that marks a draft."
+    },
+    {
+      "id": "BR2.1",
+      "status": "N/A",
+      "target": "Not authored by this unit. Opens the U1-authored range BR2.1-BR2.3 (a post carries title, a one-line summary, and a strict ISO date), listed here as an inherited obligation. Traces to FR2.5."
+    },
+    {
+      "id": "BR2.3",
+      "status": "N/A",
+      "target": "Not authored by this unit. Closes the U1-authored range BR2.1-BR2.3, listed here as an inherited obligation. Traces to FR2.5."
+    },
+    {
+      "id": "BR3.1",
+      "status": "N/A",
+      "target": "Not authored by this unit. Opens the U1-authored range BR3.1-BR3.4 (a project carries its six required fields, correctly shaped), listed here as an inherited obligation. Traces to FR3.3."
+    },
+    {
+      "id": "BR3.4",
+      "status": "N/A",
+      "target": "Not authored by this unit. Closes the U1-authored range BR3.1-BR3.4, listed here as an inherited obligation. Traces to FR3.3."
+    },
+    {
+      "id": "BR4.2",
+      "status": "N/A",
+      "target": "Not authored by this unit. Opens the U1-authored range BR4.2-BR4.4 (a missing or malformed field fails the build naming file and field, and nothing is written), listed here as an inherited obligation. Traces to FR1.5."
+    },
+    {
+      "id": "BR4.4",
+      "status": "N/A",
+      "target": "Not authored by this unit. Closes the U1-authored range BR4.2-BR4.4, listed here as an inherited obligation. Traces to FR1.5."
+    },
+    {
+      "id": "BR8.1",
+      "status": "N/A",
+      "target": "Not authored by this unit. Authored in U2 (construction/u2-blog/functional-design/functional-spec.md); listed here as an inherited authoring obligation: images carry alt text, which the build does not check."
+    },
+    {
+      "id": "BR8.2",
+      "status": "N/A",
+      "target": "Not authored by this unit. Authored in U2; listed here as an inherited obligation: a labelled code fence naming an unknown language fails the build."
+    }
+  ]
+}

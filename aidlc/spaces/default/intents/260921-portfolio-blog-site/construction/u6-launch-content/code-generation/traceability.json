@@ -1,0 +1,106 @@
+{
+  "stage": "code-generation",
+  "unit": "u6-launch-content",
+  "upstream_ids": [
+    "FR1.5",
+    "FR2.5",
+    "FR3.3",
+    "FR3.4",
+    "NFR8",
+    "NFR9"
+  ],
+  "coverage": [
+    {
+      "id": "FR1.5",
+      "status": "N/A",
+      "target": "Constrains this unit's two files without being delivered by it. Delivered by u1-publishable-site-shell: build-time validation that fails loudly on malformed content is authored there as BR4.2-BR4.4 and implemented in src/content-source.ts, src/post-catalog.ts, src/project-catalog.ts and src/site-builder.ts. This unit added no validation and changed none; it is subject to it, and both files passed it in both passes. unit-of-work-story-map.md section U6 records that U6 delivers no functional requirement. Second pass: re-verified at Step A2 - 'npm run build' exit 0, 'Built 11 pages into dist/ (4 from content files).'"
+    },
+    {
+      "id": "FR2.5",
+      "status": "N/A",
+      "target": "Constrains this unit without being delivered by it. Delivered by u1-publishable-site-shell: the post field set (title, one-line summary, date) is authored there as BR2.1-BR2.3 and implemented in src/post-catalog.ts, and the field rules are unit-tested there. content/posts/implementing-a-methodology-paper/index.md is an instance satisfying it. Second pass: re-verified at Step A1 by inspection (title, summary, date present, no draft key) and at Step A2 by the build, which is the field validator."
+    },
+    {
+      "id": "FR3.3",
+      "status": "N/A",
+      "target": "Constrains this unit without being delivered by it. Delivered by u1-publishable-site-shell: the project field set (name, summary, year, type, tools, repo) is authored there as BR3.1-BR3.4 and implemented in src/project-catalog.ts. content/projects/homelab/index.md is an instance satisfying it. Second pass: re-verified at Step A1 by inspection (all six present, no draft key) and at Step A2 by the build."
+    },
+    {
+      "id": "FR3.4",
+      "status": "N/A",
+      "target": "Constrains this unit without being delivered by it. Delivered by u3-projects, which renders the project rail; the omit-when-absent behaviour is specified in U1 BR3.5 and covered by tests on both sides of the branch (tests/u1/page-renderer.test.ts lines 311-314, tests/u3/page-renderer.test.ts lines 52 and 62). This unit only supplies an instance that exercises the absent case: the Homelab project declares no liveUrl because a private home network has none (U6CA1). Second pass, Step A4: dist/projects/homelab/index.html carries exactly four rail rows - Year, Type, Tools, Repo - with no Live row and no empty cell; 'grep -c Live' returns 0."
+    },
+    {
+      "id": "NFR8",
+      "status": "N/A",
+      "target": "Constrains this unit without being delivered by it. Delivered by u1-publishable-site-shell: slug permanence is authored there as BR1.4 and the directory-name-is-the-slug mapping is enforced in src/content-source.ts. No mechanism can enforce permanence across releases; this unit is subject to the rule rather than implementing it. It chose two slugs once and deliberately - 'homelab', fixed by the public link the Homelab-Managment README already publishes, and 'implementing-a-methodology-paper', chosen for subject rather than acronym because the URL can never change. Second pass, Step A4: both slugs unchanged; the pages build at /projects/homelab/ and /writing/implementing-a-methodology-paper/."
+    },
+    {
+      "id": "NFR9",
+      "status": "N/A",
+      "target": "Constrains this unit without being delivered by it. Delivered by u1-publishable-site-shell: the three blocking pre-push checks are built there in bin/build.ts, bin/check.ts and src/check-runner.ts. Content commits are exempt from branching, not from checking (team.md section Testing Posture). Second pass, Step A2, verbatim: '1. The site builds ......................... pass / 2. Every content file produced a page ...... pass / 3. Internal links resolve .................. pass / All three checks passed.' exit 0. Check 2 is this unit's whole automated verification: four pages from content files, being U1's two plus this unit's two."
+    }
+  ],
+  "reverse": [
+    {
+      "id": "BR1.2",
+      "status": "N/A",
+      "target": "Not authored by this unit. Authored in u1-publishable-site-shell (construction/u1-publishable-site-shell/functional-design/rules.md) and listed in this unit's rules.md only as an inherited obligation on U6's files: the file is index.md inside its own item directory. Both files satisfy it - content/projects/homelab/index.md and content/posts/implementing-a-methodology-paper/index.md. U6 introduces no business rule of its own, which is why every entry in this array is a borrowed ID."
+    },
+    {
+      "id": "BR1.4",
+      "status": "N/A",
+      "target": "Not authored by this unit. Authored in u1-publishable-site-shell; inherited obligation: the directory name is the slug, lowercase kebab-case ASCII. Both directory names - 'homelab' and 'implementing-a-methodology-paper' - satisfy it, and neither changed in the second pass. Traces to NFR8."
+    },
+    {
+      "id": "BR1.5",
+      "status": "N/A",
+      "target": "Not authored by this unit. Authored in u1-publishable-site-shell; inherited obligation: no two items of the same kind share a slug. Neither slug collides with the two items U1 wrote (building-this-site, rue-asha-github-io); confirmed by the built output at Step A4, which lists four content pages at four distinct paths."
+    },
+    {
+      "id": "BR1.6",
+      "status": "N/A",
+      "target": "Not authored by this unit. Authored in u1-publishable-site-shell; inherited obligation: 'draft: true' and only that marks a draft. Implemented with BR1.7 in src/content-source.ts - readDraftMark at line 142 reads an optional boolean key, a non-boolean value is a hard field error rather than a coerced one, and every draft is dropped at line 321 before anything downstream sees it. The first pass's code-generation-questions.md wrongly asserted that no draft state existed; the second pass corrects that. Neither file carries the key, and that is now a decision rather than a consequence: [Q2] answer B chose to keep both pieces published because this unit's deliverable is a site that does not look empty at launch (U6CA7). Confirmed at Step A1."
+    },
+    {
+      "id": "BR2.1",
+      "status": "N/A",
+      "target": "Not authored by this unit. Opens the u1-publishable-site-shell range BR2.1-BR2.3 (a post carries title, a one-line summary, and a strict ISO date), inherited as an obligation on the one post this unit wrote. Traces to FR2.5. Enforced by the build rather than by any assertion in this unit."
+    },
+    {
+      "id": "BR2.3",
+      "status": "N/A",
+      "target": "Not authored by this unit. Closes the u1-publishable-site-shell range BR2.1-BR2.3. The post declares date 2026-09-23, the date it was written, in strict ISO form (U6CA4); unchanged in the second pass, because the file's content is the author's to refine and the date records authorship rather than verification. Traces to FR2.5."
+    },
+    {
+      "id": "BR3.1",
+      "status": "N/A",
+      "target": "Not authored by this unit. Opens the u1-publishable-site-shell range BR3.1-BR3.4 (a project carries its six required fields, correctly shaped), inherited as an obligation on the one project write-up this unit wrote. Traces to FR3.3."
+    },
+    {
+      "id": "BR3.4",
+      "status": "N/A",
+      "target": "Not authored by this unit. Closes the u1-publishable-site-shell range BR3.1-BR3.4. The optional liveUrl is absent on the Homelab project, so its Live rail row is omitted rather than rendered empty (U6CA1); U1 BR3.5 specifies that behaviour and u3-projects renders it. Traces to FR3.3 and FR3.4."
+    },
+    {
+      "id": "BR4.2",
+      "status": "N/A",
+      "target": "Not authored by this unit. Opens the u1-publishable-site-shell range BR4.2-BR4.4 (a missing or malformed field fails the build naming file and field, and nothing is written). This unit is subject to that validation and passed it in both passes; the build passing at Step A2 is the assertion that both files are well formed. Traces to FR1.5."
+    },
+    {
+      "id": "BR4.4",
+      "status": "N/A",
+      "target": "Not authored by this unit. Closes the u1-publishable-site-shell range BR4.2-BR4.4 - nothing is written when validation fails, so a build that produced eleven pages is also evidence that no file was rejected. Traces to FR1.5."
+    },
+    {
+      "id": "BR8.1",
+      "status": "N/A",
+      "target": "Not authored by this unit. Authored in u2-blog (construction/u2-blog/functional-design/functional-spec.md); inherited authoring obligation: images carry alt text, which the build does not check. Neither file references an image, so the rule has nothing to apply to here - verified at first-pass Step 6 and unchanged, since the second pass edited neither file."
+    },
+    {
+      "id": "BR8.2",
+      "status": "N/A",
+      "target": "Not authored by this unit. Authored in u2-blog; inherited obligation: a labelled code fence naming an unknown language fails the build. The Homelab write-up carries one labelled fence, 'sh'; the post uses an indented block with no fence label at all. The build passing at Step A2 is what enforces this, so A2 covers what first-pass Step 5 checked by hand."
+    }
+  ]
+}

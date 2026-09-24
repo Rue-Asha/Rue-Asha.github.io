@@ -1,0 +1,9 @@
+{
+  "stage": "code-generation",
+  "unit": "u5-visual-direction",
+  "version": 1,
+  "writes": [
+    { "path": "src/assets/styles/site.css" },
+    { "path": "tests/u5/stylesheet.test.ts" }
+  ]
+}

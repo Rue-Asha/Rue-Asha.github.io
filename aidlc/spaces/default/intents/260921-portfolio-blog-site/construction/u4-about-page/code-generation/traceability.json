@@ -1,0 +1,85 @@
+{
+  "stage": "code-generation",
+  "unit": "u4-about-page",
+  "upstream_ids": [
+    "FR4.1",
+    "FR4.5",
+    "BR10.1",
+    "BR10.2",
+    "BR10.3",
+    "NFR1",
+    "NFR2",
+    "NFR6",
+    "NFR7",
+    "NFR9",
+    "WCAG-2.1-AA-keyboard"
+  ],
+  "coverage": [
+    {
+      "id": "FR4.1",
+      "status": "OK",
+      "target": "src/page-renderer/pages.ts",
+      "note": "renderAbout emits the About page with author prose and two contact links; asserted by tests/u4/about.test.ts and tests/u4/integration.test.ts."
+    },
+    {
+      "id": "FR4.5",
+      "status": "OK",
+      "target": "tests/u4/integration.test.ts",
+      "note": "Unchanged from U1's shell navigation. The built Home page is asserted to carry href=\"/about/\", and check 3 of npm run check confirms it resolves."
+    },
+    {
+      "id": "BR10.1",
+      "status": "OK",
+      "target": "src/page-renderer/pages.ts",
+      "note": "ABOUT_PROSE and both anchors live in the template, and each anchor's destination and visible text are both read from SITE_LINKS in shell.ts so the site holds each URL and each of those strings exactly once (GitHub reads accessibleName, email reads label; the asymmetry is documented at the call site). No third ContentFile.kind, no content/pages/ directory, no ContentSource involvement, and nothing on this page reaches it from a content file."
+    },
+    {
+      "id": "BR10.2",
+      "status": "OK",
+      "target": "tests/u4/about.test.ts",
+      "note": "Both links are plain anchors whose visible text is their accessible name and names the destination; no off-origin resource is referenced outside an anchor href. A seventh test asserts the two hrefs the main landmark emits equal SITE_LINKS.github.href and SITE_LINKS.email.href in that order, compared against the constant rather than a literal, so a copy of either URL drifting back into this template fails the test. Since the third pass each anchor's visible text is also derived from SITE_LINKS (GitHub from accessibleName, email from label), and the rendered markup is byte-unchanged."
+    },
+    {
+      "id": "BR10.3",
+      "status": "OK",
+      "target": "tests/u4/integration.test.ts",
+      "note": "about/index.html is written on every build, including from a project-free content tree, and the written file carries the prose and both links."
+    },
+    {
+      "id": "NFR1",
+      "status": "PARTIAL",
+      "target": "tests/u4/about.test.ts",
+      "note": "NFR1 is the WCAG 2.1 AA keyboard and landmark bar, and this unit does not fully establish it. Automated here: heading structure (exactly one h1, no level skip) and the fact that assertions read the written HTML file, so the page is proven complete in the served markup. NOT established: tab order, visible focus indicator, skip-link behaviour and focus traps. Those are verified by the manual keyboard walkthrough at plan Step 9, which has NOT been performed and whose step is unticked. Recorded as PARTIAL rather than OK because no test in this unit exercises keyboard operation. See the WCAG-2.1-AA-keyboard row below for the same split."
+    },
+    {
+      "id": "NFR2",
+      "status": "OK",
+      "target": "tests/u4/integration.test.ts",
+      "note": "Same assertion. The page emits no script and the policy carries script-src 'none'; nothing is assembled in the reader's browser."
+    },
+    {
+      "id": "NFR6",
+      "status": "OK",
+      "target": "src/page-renderer/pages.ts",
+      "note": "Prose and links are a single column of block-level elements; no layout rule of this page's own. Visual confirmation belongs to plan Step 9 and to U5."
+    },
+    {
+      "id": "NFR7",
+      "status": "OK",
+      "target": "src/page-renderer/pages.ts",
+      "note": "Each contact link is its own paragraph rather than a side-by-side icon row, so each can clear the 44px phone minimum. Measured at plan Step 9 and again after U5's styling."
+    },
+    {
+      "id": "NFR9",
+      "status": "OK",
+      "target": "tests/u4/integration.test.ts",
+      "note": "runChecks over the fixture site reports no failures and blocking false; npm run build and npm run check both pass on the real repository."
+    },
+    {
+      "id": "WCAG-2.1-AA-keyboard",
+      "status": "PARTIAL",
+      "target": "tests/u4/about.test.ts",
+      "note": "Heading structure (exactly one h1, no level skip) is automated here. Tab order, visible focus, skip-link behaviour and focus traps are plan Step 9, a manual walkthrough performed by the author; it has NOT been performed and Step 9 is unticked."
+    }
+  ]
+}

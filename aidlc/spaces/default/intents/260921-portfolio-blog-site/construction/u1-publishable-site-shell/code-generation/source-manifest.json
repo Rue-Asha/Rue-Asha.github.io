@@ -1,0 +1,10 @@
+{
+  "stage": "code-generation",
+  "unit": "u1-publishable-site-shell",
+  "version": 1,
+  "writes": [
+    { "path": "src/page-renderer/shell.ts" },
+    { "path": "src/page-renderer/pages.ts" },
+    { "path": "tests/u1/page-renderer.test.ts" }
+  ]
+}

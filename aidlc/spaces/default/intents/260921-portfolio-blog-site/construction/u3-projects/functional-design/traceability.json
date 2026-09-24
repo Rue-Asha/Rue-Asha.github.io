@@ -1,0 +1,23 @@
+{
+  "stage": "functional-design",
+  "unit": "u3-projects",
+  "upstream_ids": [
+    "FR3.1",
+    "FR3.2",
+    "FR3.3",
+    "FR3.4",
+    "FR3.5",
+    "FR3.6",
+    "FR3.7"
+  ],
+  "coverage": [
+    { "id": "FR3.1", "status": "OK", "target": "BR9.4, BR9.3, BR9.2" },
+    { "id": "FR3.2", "status": "OK", "target": "BR9.5, BR9.1" },
+    { "id": "FR3.3", "status": "OK", "target": "BR3.1, BR3.2, BR3.3, BR3.4" },
+    { "id": "FR3.4", "status": "OK", "target": "BR3.5, BR9.1" },
+    { "id": "FR3.5", "status": "OK", "target": "BR9.2" },
+    { "id": "FR3.6", "status": "OK", "target": "BR9.2" },
+    { "id": "FR3.7", "status": "OK", "target": "BR5.5" }
+  ],
+  "reverse": []
+}

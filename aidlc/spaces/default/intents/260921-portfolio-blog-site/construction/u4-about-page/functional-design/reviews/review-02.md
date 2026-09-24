@@ -1,0 +1,23 @@
+## Review
+
+**Verdict:** READY
+**Reviewer:** aidlc-architecture-reviewer-agent
+**Date:** 2026-09-23T13:30:27Z
+**Iteration:** 1
+
+### Findings
+
+| ID | Severity | Location | Finding | Required action | Status |
+|---|---|---|---|---|---|
+| R-01 | Major | `construction/u4-about-page/functional-design/frontend-components.md` § Props and branches → new subsection "This signature supersedes U1's skeleton `AboutPage`" | Verified against `construction/u1-publishable-site-shell/functional-design/frontend-components.md`: the quoted U1 skeleton signature (`AboutPage` prop `renderedBody`, hierarchy `PageHeading + RenderedBody`) matches U1's file exactly (its § Hierarchy line and its Props/branches table row). The new subsection states plainly that U4's signature is final, `renderedBody` is dropped, and gives the reason ([Q1], keeping the content model at two kinds) and the cost (About is edited as site code on the branch path; the formatter rewrites the prose) — which matches `functional-spec.md` W3 and `team.md` § Way of Working / § Code Style exactly (site code takes the branch path; the formatter's content exclusion is scoped to posts, not templates, so About gets no such protection). It also confirms `RenderedBody` is untouched and still serves `PostPage`/`ProjectPage`, which is correct against U1's hierarchy (both templates list `RenderedBody` as a child). `traceability.json` and `functional-spec.md` were not changed and remain internally consistent with this addition (BR10.1/BR10.2 targets unaffected). A developer reading U1 first and U4 second would now build the right thing; a developer who reads U1 only and never opens U4 remains a residual risk, but that is the gap the required action itself accepted ("so a developer reading U1 in isolation is not misled" — the fix lives in U4's file, which is the artifact under this review's authority, not in U1's). | None — verified resolved. | Resolved |
+| R-02 | Minor | `construction/u4-about-page/functional-design/frontend-components.md` § "This signature supersedes U1's skeleton `AboutPage`", the sentence "U2 and U3 deepen `PostPage`/`ProjectPage` while keeping U1's prop shape" | This is a factual claim about two sibling units' final component contracts, made flatly and without attribution, inside a file outside this reviewer's read scope and outside the two files this reviewer was permitted to spot-check (only `u1-publishable-site-shell`'s `frontend-components.md`/`rules.md` were in scope). U2 and U3's functional-design artifacts were not available to verify this against, and nothing in the two permitted sibling files states or implies what U2/U3 do with `PostPage`/`ProjectPage`'s prop shape — that is entirely U2/U3's own content. If U2 or U3 change those props for reasons unrelated to About (e.g. adding a prop U1's skeleton didn't have), this sentence in U4's file would be stale and nobody maintaining U4 would know to fix it. | Soften the sentence to what U4 can actually support — that U4 is, to this unit's own knowledge, the only template in the set whose *contract* (not just its rendered depth) changes from U1's skeleton — or attribute the claim to a source that owns it (e.g. `unit-of-work-story-map.md`'s cross-cutting table, if it says this) rather than asserting U2/U3's final state as settled fact from within U4. | New |
+
+### Validation Tool Results
+
+| Tool | Result | Interpretation |
+|---|---|---|
+| required-sections / upstream-coverage / linter / type-check / traceability | Not run via CLI — the sandbox session budget was spent on manual cross-file verification instead, per the dispatch's "do not spend many turns on it" guidance | Manual checks substituted: `traceability.json` (FR4.1 → BR10.1, BR10.2, status OK) is internally consistent with `functional-spec.md`'s rules block and was confirmed unchanged by the revision; `frontend-components.md`'s new subsection was checked line-by-line against U1's `frontend-components.md` and found accurate. The two previously diagnosed sensor limitations (`invalid_targets` for `rules.md` on a `ui` unit; `missing_from_upstream_ids` for FR IDs with no `stories.md`) are not re-raised per the dispatch's instruction. |
+
+### Summary
+
+The revision resolves R-01: the new subsection accurately quotes U1's skeleton `AboutPage` signature, states unambiguously that U4's signature (no props, `AboutProse` + `ContactLinks` in place of `renderedBody`/`RenderedBody`) is final, and the stated cost matches both `functional-spec.md` and the affirmed team practices. One new Minor finding (R-02) flags an unverifiable, unattributed claim about U2/U3's final prop shapes made from within U4's file — a maintenance-drift risk, not a blocker. With zero Critical and one Minor finding, the unit is READY.

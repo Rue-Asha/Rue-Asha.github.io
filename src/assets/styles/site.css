@@ -1,0 +1,929 @@
+/**
+ * site.css — the design system, applied.
+ *
+ * `inception/refined-mockups/design-system-mapping.md` IS the design system for
+ * this site: there is no component library to map onto, and adopting a
+ * third-party one would break the rule that no page fetches anything from
+ * another server. This file implements that document literally. Every colour,
+ * size, leading, step, border, radius and duration below is copied from it; not
+ * one is invented, adjusted or rounded, because changing a colour re-opens a
+ * hand-measured contrast table that nothing else verifies (BR11.5).
+ *
+ * One stylesheet for the whole site, and the register is one class on the page
+ * root (BR11.3). One width breakpoint (BR11.6). Nothing here is fetched from
+ * another origin: the font is a file in this repository and `url()` below points
+ * at it relatively (BR11.4). No `@import`, no icon set, no script.
+ *
+ * Sections, in the order `frontend-components.md` § The stylesheet's internal
+ * shape names:
+ *
+ *   1. Tokens       every value from the design system, declared once
+ *   2. Base         document, typography defaults, the focus ring, links
+ *   3. Shell        header, navigation, current page, footer, skip link
+ *   4. Rows         list rows, their hairlines, the one hover transition
+ *   5. Reading      the editorial register: measure, headings, code, rail
+ *   6. Targets      the shared minimum-target rule for standalone links
+ *   7. Responsive   the single breakpoint and the phone contraction
+ *   8. Preferences  reduced motion
+ *
+ * Three things this file deliberately does NOT do: it sets no performance
+ * budget of any kind (NFR5 forbids introducing one, and a font is exactly where
+ * one usually appears); it never writes `outline: none` (BR11.7); and it never
+ * moves a focusable element out of its document position, because tab order is
+ * the one condition a stylesheet can break without touching any markup.
+ */
+
+/* =========================================================================
+   1. Tokens
+   ========================================================================= */
+
+/**
+ * Source Serif 4, variable, Latin subset, SIL Open Font License, served from
+ * this repository (`design-system-mapping.md` § Type § Families; [Q1] answer A).
+ * The licence text ships beside the file at `assets/fonts/`.
+ *
+ * `font-display: swap` is BR11.2: text renders immediately in the fallback
+ * stack and swaps when the real font arrives. Text is never hidden waiting,
+ * which is the loading state NFR2 forbids arriving through another door.
+ */
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("../fonts/source-serif-4-latin.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  /* Surfaces (§ Colour § Surfaces). The lift between shell and reading is
+     deliberately small: paper on a desk, not a card floating on a page. */
+  --surface-shell: #0f1012;
+  --surface-reading: #17181b;
+  --surface-well: #0f1012;
+  --rule: #2a2c31;
+
+  /* Ink (§ Colour § Ink). `--text` is deliberately not pure white: on a dark
+     background `#ffffff` body text haloes over a long read. The accent is used
+     for links and the focus ring, and nothing else. */
+  --text: #e8e6e1;
+  --text-muted: #a3a199;
+  --accent: #e3a857;
+
+  /* The code theme (`interaction-spec.md` § Code Block, checklist item P6,
+     left open for this unit to close). At most four treatments, none reusing
+     `--accent`, each measured against `--surface-well`:
+       comment  `--text-muted`  7.4:1
+       string   #9cbf8a         9.3:1
+       keyword  #a6a0d6         7.8:1
+       anything else `--text`, plain
+     Measured with the same sRGB relative-luminance formula that reproduces the
+     figures in § Measured contrast exactly. Changing one re-opens that table by
+     hand (BR11.5). */
+  --code-comment: var(--text-muted);
+  --code-string: #9cbf8a;
+  --code-keyword: #a6a0d6;
+
+  /* Families (§ Type § Families). One self-hosted face; body and code use the
+     reader's own stacks at zero bytes. The serif fallback is the system serif,
+     chosen for metric proximity so the swap is small (U5CA3, BR11.2) — and it
+     is what the page keeps if the font never arrives at all. */
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono",
+    monospace;
+
+  /* The scale (§ Type § Scale), one token per row of that table, each carrying
+     its weight, size, leading and family as a `font` shorthand value. Letter
+     spacing cannot ride in that shorthand, so the two tracked tokens carry a
+     companion. */
+  --type-post-title: 600 40px/1.2 var(--font-serif);
+  --type-page-title: 600 28px/1.25 var(--font-sans);
+  --type-body-heading: 600 26px/1.3 var(--font-serif);
+  --type-body-subheading: 600 20px/1.35 var(--font-serif);
+  --type-reading: 400 17px/1.7 var(--font-sans);
+  --type-list: 400 16px/1.5 var(--font-sans);
+  --type-summary: 400 16px/1.5 var(--font-sans);
+  --type-section: 600 18px/1.3 var(--font-sans);
+  --type-meta: 400 13px/1.4 var(--font-mono);
+  --type-meta-tracking: 0.02em;
+  --type-rail-label: 400 12px/1.4 var(--font-mono);
+  --type-rail-label-tracking: 0.06em;
+  --type-rail-value: 400 14px/1.5 var(--font-sans);
+  --type-code: 400 14px/1.6 var(--font-mono);
+
+  /* Measure (§ Type § Measure). */
+  --measure: 66ch;
+  --container: 1100px;
+
+  /* Spacing (§ Spacing). Two scales drawn from one set of steps; every spacing
+     value in this file is one of these nine, never a loose figure. */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* Borders, radius, focus and motion (§ Borders, radius, and motion). The
+     radius applies to code blocks and images only — the editorial register uses
+     no cards. The focus ring is on every focusable element, no exceptions. */
+  --border-hairline: 1px solid var(--rule);
+  --radius: 4px;
+  --focus-ring: 2px solid var(--accent);
+  --focus-ring-offset: 2px;
+  --transition: background-color 120ms ease-out;
+
+  /* Implementation variables, not design-system tokens. The page margin is the
+     phone figure the system fixes (§ Spacing) widened one step on desktop; the
+     target floor is switched on by the single breakpoint in § 7, which is what
+     lets the minimum-target rule in § 6 be written once. */
+  --page-margin: var(--space-5);
+  --target-min-height: 0;
+}
+
+/* =========================================================================
+   2. Base
+   ========================================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Also on the root, so an overscroll does not reveal a white band. */
+  background-color: var(--surface-shell);
+}
+
+body {
+  margin: 0;
+  background-color: var(--surface-shell);
+  color: var(--text);
+  font: var(--type-list);
+  -webkit-text-size-adjust: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+}
+
+/**
+ * The focus ring, applied universally rather than per element, because "every
+ * focusable element, no exceptions" is only true by construction when one rule
+ * says it (NFR1, BR11.7). `outline` is used rather than a border or a shadow so
+ * it follows the element's shape and is never clipped by an overflow.
+ *
+ * There is no `outline: none` anywhere in this file, and no rule below removes
+ * this one.
+ */
+:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* =========================================================================
+   3. Shell
+   ========================================================================= */
+
+/**
+ * The skip link: present in the DOM and in the tab order at all times, visible
+ * only when focused. Hidden by clipping rather than with `display: none` or
+ * `visibility: hidden`, both of which would remove it from the tab order and
+ * defeat it (`interaction-spec.md` § Skip Link). U1 owns its position as the
+ * first focusable element (BR5.2); this is only its treatment.
+ */
+.skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  background-color: var(--surface-shell);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  padding: var(--space-3);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 1;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip-path: none;
+}
+
+/**
+ * Header, main and footer each span the viewport and hold their content to the
+ * container width themselves, so the header and footer hairlines run full width
+ * as the mockups draw them while the content stays aligned. Done with padding
+ * rather than a wrapper element, because adding a wrapper would be new markup
+ * and this unit adds none.
+ */
+.site-header,
+main,
+.site-footer {
+  padding-inline: max(var(--page-margin), (100% - var(--container)) / 2);
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-5);
+  padding-block: var(--space-5);
+  border-bottom: var(--border-hairline);
+}
+
+.site-name {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+}
+
+.site-header nav a {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.site-header nav a:hover {
+  color: var(--text);
+}
+
+/**
+ * The current page. The accent underline is an addition to `aria-current`,
+ * never the only signal — U1 emits the attribute, which is what keeps the
+ * marking from being colour-only.
+ */
+.site-header nav a[aria-current="page"] {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+main {
+  display: block;
+  padding-block: var(--space-6);
+}
+
+.site-footer {
+  border-top: var(--border-hairline);
+  padding-block: var(--space-5);
+  font: var(--type-meta);
+  letter-spacing: var(--type-meta-tracking);
+  color: var(--text-muted);
+}
+
+/* =========================================================================
+   4. Rows
+   ========================================================================= */
+
+.post-list,
+.project-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: var(--border-hairline);
+}
+
+.post-row,
+.project-row {
+  border-bottom: var(--border-hairline);
+}
+
+/**
+ * A Writing row is one link around the whole row (FR2.3), so its padding is the
+ * hit area. The padding is `--space-4` on each side of a `--type-list` line,
+ * which is the derivation BR11.8 states as an obligation: 16px + 24px + 16px is
+ * 56px before the summary is counted, clearing the 44px floor with room. It is
+ * written as the token rather than as `16px` so a later change to the step
+ * cannot silently drop the row below the floor.
+ */
+.post-row > a {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: var(--space-4);
+  padding-block: var(--space-4);
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.post-row > a:hover {
+  background-color: var(--surface-reading);
+}
+
+/**
+ * Placement inside the row. None of these three is focusable — the row is one
+ * link and they are its contents — so this positions text, never a tab stop
+ * (BR11.7).
+ */
+.post-row-title {
+  grid-column: 1;
+  grid-row: 1;
+  font: var(--type-list);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.post-row time {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  font: var(--type-meta);
+  letter-spacing: var(--type-meta-tracking);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.post-row-summary {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  margin-top: var(--space-1);
+  font: var(--type-summary);
+  color: var(--text-muted);
+}
+
+/**
+ * A Projects row carries two separate targets by design at every width (U3
+ * BR9.2): the project name and the outbound repository link. The row itself is
+ * not a link, so the hover lift follows the row's main target rather than the
+ * row box — tinting the whole row on hover would advertise a hit area the row
+ * does not have.
+ */
+.project-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: var(--space-4);
+  padding-block: var(--space-4);
+  transition: var(--transition);
+}
+
+.project-row:has(> :is(h2, h3) > a:hover) {
+  background-color: var(--surface-reading);
+}
+
+.project-row > :is(h2, h3) {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  font: var(--type-list);
+  font-weight: 600;
+}
+
+.project-row > :is(h2, h3) > a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.project-row-summary {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  margin-top: var(--space-1);
+  font: var(--type-summary);
+  color: var(--text-muted);
+}
+
+.project-row-tools {
+  grid-column: 1;
+  grid-row: 3;
+  margin-top: var(--space-2);
+  font: var(--type-meta);
+  letter-spacing: var(--type-meta-tracking);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/**
+ * The outbound link keeps `--space-4` of clear space from the row's main
+ * target, and that space is measured between hit areas rather than between
+ * glyph boxes (BR11.1). Below the breakpoint § 6 enlarges this link's own hit
+ * area; the margin sits outside that area, so the gap is pushed outward rather
+ * than consumed.
+ */
+.project-row-repo {
+  grid-column: 2;
+  grid-row: 3;
+  justify-self: end;
+  margin-top: var(--space-2);
+  margin-left: var(--space-4);
+}
+
+.project-row-repo a {
+  font: var(--type-meta);
+  letter-spacing: var(--type-meta-tracking);
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.project-row-repo a:hover {
+  color: var(--accent);
+}
+
+/**
+ * Home's two sections are structurally equal — same heading token, same rule
+ * treatment, same "All X" affordance, same row rhythm. Neither gets a larger
+ * face, an image, or a colour the other lacks; unequal treatment would state
+ * that one half of the site matters more.
+ *
+ * The grid puts the "All X" link on the heading's line, where the mockups draw
+ * it. It is still between the heading and the rows in both visual order and
+ * document order, so tab order is unchanged (BR11.7).
+ */
+.home-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: var(--space-4);
+  align-items: baseline;
+  margin-top: var(--space-6);
+}
+
+.home-section > h2 {
+  grid-column: 1;
+  font: var(--type-section);
+}
+
+.home-section > .section-all {
+  grid-column: 2;
+  justify-self: end;
+}
+
+.home-section > .section-all a {
+  font: var(--type-meta);
+  letter-spacing: var(--type-meta-tracking);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.home-section > .section-all a:hover {
+  color: var(--accent);
+}
+
+.home-section > ul,
+.home-section > .empty-state,
+.home-section > .empty-state + p {
+  grid-column: 1 / -1;
+  margin-top: var(--space-4);
+}
+
+.home-intro h1 {
+  font: var(--type-post-title);
+  text-wrap: balance;
+}
+
+.home-intro p {
+  margin-top: var(--space-4);
+  max-width: var(--measure);
+  font: var(--type-reading);
+  color: var(--text-muted);
+}
+
+/**
+ * The empty state a launch-day site shows: the heading and its rule are kept,
+ * one muted sentence replaces the rows, and a route to the other section
+ * follows. The page must not look broken with nothing in it.
+ */
+.empty-state {
+  font: var(--type-summary);
+  color: var(--text-muted);
+}
+
+/* =========================================================================
+   5. Reading
+   ========================================================================= */
+
+/**
+ * The editorial register. It is one class on the page root and the smallest set
+ * of differences that reads as two registers rather than two sites (BR11.3):
+ * the surface lifts one step, titles take the serif, and the air opens. The
+ * shell above stays technical on every page.
+ */
+.register-editorial main {
+  background-color: var(--surface-reading);
+  padding-block: var(--space-7);
+}
+
+.register-editorial main > article,
+.register-editorial main > .back-link {
+  max-width: var(--measure);
+  margin-inline: auto;
+}
+
+/* The project page is the one frame carrying both registers: its rail sits
+   beside the body, so the article takes the container rather than the measure
+   and the body keeps the measure to itself. */
+.register-editorial main > article.project,
+.register-editorial main:has(> article.project) > .back-link {
+  max-width: var(--container);
+}
+
+.register-editorial main h1 {
+  font: var(--type-post-title);
+  text-wrap: balance;
+}
+
+.register-editorial article > header,
+.register-editorial .project-body > header {
+  padding-bottom: var(--space-5);
+  margin-bottom: var(--space-6);
+  border-bottom: var(--border-hairline);
+}
+
+.dek {
+  margin-top: var(--space-3);
+  font: var(--type-reading);
+  color: var(--text-muted);
+}
+
+.register-editorial header time {
+  display: block;
+  margin-top: var(--space-3);
+  font: var(--type-meta);
+  letter-spacing: var(--type-meta-tracking);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* "All posts" / "All projects", at the top and the end of a reading page. */
+.back-link {
+  font: var(--type-meta);
+  letter-spacing: var(--type-meta-tracking);
+  text-transform: uppercase;
+}
+
+.back-link a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.back-link a:hover {
+  color: var(--accent);
+}
+
+.register-editorial main > .back-link:first-child {
+  margin-bottom: var(--space-6);
+}
+
+.register-editorial main > .back-link:last-child {
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: var(--border-hairline);
+}
+
+/**
+ * `overflow-wrap: anywhere` so a bare URL longer than the 66ch measure breaks
+ * inside the reading column instead of pushing the page wider than the
+ * viewport — which is the most visible way to break NFR6's "the phone layout is
+ * the desktop layout contracted". `anywhere` rather than `break-word` because
+ * `break-word` takes the break only after the line has already overflowed.
+ * Nothing else changes: no hyphenation, no `word-break`, no change to the
+ * measure.
+ */
+.prose {
+  font: var(--type-reading);
+  overflow-wrap: anywhere;
+}
+
+.prose > * {
+  margin-block: 0 var(--space-5);
+}
+
+.prose > :last-child {
+  margin-bottom: 0;
+}
+
+.prose h2 {
+  margin-top: var(--space-7);
+  margin-bottom: var(--space-4);
+  font: var(--type-body-heading);
+}
+
+.prose h3 {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-4);
+  font: var(--type-body-subheading);
+}
+
+/* Body links are underlined with an offset, so descenders stay legible. */
+.prose a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: var(--space-5);
+}
+
+.prose li + li {
+  margin-top: var(--space-2);
+}
+
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+.prose code {
+  font: var(--type-code);
+}
+
+/**
+ * A code block is a well recessed back to the shell surface, coloured at build
+ * time by classes rather than by inline styles — the policy carries no
+ * `'unsafe-inline'`, so a highlighter emitting inline colours would render as
+ * plain text and nothing would say so. It scrolls rather than reflows, because
+ * rewrapping code changes its meaning, and U1 gives it `tabindex="0"` so a
+ * keyboard reader can reach and scroll it.
+ */
+.code-block {
+  margin-block: var(--space-5);
+  padding: var(--space-4);
+  background-color: var(--surface-well);
+  border: var(--border-hairline);
+  border-radius: var(--radius);
+  overflow-x: auto;
+  font: var(--type-code);
+}
+
+.code-block code {
+  font: inherit;
+}
+
+.tok-comment {
+  color: var(--code-comment);
+}
+
+.tok-string {
+  color: var(--code-string);
+}
+
+.tok-keyword {
+  color: var(--code-keyword);
+}
+
+/**
+ * The project rail. Separated from the body by space alone — a border or a tint
+ * would introduce a third surface and a third column in the contrast table for
+ * no gain. It precedes the body in the DOM, so tab order matches reading order
+ * in both layouts without any reordering (BR11.7).
+ */
+.project {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  column-gap: var(--space-5);
+  align-items: start;
+}
+
+.project-rail {
+  margin: 0;
+}
+
+.project-rail dt {
+  font: var(--type-rail-label);
+  letter-spacing: var(--type-rail-label-tracking);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.project-rail dd {
+  margin: var(--space-1) 0 var(--space-4);
+  font: var(--type-rail-value);
+  color: var(--text);
+}
+
+.project-rail dd:last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * A rail link is underlined at rest, not only on hover. In the same column, at
+ * the same size, an underline that appeared only on hover would leave hue as
+ * the only thing separating "2026" from the repo link beside it — the
+ * colour-only signal `design-system-mapping.md` § Measured contrast rules out
+ * for `--rule`, arriving in a different place. `interaction-spec.md` § Project
+ * Metadata Rail specifies the hover and focus states and is silent at rest, so
+ * this is additive, and it matches `.prose a` and `.contact-link a`.
+ *
+ * The hover rule is gone rather than emptied: with `--accent` and the underline
+ * both at rest, hover has nothing left to add.
+ */
+.project-rail a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.project-body {
+  max-width: var(--measure);
+}
+
+/* The technical register's own page headings and prose. About is short and
+   scanned rather than read, so it keeps the shell surface while its paragraphs
+   take the reading size at the reading measure. */
+.register-technical main > h1 {
+  margin-bottom: var(--space-6);
+  font: var(--type-page-title);
+}
+
+.register-technical main > h2 {
+  margin-top: var(--space-7);
+  margin-bottom: var(--space-4);
+  font: var(--type-section);
+}
+
+.register-technical main > p {
+  margin-bottom: var(--space-5);
+  max-width: var(--measure);
+  font: var(--type-reading);
+}
+
+.contact-link a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* =========================================================================
+   6. Targets
+   ========================================================================= */
+
+/**
+ * The shared minimum-target rule (BR11.1, NFR7).
+ *
+ * Written once against the element rather than as a figure per site feature, so
+ * a standalone link added later is covered without anyone remembering: NFR7 has
+ * no automated check, only a measurement taken during the keyboard walkthrough,
+ * and one rule cannot be forgotten the way three figures can. It reaches the
+ * repository link in a Projects row, the contact links on About, the "All posts"
+ * links on a reading page, the rail links, and the routes on the 404 page.
+ *
+ * Links inside `.prose` are excluded: those are words in a sentence, and giving
+ * each a 44px box would take the reading column apart.
+ *
+ * `--target-min-height` is `0` above the breakpoint and 44px below it (§ 7), so
+ * the rule is declared once and the breakpoint only switches its floor on. The
+ * padding is symmetric about the link's own text — a box grown on one side only
+ * would make a tap just above the text miss while the same distance below
+ * lands, which is worse than a taller row. The enlarged box pushes the
+ * surrounding clear space outward rather than eating it, which is what keeps
+ * the 16px gap in a Projects row a gap between HIT AREAS.
+ */
+:where(p, dd) > a:not(.prose *) {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  min-height: var(--target-min-height);
+}
+
+/* =========================================================================
+   7. Responsive
+   ========================================================================= */
+
+/**
+ * One breakpoint, and the phone layout is the desktop layout contracted rather
+ * than a second layout (BR11.6, NFR6). 720px is where the 66ch reading column
+ * plus its margins stops fitting — content dictating the breakpoint rather than
+ * a device name.
+ *
+ * Three behaviours a contraction most easily loses are preserved here: the rail
+ * stacks ABOVE the body, a Writing row keeps exactly one hit target with the
+ * date moving beneath the title, and the top bar stays visible with no
+ * disclosure control. A Projects row keeps its two targets, which is BR9.2 by
+ * design and not a contraction artefact.
+ */
+@media (max-width: 719.98px) {
+  :root {
+    --page-margin: var(--space-4);
+    --target-min-height: 44px;
+  }
+
+  /* The only type that contracts. */
+  .register-editorial main h1 {
+    font-size: 32px;
+  }
+
+  /* The row stays one hit target; the date moves beneath the title. */
+  .post-row > a {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .post-row time {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: start;
+    margin-top: var(--space-1);
+  }
+
+  .post-row-summary {
+    grid-row: 3;
+  }
+
+  /* The Projects row keeps both targets. The outbound link takes its own line,
+     with the clear space between the two hit areas preserved. */
+  .project-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .project-row-repo {
+    grid-column: 1;
+    grid-row: 4;
+    justify-self: start;
+    margin-top: var(--space-4);
+    margin-left: 0;
+  }
+
+  /* The rail stacks above the body, one label and value per line. */
+  .project {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--space-5);
+  }
+
+  .project-rail {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: var(--space-4);
+    row-gap: var(--space-2);
+  }
+
+  .project-rail dt {
+    grid-column: 1;
+  }
+
+  .project-rail dd {
+    grid-column: 2;
+    margin: 0;
+  }
+
+  /* The heading and its "All X" link stack rather than share a line. */
+  .home-section {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-section > .section-all {
+    justify-self: start;
+    margin-top: var(--space-2);
+  }
+}
+
+/* =========================================================================
+   8. Preferences
+   ========================================================================= */
+
+/**
+ * The site has one transition — a background fade on a row, well under the
+ * 300ms guidance, which moves nothing. There are no modals, dropdowns,
+ * carousels or entrance animations, so there is nothing else for this to
+ * disable. It is declared anyway, because it costs two lines and removes the
+ * question.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .post-row > a,
+  .project-row {
+    transition: none;
+  }
+}

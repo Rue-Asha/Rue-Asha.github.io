@@ -1,0 +1,29 @@
+{
+  "stage": "functional-design",
+  "unit": "u2-blog",
+  "upstream_ids": [
+    "FR2.1",
+    "FR2.2",
+    "FR2.3",
+    "FR2.4",
+    "FR2.5",
+    "FR2.6",
+    "FR2.7",
+    "FR2.8",
+    "FR2.9",
+    "FR5.1"
+  ],
+  "coverage": [
+    { "id": "FR2.1", "status": "OK", "target": "BR8.5" },
+    { "id": "FR2.2", "status": "OK", "target": "BR2.4" },
+    { "id": "FR2.3", "status": "OK", "target": "BR8.6" },
+    { "id": "FR2.4", "status": "OK", "target": "BR8.7" },
+    { "id": "FR2.5", "status": "OK", "target": "BR2.1, BR2.2, BR2.3" },
+    { "id": "FR2.6", "status": "OK", "target": "BR8.1, BR8.2" },
+    { "id": "FR2.7", "status": "OK", "target": "BR8.2" },
+    { "id": "FR2.8", "status": "OK", "target": "BR8.4" },
+    { "id": "FR2.9", "status": "OK", "target": "BR5.5" },
+    { "id": "FR5.1", "status": "OK", "target": "BR8.3, BR1.7" }
+  ],
+  "reverse": []
+}

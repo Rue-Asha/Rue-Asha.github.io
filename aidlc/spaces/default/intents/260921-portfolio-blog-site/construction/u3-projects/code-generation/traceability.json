@@ -1,0 +1,116 @@
+{
+  "stage": "code-generation",
+  "unit": "u3-projects",
+  "upstream_ids": [
+    "BR9.1",
+    "BR9.2",
+    "BR9.3",
+    "BR9.4",
+    "BR9.5",
+    "FR3.1",
+    "FR3.2",
+    "FR3.3",
+    "FR3.4",
+    "FR3.5",
+    "FR3.6",
+    "FR3.7",
+    "NFR1",
+    "NFR6",
+    "NFR7",
+    "NFR9",
+    "NFR11",
+    "NFR12"
+  ],
+  "coverage": [
+    {
+      "id": "BR9.1",
+      "status": "OK",
+      "target": "tests/u3/page-renderer.test.ts"
+    },
+    {
+      "id": "BR9.2",
+      "status": "OK",
+      "target": "tests/u3/page-renderer.test.ts"
+    },
+    {
+      "id": "BR9.3",
+      "status": "OK",
+      "target": "tests/u3/ordering-parity.test.ts"
+    },
+    {
+      "id": "BR9.4",
+      "status": "OK",
+      "target": "tests/u3/page-renderer.test.ts"
+    },
+    {
+      "id": "BR9.5",
+      "status": "OK",
+      "target": "tests/u3/page-renderer.test.ts"
+    },
+    {
+      "id": "FR3.1",
+      "status": "OK",
+      "target": "src/page-renderer/pages.ts"
+    },
+    {
+      "id": "FR3.2",
+      "status": "OK",
+      "target": "tests/u3/page-renderer.test.ts"
+    },
+    {
+      "id": "FR3.3",
+      "status": "N/A",
+      "target": "Owned, implemented and unit-tested by U1 in src/project-catalog.ts; consumed unchanged by this unit, which adds no entity and changes no field rule."
+    },
+    {
+      "id": "FR3.4",
+      "status": "OK",
+      "target": "tests/u3/integration.test.ts"
+    },
+    {
+      "id": "FR3.5",
+      "status": "OK",
+      "target": "tests/u3/page-renderer.test.ts"
+    },
+    {
+      "id": "FR3.6",
+      "status": "OK",
+      "target": "tests/u3/page-renderer.test.ts"
+    },
+    {
+      "id": "FR3.7",
+      "status": "OK",
+      "target": "tests/u3/integration.test.ts"
+    },
+    {
+      "id": "NFR1",
+      "status": "OK",
+      "target": "tests/u3/heading-order.test.ts"
+    },
+    {
+      "id": "NFR6",
+      "status": "OK",
+      "target": "tests/u3/page-renderer.test.ts"
+    },
+    {
+      "id": "NFR7",
+      "status": "Deferred",
+      "target": "U5 BR11.1 owns the 44px phone target. This unit supplies only the structural precondition — two separately sized elements per row — which is asserted in tests/u3/page-renderer.test.ts; the figure is not assertable from markup and is not this unit's to state (functional-spec.md, Sizing the second target)."
+    },
+    {
+      "id": "NFR9",
+      "status": "OK",
+      "target": "tests/u3/integration.test.ts"
+    },
+    {
+      "id": "NFR11",
+      "status": "N/A",
+      "target": "Realised as a deliberate absence: no external link is fetched or validated anywhere on the publish path. Nothing was added, so there is no implementation to point at; W4 of functional-spec.md records the accepted consequence, and U3OQ1 remains open by design."
+    },
+    {
+      "id": "NFR12",
+      "status": "OK",
+      "target": "vitest.config.ts"
+    }
+  ]
+}

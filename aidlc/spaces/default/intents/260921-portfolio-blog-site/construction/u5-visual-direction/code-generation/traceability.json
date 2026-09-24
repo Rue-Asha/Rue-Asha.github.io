@@ -1,0 +1,120 @@
+{
+  "stage": "code-generation",
+  "unit": "u5-visual-direction",
+  "upstream_ids": [
+    "NFR1",
+    "NFR3",
+    "NFR4",
+    "NFR5",
+    "NFR6",
+    "NFR7",
+    "NFR9",
+    "NFR12",
+    "BR11.1",
+    "BR11.2",
+    "BR11.3",
+    "BR11.4",
+    "BR11.5",
+    "BR11.6",
+    "BR11.7",
+    "BR11.8"
+  ],
+  "coverage": [
+    {
+      "id": "NFR1",
+      "status": "PARTIAL",
+      "target": "src/assets/styles/site.css",
+      "note": "One universal :focus-visible rule gives every focusable element the 2px accent ring at 2px offset, and tests/u5/stylesheet.test.ts proves no rule removes or suppresses it. The second pass added one more thing a reader who is not using a mouse relies on: .project-rail a is now underlined at rest rather than only on hover, so a rail link is never distinguished from the plain value beside it by colour alone (tests/u5/stylesheet.test.ts, test 5). Those are two of NFR1's four conditions. Tab order following visual order, absence of a focus trap, and the skip link becoming visible on focus are verified only by the second keyboard walkthrough on all seven page types after styling — plan Step 8, the author's, NOT performed and left unticked."
+    },
+    {
+      "id": "NFR3",
+      "status": "OK",
+      "target": "tests/u5/head.test.ts",
+      "note": "The font file is committed in this repository and the stylesheet is this site's own file; both are served from root-relative paths. Every href and src outside an anchor is asserted same-origin across all seven page types, the stylesheet is asserted to contain no @import and no off-host url(), and no page emits a style block, a style attribute or a script. The second pass added no resource of any kind: two declarations in an existing rule block cannot reach another server, and the url() count assertion still reports exactly one."
+    },
+    {
+      "id": "NFR4",
+      "status": "OK",
+      "target": "src/page-renderer/shell.ts",
+      "note": "U1's content-security-policy meta tag is unchanged and still emitted once. Nothing this unit adds needs a relaxation of it: default-src 'self' covers the stylesheet and the font, and style-src 'self' with no 'unsafe-inline' holds because there is no inline style anywhere — including on the second pass, which put both of its declarations in the stylesheet rather than on an element. tests/u5/head.test.ts asserts the policy string carries neither 'unsafe-inline' nor a script allowance."
+    },
+    {
+      "id": "NFR5",
+      "status": "OK",
+      "target": "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u5-visual-direction/code-generation/code-summary.md",
+      "note": "Satisfied by absence, deliberately. No byte ceiling, no timing assertion, no budget file, and no test measuring the size or load time of the stylesheet or the font — on either pass. The preload link is a hint about a file the page already needs, not a target. Recorded here because 'nothing was introduced' is a claim that needs a place to be checked."
+    },
+    {
+      "id": "NFR6",
+      "status": "PARTIAL",
+      "target": "src/assets/styles/site.css",
+      "note": "Exactly one width media query at 720px, asserted by counting rather than by matching a value, so moving the breakpoint is allowed and adding a second is not. The second pass closed one way the contraction could break without any breakpoint being involved: .prose now declares overflow-wrap: anywhere, so a bare URL longer than the 66ch measure breaks inside the reading column instead of pushing the page wider than the viewport (tests/u5/stylesheet.test.ts, test 6). That test asserts the declaration, not a rendered width. Whether the phone layout actually reads as a contraction — the rail above the body, a row keeping one hit target, the top bar still visible, and a long URL not widening the page — is verified by loading each page type at phone width, plan Step 9, the author's, NOT performed."
+    },
+    {
+      "id": "NFR7",
+      "status": "PARTIAL",
+      "target": "src/assets/styles/site.css",
+      "note": "The two rules that carry the 44px floor exist and are written against the tokens: the list row's padding-block: var(--space-4) (asserted in tests/u5/stylesheet.test.ts) and one shared minimum-target rule for standalone links switched to 44px below the breakpoint. Neither second-pass change touches either rule — an underline adds no height and overflow-wrap adds none. The measurement itself — a list row and a standalone link at phone width — is plan Step 9, the author's, NOT performed. No automated check can measure a rendered hit area."
+    },
+    {
+      "id": "NFR9",
+      "status": "OK",
+      "target": "bin/check.ts",
+      "note": "The three blocking checks were run on this machine against the state this pass leaves behind, before any push: 'node --import tsx bin/check.ts' reported pass on all three — the site builds, every content file produced a page, internal links resolve — and exited 0. The verbatim output is in code-summary.md § Commands run on this pass. The check runner itself is U1's implementation, not this unit's; what NFR9 obliges this pass to do is run it and record the result, which is what the recorded output is."
+    },
+    {
+      "id": "NFR12",
+      "status": "PARTIAL",
+      "target": "vitest.config.ts",
+      "note": "This unit does contain instrumentable code — shell.ts and site-builder.ts, changed by the first pass — so the N/A branch of NFR12 does not apply and a measurement is owed. It was taken on this pass and recorded: 96.25% lines (540/561) across the combined run, against the inherited 80% floor. vitest.config.ts still reads thresholds: { lines: 80 }, unchanged, with no coverage.exclude entry added; 'git diff -- vitest.config.ts' is empty. PARTIAL rather than OK because NFR12 places the measurement in the Build and Test record for the unit, and that record is Build and Test's to write; this is the Code Generation measurement it will re-take independently. site.css contributes no line to the figure — it is not code — and is covered instead by the six assertions in tests/u5/stylesheet.test.ts."
+    },
+    {
+      "id": "BR11.1",
+      "status": "PARTIAL",
+      "target": "src/assets/styles/site.css",
+      "note": "§ 6 Targets holds one rule, written against the element rather than per site feature, reaching the Projects-row repository link, the About contact links, the reading-page back links, the rail links and the 404 routes; links inside .prose are excluded. Padding is symmetric about the link's own text, and the surrounding margin sits outside the enlarged box so the 16px clear space is measured between HIT AREAS and pushed outward rather than consumed. Unchanged by the second pass. The measurement at phone width is plan Step 9, the author's."
+    },
+    {
+      "id": "BR11.2",
+      "status": "PARTIAL",
+      "target": "tests/u5/head.test.ts",
+      "note": "font-display: swap and the metric-matched fallback stack are in the @font-face and --font-serif declarations; the preload link with as=font, type=font/woff2 and crossorigin is asserted on all seven page types. Text is never hidden: if the font never arrives the page stays in Georgia and is fully readable. Unchanged by the second pass. Watching a cold-cache load — that the swap happens and nothing blanks — is the author's observation."
+    },
+    {
+      "id": "BR11.3",
+      "status": "OK",
+      "target": "tests/u5/head.test.ts",
+      "note": "Exactly one <link rel=\"stylesheet\"> per page, root-relative, asserted across all seven page types; every emitted page in a real build references it (tests/u5/integration.test.ts). The register is the single class U1 already emits on the page root — body class=\"register-editorial|register-technical\" — and the editorial rules are scoped by it. No second stylesheet and no parallel rule set, and the second pass added neither: both of its declarations went into the existing file."
+    },
+    {
+      "id": "BR11.4",
+      "status": "OK",
+      "target": "tests/u5/stylesheet.test.ts",
+      "note": "The stylesheet contains no @import and exactly one url(), pointing relatively at the committed font file — still exactly one after the second pass, which the url() count assertion re-proves. No page emits an off-origin href or src outside an anchor, no inline style and no script. Plan Step 7 additionally read the built output and confirmed the rail's outbound rows carry U3's ↗ mark alongside the newly-at-rest underline, so an outbound rail link is signalled by glyph and underline rather than by hue. The reader's browser enforcing the policy on a live page, and the network panel confirming it, remain plan Step 9 — but nothing in the source can reach another server."
+    },
+    {
+      "id": "BR11.5",
+      "status": "PARTIAL",
+      "target": "src/assets/styles/site.css",
+      "note": "Every colour token is the documented value, character for character, asserted by tests/u5/stylesheet.test.ts, so the measured contrast table has not been re-opened by an edit — and the second pass deliberately touched no colour, no size, no spacing step and no measure, precisely so it would not re-open it. This unit did add three code-theme colours that the design system left open (checklist item P6): comment = --text-muted, string #9CBF8A at 9.3:1, keyword #A6A0D6 at 7.8:1 against --surface-well, computed with the same formula that reproduces the published table exactly. Those three figures have not been re-checked by a second party; re-reading the whole table against the shipped colours is plan Step 9, the author's, and nothing automates it."
+    },
+    {
+      "id": "BR11.6",
+      "status": "PARTIAL",
+      "target": "tests/u5/stylesheet.test.ts",
+      "note": "One width query, counted — still exactly one after the second pass, which added no media query. Inside it the three named behaviours are implemented: the rail stacks above the body with one label and value per line, a Writing row keeps a single hit target with the date moving beneath the title, and the header has no disclosure control at any width. A Projects row keeps both targets by design (U3 BR9.2) and the clause is not read as merging them. Observing the contraction at phone width is plan Step 9."
+    },
+    {
+      "id": "BR11.7",
+      "status": "PARTIAL",
+      "target": "tests/u5/stylesheet.test.ts",
+      "note": "The stylesheet contains no outline: none, no outline-width/style of 0 or none, and no order property at all; the :focus-visible rule sets the ring and no later rule removes it. The second pass added a regression guard next to it: test 5 asserts .project-rail a carries its underline in its own rule and not only under :hover, so a later edit that moves it back — restoring a colour-only distinction that no other check in the suite would notice — fails a test instead of shipping. Grid placement is used only inside a list row and on Home's section heading, where the reordered items are non-focusable text or already sit between the heading and the rows in both visual and document order. That reasoning is not a verification: tab order and focus traps on all seven page types are plan Step 8, the author's, NOT performed."
+    },
+    {
+      "id": "BR11.8",
+      "status": "PARTIAL",
+      "target": "src/assets/styles/site.css",
+      "note": "The row's hit area is its own padding — padding-block: var(--space-4) on the whole-row link — asserted as the token rather than a literal by tests/u5/stylesheet.test.ts, so a later change to the step cannot silently drop the row below the floor. 16px + a 24px --type-list line + 16px is 56px before the summary. Unchanged by the second pass. Measuring the rendered row at phone width is plan Step 9, the author's."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+manifest	852910d28ac34654364f263b8814f821182c9611e09b34f036efe189a13ff9b4	-
+	src/page-renderer/pages.ts	100644	f2987815ccf51d224bd9c7ce0680811a7feff1d0117d00915ddf18dfea0ea277
+	tests/u3/fixtures/no-projects/content/posts/only-a-post/index.md	100644	64fa777a470da198ea3caa2ec52e3440e99b7935bb935d7621c2a445361be8bc
+	tests/u3/fixtures/projects-site/content/posts/a-note/index.md	100644	2aa79f31a12c03d3ec5f0903cf5d4f955001d14f309193cb1e1f6414fbac1efb
+	tests/u3/fixtures/projects-site/content/projects/almanac/index.md	100644	c1ef86f1b01ff1f0000f8a980ea2e5e4d95af6f6469ad237139b2023ec0b5ca0
+	tests/u3/fixtures/projects-site/content/projects/beacon/index.md	100644	86e7aad2a1f191b026d971ca28e9668afb6e71e575b0373eeba4c209e55fe073
+	tests/u3/fixtures/projects-site/content/projects/cartograph/index.md	100644	16698703c70bae643690f03ce2568eb73942e4d40a6190fee369639ac4b666c7
+	tests/u3/heading-order.test.ts	100644	8a8252b95bdf4e54909afdbba7c1eff3317cb0443f293924a80f65491f873204
+	tests/u3/helpers.ts	100644	5bb494ac898240785cb49e6d9984bdb6790e6c60ccc4ebbab1168916ffc57839
+	tests/u3/integration.test.ts	100644	4fe618e59240e09b95371177ef3532efd724a04df90b5bd3f4e0206141506b76
+	tests/u3/ordering-parity.test.ts	100644	68972214d30c63e8b23c2729430bd55cf9c85438638237906d83ecb46ec23f93
+	tests/u3/page-renderer.test.ts	100644	2fdfbb69492848131431bda1edba337e257f9f6bab48029026cc13f97c09855d

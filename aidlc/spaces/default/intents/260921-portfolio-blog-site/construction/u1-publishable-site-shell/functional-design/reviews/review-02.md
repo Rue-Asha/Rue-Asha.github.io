@@ -1,0 +1,25 @@
+## Review
+
+**Verdict:** READY
+**Reviewer:** aidlc-architecture-reviewer-agent
+**Date:** 2026-09-23T13:34:29Z
+**Iteration:** 1
+
+### Findings
+
+| ID | Severity | Location | Finding | Required action | Status |
+|---|---|---|---|---|---|
+| R-01 | Minor | `inception/domain-design/components.md` § Entity Ownership / § Later additions | Verified resolved. `components.md` § Entity Ownership now carries the `SiteMetadata` row and `Project.featured` in the attribute list, both annotated inline with `# ... was added by Functional Design for U1 — see § Later additions.`. A new `### Later additions` subsection immediately follows Entity Ownership, attributing each addition to "Functional Design (U1)" with the originating question tag ([Q4]/[Q7] for `featured`, [Q5] for `SiteMetadata`), stating the reasoning for each, and pointing at `construction/u1-publishable-site-shell/functional-design/entities.md` § "Additions this stage makes, stated openly". That heading exists verbatim in `entities.md` (line 427). A reader who opens only `components.md` now sees 6 entities including `SiteMetadata`, `Project` with `featured` among its attributes, and an explicit account of where and why each was added. The finding's stated purpose is discharged. | None — resolved. | Resolved |
+| R-02 | Minor | `functional-spec.md` § Assumptions & Open Questions (FA1) | FA1 got the claimed addition: a "**Carried, not closed:**" clause naming Build and Test as the owner of the Published→Removed/tombstone decision, with a fallback to "the next requirements pass" if not settled there, and reasoning that the decision is a requirements decision rather than a design one. This satisfies the original finding's ask (visibility at the gate) — no action was required to reach READY and none is required now. However, the added text asserts as fact that "Build and Test... is where the Published→Removed transition is exercised." Neither `inception/units-generation/unit-of-work.md` nor `inception/requirements-analysis/requirements.md` contains any reference to deletion, removal, or a tombstone/redirect requirement — there is no backlog item or unit-of-work scope line that actually commits Build and Test to exercising this transition. The claim reads as a plan but is unbacked by any upstream artifact; it is an assumption about a future stage's scope dressed as a settled hand-off. This does not overstate that the *underlying question* will be resolved — the assumption cell is still honest that no requirement exists — but the *routing* claim ("where the transition is exercised") is stronger than what the artifacts support. | Optional, non-blocking: soften "where the Published→Removed transition is exercised" to something like "where this unit's automated checks would be the first place such a transition could be observed, if a check is added there" — or state plainly that no upstream artifact yet commits Build and Test to exercising this transition, so the "owner" is a proposed next step rather than a scheduled one. Not required to reach READY. | Resolved |
+
+### Validation Tool Results
+
+| Tool | Result | Interpretation |
+|---|---|---|
+| sensor-traceability | FAIL (as expected) — `missing_from_upstream_ids` lists 23 FR IDs; `orphans: []`, `invalid_targets: []`, `invalid_entries: []`, `missing_from_table: []` | Matches the known, previously-diagnosed limitation from the dispatch brief exactly: U1 produces `rules.md` and its `traceability.json` resolves `BRx.y` targets cleanly, so no `invalid_targets` or `orphans` appear. The `missing_from_upstream_ids` list is the pre-diagnosed per-unit-scoping gap (no `inception/user-stories/stories.md` in this scope) and is not raised as a finding per the dispatch instruction. |
+| BR series check (manual, `rules.md`) | BR1.1–BR6.4, sequential, no gaps or renumbering | Confirms the revision did not touch `rules.md`; the BR series several later units cite is unchanged. |
+| entities.md / frontend-components.md consistency (manual) | No contradiction found with revised FA1 text | `entities.md` § Later additions cross-references `entities.md` § "Additions this stage makes, stated openly" correctly (heading exists at line 427); nothing in the unchanged files conflicts with the FA1 wording change. |
+
+### Summary
+
+Both carried findings are resolved to the point required for READY. R-01's cross-reference chain (components.md → entities.md § Additions this stage makes, stated openly) is verified to exist and resolve correctly, and a components.md-only reader now sees the correct entity count and `featured` attribute. R-02's addition satisfies the original ask; the one substantive gap — that FA1 now names Build and Test as exercising the Published→Removed transition without any upstream artifact actually committing to that — is real but does not rise above Minor: it is an unbacked routing claim inside an already-honest, already-carried-forward assumption, not a design flaw or a hidden decision. Zero Critical, zero unresolved Major findings; verdict is READY.
