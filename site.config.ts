@@ -9,7 +9,7 @@
  * here, once, so the policy cannot drift between templates.
  */
 
-import type { SiteMetadata } from "./src/types.ts";
+import type { SiteMetadata, SiteProfile } from "./src/types.ts";
 
 export const site: SiteMetadata = {
   siteName: "Rue Asha",
@@ -29,5 +29,25 @@ export const site: SiteMetadata = {
  */
 export const homeIntro =
   "I build things and write about what I am currently learning or find interesting.";
+
+/**
+ * The lines Home's status readout and the footer print about the author.
+ *
+ * Editorial copy, beside the other editorial values rather than inside a
+ * template, so changing what the readout says is not a code change. The
+ * remaining row of that readout — how many posts and projects exist — is
+ * derived from the content by the build and is deliberately not settable here:
+ * a count someone can type is a count that can go stale.
+ *
+ * There is no `focus` line any more, and no field for one. The readout carried
+ * a second editorial sentence beside `now` that said much the same thing in
+ * fewer words; keeping the field for a row nothing renders would leave a value
+ * someone could edit and never see change.
+ */
+export const profile: SiteProfile = {
+  role: "Sysadmin / DevOps",
+  location: "Germany",
+  now: "Writing the generator this site is built by",
+};
 
 export default site;

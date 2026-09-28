@@ -16,7 +16,10 @@
 
 import { describe, expect, it } from "vitest";
 
-import { FONT_PATH, STYLESHEET_PATH } from "../../src/page-renderer/shell.ts";
+import {
+  FONT_PRELOAD_PATHS,
+  STYLESHEET_PATH,
+} from "../../src/page-renderer/shell.ts";
 import { TEST_SITE } from "../u1/helpers.ts";
 import { allUrls, everyPage, headLinks } from "./helpers.ts";
 
@@ -41,21 +44,31 @@ describe("BR11.3 — one stylesheet, on every page, from this origin", () => {
   });
 });
 
-describe("BR11.2 — the font is preloaded, and text never waits for it", () => {
-  it("emits the font preload with as, type and crossorigin on every page type", () => {
+describe("BR11.2 — the fonts are preloaded, and text never waits for them", () => {
+  it("emits every font preload with as, type and crossorigin on every page type", () => {
     for (const page of PAGES) {
       const preloads = headLinks(page.html).filter(
         (link) => link.rel === "preload",
       );
 
-      expect(preloads, `${page.name} preload links`).toHaveLength(1);
-      const font = preloads[0];
-      expect(font?.href).toBe(FONT_PATH);
-      expect(font?.as).toBe("font");
-      expect(font?.type).toBe("font/woff2");
-      // Required even same-origin: a font is fetched in CORS mode, and a
-      // preload without it fetches the file twice rather than once.
-      expect(font?.crossorigin).toBe(true);
+      // Two faces are preloaded — the body sans and the interface mono — and
+      // the other four are left to be fetched when a page actually uses them.
+      // Counted against the exported list rather than a literal, so adding a
+      // preload without adding it there fails here.
+      expect(preloads, `${page.name} preload links`).toHaveLength(
+        FONT_PRELOAD_PATHS.length,
+      );
+      expect(preloads.map((link) => link.href)).toEqual([
+        ...FONT_PRELOAD_PATHS,
+      ]);
+
+      for (const font of preloads) {
+        expect(font.as).toBe("font");
+        expect(font.type).toBe("font/woff2");
+        // Required even same-origin: a font is fetched in CORS mode, and a
+        // preload without it fetches the file twice rather than once.
+        expect(font.crossorigin).toBe(true);
+      }
     }
   });
 });

@@ -12,6 +12,7 @@ import { beforeAll, describe, expect, it } from "vitest";
 import {
   type MarkupRenderer,
   createMarkupRenderer,
+  extractHeadings,
   isKnownFenceLanguage,
   unknownFenceLanguages,
 } from "../../src/markup-renderer.ts";
@@ -43,7 +44,9 @@ describe("The full Markdown set (FR2.6)", () => {
     );
 
     expect(html).toContain("<h1>A title</h1>");
-    expect(html).toContain("<h2>A heading</h2>");
+    // `h2` alone carries an anchor id, because the post page's contents rail
+    // links to those and nothing else. Every other level renders bare.
+    expect(html).toContain('<h2 id="a-heading">A heading</h2>');
     expect(html).toContain("<h3>A sub-heading</h3>");
     expect(html).toContain("<ul>");
     expect(html).toContain("<li>bullet one</li>");
@@ -189,5 +192,69 @@ describe("Nothing runs in the reader's browser (NFR2, NFR3)", () => {
     // plain text in a browser and nothing would say so (BR5.10).
     expect(html).not.toMatch(/style\s*=/);
     expect(html).not.toMatch(/(?:src|href)="https?:\/\//);
+  });
+});
+
+/**
+ * The anchor ids a post page's contents rail links to.
+ *
+ * `script-src 'none'` means the rail is a plain list of anchors and nothing
+ * marks which section the reader is in. That makes the ids the whole of the
+ * feature: a rail whose links go nowhere is worse than no rail, and nothing
+ * else in this repository would notice — the page still builds, the internal
+ * link check does not follow fragments, and it still looks right.
+ */
+describe("Heading anchors (the post page's contents rail)", () => {
+  it("gives every h2 a slug id and leaves the other levels bare", async () => {
+    const html = await renderer.render(
+      ["# Title", "", "## First section", "", "### Not in the rail"].join("\n"),
+    );
+
+    expect(html).toContain("<h1>Title</h1>");
+    expect(html).toContain('<h2 id="first-section">First section</h2>');
+    expect(html).toContain("<h3>Not in the rail</h3>");
+  });
+
+  it("makes repeated headings unique rather than letting two ids collide", async () => {
+    const html = await renderer.render(
+      ["## Notes", "", "Text.", "", "## Notes", "", "More."].join("\n"),
+    );
+
+    // Duplicate ids would make the rail jump to whichever one the browser
+    // found first — a silently wrong answer rather than a visible fault.
+    expect(html).toContain('<h2 id="notes">Notes</h2>');
+    expect(html).toContain('<h2 id="notes-2">Notes</h2>');
+  });
+
+  it("keeps ids from leaking between documents", async () => {
+    await renderer.render("## Notes");
+    const second = await renderer.render("## Notes");
+
+    // Each render owns its own set. A shared counter would make the same
+    // heading in two different posts get `notes` and `notes-2`, so the second
+    // post's rail would link to an id its own page does not have.
+    expect(second).toContain('<h2 id="notes">Notes</h2>');
+  });
+
+  it("falls back to a usable id when a heading reduces to nothing", async () => {
+    const html = await renderer.render("## ###");
+    expect(html).toMatch(/<h2 id="[a-z0-9-]+">/);
+  });
+
+  it("reads the headings back out in document order, markup intact", async () => {
+    const html = await renderer.render(
+      ["## Plain", "", "## With `code` in it"].join("\n"),
+    );
+
+    expect(extractHeadings(html)).toEqual([
+      { id: "plain", html: "Plain" },
+      { id: "with-code-in-it", html: "With <code>code</code> in it" },
+    ]);
+  });
+
+  it("finds no headings in a body that has none", async () => {
+    expect(extractHeadings(await renderer.render("Just a paragraph."))).toEqual(
+      [],
+    );
   });
 });

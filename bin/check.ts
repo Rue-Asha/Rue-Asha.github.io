@@ -14,14 +14,19 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { formatCheckReport, runChecks } from "../src/check-runner.ts";
-import { homeIntro, site } from "../site.config.ts";
+import { homeIntro, profile, site } from "../site.config.ts";
 
 const REPO_ROOT = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
   "..",
 );
 
-const report = await runChecks({ repoRoot: REPO_ROOT, site, homeIntro });
+const report = await runChecks({
+  repoRoot: REPO_ROOT,
+  site,
+  homeIntro,
+  profile,
+});
 
 console.log(formatCheckReport(report));
 process.exitCode = report.blocking ? 1 : 0;

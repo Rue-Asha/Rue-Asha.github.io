@@ -69,6 +69,89 @@ function requireText(
   return { value };
 }
 
+/**
+ * Read an optional list of short labels (`tags`).
+ *
+ * Optional means absent is allowed and produces an empty list, but *present and
+ * wrong* is still a field error: a `tags: infrastructure` written without the
+ * list syntax parses as a string, and silently dropping it would leave the
+ * author looking at a post with no chips and nothing saying why. A value that is
+ * the wrong shape is a mistake; an absent value is a choice.
+ */
+function readTags(
+  frontMatter: Readonly<Record<string, unknown>>,
+  sourcePath: string,
+): { value: string[] } | { error: FieldError } {
+  const raw = frontMatter["tags"];
+  if (raw === undefined || raw === null) return { value: [] };
+
+  if (!Array.isArray(raw)) {
+    return {
+      error: fieldError(
+        sourcePath,
+        "tags",
+        `is optional, but when present it must be a list. Found ${typeof raw}. ` +
+          "Write it as a YAML list, one tag per line under `tags:`.",
+      ),
+    };
+  }
+
+  const tags: string[] = [];
+  for (const entry of raw) {
+    if (typeof entry !== "string" || entry.trim() === "") {
+      return {
+        error: fieldError(
+          sourcePath,
+          "tags",
+          "must contain only non-empty text entries.",
+        ),
+      };
+    }
+    tags.push(entry.trim());
+  }
+  return { value: tags };
+}
+
+/**
+ * Read the optional `kicker` — the short line drawn above a post's title.
+ *
+ * Absent omits the line entirely rather than rendering it empty, which is the
+ * same rule `Project.liveUrl` follows (BR3.5). Present but not text is a field
+ * error, for the reason `readTags` gives.
+ */
+function readKicker(
+  frontMatter: Readonly<Record<string, unknown>>,
+  sourcePath: string,
+): { value: string | undefined } | { error: FieldError } {
+  const raw = frontMatter["kicker"];
+  if (raw === undefined || raw === null) return { value: undefined };
+
+  if (typeof raw !== "string") {
+    return {
+      error: fieldError(
+        sourcePath,
+        "kicker",
+        `is optional, but when present it must be text, not ${typeof raw}.`,
+      ),
+    };
+  }
+  if (/[\r\n]/.test(raw)) {
+    return {
+      error: fieldError(
+        sourcePath,
+        "kicker",
+        "must be a single line: it is drawn on one line above the title.",
+      ),
+    };
+  }
+
+  const value = raw.trim();
+  // An empty kicker is the same statement as no kicker, and the omit behaviour
+  // is already defined. Treating it as absent avoids a field error for a
+  // difference the page cannot show.
+  return { value: value === "" ? undefined : value };
+}
+
 /** Days between two strict ISO dates, positive when `later` is after `earlier`. */
 function daysBetween(earlier: string, later: string): number {
   const a = parseIsoDate(earlier);
@@ -183,6 +266,12 @@ export function buildPostCatalog(
     );
     if ("error" in date) fileErrors.push(date.error);
 
+    const tags = readTags(file.frontMatter, file.path);
+    if ("error" in tags) fileErrors.push(tags.error);
+
+    const kicker = readKicker(file.frontMatter, file.path);
+    if ("error" in kicker) fileErrors.push(kicker.error);
+
     if (fileErrors.length > 0) {
       errors.push(...fileErrors);
       continue;
@@ -193,6 +282,8 @@ export function buildPostCatalog(
       title: (title as { value: string }).value,
       summary: (summary as { ok: true; summary: string }).summary,
       date: (date as { value: string }).value,
+      tags: (tags as { value: string[] }).value,
+      kicker: (kicker as { value: string | undefined }).value,
       body: file.body,
       sourcePath: file.path,
     });

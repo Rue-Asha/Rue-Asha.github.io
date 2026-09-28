@@ -31,6 +31,8 @@ import {
   createHighlighter,
 } from "shiki";
 
+import { generateSlug } from "./content-transforms.ts";
+
 /**
  * The token classes the emitted markup uses.
  *
@@ -270,6 +272,56 @@ function renderCode(
   return wrapCodeBlock(rendered, language);
 }
 
+/**
+ * One second-level heading in a rendered body, as the contents rail needs it.
+ *
+ * `html` is the heading's own inner markup, which this renderer escaped on the
+ * way in — a heading carrying inline code or emphasis keeps it in the rail
+ * rather than arriving with tag names in the middle of the text.
+ */
+export interface BodyHeading {
+  readonly id: string;
+  readonly html: string;
+}
+
+/**
+ * The anchor id a heading gets, unique within one document.
+ *
+ * `generateSlug` is the site's one definition of what a slug looks like, reused
+ * here so a heading anchor and a page URL cannot drift into two spellings of
+ * the same idea. A document with two headings reading the same thing gets `-2`,
+ * `-3` and so on: duplicate ids would make the contents rail jump to whichever
+ * one the browser found first, which is a silently wrong answer.
+ */
+function headingId(text: string, used: Set<string>): string {
+  const base = generateSlug(text) || "section";
+  let id = base;
+  let counter = 2;
+  while (used.has(id)) {
+    id = `${base}-${String(counter)}`;
+    counter += 1;
+  }
+  used.add(id);
+  return id;
+}
+
+/** Ids assigned during one `render` call, keyed by the env object that call owns. */
+const headingIds = new WeakMap<object, Set<string>>();
+
+/**
+ * Every `h2` in a rendered body, in document order.
+ *
+ * Read back out of the HTML rather than returned alongside it, so `render`
+ * keeps its one-string signature and a caller that does not want a contents
+ * rail pays nothing. The input is this renderer's own output, so the pattern is
+ * matching markup whose shape is known rather than parsing arbitrary HTML.
+ */
+export function extractHeadings(html: string): BodyHeading[] {
+  return [...html.matchAll(/<h2 id="([^"]*)">([\s\S]*?)<\/h2>/g)].map(
+    (match) => ({ id: match[1] ?? "", html: match[2] ?? "" }),
+  );
+}
+
 /** Every fence language used in a document, so grammars can be loaded before rendering. */
 function fenceLanguages(tokens: readonly Token[]): BundledLanguage[] {
   const languages = new Set<BundledLanguage>();
@@ -300,6 +352,36 @@ export async function createMarkupRenderer(): Promise<MarkupRenderer> {
     const token = tokens[index];
     if (!token) return "";
     return renderCode(highlighter, token.content, fenceLabel(token));
+  };
+
+  /**
+   * Give every `h2` an anchor id, so a post page can offer a contents rail.
+   *
+   * Only `h2`: the rail lists the sections of a piece, and a rail that also
+   * listed every `h3` would be an outline of the whole document rather than a
+   * way to get to a part of it. Other levels render exactly as before.
+   *
+   * The ids are tracked per call through `env`, which markdown-it threads from
+   * `render` into every renderer rule — so two posts sharing a heading do not
+   * see each other's ids, and one post with a repeated heading still gets
+   * unique ones.
+   */
+  md.renderer.rules["heading_open"] = (tokens, index, _options, env) => {
+    const token = tokens[index];
+    const inline = tokens[index + 1];
+    if (!token) return "";
+    if (token.tag !== "h2" || !inline) return `<${token.tag ?? "h2"}>`;
+
+    const used = ((): Set<string> => {
+      const scope = env as object;
+      const existing = headingIds.get(scope);
+      if (existing) return existing;
+      const created = new Set<string>();
+      headingIds.set(scope, created);
+      return created;
+    })();
+
+    return `<h2 id="${escapeHtml(headingId(inline.content, used))}">`;
   };
 
   return {

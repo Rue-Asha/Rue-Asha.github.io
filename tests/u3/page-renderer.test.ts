@@ -15,11 +15,19 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  renderHome,
   renderProject,
   renderProjects,
 } from "../../src/page-renderer/pages.ts";
 import { aProject } from "../u1/helpers.ts";
-import { anchorTags, projectRows, railLabels, renderPage } from "./helpers.ts";
+import {
+  anchorTags,
+  projectRows,
+  projectTableRows,
+  railLabels,
+  railOf,
+  renderPage,
+} from "./helpers.ts";
 
 const WITH_LIVE = aProject({
   slug: "with-live",
@@ -43,24 +51,37 @@ const WITHOUT_LIVE = aProject({
 });
 
 describe("BR9.1 — the metadata rail's row order is fixed", () => {
-  it("emits year, type, tools, repo and then live, in that order and no other", () => {
+  it("emits year, type, tools and then links, in that order and no other", () => {
     const html = renderPage(renderProject(WITH_LIVE, "<p>Body.</p>"));
 
     // The order itself, not merely the presence of each label. A rail whose row
     // order varied by project would make a reader re-read it each time, and
     // asserting presence alone would not notice.
-    expect(railLabels(html)).toEqual(["Year", "Type", "Tools", "Repo", "Live"]);
+    //
+    // The repository and the live site now share one `Links` row rather than
+    // holding a row each: they are the same kind of value — somewhere else to
+    // go — and two adjacent one-item rows read as a longer rail without saying
+    // more. Their order inside that row is asserted below.
+    expect(railLabels(html)).toEqual(["Year", "Type", "Tools", "Links"]);
+
+    const rail = railOf(html);
+    expect(rail.indexOf("project-rail-repo-link")).toBeLessThan(
+      rail.indexOf("project-rail-live-link"),
+    );
   });
 
-  it("omits the live row entirely when a project declares no live URL, leaving four rows", () => {
+  it("omits the live link entirely when a project declares no live URL", () => {
     const html = renderPage(renderProject(WITHOUT_LIVE, "<p>Body.</p>"));
+    const rail = railOf(html);
 
-    // Four rows, not five with one blank: the absent value omits the whole row,
-    // label included (U1 BR3.5, FR3.4). A label with nothing after it is what
-    // this rule exists to forbid.
-    expect(railLabels(html)).toEqual(["Year", "Type", "Tools", "Repo"]);
-    expect(html).not.toContain("<dt>Live</dt>");
-    expect(html).not.toContain("<dd></dd>");
+    // The absent value omits its whole entry, label included (U1 BR3.5, FR3.4).
+    // A label with nothing after it is what this rule exists to forbid, and the
+    // `Links` row still exists because the repository is required.
+    expect(railLabels(html)).toEqual(["Year", "Type", "Tools", "Links"]);
+    expect(rail).not.toContain("project-rail-live-link");
+    expect(rail).not.toContain("Live <span");
+    expect(rail).not.toContain('<dd class="spec__val"></dd>');
+    expect(rail.match(/<li>/g) ?? []).toHaveLength(1);
   });
 });
 
@@ -73,18 +94,26 @@ describe("BR9.1 — the metadata rail's row order is fixed", () => {
  * elements under one `<dt>`, which is the only shape a `<dl>` has for it.
  */
 function railGroups(html: string): { label: string; values: string[] }[] {
-  const rail =
-    /<dl class="project-rail">([\s\S]*?)<\/dl>/.exec(html)?.[1] ?? "";
+  const rail = railOf(html);
   const groups: { label: string; values: string[] }[] = [];
 
-  for (const match of rail.matchAll(/<(dt|dd)>([\s\S]*?)<\/\1>/g)) {
+  for (const match of rail.matchAll(
+    /<(dt|dd) class="spec__(?:key|val)">([\s\S]*?)<\/\1>/g,
+  )) {
     const tag = match[1];
     const inner = (match[2] ?? "").trim();
     if (tag === "dt") {
       groups.push({ label: inner, values: [] });
-    } else {
-      groups.at(-1)?.values.push(inner);
+      continue;
     }
+    const group = groups.at(-1);
+    if (!group) continue;
+    // A multi-valued row is a list inside one `<dd>`. Its items are the values;
+    // a single-valued row is its own one value.
+    const items = [...inner.matchAll(/<li[^>]*>([\s\S]*?)<\/li>/g)].map(
+      (item) => (item[1] ?? "").trim(),
+    );
+    group.values.push(...(items.length > 0 ? items : [inner]));
   }
 
   return groups;
@@ -101,7 +130,7 @@ describe("BR9.1 — the rail lists tools one per line, the index row inline", ()
     repo: "https://github.com/Rue-Asha/three-tools",
   });
 
-  it("emits one <dd> per declared tool, in declaration order, under a single Tools label", () => {
+  it("emits one element per declared tool, in declaration order, under a single Tools label", () => {
     const html = renderPage(renderProject(THREE_TOOLS, "<p>Body.</p>"));
     const groups = railGroups(html);
 
@@ -110,9 +139,9 @@ describe("BR9.1 — the rail lists tools one per line, the index row inline", ()
     const toolsGroups = groups.filter((group) => group.label === "Tools");
     expect(toolsGroups).toHaveLength(1);
 
-    // `mockups.md` § Project draws the tools stacked one per line beneath the
-    // label. A stylesheet cannot split a single `<dd>` into lines, so the shape
-    // is a markup commitment and belongs in a test rather than in U5.
+    // The tools are a list of separate elements rather than one joined string.
+    // A stylesheet cannot split a joined value apart, so the shape is a markup
+    // commitment and belongs in a test rather than in the stylesheet.
     expect(toolsGroups[0]?.values).toEqual([
       "TypeScript",
       "Postgres",
@@ -132,74 +161,82 @@ describe("BR9.1 — the rail lists tools one per line, the index row inline", ()
     }
   });
 
-  it("keeps the Projects list row's tools inline on one line", () => {
+  it("lists the Projects card's tools as separate elements too, never a joined string", () => {
     const html = renderPage(renderProjects([THREE_TOOLS]));
-    const row = projectRows(html)[0] ?? "";
-    const tools =
-      /<p class="project-row-tools">([\s\S]*?)<\/p>/.exec(row)?.[1] ?? "";
+    const card = projectRows(html)[0] ?? "";
+    const tools = [...card.matchAll(/<li class="chip">([^<]*)<\/li>/g)].map(
+      (match) => match[1] ?? "",
+    );
 
-    // Deliberately unlike the rail. § Projects draws a scannable summary line;
-    // § Project draws a reference table. Asserted so the difference is held
-    // rather than assumed, and so making the two the same has to be a decision.
-    expect(tools).toBe("TypeScript · Postgres · Docker");
+    // The listing and the rail now agree, where the previous design held them
+    // deliberately apart: the card drew a joined `A · B · C` summary line and
+    // the rail drew a list. Making them the same is a decision, and the reason
+    // is the one the rail's own rule already gave — a welded separator is
+    // announced by a screen reader where the markup means "these are a list".
+    expect(tools).toEqual(["TypeScript", "Postgres", "Docker"]);
+    expect(card).not.toContain("TypeScript · Postgres");
   });
 });
 
-describe("BR9.2 — a Projects list row carries exactly two targets", () => {
-  it("emits two anchors per row: the project name and the repository link", () => {
-    const html = renderPage(renderProjects([WITH_LIVE, WITHOUT_LIVE]));
-    const rows = projectRows(html);
+describe("BR9.2 — a listing entry carries exactly one target", () => {
+  it("emits one anchor per card and one per Home row", () => {
+    const projects = [WITH_LIVE, WITHOUT_LIVE];
+    const cards = projectRows(renderPage(renderProjects(projects)));
 
-    expect(rows).toHaveLength(2);
-    for (const row of rows) {
-      // Counted rather than merely checked for presence. A row that passes "the
-      // name links" can still carry a third target, which would leave a reader
-      // unable to predict where each tab stop goes.
-      expect(anchorTags(row)).toHaveLength(2);
+    expect(cards).toHaveLength(2);
+    for (const card of cards) {
+      // Counted rather than merely checked for presence. The previous design
+      // gave a row two targets — the name and an outbound repository link —
+      // and BR9.2's own reasoning was that a reader must be able to predict
+      // where each tab stop goes. One target per entry satisfies that outright:
+      // every entry on this site now goes exactly one place, and the repository
+      // is one click further in, on the project's own page.
+      expect(anchorTags(card)).toHaveLength(1);
+    }
+
+    for (const row of projectTableRows(
+      renderPage(renderHome([], projects, "Rue Asha", "An intro.")),
+    )) {
+      expect(anchorTags(row)).toHaveLength(1);
     }
   });
 
-  it("makes neither the summary nor the tools list a link", () => {
+  it("makes the whole entry the target, summary and tools included", () => {
     const html = renderPage(renderProjects([WITH_LIVE]));
-    const row = projectRows(html)[0] ?? "";
+    const card = projectRows(html)[0] ?? "";
 
-    const summary =
-      /<p class="project-row-summary">([\s\S]*?)<\/p>/.exec(row)?.[1] ?? "";
-    const tools =
-      /<p class="project-row-tools">([\s\S]*?)<\/p>/.exec(row)?.[1] ?? "";
-
-    expect(summary).toContain("A thing that is deployed somewhere.");
-    expect(summary).not.toContain("<a ");
-    expect(tools).toContain("TypeScript");
-    expect(tools).not.toContain("<a ");
+    // The summary and the tools are inside the one anchor rather than being
+    // targets of their own. No nested anchor: that is the third target the rule
+    // forbids, arriving through a different door.
+    expect(card).toContain("A thing that is deployed somewhere.");
+    expect(card).toContain("TypeScript");
+    expect(anchorTags(card)).toHaveLength(1);
   });
 
-  it('names each repository link for its own project rather than a bare "repo"', () => {
-    const html = renderPage(renderProjects([WITH_LIVE, WITHOUT_LIVE]));
-
+  it('names the repository link for its own project rather than a bare "repo"', () => {
     // FR3.6: read out of context, a page of links all named "repo" tells a
-    // screen-reader user nothing about which project each one belongs to.
+    // screen-reader user nothing about which project each one belongs to. The
+    // link lives on the project page now, so that is where it is asserted.
     for (const project of [WITH_LIVE, WITHOUT_LIVE]) {
+      const html = renderPage(renderProject(project, "<p>Body.</p>"));
       expect(html).toContain(`aria-label="Repository for ${project.name}"`);
-    }
 
-    // The visible text may be short; the accessible name may not be the whole of
-    // it. Every repo anchor carries an aria-label naming its project.
-    const repoAnchors = anchorTags(html).filter((tag) =>
-      tag.includes("project-row-repo-link"),
-    );
-    expect(repoAnchors).toHaveLength(2);
-    for (const anchor of repoAnchors) {
-      expect(anchor).toMatch(/aria-label="Repository for [^"]+"/);
-      // It leaves this site, so it must not hand the destination a window
-      // reference or a referrer.
-      expect(anchor).toContain('rel="noopener noreferrer"');
+      const repoAnchors = anchorTags(html).filter((tag) =>
+        tag.includes("project-rail-repo-link"),
+      );
+      expect(repoAnchors).toHaveLength(1);
+      for (const anchor of repoAnchors) {
+        expect(anchor).toMatch(/aria-label="Repository for [^"]+"/);
+        // It leaves this site, so it must not hand the destination a window
+        // reference or a referrer.
+        expect(anchor).toContain('rel="noopener noreferrer"');
+      }
     }
   });
 });
 
 describe("BR9.4 — every project appears once, with all four values", () => {
-  it("emits one row per project, each carrying name, summary, tools and a repo link", () => {
+  it("emits one card per project, each carrying name, summary, tools and its route", () => {
     const projects = [
       WITH_LIVE,
       WITHOUT_LIVE,
@@ -222,8 +259,13 @@ describe("BR9.4 — every project appears once, with all four values", () => {
       expect(row).toContain(project.name);
       expect(row).toContain(project.summary);
       expect(row).toContain(project.tools[0] ?? "");
-      expect(row).toContain(`href="${project.repo}"`);
       expect(row).toContain(`href="/projects/${project.slug}/"`);
+      // The repository is reached from the project's own page, and every card
+      // links to it — so the route to every repository is still exactly one
+      // click from this listing.
+      expect(renderPage(renderProject(project, "<p>Body.</p>"))).toContain(
+        `href="${project.repo}"`,
+      );
     }
 
     // No project appears twice: `renderProjects` maps the list it is given and
@@ -237,25 +279,24 @@ describe("BR9.4 — every project appears once, with all four values", () => {
 });
 
 describe("BR9.5 — the rail sits beside the body, not inside it", () => {
-  it("emits the rail and the body as siblings within the project article", () => {
+  it("emits the rail and the prose as siblings, rail first", () => {
     const html = renderPage(renderProject(WITH_LIVE, "<p>Body.</p>"));
 
-    const article =
-      /<article class="project">([\s\S]*?)<\/article>/.exec(html)?.[1] ?? "";
     const body =
-      /<div class="project-body">([\s\S]*?)<\/div>\s*<\/article>/.exec(
+      /<div class="project__body">([\s\S]*?)<\/div>\s*<p class="back-end">/.exec(
         html,
       )?.[1] ?? "";
 
-    expect(article).toContain('<dl class="project-rail">');
-    expect(article).toContain('<div class="project-body">');
+    expect(body).toContain('<aside class="side">');
+    expect(body).toContain('<div class="prose">');
 
-    // The structural commitment U5 relies on to stack the rail above the body at
-    // phone width with one layout rule (`frontend-components.md` § Responsive
-    // commitments). A rail nested in the body cannot be stacked that way.
-    expect(body).not.toContain('<dl class="project-rail">');
-    expect(article.indexOf('<dl class="project-rail">')).toBeLessThan(
-      article.indexOf('<div class="project-body">'),
+    // The structural commitment the stylesheet relies on to stack the rail
+    // above the write-up at phone width with one layout rule. A rail nested in
+    // the prose could not be stacked that way, and a rail placed after it in
+    // the markup could only be moved above it by reordering — the one thing a
+    // stylesheet can do that breaks tab order (BR11.7).
+    expect(body.indexOf('<aside class="side">')).toBeLessThan(
+      body.indexOf('<div class="prose">'),
     );
   });
 
@@ -275,12 +316,12 @@ describe("W3, FR3.7 — the Projects page with nothing to list", () => {
   it("keeps its heading, shows one sentence, and offers a route to Writing", () => {
     const html = renderPage(renderProjects([]));
 
-    expect(html).toContain("<h1>Projects</h1>");
+    expect(html).toContain('<h1 class="phead__title">Projects</h1>');
     expect(html).toContain("Nothing here yet.");
     expect(html).toContain('href="/writing/"');
 
-    // Never a bare heading, and never a row (U1 BR5.5).
+    // Never a bare heading, and never a card (U1 BR5.5).
     expect(projectRows(html)).toHaveLength(0);
-    expect(html).not.toContain('<ul class="project-list">');
+    expect(html).not.toContain('<ul class="units">');
   });
 });

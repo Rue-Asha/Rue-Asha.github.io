@@ -152,7 +152,7 @@ describe("W2 and W3 — a post page renders the whole Markdown set", () => {
         "utf8",
       );
 
-      expect(page).toContain("<h2>A heading</h2>");
+      expect(page).toContain('<h2 id="a-heading">A heading</h2>');
       expect(page).toContain('<a href="/writing/">an internal link</a>');
       expect(page).toContain("<li>a bullet</li>");
       expect(page).toContain("<li>a numbered step</li>");

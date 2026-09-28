@@ -79,7 +79,7 @@ describe("BR10.3 — About is emitted on every build", () => {
 
       // And the file is really on disk, not merely named in the manifest.
       await expect(page(outputRoot, ABOUT_OUTPUT_PATH)).resolves.toContain(
-        "<h1>About</h1>",
+        '<h1 class="phead__title">About</h1>',
       );
     } finally {
       await cleanup();

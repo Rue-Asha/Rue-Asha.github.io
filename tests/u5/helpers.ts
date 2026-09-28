@@ -40,8 +40,18 @@ export const REPO_ROOT = path.resolve(HERE, "..", "..");
 /** The one stylesheet, as a repository-relative path. */
 export const STYLESHEET_SOURCE = "src/assets/styles/site.css";
 
-/** The self-hosted font file, as a repository-relative path. */
-export const FONT_SOURCE = "src/assets/fonts/source-serif-4-latin.woff2";
+/** The self-hosted font files, as repository-relative paths. */
+export const FONT_SOURCES: readonly string[] = [
+  "src/assets/fonts/ibm-plex-sans-latin-400-normal.woff2",
+  "src/assets/fonts/ibm-plex-sans-latin-500-normal.woff2",
+  "src/assets/fonts/ibm-plex-sans-latin-600-normal.woff2",
+  "src/assets/fonts/ibm-plex-mono-latin-400-normal.woff2",
+  "src/assets/fonts/ibm-plex-mono-latin-500-normal.woff2",
+  "src/assets/fonts/ibm-plex-mono-latin-600-normal.woff2",
+];
+
+/** The first preloaded face, for the checks that only need one file to exist. */
+export const FONT_SOURCE = FONT_SOURCES[0] ?? "";
 
 /** The page context every rendering test uses. */
 export const TEST_CONTEXT: PageContext = {

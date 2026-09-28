@@ -13,7 +13,7 @@ import { fileURLToPath } from "node:url";
 
 import { BuildFailedError, formatFieldError } from "../src/errors.ts";
 import { buildSite } from "../src/site-builder.ts";
-import { homeIntro, site } from "../site.config.ts";
+import { homeIntro, profile, site } from "../site.config.ts";
 
 const REPO_ROOT = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
@@ -22,7 +22,12 @@ const REPO_ROOT = path.resolve(
 
 async function main(): Promise<number> {
   try {
-    const manifest = await buildSite({ repoRoot: REPO_ROOT, site, homeIntro });
+    const manifest = await buildSite({
+      repoRoot: REPO_ROOT,
+      site,
+      homeIntro,
+      profile,
+    });
     console.log(
       `Built ${String(manifest.pagesWritten.length)} pages into ${manifest.outputRoot}/ ` +
         `(${String(manifest.sourceToOutput.length)} from content files).`,

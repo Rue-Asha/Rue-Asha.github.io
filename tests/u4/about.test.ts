@@ -50,7 +50,7 @@ describe("the About page has a well-formed heading outline (WCAG 2.1 AA)", () =>
     const html = renderAboutPage();
 
     expect(countLevelOneHeadings(html)).toBe(1);
-    expect(html).toContain("<h1>About</h1>");
+    expect(html).toContain('<h1 class="phead__title">About</h1>');
   });
 
   it("skips no heading level between the page heading and its sections", () => {

@@ -46,15 +46,32 @@ cover the site code. The formatter never touches the prose under `content/`.
 One directory per post, with its images inside it, under `content/posts/`.
 Project write-ups live under `content/projects/`.
 
-| File kind | Required front matter                              |
-| --------- | -------------------------------------------------- |
-| Post      | `title`, `summary`, `date`                         |
-| Project   | `name`, `summary`, `year`, `type`, `tools`, `repo` |
+| File kind | Required front matter                              | Optional         |
+| --------- | -------------------------------------------------- | ---------------- |
+| Post      | `title`, `summary`, `date`                         | `tags`, `kicker` |
+| Project   | `name`, `summary`, `year`, `type`, `tools`, `repo` | `liveUrl`        |
 
-A project may also carry a live URL; when it is absent the rail row is omitted
-rather than rendered empty. A missing **required** field is a build failure that
-names the file and the field — the build fails loudly rather than skipping the
-file.
+A missing **required** field is a build failure that names the file and the
+field — the build fails loudly rather than skipping the file.
+
+An **optional** field that is absent is omitted from the page entirely rather
+than rendered empty: a project with no live URL gets no `Live` link, a post with
+no kicker gets no line above its title, and a Writing listing where no entry is
+tagged has no tag column at all. An optional field that is _present and the
+wrong shape_ is still a build failure — `tags: infrastructure` written without
+the list syntax would otherwise vanish silently.
+
+```yaml
+---
+title: Building this site
+summary: Why this site has its own build rather than an off-the-shelf generator.
+date: 2026-09-23
+kicker: Field notes
+tags:
+  - infrastructure
+  - typescript
+---
+```
 
 The file name is the URL, so file names are lowercase, kebab-case and ASCII.
 Published slugs never change: renaming one breaks every link anyone shared, and
@@ -63,15 +80,41 @@ GitHub Pages has no server-side redirects.
 Post ordering reads the `date` in front matter, never the file's modification
 time.
 
+## The look
+
+One stylesheet, `src/assets/styles/site.css`, and one class on the page root.
+The direction is an instrument panel: bordered panels, a visible grid, IBM Plex
+Mono for every label and number, IBM Plex Sans for reading, and one signal
+colour — a deep teal-emerald on a cool off-white ground. It is light-only. There
+is no dark theme, no toggle and no `prefers-color-scheme` branch; the single
+`:root` block is the whole palette.
+
+Two things the policy in the page head decides rather than taste:
+
+- **No `style` attribute is ever emitted.** `style-src 'self'` carries no
+  `'unsafe-inline'`, so a grid template passed inline would be dropped by the
+  browser and a table would silently collapse into one column. Every column
+  layout is a class.
+- **Nothing runs in the reader's browser.** `script-src 'none'`. The contents
+  rail on a post page is a plain list of anchors with no active marking, the tag
+  chips are labels rather than filters, and there is no reading-progress bar.
+  Each would need a script, and a control that does not work is worse than one
+  that is not there.
+
+Editorial copy that is not a content file lives in `site.config.ts` — the
+sentence Home opens with, and the role, location and current-work lines its
+status readout prints. The rest of that readout is derived by the build: the
+post and project counts come from the content and cannot go stale.
+
 ## Layout
 
 | Path                 | What it is                                                                                           |
 | -------------------- | ---------------------------------------------------------------------------------------------------- |
 | `content/`           | Posts and project write-ups — the prose                                                              |
 | `src/`               | The generator: content sources, catalogues, renderers, checks                                        |
-| `src/assets/`        | Stylesheet and the self-hosted font                                                                  |
+| `src/assets/`        | The stylesheet and the six self-hosted font files                                                    |
 | `bin/`               | `build.ts` and `check.ts` entry points                                                               |
-| `site.config.ts`     | Site name, base URL, content-security policy                                                         |
+| `site.config.ts`     | Site name, base URL, content-security policy, and the editorial copy Home prints                     |
 | `tests/`             | Unit tests, one directory per unit of work                                                           |
 | `.github/workflows/` | The publish workflow                                                                                 |
 | `aidlc/`, `.claude/` | The AI-DLC workspace this site was built with — version-controlled, and excluded from the built site |

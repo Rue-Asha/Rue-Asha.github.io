@@ -19,8 +19,13 @@ import { renderHome, renderProjects } from "../../src/page-renderer/pages.ts";
 import { TEST_SITE, aPost, aProject } from "../u1/helpers.ts";
 import { listedProjectSlugs, renderPage } from "./helpers.ts";
 
-/** How many projects Home shows (BR5.3). Asserted against, never imported. */
-const HOME_LIMIT = 3;
+/**
+ * How many projects Home shows. Asserted against, never imported.
+ *
+ * Named for projects because the cap is no longer shared: BR5.3's one figure
+ * became two independent ones, and this file is about the project ordering.
+ */
+const HOME_PROJECT_LIMIT = 3;
 
 const POSTS = [aPost()];
 
@@ -63,13 +68,15 @@ describe("BR9.3 — Home is a window onto the same order", () => {
   it("shows exactly the first three of the catalog's order, not its own top three", () => {
     const home = homeOrder(ORDERED);
 
-    expect(home).toHaveLength(HOME_LIMIT);
+    expect(home).toHaveLength(HOME_PROJECT_LIMIT);
     expect(home).toEqual(
-      ORDERED.slice(0, HOME_LIMIT).map((project) => project.slug),
+      ORDERED.slice(0, HOME_PROJECT_LIMIT).map((project) => project.slug),
     );
     // And it is a prefix of the full page, which is the property that fails if
     // either template ever sorts again on its own.
-    expect(projectsPageOrder(ORDERED).slice(0, HOME_LIMIT)).toEqual(home);
+    expect(projectsPageOrder(ORDERED).slice(0, HOME_PROJECT_LIMIT)).toEqual(
+      home,
+    );
   });
 
   it("moves a project on both pages when it becomes featured, never on one", () => {

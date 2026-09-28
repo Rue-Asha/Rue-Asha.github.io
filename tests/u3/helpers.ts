@@ -90,25 +90,58 @@ export function anchorTags(html: string): string[] {
   return [...html.matchAll(/<a\s[^>]*>/g)].map((match) => match[0]);
 }
 
-/** The `<li class="project-row">…</li>` fragments of a rendered page, in order. */
+/**
+ * The project cards of a rendered Projects page, in order.
+ *
+ * A card, not a table row: the Projects listing is a grid of panels, and each
+ * `<li class="unit …">` is one project. Home's compact table rows are a
+ * different shape and are extracted by {@link projectTableRows}.
+ */
 export function projectRows(html: string): string[] {
-  return [...html.matchAll(/<li class="project-row">([\s\S]*?)<\/li>/g)].map(
-    (match) => match[1] ?? "",
+  // Closed on the card's own anchor rather than on the first `</li>`: the tool
+  // chips are list items too, and a non-greedy match would stop at the first of
+  // them and report a card with no tools in it.
+  return [
+    ...html.matchAll(/<li class="unit panel ticks">([\s\S]*?<\/a>)\s*<\/li>/g),
+  ].map((match) => match[1] ?? "");
+}
+
+/** Home's `<a class="row row--project">…</a>` rows, whole anchors, in order. */
+export function projectTableRows(html: string): string[] {
+  return [...html.matchAll(/<a class="row row--project"[\s\S]*?<\/a>/g)].map(
+    (match) => match[0],
   );
+}
+
+/**
+ * The specification rail of a rendered project page.
+ *
+ * Scoped to the rail's own panel, because Home draws a `spec` list too and a
+ * pattern matching every `<dl class="spec">` on the site would happily assert
+ * against the wrong one.
+ */
+export function railOf(html: string): string {
+  return /<div class="side__inner">([\s\S]*?)<\/aside>/.exec(html)?.[1] ?? "";
 }
 
 /** The `<dt>` labels of the metadata rail, in document order. */
 export function railLabels(html: string): string[] {
-  const rail =
-    /<dl class="project-rail">([\s\S]*?)<\/dl>/.exec(html)?.[1] ?? "";
-  return [...rail.matchAll(/<dt>([^<]*)<\/dt>/g)].map((match) =>
-    (match[1] ?? "").trim(),
+  return [...railOf(html).matchAll(/<dt class="spec__key">([^<]*)<\/dt>/g)].map(
+    (match) => (match[1] ?? "").trim(),
   );
 }
 
-/** The project slugs a rendered Projects page or Home section links to, in order. */
+/**
+ * The project slugs a rendered Projects page or Home section links to, in order.
+ *
+ * Scanned from the whole page rather than from one listing shape, because the
+ * two listings have different markup — Home draws compact table rows, the
+ * Projects page draws cards — and this helper is used against both. The
+ * navigation's own `/projects/` link carries no slug segment and therefore does
+ * not match.
+ */
 export function listedProjectSlugs(html: string): string[] {
-  return projectRows(html).map(
-    (row) => /href="\/projects\/([^/"]+)\//.exec(row)?.[1] ?? "",
+  return [...html.matchAll(/href="\/projects\/([^/"]+)\//g)].map(
+    (match) => match[1] ?? "",
   );
 }

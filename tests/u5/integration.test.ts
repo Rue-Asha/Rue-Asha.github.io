@@ -20,7 +20,10 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 
 import { type CheckRunnerOptions, runChecks } from "../../src/check-runner.ts";
-import { FONT_PATH, STYLESHEET_PATH } from "../../src/page-renderer/shell.ts";
+import {
+  FONT_PRELOAD_PATHS,
+  STYLESHEET_PATH,
+} from "../../src/page-renderer/shell.ts";
 import {
   TEST_BUILD_DATE,
   TEST_SITE,
@@ -81,10 +84,15 @@ describe("BR11.3, BR11.4 — the build writes what the head references", () => {
       // leading slash. Asserted against the same exported constants the head
       // emits, so the two cannot disagree.
       const stylesheet = path.join(outputRoot, STYLESHEET_PATH.slice(1));
-      const font = path.join(outputRoot, FONT_PATH.slice(1));
 
       await expect(readFile(stylesheet, "utf8")).resolves.toContain(":root");
-      expect((await stat(font)).size).toBeGreaterThan(0);
+
+      for (const preload of FONT_PRELOAD_PATHS) {
+        const font = path.join(outputRoot, preload.slice(1));
+        expect((await stat(font)).size, `${preload} is empty`).toBeGreaterThan(
+          0,
+        );
+      }
     } finally {
       await cleanup();
     }
@@ -110,9 +118,11 @@ describe("BR11.3, BR11.2 — every page gets the treatment", () => {
         expect(html, `${page} has no stylesheet`).toContain(
           `rel="stylesheet" href="${STYLESHEET_PATH}"`,
         );
-        expect(html, `${page} has no font preload`).toContain(
-          `rel="preload" href="${FONT_PATH}"`,
-        );
+        for (const preload of FONT_PRELOAD_PATHS) {
+          expect(html, `${page} does not preload ${preload}`).toContain(
+            `rel="preload" href="${preload}"`,
+          );
+        }
       }
     } finally {
       await cleanup();

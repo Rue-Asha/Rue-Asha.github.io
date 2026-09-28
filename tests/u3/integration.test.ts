@@ -125,22 +125,19 @@ describe("BR9.1 — the rail's shape in a real build", () => {
       );
       const withLive = await page(outputRoot, "projects/beacon/index.html");
 
+      // Both rails carry the same four rows; the repository and the live site
+      // share the `Links` row, and the absent one omits its whole entry rather
+      // than its value (U1 BR3.5, FR3.4).
       expect(railLabels(withoutLive)).toEqual([
         "Year",
         "Type",
         "Tools",
-        "Repo",
+        "Links",
       ]);
-      expect(railLabels(withLive)).toEqual([
-        "Year",
-        "Type",
-        "Tools",
-        "Repo",
-        "Live",
-      ]);
+      expect(railLabels(withLive)).toEqual(["Year", "Type", "Tools", "Links"]);
 
-      // The omission is of the whole row, not of its value (U1 BR3.5, FR3.4).
-      expect(withoutLive).not.toContain("<dt>Live</dt>");
+      expect(withoutLive).not.toContain("project-rail-live-link");
+      expect(withLive).toContain("project-rail-live-link");
       expect(withLive).toContain("https://example.com/beacon");
     } finally {
       await cleanup();
@@ -195,7 +192,7 @@ describe("W3 — the empty Projects page in a real build", () => {
       expect(report.blocking).toBe(false);
 
       const list = await page(outputRoot, "projects/index.html");
-      expect(list).toContain("<h1>Projects</h1>");
+      expect(list).toContain('<h1 class="phead__title">Projects</h1>');
       expect(list).toContain("Nothing here yet.");
       expect(list).toContain('href="/writing/"');
       expect(listedProjectSlugs(list)).toEqual([]);

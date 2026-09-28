@@ -31,6 +31,7 @@ import { buildPostCatalog } from "./post-catalog.ts";
 import { buildProjectCatalog } from "./project-catalog.ts";
 import {
   createMarkupRenderer,
+  extractHeadings,
   unknownFenceLanguages,
 } from "./markup-renderer.ts";
 import {
@@ -56,6 +57,7 @@ import type {
   FieldError,
   SourceOutputRow,
   SiteMetadata,
+  SiteProfile,
 } from "./types.ts";
 
 /** Where the build writes, relative to the repository root (CA1). */
@@ -104,6 +106,16 @@ export interface BuildOptions {
   readonly site: SiteMetadata;
   /** The sentence Home shows under the site name. */
   readonly homeIntro: string;
+  /**
+   * The editorial copy about the author that Home's status readout and the
+   * footer print.
+   *
+   * Optional: a build without it still produces a complete site, falling back to
+   * the values in `page-renderer/shell.ts`. Every *derived* figure in that
+   * readout — the counts, the tool list — comes from the content this build
+   * loaded and is never settable here.
+   */
+  readonly profile?: SiteProfile;
   /**
    * The build's own date, `YYYY-MM-DD`. Injected rather than read from a clock so
    * a test suite does not start failing on 1 January (BR3.2 bounds `year` at the
@@ -179,7 +191,6 @@ export async function buildSite(options: BuildOptions): Promise<BuildManifest> {
     options.outputRoot ?? path.join(repoRoot, DEFAULT_OUTPUT_ROOT);
   const startedAt = options.startedAt ?? new Date();
   const buildDate = options.buildDate ?? todayIso(startedAt);
-  const context: PageContext = { site: options.site, buildDate };
 
   // ---- Phase 1: load -----------------------------------------------------
   const loaded = await loadContent({ repoRoot });
@@ -205,6 +216,19 @@ export async function buildSite(options: BuildOptions): Promise<BuildManifest> {
   }
 
   // ---- Phase 3: render ---------------------------------------------------
+  //
+  // The page context is assembled here rather than at the top of the build,
+  // because the header readout every page carries prints the number of posts
+  // and projects the build found — figures that do not exist until the catalogs
+  // above have been built and found free of errors.
+  const context: PageContext = {
+    site: options.site,
+    buildDate,
+    postCount: postCatalog.posts.length,
+    projectCount: projectCatalog.projects.length,
+    profile: options.profile,
+  };
+
   const markup = await createMarkupRenderer();
   const pages: RenderedPage[] = [];
   const sourceToOutput: SourceOutputRow[] = [];
@@ -222,15 +246,27 @@ export async function buildSite(options: BuildOptions): Promise<BuildManifest> {
       projectCatalog.projects,
       options.site.siteName,
       options.homeIntro,
+      options.profile,
     ),
   );
   emit(renderWriting(postCatalog.posts));
   emit(renderProjects(projectCatalog.projects));
-  emit(renderAbout(options.site.siteName));
+  emit(renderAbout(options.site.siteName, options.profile));
   emit(renderNotFound());
 
-  for (const post of postCatalog.posts) {
-    emit(renderPost(post, await markup.render(post.body)));
+  // The posts arrive already ordered newest-first (BR2.4), so a post's
+  // neighbours are simply the entries either side of it in that list. Derived
+  // from the ordering rather than re-decided here: two definitions of "the next
+  // post" would drift the first time the ordering rule changed.
+  const posts = postCatalog.posts;
+  for (const [index, post] of posts.entries()) {
+    const html = await markup.render(post.body);
+    emit(
+      renderPost(post, html, extractHeadings(html), {
+        newer: posts[index - 1],
+        older: posts[index + 1],
+      }),
+    );
     sourceToOutput.push({
       sourcePath: post.sourcePath,
       outputPath: postOutputPath(post.slug),
@@ -238,8 +274,19 @@ export async function buildSite(options: BuildOptions): Promise<BuildManifest> {
     });
   }
 
-  for (const project of projectCatalog.projects) {
-    emit(renderProject(project, await markup.render(project.body)));
+  // The last project's "next unit" wraps to the first, so the rail is never a
+  // dead end. A single-project site gets no rail at all rather than one
+  // pointing at the page the reader is on.
+  const projects = projectCatalog.projects;
+  for (const [index, project] of projects.entries()) {
+    emit(
+      renderProject(
+        project,
+        await markup.render(project.body),
+        index,
+        projects.length > 1 ? (projects[index + 1] ?? projects[0]) : undefined,
+      ),
+    );
     sourceToOutput.push({
       sourcePath: project.sourcePath,
       outputPath: projectOutputPath(project.slug),

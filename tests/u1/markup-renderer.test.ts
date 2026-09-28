@@ -35,7 +35,9 @@ describe("MarkupRenderer", () => {
       ].join("\n"),
     );
 
-    expect(html).toContain("<h2>A heading</h2>");
+    // `h2` alone carries an anchor id — the post page's contents rail links to
+    // those and nothing else. Every other level renders bare.
+    expect(html).toContain('<h2 id="a-heading">A heading</h2>');
     expect(html).toContain("<li>one</li>");
     expect(html).toContain('<a href="/writing/">a link</a>');
     expect(html).toContain('alt="alt text"');

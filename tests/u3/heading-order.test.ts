@@ -89,15 +89,18 @@ describe("Home has a well-formed heading outline (BR5.3, NFR1)", () => {
     expect(countLevelOneHeadings(html)).toBe(1);
   });
 
-  it("keeps its project rows one level below the section heading they sit under", () => {
+  it("gives each listing a section heading and its rows no heading of their own", () => {
     const html = renderPage(
       renderHome(POSTS, PROJECTS, TEST_SITE.siteName, "An intro."),
     );
 
-    // Home was already correct and must stay correct: the fix to the Projects
-    // page moved a shared include, so the regression risk runs this way.
-    expect(html).toContain('<h2 id="home-projects">Projects</h2>');
-    expect(html).toContain('<h3><a href="/projects/alpha/"');
+    // The section heading is the only heading in a listing block. A row is one
+    // link around a whole table row, and giving each row a heading as well
+    // would put an `h3` inside an anchor for every entry — an outline made of
+    // link text rather than of sections.
+    expect(html).toContain('<h2 id="home-projects">Selected work</h2>');
+    expect(html).toContain('<h2 id="home-writing">Recent writing</h2>');
+    expect(html.match(/<h3[ >]/g) ?? []).toHaveLength(0);
   });
 });
 
@@ -112,6 +115,6 @@ describe("a project write-up page has a well-formed heading outline (BR9.5, NFR1
   it("puts the project name at h1 rather than leaving the page without one", () => {
     const html = renderPage(renderProject(PROJECTS[1]!, BODY));
 
-    expect(html).toContain("<h1>Beta</h1>");
+    expect(html).toContain('<h1 class="project__name">Beta</h1>');
   });
 });

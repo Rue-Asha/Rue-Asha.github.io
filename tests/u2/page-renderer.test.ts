@@ -42,11 +42,16 @@ const POSTS = [
   }),
 ];
 
-/** The `<li class="post-row">` blocks of a rendered list, in document order. */
+/**
+ * The Writing entries of a rendered list, in document order.
+ *
+ * Two row classes, because a listing with no tagged post anywhere in it drops
+ * the tag column rather than drawing one empty cell per row.
+ */
 function postRows(html: string): string[] {
-  return [...html.matchAll(/<li class="post-row">([\s\S]*?)<\/li>/g)].map(
-    (match) => match[1] ?? "",
-  );
+  return [
+    ...html.matchAll(/<a class="row row--post(?:-plain)?"[\s\S]*?<\/a>/g),
+  ].map((match) => match[0]);
 }
 
 function anchorCount(html: string): number {
@@ -86,8 +91,8 @@ describe("The Writing list (BR8.5, BR8.6)", () => {
       expect(anchorCount(row)).toBe(1);
 
       const anchorBody = /<a\s[^>]*>([\s\S]*?)<\/a>/.exec(row)?.[1] ?? "";
-      expect(anchorBody).toContain("post-row-title");
-      expect(anchorBody).toContain("post-row-summary");
+      expect(anchorBody).toContain("row__name");
+      expect(anchorBody).toContain("row__desc");
       expect(anchorBody).toContain("<time");
     }
   });
@@ -95,7 +100,7 @@ describe("The Writing list (BR8.5, BR8.6)", () => {
   it("keeps the heading, the sentence and the route to Projects when nothing is published (W5, FR2.9)", () => {
     const main = renderWriting([]).main;
 
-    expect(main).toContain("<h1>Writing</h1>");
+    expect(main).toContain('<h1 class="phead__title">Writing</h1>');
     expect(main).toContain("Nothing published yet.");
     expect(main).toContain('href="/projects/"');
     expect(postRows(main)).toHaveLength(0);
@@ -120,7 +125,7 @@ describe("The post page (BR8.4, BR8.7)", () => {
 
   it("emits exactly two All posts links, one before the body and one after it (BR8.4)", () => {
     const backLinks = [
-      ...page.main.matchAll(/<p class="back-link">[\s\S]*?<\/p>/g),
+      ...page.main.matchAll(/<a class="lbl back"[\s\S]*?<\/a>/g),
     ].map((match) => match[0]);
 
     expect(backLinks).toHaveLength(2);

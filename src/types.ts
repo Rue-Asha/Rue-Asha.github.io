@@ -59,6 +59,21 @@ export interface Post {
   readonly summary: string;
   /** Strict ISO 8601 calendar date, `YYYY-MM-DD` (BR2.3). */
   readonly date: string;
+  /**
+   * Optional subject labels, in declared order.
+   *
+   * Optional deliberately: `title`, `summary` and `date` are the three fields a
+   * post must carry, and adding a fourth required one would fail the build on
+   * every post already written. An absent list is an empty list, never an
+   * error, and a post with none simply shows no chips.
+   */
+  readonly tags: readonly string[];
+  /**
+   * Optional short line above the title. Absent means the line is omitted
+   * entirely rather than rendered empty — the same rule `Project.liveUrl`
+   * follows (BR3.5).
+   */
+  readonly kicker?: string;
   /** The Markdown body, unrendered at this layer. */
   readonly body: string;
   /** Repository-relative path of the source file, for error messages and the manifest. */
@@ -99,6 +114,24 @@ export interface SiteMetadata {
   readonly fallbackDescription: string;
   /** The exact policy value emitted into every page head (BR5.10). */
   readonly contentSecurityPolicy: string;
+}
+
+/**
+ * SiteProfile — the editorial copy about the author that the shell and Home
+ * read, held beside the other editorial values in `site.config.ts`.
+ *
+ * Not part of `SiteMetadata`, whose four attributes `entities.md` closes: that
+ * entity is the values every page's *head* needs, and none of these appear in a
+ * head. They are here rather than inside a template so that changing the
+ * sentence Home's status readout shows is not a code change.
+ */
+export interface SiteProfile {
+  /** One line, printed beside the author's name on Home. */
+  readonly role: string;
+  /** Printed on Home and in the footer's base line. */
+  readonly location: string;
+  /** What the author is working on at the moment. */
+  readonly now: string;
 }
 
 /** One row of BuildManifest.sourceToOutput. Drafts produce no row (BR1.7, BR6.2). */

@@ -78,6 +78,9 @@ export function aPost(overrides: Partial<Post> = {}): Post {
     title: "A post",
     summary: "A one-line summary.",
     date: "2026-03-12",
+    // The two optional fields default to their absent form, so a test that is
+    // not about tags or kickers reads as one post with neither.
+    tags: [],
     body: "Body text.",
     sourcePath: "content/posts/a-post/index.md",
     ...overrides,
