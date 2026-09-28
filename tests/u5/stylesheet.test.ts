@@ -343,6 +343,53 @@ describe("NFR1 — a link is never distinguished by colour alone", () => {
   });
 });
 
+describe("the About panel's labels all resolve to the accent", () => {
+  it("lets no later rule of equal weight take one of them back to grey", () => {
+    // A regression guard for a fault that had already happened: the accent was
+    // set for the four label selectors in one group, and a layout rule further
+    // down the same section re-declared `color: var(--fg-3)` on one of them.
+    // Equal specificity, later in the file, so it won — and one key sat grey
+    // among four accented ones with nothing in the suite noticing. Markup tests
+    // cannot see this: the class is on the element either way.
+    //
+    // Checked by resolution rather than by presence. For each selector, every
+    // rule whose selector list mentions it is collected in document order and
+    // the last `color` declaration among them must be the accent, which is what
+    // the browser will actually apply.
+    const labelSelectors = [
+      ".about .panel__head .lbl",
+      ".about__side-title",
+      ".about__side .spec__key",
+      ".about__now .lbl",
+    ];
+
+    for (const selector of labelSelectors) {
+      const colours: string[] = [];
+
+      for (const rule of rules.matchAll(/([^{}]+)\{([^}]*)\}/g)) {
+        const selectors = (rule[1] ?? "")
+          .split(",")
+          .map((part) => part.replace(/\s+/g, " ").trim());
+        if (!selectors.includes(selector)) continue;
+
+        for (const declaration of (rule[2] ?? "").matchAll(
+          /(?:^|;)\s*color\s*:\s*([^;]+)/g,
+        )) {
+          colours.push((declaration[1] ?? "").trim());
+        }
+      }
+
+      expect(colours, `${selector} sets no colour anywhere`).not.toHaveLength(
+        0,
+      );
+      expect(
+        colours.at(-1),
+        `${selector} is overridden back to ${String(colours.at(-1))}`,
+      ).toBe("var(--signal)");
+    }
+  });
+});
+
 describe("NFR6 — a long word never widens the page", () => {
   it("lets .prose break a word too long for the measure", () => {
     // The declaration, not a rendered width: asserting a pixel measurement

@@ -1695,10 +1695,13 @@ main {
   text-wrap: pretty;
 }
 
+/* Layout only. The colour is set once, with the panel's other labels, further up
+   this section — and it had to be taken out of here, because this rule carries
+   the same specificity and sits later in the file, so its `--fg-3` was quietly
+   winning and leaving this one key grey among four accented ones. */
 .about__now .lbl {
   display: block;
   margin-block-end: 0.3rem;
-  color: var(--fg-3);
 }
 
 /* ---- 404 ---------------------------------------------------------------- */
