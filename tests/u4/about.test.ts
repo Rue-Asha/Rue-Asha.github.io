@@ -18,9 +18,15 @@
 
 import { describe, expect, it } from "vitest";
 
-import { SITE_LINKS } from "../../src/page-renderer/shell.ts";
+import { renderWriting } from "../../src/page-renderer/pages.ts";
+import {
+  FEED_PATH,
+  SITE_LINKS,
+  renderDocument,
+} from "../../src/page-renderer/shell.ts";
 import { TEST_SITE } from "../u1/helpers.ts";
 import {
+  TEST_CONTEXT,
   anchorFor,
   anchors,
   countLevelOneHeadings,
@@ -28,6 +34,7 @@ import {
   mainParagraphs,
   offOriginResources,
   renderAboutPage,
+  renderAboutPageWith,
 } from "./helpers.ts";
 
 const GITHUB_HREF = "https://github.com/Rue-Asha";
@@ -87,7 +94,7 @@ describe("the contact links are plain outbound links with real names (BR10.2)", 
 });
 
 describe("both destinations come from the one place the site holds them", () => {
-  it("emits exactly the two hrefs SITE_LINKS carries, in that order", () => {
+  it("carries the two contact hrefs in order, both read from SITE_LINKS", () => {
     const html = renderAboutPage();
     const main = /<main[^>]*>([\s\S]*?)<\/main>/.exec(html)?.[1] ?? "";
     const destinations = anchors(main).map((anchor) => anchor.href);
@@ -97,10 +104,39 @@ describe("both destinations come from the one place the site holds them", () => 
     // page and Home's intro row already read these two URLs from `SITE_LINKS`;
     // About typing them out separately is what made three copies of two values,
     // and it is the copy that would have been missed when one of them changed.
-    expect(destinations).toEqual([
-      SITE_LINKS.github.href,
-      SITE_LINKS.email.href,
-    ]);
+    //
+    // The contact pair is asserted as a subsequence rather than as the whole
+    // list, and the reason is that the earlier form pinned the wrong property.
+    // What BR10.2 is about is where an *outbound* link's URL comes from, not how
+    // many links the page is allowed to have; the equality form made an ordinary
+    // internal route — the feed the rail now offers — read as a rule violation.
+    // The link inventory is still closed, by the two assertions below it.
+    expect(
+      destinations.filter(
+        (href) =>
+          href === SITE_LINKS.github.href || href === SITE_LINKS.email.href,
+      ),
+    ).toEqual([SITE_LINKS.github.href, SITE_LINKS.email.href]);
+
+    // Nothing leaves this origin except through `SITE_LINKS`. This is the half
+    // of the old assertion that was load-bearing, and it is now stated
+    // directly: a hard-coded profile URL added to a new band fails here.
+    const knownExternal: string[] = Object.values(SITE_LINKS).map(
+      (link) => link.href,
+    );
+    const offSite = destinations.filter(
+      (href) => !href.startsWith("/") && !knownExternal.includes(href),
+    );
+    expect(offSite).toEqual([]);
+
+    // Every remaining link is a root-relative path on this site. Catches a
+    // relative href, which resolves differently from `/about/` than it does
+    // from the page it was copied out of.
+    const internal = destinations.filter((href) => href.startsWith("/"));
+    expect(internal).toContain(FEED_PATH);
+    expect(
+      internal.every((href) => href.endsWith("/") || href.includes(".")),
+    ).toBe(true);
 
     // The two literals the older tests in this file pin, checked against the
     // same constant — otherwise they could keep asserting a URL the site no
@@ -123,6 +159,73 @@ describe("the page carries prose beneath its heading (BR10.3)", () => {
     // The placeholder U1 shipped is gone rather than merely added to.
     expect(html).not.toContain(U1_PLACEHOLDER);
     expect(html).not.toContain("placeholder");
+  });
+});
+
+describe("the page head carries the title alone, with no lead beneath it", () => {
+  it("emits the full-width head here and keeps the split head on the listings", () => {
+    const about = renderAboutPage();
+
+    // The lead this page used to carry was a table of contents for the panel
+    // directly beneath it. Its absence is a decision, so it is asserted: a
+    // later edit that reinstates one has to come past this test rather than
+    // arriving as a quiet addition.
+    expect(about).toContain('<div class="phead__grid phead__grid--full">');
+    expect(about).toContain('<section class="phead phead--tight">');
+    expect(about).not.toContain('class="phead__lead"');
+
+    // The listings are untouched by this: their leads still fill their column,
+    // and a change to About's head must not quietly restyle the other two.
+    const writing = renderDocument(renderWriting([]), TEST_CONTEXT);
+    expect(writing).toContain('<p class="phead__lead">');
+    expect(writing).toContain('<section class="phead">');
+    expect(writing).not.toContain("phead__grid--full");
+  });
+
+  it("leaves no empty element where the lead and its rule used to be", () => {
+    const html = renderAboutPage();
+    const head = /<section class="phead[^"]*">([\s\S]*?)<\/section>/.exec(
+      html,
+    )?.[1];
+
+    // A `<p></p>` or a leftover spacer would keep the vertical gap the removed
+    // block occupied, which is the usual way a "removed" element survives.
+    expect(head).toBeDefined();
+    expect(head).not.toMatch(/<p[^>]*>\s*<\/p>/);
+    expect(head).not.toContain("phead__rule");
+  });
+});
+
+describe("the panel opens with its lead and states the role exactly once", () => {
+  it("sets the opening line apart from the prose it introduces", () => {
+    const html = renderAboutPage();
+
+    // The lead is a separate element rather than the first `.prose` paragraph,
+    // because it is typeset differently; asserting it exists as its own element
+    // is what stops it being folded back into the run of body text.
+    expect([...html.matchAll(/<p class="about__lead">/g)]).toHaveLength(1);
+  });
+
+  it("prints the role once and the location once across the whole page head", () => {
+    const html = renderAboutPage();
+    const main = /<main[^>]*>([\s\S]*?)<\/main>/.exec(html)?.[1] ?? "";
+
+    // The page used to say "Sysadmin / DevOps in Germany" in its lead, print
+    // Germany again in the count cell beside it, and then list Role and Based as
+    // two more rows of the rail. Each now appears once in `main`; the footer's
+    // own copy of the location is outside it and is not counted here.
+    expect([...main.matchAll(/Sysadmin \/ DevOps/g)]).toHaveLength(1);
+    expect([...main.matchAll(/Germany/g)]).toHaveLength(1);
+  });
+
+  it("drops the rail's note when the profile carries no current work", () => {
+    const withNow = renderAboutPage();
+    expect(withNow).toContain('class="about__now"');
+
+    // Cleared in `site.config.ts`, the note goes with it rather than leaving a
+    // label over a blank — the rule BR3.5 states for the project rail.
+    const withoutNow = renderAboutPageWith({ now: "" });
+    expect(withoutNow).not.toContain('class="about__now"');
   });
 });
 

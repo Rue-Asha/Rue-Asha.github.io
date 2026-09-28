@@ -32,6 +32,7 @@ import { formatDisplayDate, parseIsoDate } from "../content-transforms.ts";
 import type { Post, Project, SiteProfile } from "../types.ts";
 import {
   DEFAULT_PROFILE,
+  FEED_PATH,
   OUTPUT_PATHS,
   type PageDefinition,
   ROUTES,
@@ -89,7 +90,17 @@ function emptyState(sentence: string, href: string, label: string): string {
   ].join("\n");
 }
 
-/** The eyebrow, title and lead a listing page opens with. */
+/**
+ * The eyebrow, title and lead a page opens with.
+ *
+ * The lead is optional, and passing `""` is a real choice rather than a missing
+ * value. The default arrangement is two columns — title left, lead right, on a
+ * shared baseline — and it only works while the lead is long enough to fill its
+ * column: at two lines the pair reads as one block, which is what the listings
+ * get. About has nothing to say there that its own panel does not say better a
+ * few lines further down, so it passes no lead and the title takes the full
+ * width, sitting directly under the bar rule with the panel beneath it.
+ */
 function pageHead(
   eyebrow: string,
   title: string,
@@ -97,15 +108,21 @@ function pageHead(
   count: string,
 ): string {
   return [
-    '      <section class="phead">',
+    // The head's lower padding exists to clear a two-line lead. With no lead it
+    // is holding a one-word title away from the panel it introduces, on top of
+    // the section gap that already separates them — so the variant drops it and
+    // lets the standard gap do the whole job.
+    `      <section class="phead${lead === "" ? " phead--tight" : ""}">`,
     '        <div class="shell">',
     '          <div class="phead__bar">',
     `            <span class="lbl">${escapeHtml(eyebrow)}</span>`,
     `            <span class="lbl phead__count">${escapeHtml(count)}</span>`,
     "          </div>",
-    '          <div class="phead__grid">',
+    `          <div class="phead__grid${lead === "" ? " phead__grid--full" : ""}">`,
     `            <h1 class="phead__title">${escapeHtml(title)}</h1>`,
-    `            <p class="phead__lead">${escapeHtml(lead)}</p>`,
+    ...(lead === ""
+      ? []
+      : [`            <p class="phead__lead">${escapeHtml(lead)}</p>`]),
     "          </div>",
     "        </div>",
     "      </section>",
@@ -806,14 +823,40 @@ export function renderProject(
  * formatter rewrites its line breaks.
  */
 const ABOUT_PROSE: readonly string[] = [
-  "I build things and write about what I am currently learning or find interesting.",
   "Most of what I make is small, self-contained and built to be understood. This site is a folder of Markdown turned into a folder of HTML by a few hundred lines of TypeScript, with no database, no server, and nothing running while you read it. I would rather write a build than configure one: a build I wrote fails loudly, and a build I configured fails quietly.",
-  "Writing here is a record of what I was working out at the time rather than finished advice. Projects are the things that got far enough to show.",
+  "That preference is most of what I have to say about the work. The failures that cost the most are rarely the loud ones — they are the ones that report success while quietly dropping something, and go unnoticed until somebody needs the thing that went missing. So what I build is built to stop, by name, at the first sign it cannot do what it claims.",
+  "Writing here is a record of what I was working out at the time rather than finished advice. Some of it will age badly and I would rather leave it up than tidy the history. Projects are the things that got far enough to show.",
 ];
 
 /**
- * About — the prose beside a readout of where else to find the author (FR4.1,
- * BR10.1, BR10.2, BR10.3).
+ * The line the About panel opens with, set in the display register.
+ *
+ * Separate from {@link ABOUT_PROSE} rather than being its first entry, because
+ * it is typeset differently: three paragraphs at one size is what made this page
+ * read as a wall, and the opening sentence is the one thing on it a reader is
+ * guaranteed to actually read. Kept to a single sentence for the same reason —
+ * at this size a second one would set the whole panel shouting.
+ */
+const ABOUT_LEAD =
+  "I keep systems running, automate the parts that should not need me, and build small things of my own to find out how they actually work.";
+
+/**
+ * About — the prose and where else to find the author (FR4.1, BR10.1, BR10.2,
+ * BR10.3).
+ *
+ * One panel, deliberately. The page carries no principles band and no colophon:
+ * a personal site that states its own values in four numbered cells is writing
+ * a manifesto nobody asked for, and a readout of the generator and the font
+ * stack is a fact about the tooling rather than about the person the page is
+ * supposed to introduce. What is left is the thing a reader came for.
+ *
+ * The panel earns its space through treatment rather than through more sections.
+ * It carries a head strip and the registration ticks the hero grid carries, so
+ * it reads as one instrument rather than as a bordered box; the opening line is
+ * set in the display register; and the side rail lists only routes that
+ * genuinely leave this page. Role and Based used to sit in that rail under the
+ * heading "Elsewhere" — two facts the footer prints on every page and Home's
+ * status readout prints again, under a heading that did not describe them.
  *
  * Emitted on every build, unconditionally, and never empty: BR10.3 requires
  * prose identifying the author *and* at least one contact link, and says
@@ -838,6 +881,69 @@ export function renderAbout(
   siteName: string,
   profile: SiteProfile = DEFAULT_PROFILE,
 ): PageDefinition {
+  const panel = [
+    '      <section class="band">',
+    '        <div class="shell">',
+    '          <div class="about panel ticks">',
+    // The head strip is the panel's own label, and its right-hand cell is where
+    // the role belongs: stated once, as the caption of the thing it describes,
+    // rather than as a row of a rail that claimed to be about somewhere else.
+    // The location is not repeated here — the page head above already prints it
+    // in the cell every listing page uses for its count.
+    '            <div class="panel__head">',
+    '              <span class="lbl">',
+    '                <span class="dot dot--sig dot--live" aria-hidden="true"></span>',
+    "                Identity",
+    "              </span>",
+    `              <span class="lbl panel__head-end">${escapeHtml(profile.role)}</span>`,
+    "            </div>",
+    '            <div class="about__body schematic">',
+    '              <div class="about__text">',
+    `                <p class="about__lead">${escapeHtml(ABOUT_LEAD)}</p>`,
+    '                <div class="prose">',
+    ...ABOUT_PROSE.map(
+      (paragraph) => `                  <p>${escapeHtml(paragraph)}</p>`,
+    ),
+    "                </div>",
+    "              </div>",
+    '              <div class="about__side">',
+    '                <h2 class="about__side-title">Elsewhere</h2>',
+    '                <dl class="spec">',
+    specItem(
+      "Code",
+      `<a class="lnk" href="${escapeHtml(SITE_LINKS.github.href)}" rel="noopener noreferrer">${escapeHtml(SITE_LINKS.github.accessibleName)}</a>`,
+      "                  ",
+    ),
+    specItem(
+      "Email",
+      `<a class="lnk" href="${escapeHtml(SITE_LINKS.email.href)}">${escapeHtml(SITE_LINKS.email.label)}</a>`,
+      "                  ",
+    ),
+    specItem(
+      "Feed",
+      `<a class="lnk" href="${FEED_PATH}">Atom feed</a>`,
+      "                  ",
+    ),
+    "                </dl>",
+    // The rail's own footnote, sitting under the three routes rather than in
+    // the run of prose: it is about the page a reader is on, not about the
+    // author, and `now` is editorial copy from `site.config.ts` — cleared
+    // there, the note goes with it rather than leaving a stranded label.
+    ...(profile.now === ""
+      ? []
+      : [
+          '                <p class="about__now">',
+          '                  <span class="lbl">Now</span>',
+          `                  ${escapeHtml(profile.now)}`,
+          "                </p>",
+        ]),
+    "              </div>",
+    "            </div>",
+    "          </div>",
+    "        </div>",
+    "      </section>",
+  ].join("\n");
+
   return {
     outputPath: OUTPUT_PATHS.about,
     title: "About",
@@ -848,37 +954,16 @@ export function renderAbout(
       pageHead(
         "Operator / About",
         "About",
-        `${profile.role} in ${profile.location}. I build small systems and write down what they taught me.`,
+        // Deliberately none. The lead here was a table of contents for a page
+        // one screen long — "who I am, what I make, where to find me" is the
+        // panel directly beneath it, item for item, and a reader reaches the
+        // real thing before they would have finished acting on the summary.
+        // Its rule went with it: a separator with nothing on it is a line
+        // between a title and the thing the title is already introducing.
+        "",
         profile.location,
       ),
-      '      <div class="shell">',
-      '        <div class="about schematic">',
-      '          <div class="about__text">',
-      '            <div class="prose">',
-      ...ABOUT_PROSE.map(
-        (paragraph) => `              <p>${escapeHtml(paragraph)}</p>`,
-      ),
-      "            </div>",
-      "          </div>",
-      '          <div class="about__side">',
-      '            <h2 class="about__side-title">Elsewhere</h2>',
-      '            <dl class="spec">',
-      specItem("Role", escapeHtml(profile.role), "              "),
-      specItem("Based", escapeHtml(profile.location), "              "),
-      specItem(
-        "Code",
-        `<a class="lnk" href="${escapeHtml(SITE_LINKS.github.href)}" rel="noopener noreferrer">${escapeHtml(SITE_LINKS.github.accessibleName)}</a>`,
-        "              ",
-      ),
-      specItem(
-        "Email",
-        `<a class="lnk" href="${escapeHtml(SITE_LINKS.email.href)}">${escapeHtml(SITE_LINKS.email.label)}</a>`,
-        "              ",
-      ),
-      "            </dl>",
-      "          </div>",
-      "        </div>",
-      "      </div>",
+      panel,
     ].join("\n"),
   };
 }

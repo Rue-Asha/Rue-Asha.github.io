@@ -1146,6 +1146,14 @@ main {
   padding-block: clamp(1.75rem, 4vw, 3.25rem) clamp(1.5rem, 3vw, 2.5rem);
 }
 
+/* A head with no lead beneath its title drops the lower padding and leans on the
+   section gap below it instead. Kept, the two stack to as much as seven rems
+   between a single-word title and the panel it introduces — a gap sized for a
+   block that is no longer there. */
+.phead--tight {
+  padding-block-end: 0;
+}
+
 .phead__bar {
   display: flex;
   justify-content: space-between;
@@ -1185,6 +1193,15 @@ main {
   line-height: 1.6;
   color: var(--fg-2);
   text-wrap: pretty;
+}
+
+/* The title takes the whole width when the page passes no lead. Nothing else
+   changes: the bar above it and the spacing below are the ones every page head
+   uses, so the two arrangements are the same head with one element absent
+   rather than two layouts to keep in step. */
+.phead__grid--full {
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
 }
 
 /* ---- Writing listing ---------------------------------------------------- */
@@ -1582,9 +1599,19 @@ main {
 
 /* ---- About -------------------------------------------------------------- */
 
-.about {
+/* The panel is the page. It carries the bordered ground and the registration
+   ticks (the same pair the hero grid carries), and the two columns are a
+   schematic grid *inside* it rather than the outer element — which is what lets
+   the head strip run the full width above them instead of being a third cell. */
+.about__body {
   grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
   align-items: stretch;
+  /* The schematic's own border is dropped: the panel around it already draws
+     one, and the head strip above already draws the line between them. Kept
+     would put two 1px rules a pixel apart on all four sides. The 1px column gap
+     over the line-coloured ground still draws the divider between the two
+     columns, which is the part this grid is here for. */
+  border: 0;
 }
 
 .about__text {
@@ -1608,6 +1635,69 @@ main {
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+/* Every label on this panel takes the accent: the head strip's own name and the
+   role opposite it, the rail's heading, and the rail's keys. They are one
+   labelled set — the panel says what it is, then what each row of it is — and
+   colouring part of that set while leaving the rest grey splits one readout into
+   two that look unrelated.
+
+   Scoped to this panel rather than applied to `.panel__head .lbl` and
+   `.spec__key` themselves: those two components also draw the post page's
+   contents rail, every project page's head and spec rail, and Home's status
+   readout, where the labels are deliberately quiet against values that are the
+   point. Changing the base rules would restyle four page types to settle one,
+   including the Home page that is already signed off.
+
+   `--signal` measures 5.47:1 on the page ground and 5.6:1 on the rail's
+   `--panel-2`. Both clear the 4.5:1 floor, which these need in full: at 11px
+   uppercase none of them is large text. */
+.about .panel__head .lbl,
+.about__side-title,
+.about__side .spec__key,
+.about__now .lbl {
+  color: var(--signal);
+}
+
+/* The opening line, set in the display register.
+
+   This is the one change that does most of the work on this page. Three
+   paragraphs at one size read as a wall a reader skims past; a single sentence
+   at `--t-lg` gives the panel somewhere to start, and it is set in the sans at
+   a lighter colour than the body deliberately — large *and* darker than the
+   text beneath it would make the paragraphs look like a caption to it.
+
+   The rule beneath separates it from the prose without a horizontal line's
+   worth of ceremony: it is the same hairline the panel's own head strip uses. */
+.about__lead {
+  font-size: var(--t-lg);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+  text-wrap: pretty;
+  padding-block-end: clamp(1rem, 2vw, 1.4rem);
+  margin-block-end: clamp(1rem, 2vw, 1.4rem);
+  border-block-end: 1px solid var(--line);
+}
+
+/* What the rail is currently pointed at. A note about the author rather than a
+   route out, so it sits below the three routes and behind a rule, and it takes
+   the label treatment for its key the way every other readout on the site
+   does. */
+.about__now {
+  margin-block-start: 0.35rem;
+  padding-block-start: 0.9rem;
+  border-block-start: 1px solid var(--line);
+  font-size: var(--t-base);
+  line-height: 1.5;
+  color: var(--fg-2);
+  text-wrap: pretty;
+}
+
+.about__now .lbl {
+  display: block;
+  margin-block-end: 0.3rem;
   color: var(--fg-3);
 }
 
@@ -1727,7 +1817,7 @@ main {
 }
 
 @media (max-width: 56rem) {
-  .about {
+  .about__body {
     grid-template-columns: 1fr;
   }
 
