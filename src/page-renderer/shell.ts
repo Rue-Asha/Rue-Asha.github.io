@@ -236,13 +236,8 @@ function renderCspTag(site: SiteMetadata): string {
 
 /**
  * The feed's site path, derived from its output path so the two cannot disagree.
- *
- * Exported because About's "Elsewhere" rail offers the feed as a route out of
- * the site alongside the two contact links, and a second literal `/feed.xml`
- * spelled in a template is exactly the copy that would be missed when the
- * output path moved.
  */
-export const FEED_PATH = toSitePath(FEED_OUTPUT_PATH);
+const FEED_PATH = toSitePath(FEED_OUTPUT_PATH);
 
 /**
  * Head metadata: title, description, canonical URL, the feed autodiscovery link,

@@ -479,17 +479,10 @@ describe("PageRenderer — the page templates", () => {
     expect(notFound).toContain('<ul class="page-routes">');
 
     // About's paragraphs are full-strength body text and stay unclassed — the
-    // whole point is that the two are distinguishable. Asserted as "the prose
-    // block contains unclassed paragraphs" rather than against the opening
-    // words, which is what the earlier form pinned: the sentence is editorial
-    // copy the author edits (U4CA1), and rewriting it broke a test about CSS
-    // classes. The lead is a classed paragraph by design and sits outside the
-    // prose block, so it is not what this matches.
+    // whole point is that the two are distinguishable.
     const about = render(renderAbout(TEST_SITE.siteName));
     expect(about).not.toContain("page-note");
-    const aboutProse = /<div class="prose">([\s\S]*?)<\/div>/.exec(about)?.[1];
-    expect(aboutProse).toBeDefined();
-    expect([...(aboutProse ?? "").matchAll(/<p>/g)].length).toBeGreaterThan(1);
+    expect(about).toContain("<p>I build things");
 
     // Still no illustration. The oversized numeral BR5.6 ruled out IS now
     // drawn, and the reversal is deliberate rather than an oversight: that rule

@@ -13,11 +13,9 @@ import { fileURLToPath } from "node:url";
 
 import { renderAbout } from "../../src/page-renderer/pages.ts";
 import {
-  DEFAULT_PROFILE,
   type PageContext,
   renderDocument,
 } from "../../src/page-renderer/shell.ts";
-import type { SiteProfile } from "../../src/types.ts";
 import { TEST_BUILD_DATE, TEST_SITE } from "../u1/helpers.ts";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -42,20 +40,6 @@ export const TEST_CONTEXT: PageContext = {
  */
 export function renderAboutPage(): string {
   return renderDocument(renderAbout(TEST_SITE.siteName), TEST_CONTEXT);
-}
-
-/**
- * The About page rendered against a profile other than the default.
- *
- * Separate from {@link renderAboutPage} rather than replacing it: the default
- * call is the case every other test in this file exercises, and the page must
- * keep rendering completely from it, so it stays reachable.
- */
-export function renderAboutPageWith(profile: Partial<SiteProfile>): string {
-  return renderDocument(
-    renderAbout(TEST_SITE.siteName, { ...DEFAULT_PROFILE, ...profile }),
-    TEST_CONTEXT,
-  );
 }
 
 /**
