@@ -1311,7 +1311,13 @@ main {
   transition: border-color var(--fast) var(--ease);
 }
 
-.unit:hover {
+/* The border is on `.unit` (it carries `.panel`) and the state is on the link
+   inside it, so this reads upwards. A browser without `:has()` drops the rule
+   and loses the border lift — the edge marker, the body tint and the global
+   focus ring all still fire, so nothing that tells a reader where they are
+   depends on it. */
+.unit:has(.unit__link:hover),
+.unit:has(.unit__link:focus-visible) {
   border-color: var(--line-2);
 }
 
@@ -1319,6 +1325,47 @@ main {
   display: grid;
   grid-template-rows: auto 1fr auto;
   height: 100%;
+  position: relative;
+  transition: background-color var(--fast) var(--ease);
+}
+
+/**
+ * The card answers a pointer the way a Writing row does.
+ *
+ * `.row::before` wipes a 2px signal edge marker in from the top on hover, and
+ * the row tints to `--panel-2` under it. This is the same marker and the same
+ * tint, declared here rather than shared with `.row` because the two components
+ * have nothing else in common — a row is a grid of columns, a card is a grid of
+ * three stacked zones. What they share is the interaction, so that is what is
+ * repeated: a reader who has learned what a hovered entry looks like on Writing
+ * has learned it for Projects too.
+ *
+ * The head and foot draw their own backgrounds, so the tint lands on the body
+ * alone. That is the zone the tint is for — the name and the summary are what
+ * the card is offering — and a tint that covered all three would flatten the
+ * banding the card is built from.
+ */
+.unit__link::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 2px;
+  background: var(--signal);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform var(--fast) var(--ease);
+  z-index: 1;
+}
+
+.unit__link:hover::before,
+.unit__link:focus-visible::before {
+  transform: scaleY(1);
+}
+
+.unit__link:hover .unit__body,
+.unit__link:focus-visible .unit__body {
+  background: var(--panel-2);
 }
 
 /**
@@ -1341,7 +1388,12 @@ main {
   background: var(--panel-2);
 }
 
+/* Weight as well as hue, for the reason `.year__num` states: the index is the
+   one accent in the card's head, and at 500 it was separated from the two
+   labels beside it by colour alone. At 600 it still reads as the lead item
+   with the colour removed. */
 .unit__idx {
+  font-weight: 600;
   color: var(--signal);
 }
 
@@ -1350,8 +1402,14 @@ main {
   white-space: nowrap;
 }
 
+/* The card's own measure. A grid of three or more tracks gives the body about
+   26rem and the old 1.25rem block padding sat right; at two projects the track
+   is twice that and the same padding left the name floating in the middle of a
+   wide, shallow box. The vertical padding now grows with the viewport the way
+   the page head's does, so the card keeps its proportions as it widens. */
 .unit__body {
-  padding: 1.25rem 1rem;
+  padding: clamp(1.25rem, 2vw, 1.9rem) 1rem;
+  transition: background-color var(--fast) var(--ease);
 }
 
 .unit__name {
@@ -1363,15 +1421,28 @@ main {
   transition: color var(--fast) var(--ease);
 }
 
-.unit__link:hover .unit__name {
+.unit__link:hover .unit__name,
+.unit__link:focus-visible .unit__name {
   color: var(--signal);
 }
 
+/**
+ * A step up from `.row__desc`, and capped at a measure.
+ *
+ * This is the same sentence a Home project row prints, but it is doing more
+ * work here: the row has a date, a type and a year beside it to be scanned
+ * against, and the card's summary is the only prose on the page. At `--t-base`
+ * in a 40rem track it read as a caption under the name rather than as the
+ * card's content, and it ran to about 90 characters a line — roughly twice the
+ * measure the prose pages hold themselves to. `--t-body` and 46ch put the
+ * name/summary step back where the page head's title/lead step already is.
+ */
 .unit__summary {
-  margin-block-start: 0.6rem;
-  font-size: var(--t-base);
+  margin-block-start: 0.7rem;
+  max-width: 46ch;
+  font-size: var(--t-body);
   color: var(--fg-2);
-  line-height: 1.55;
+  line-height: 1.6;
   text-wrap: pretty;
 }
 
@@ -1400,7 +1471,8 @@ main {
     transform var(--fast) var(--ease);
 }
 
-.unit__link:hover .unit__go {
+.unit__link:hover .unit__go,
+.unit__link:focus-visible .unit__go {
   color: var(--signal);
   transform: translateX(3px);
 }

@@ -102,7 +102,7 @@ export function projectRows(html: string): string[] {
   // chips are list items too, and a non-greedy match would stop at the first of
   // them and report a card with no tools in it.
   return [
-    ...html.matchAll(/<li class="unit panel ticks">([\s\S]*?<\/a>)\s*<\/li>/g),
+    ...html.matchAll(/<li class="unit panel">([\s\S]*?<\/a>)\s*<\/li>/g),
   ].map((match) => match[1] ?? "");
 }
 

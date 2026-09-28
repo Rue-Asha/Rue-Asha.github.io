@@ -323,5 +323,68 @@ describe("W3, FR3.7 — the Projects page with nothing to list", () => {
     // Never a bare heading, and never a card (U1 BR5.5).
     expect(projectRows(html)).toHaveLength(0);
     expect(html).not.toContain('<ul class="units">');
+
+    // And never a readout with nothing behind it. Three keys over three blanks
+    // is the decoration this design has none of; the strip is dropped whole.
+    expect(html).not.toContain('<div class="readout schematic">');
+  });
+});
+
+/**
+ * The figures under the Projects title.
+ *
+ * Every one is derived from the projects the build just validated, which is the
+ * property that keeps the strip from going stale without anyone noticing. These
+ * assert the derivation rather than the markup: the span reads off the year
+ * range, the latest reads off the greatest year rather than off card position,
+ * and the count is the length of the listing the page just drew.
+ */
+describe("PageRenderer — the Projects readout", () => {
+  /** The `key → value` pairs of the readout strip, in document order. */
+  function readoutPairs(html: string): [string, string][] {
+    const strip =
+      /<div class="readout schematic">([\s\S]*?)<\/div>\s*<\/div>/.exec(
+        html,
+      )?.[1] ?? "";
+    return [
+      ...strip.matchAll(
+        /<span class="lbl readout__key">([^<]*)<\/span>\s*<span class="readout__val">([^<]*)<\/span>/g,
+      ),
+    ].map((match) => [match[1] ?? "", match[2] ?? ""]);
+  }
+
+  it("spans the year range, names the newest project, and counts the listing", () => {
+    // Deliberately not in year order: projects are ordered featured-first
+    // (FR3.1), so a "latest" read off the first card would name the wrong one.
+    const html = renderPage(
+      renderProjects([
+        WITHOUT_LIVE, // 2025
+        WITH_LIVE, // 2026
+        aProject({
+          slug: "oldest",
+          name: "Oldest",
+          summary: "The first one.",
+          year: 2024,
+          tools: ["Go"],
+          repo: "https://github.com/Rue-Asha/oldest",
+        }),
+      ]),
+    );
+
+    expect(readoutPairs(html)).toEqual([
+      ["Span", "2024–2026"],
+      ["Latest", "With Live"],
+      ["Projects", "3"],
+    ]);
+  });
+
+  it("prints a single year rather than a range when every project shares one", () => {
+    const html = renderPage(renderProjects([WITH_LIVE]));
+
+    expect(readoutPairs(html)).toEqual([
+      ["Span", "2026"],
+      ["Latest", "With Live"],
+      ["Projects", "1"],
+    ]);
   });
 });

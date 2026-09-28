@@ -551,12 +551,19 @@ export function renderWriting(posts: readonly Post[]): PageDefinition {
  *
  * Each card's name is an `h2`, one level under the page's `h1`, so the page is
  * navigable by heading and skips no level.
+ *
+ * The card carries no corner ticks. They are a registration mark — the hero
+ * wears them once, a project's header wears them once — and repeated down a grid
+ * they stop marking anything and become two accent strokes per card, which on a
+ * page of eight projects is sixteen. The accent this page does spend is placed
+ * where it says something: the unit index, the readout keys, and the edge marker
+ * a card takes on hover, which is the same marker a Writing row takes.
  */
 export function renderProjects(projects: readonly Project[]): PageDefinition {
   const cards = projects
     .map((project, index) =>
       [
-        '          <li class="unit panel ticks">',
+        '          <li class="unit panel">',
         `            <a class="unit__link" href="${projectPath(project.slug)}" data-testid="project-row-name-link">`,
         '              <div class="unit__head">',
         `                <span class="lbl unit__idx">${pad2(index + 1)}</span>`,
@@ -582,6 +589,39 @@ export function renderProjects(projects: readonly Project[]): PageDefinition {
     )
     .join("\n");
 
+  // The three figures under the title, all derived from the projects this build
+  // validated — the same treatment, and the same rule, as Writing's. Nothing
+  // here is a number anyone can type, and a cell that came out empty is dropped
+  // rather than drawn with a key over a blank.
+  const years = projects.map((project) => project.year);
+  const oldest = years.length === 0 ? undefined : Math.min(...years);
+  const newest = years.length === 0 ? undefined : Math.max(...years);
+  const span =
+    oldest === undefined || newest === undefined
+      ? ""
+      : oldest === newest
+        ? String(newest)
+        : `${String(oldest)}–${String(newest)}`;
+  // The newest project by year. Projects are ordered featured-first (FR3.1), so
+  // the first card is not the newest one and this has to be read off the years
+  // rather than off position. Two projects of the same year tie, and the tie
+  // goes to the one the catalog put first — `>` rather than `>=`.
+  const latest = projects.reduce<Project | undefined>(
+    (best, project) =>
+      best === undefined || project.year > best.year ? project : best,
+    undefined,
+  );
+  const readoutCells: (readonly [string, string])[] = [
+    ["Span", span],
+    ["Latest", latest?.name ?? ""],
+    // Emptied rather than printed as `0` on a site with nothing to list, so the
+    // whole strip is dropped by the filter below. A readout reduced to one cell
+    // reading "Projects / 0" is the "failed to load" shape the empty-state rule
+    // exists to avoid.
+    ["Projects", projects.length === 0 ? "" : String(projects.length)],
+  ];
+  const cells = readoutCells.filter(([, value]) => value !== "");
+
   return {
     outputPath: OUTPUT_PATHS.projects,
     title: "Projects",
@@ -589,12 +629,18 @@ export function renderProjects(projects: readonly Project[]): PageDefinition {
     current: "projects",
     register: "technical",
     main: [
+      // No lead sentence, for the reason Writing has none: it said how much
+      // there is and what shape it is in, and the readout below says the same
+      // thing with figures the build derived rather than with a sentence nobody
+      // maintains. The head is the eyebrow, the title and the count.
       pageHead(
         "Index / Units",
         "Projects",
-        "Things that got far enough to show, each with a write-up of what it is and what building it taught me.",
+        "",
         `${pad2(projects.length)} total`,
       ),
+      // Dropped entirely on an empty site rather than drawn as three blanks.
+      ...(cells.length === 0 ? [] : [readout(cells)]),
       '      <div class="shell">',
       projects.length === 0
         ? emptyState(EMPTY_PROJECTS, ROUTES.writing, "Read the writing instead")
