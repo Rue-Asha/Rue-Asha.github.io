@@ -89,13 +89,21 @@ function emptyState(sentence: string, href: string, label: string): string {
   ].join("\n");
 }
 
-/** The eyebrow, title and lead a listing page opens with. */
+/**
+ * The eyebrow, title and lead a listing page opens with.
+ *
+ * `lead` may be empty, and an empty one drops the paragraph rather than drawing
+ * an empty element beside the title — the same rule the project rail follows for
+ * a missing live URL (BR3.5). The grid collapses to a single column with it, so
+ * the title is not left sitting in a half-width track with nothing opposite.
+ */
 function pageHead(
   eyebrow: string,
   title: string,
   lead: string,
   count: string,
 ): string {
+  const hasLead = lead !== "";
   return [
     '      <section class="phead">',
     '        <div class="shell">',
@@ -103,12 +111,44 @@ function pageHead(
     `            <span class="lbl">${escapeHtml(eyebrow)}</span>`,
     `            <span class="lbl phead__count">${escapeHtml(count)}</span>`,
     "          </div>",
-    '          <div class="phead__grid">',
+    `          <div class="phead__grid${hasLead ? "" : " phead__grid--solo"}">`,
     `            <h1 class="phead__title">${escapeHtml(title)}</h1>`,
-    `            <p class="phead__lead">${escapeHtml(lead)}</p>`,
+    ...(hasLead
+      ? [`            <p class="phead__lead">${escapeHtml(lead)}</p>`]
+      : []),
     "          </div>",
     "        </div>",
     "      </section>",
+  ].join("\n");
+}
+
+/**
+ * A strip of generated figures under a listing's title.
+ *
+ * Every cell is derived from the content the build just validated — nothing here
+ * is a number someone typed, which is the rule the header readout already
+ * follows. A cell whose value came out empty is dropped by the caller rather
+ * than drawn with a label over a blank.
+ *
+ * It uses Home's status-readout vocabulary rather than a new one: the schematic
+ * grid, the `.lbl` key in the signal colour, the value in mono at full strength.
+ * The two readouts on this site are therefore the same component read twice, not
+ * two components that happen to look alike.
+ */
+function readout(cells: readonly (readonly [string, string])[]): string {
+  return [
+    '      <div class="shell">',
+    '        <div class="readout schematic">',
+    ...cells.map(([key, value]) =>
+      [
+        '          <div class="readout__cell">',
+        `            <span class="lbl readout__key">${escapeHtml(key)}</span>`,
+        `            <span class="readout__val">${escapeHtml(value)}</span>`,
+        "          </div>",
+      ].join("\n"),
+    ),
+    "        </div>",
+    "      </div>",
   ].join("\n");
 }
 
@@ -449,6 +489,35 @@ export function renderWriting(posts: readonly Post[]): PageDefinition {
     )
     .join("\n");
 
+  // The three figures under the title, all derived from the posts this build
+  // validated. The span reads off the year groups rather than off the raw dates,
+  // so a post whose date did not parse cannot widen it — the grouping above
+  // already dropped that post, and a span it still counted would disagree with
+  // the sections underneath it.
+  const spanNewest = years[0]?.year;
+  const spanOldest = years.at(-1)?.year;
+  const span =
+    spanNewest === undefined || spanOldest === undefined
+      ? ""
+      : spanNewest === spanOldest
+        ? String(spanNewest)
+        : `${String(spanOldest)}–${String(spanNewest)}`;
+  const newest = posts[0];
+  const totalMinutes = posts.reduce(
+    (sum, post) => sum + readingMinutes(post.body),
+    0,
+  );
+
+  const readoutCells: (readonly [string, string])[] = [
+    ["Span", span],
+    ["Latest", newest === undefined ? "" : formatDisplayDate(newest.date)],
+    [
+      "Reading",
+      posts.length === 0 ? "" : `${String(totalMinutes)} min end to end`,
+    ],
+  ];
+  const cells = readoutCells.filter(([, value]) => value !== "");
+
   return {
     outputPath: OUTPUT_PATHS.writing,
     title: "Writing",
@@ -457,12 +526,13 @@ export function renderWriting(posts: readonly Post[]): PageDefinition {
     current: "writing",
     register: "technical",
     main: [
-      pageHead(
-        "Log / Entries",
-        "Writing",
-        "Things I worked out the slow way and would rather not work out again. No schedule, no newsletter.",
-        `${pad2(posts.length)} total`,
-      ),
+      // No lead sentence. The page head is the eyebrow, the title and the count,
+      // and the readout below carries what a sentence there was doing badly —
+      // how much there is, over what period, and how long it would take.
+      pageHead("Log / Entries", "Writing", "", `${pad2(posts.length)} total`),
+      // Dropped entirely on an empty site rather than drawn as three zeros: a
+      // readout with nothing behind it is the decoration this design has none of.
+      ...(cells.length === 0 ? [] : [readout(cells)]),
       '      <div class="shell">',
       posts.length === 0
         ? emptyState(EMPTY_WRITING, ROUTES.projects, "See the projects instead")

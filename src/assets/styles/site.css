@@ -1158,6 +1158,15 @@ main {
   color: var(--signal);
 }
 
+/* A head with no lead sentence. The two-column track is released rather than
+   left half empty, so the title is not sitting in a 1fr column with nothing
+   opposite it. Writing is the one page in this state: what its lead was doing —
+   saying how much there is and over what period — the readout below does with
+   figures the build derived rather than with a sentence nobody maintains. */
+.phead__grid--solo {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 /* Title left, lead right — a single left column leaves the page top empty. */
 .phead__grid {
   display: grid;
@@ -1187,6 +1196,54 @@ main {
   text-wrap: pretty;
 }
 
+/* ---- Listing readout ---------------------------------------------------- */
+
+/**
+ * The figures under a listing's title.
+ *
+ * `auto-fit`, not `auto-fill`, for the reason the project grid states: a track
+ * holding no cell across the whole grid collapses, so a readout that renders
+ * two cells rather than three still fills its row instead of drawing a third of
+ * the schematic ground as an empty box.
+ *
+ * That only covers a track nothing occupies. Three cells in two tracks occupy
+ * both, so nothing collapses and the second row is left one cell short — a grey
+ * rectangle beside "Reading", which is the same "failed to load" reading. The
+ * breakpoint below is where that band starts, so it never appears: three
+ * 11rem tracks plus their two 1px gaps need 530px, and at 36rem with a 1rem
+ * shell padding either side the row has 544px. Anything wider fits three;
+ * anything narrower gets one.
+ *
+ * The treatment is Home's status readout, not a second one — signal key, mono
+ * value at full strength on the schematic ground. That is the whole point of
+ * reusing it: the two readouts on this site read as the same instrument.
+ */
+.readout {
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  margin-block-end: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.readout__cell {
+  display: grid;
+  gap: 0.4rem;
+  align-content: start;
+  padding: 0.85rem 1rem;
+}
+
+/* Beats `.lbl` on source order at equal specificity, the same way
+   `.hero__spec .spec__key` takes the accent on Home. */
+.readout__key {
+  font-weight: 600;
+  color: var(--signal);
+}
+
+.readout__val {
+  font-family: var(--mono);
+  font-size: var(--t-base);
+  font-weight: 500;
+  color: var(--fg);
+}
+
 /* ---- Writing listing ---------------------------------------------------- */
 
 .log {
@@ -1201,11 +1258,25 @@ main {
   padding-block-end: 0.5rem;
 }
 
+/**
+ * The year heading, set like Home's section headings rather than like a label.
+ *
+ * It was `--t-xs` at weight 500 — the same 11px as the `.lbl` beside it and a
+ * step lighter, so the one `h2` on the page was the quietest thing on its own
+ * line and the listing read as having no heading at all. `.sect h2` heads the
+ * identical `.row--post` table on Home at `--t-md` / 600; this is the same role,
+ * so it now takes the same treatment and the two listings stop disagreeing.
+ *
+ * `--signal` on `--bg` measures 6.4:1, clear of the 4.5:1 floor, and hue is not
+ * doing the work alone — it is also the largest and heaviest thing on its line,
+ * so the heading still reads as a heading with the colour removed.
+ */
 .year__num {
   font-family: var(--mono);
-  font-size: var(--t-xs);
-  font-weight: 500;
-  letter-spacing: 0.1em;
+  font-size: var(--t-md);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
   color: var(--signal);
 }
 
@@ -1828,6 +1899,15 @@ main {
 
   .meta__cell:last-child {
     border-block-end: 0;
+  }
+}
+
+/* Below the width where all three readout cells fit on one row. Stacking them
+   is the contraction; two cells and a grey gap is the layout that reads as
+   broken. */
+@media (max-width: 36rem) {
+  .readout {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
