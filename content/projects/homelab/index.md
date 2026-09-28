@@ -10,6 +10,7 @@ tools:
   - LXC
   - systemd
 repo: https://github.com/Rue-Asha/Homelab-Managment
+featured: true
 ---
 
 A Proxmox host running a handful of small machines, each doing one thing. The

@@ -9,7 +9,6 @@ tools:
   - markdown-it
   - Shiki
 repo: https://github.com/Rue-Asha/Rue-Asha.github.io
-featured: true
 ---
 
 A GitHub Pages user site built from Markdown by a small TypeScript build.

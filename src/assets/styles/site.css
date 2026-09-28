@@ -109,6 +109,11 @@
   --t-sm: 0.75rem;
   --t-base: 0.875rem;
   --t-body: 0.9375rem;
+  /* One step for the section headings, which need to clear the labels around
+     them without reaching the 17-21px of the row titles they sit above. Fixed
+     rather than fluid: it is a rung between two rungs, and a clamp here would
+     cross `--t-lg` at the narrow end. */
+  --t-md: 1rem;
   --t-prose: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
   --t-lg: clamp(1.0625rem, 0.98rem + 0.45vw, 1.3125rem);
   --t-xl: clamp(1.4375rem, 1.18rem + 1.2vw, 2.25rem);
@@ -650,14 +655,19 @@ a.row:hover .row__go {
 }
 
 /* A section heading sitting above a listing of 19px titles cannot itself be
-   12px — at that size it stops reading as a heading at all. */
+   12px — at that size it stops reading as a heading at all.
+   It carries the signal colour, which is what separates it from the run of
+   uppercase mono labels either side of it — the rule, the "All NN" route, the
+   table head. Hue is not doing the work alone: it is also the largest and the
+   heaviest thing on its line, so the heading still reads as a heading with the
+   colour removed. */
 .sect h2 {
   font-family: var(--mono);
-  font-size: var(--t-base);
+  font-size: var(--t-md);
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--fg);
+  color: var(--signal);
 }
 
 .sect__more {
@@ -1105,6 +1115,25 @@ main {
 
 .hero__spec {
   margin-block-start: 1rem;
+}
+
+/**
+ * The status readout's keys, in the signal colour and a step heavier.
+ *
+ * Scoped to the hero rather than written into `.spec__key`, which is the same
+ * component on the project page's Spec rail and on About's Elsewhere rail.
+ * There the key is a quiet index beside the value that matters; here the
+ * readout *is* the panel, and the five words down its left edge are what the
+ * eye lands on first. One place, one treatment.
+ *
+ * `#0a6e52` on `--panel` measures 6.9:1, so this clears the 4.5:1 floor at a
+ * size (11px) where it would otherwise be borderline — the muted `--fg-3` it
+ * replaces measured 5.31:1 there. Weight rather than hue is what carries the
+ * emphasis; the colour is the second signal, not the only one.
+ */
+.hero__spec .spec__key {
+  font-weight: 600;
+  color: var(--signal);
 }
 
 .band {

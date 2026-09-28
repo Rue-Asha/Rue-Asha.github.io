@@ -28,7 +28,7 @@ export const site: SiteMetadata = {
  * inside a template so that changing it is not a code change.
  */
 export const homeIntro =
-  "I build things and write about what I am currently learning or find interesting.";
+  "I build small things, mostly to find out how they actually work, and write up whatever the building taught me.";
 
 /**
  * The lines Home's status readout and the footer print about the author.
