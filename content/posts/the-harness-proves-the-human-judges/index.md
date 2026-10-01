@@ -10,7 +10,7 @@ the parts I found missing on either side of it.
 
 It has not been piloted yet. Everything below is a design that has been run
 against a scratch repository and read against my real ones, not one that has
-shipped a feature. I come back to what that means at the end.
+shipped a feature.
 
 ## Why AI-DLC was slow
 
@@ -233,30 +233,3 @@ skill's own file, so the process can improve itself. That file is still empty.
 
 None of this asks me first. It appears at the second gate as one line,
 `Learnings: +1 new, 1 updated`, which I can veto.
-
-## What is not done
-
-It has not been piloted. What it has been tested against: a scratch repository,
-through every phase from planning to done, plus a trivial change, a crashed
-worktree, and a code change after verification; and my real repositories,
-read-only, through `flow-status`.
-
-The pilot is Party-Games. First, adopt, verify and archive the two finished
-changes that were never archived. Then a real change with at least two
-independent units, whose first unit will have to establish `proof` — Party-Games
-has `svelte-check` and no tests at all.
-
-Shipping is parked. I do not know yet whether it should be generic or tailored to
-my own setup. What is decided is that each repository declares its own ship
-policy, which makes that a configuration question rather than a question about
-the skill.
-
-A gate that fails open is worse than no gate, because you stop looking, and I
-found two while writing this. My homelab repository has a proof hook that does everything right — gate, sensor,
-`exit 2` — and no settings file registering it, so it never runs. The AI-DLC
-sensor hooks here always end in `exit 0`, so they apply no backpressure at all. A
-process can only lean on a harness that exists.
-
-What the gates cannot replace is a second person. The fresh-context review is a
-stand-in for one, not an equivalent, and it would be dishonest to pretend
-otherwise.
