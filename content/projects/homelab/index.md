@@ -58,8 +58,7 @@ entirely; that step is now `terraform apply`.
 
 Everything runs from the repository root. `.envrc` exports `ANSIBLE_CONFIG`
 pointing at `ansible/ansible.cfg`, so Ansible finds its config without anyone
-changing directory — which matters because the Terraform-backed inventory plugin
-resolves its project path relative to the working directory.
+changing directory.
 
 ```sh
 direnv allow
@@ -69,4 +68,9 @@ ansible-playbook ansible/playbooks/03_SERVICES/pihole.yml -l pihole01
 
 The host catalogue lives in `hosts.auto.tfvars` and is rendered into the Ansible
 inventory, so the two layers read the same list of machines instead of keeping
-one each.
+one each. The original plan was the `cloud.terraform` inventory plugin reading
+Terraform state directly, but its latest release cannot parse an inventory on
+current ansible-core at all. Writing the inventory as a plain file turned out
+better anyway: no extra collection, no dependency on readable state, and the
+inventory change shows up in the same diff as the catalogue change that caused
+it.
