@@ -25,10 +25,15 @@ code lives in its own repository and is checked out and built on the host at a
 pinned git tag. There is no Docker and no CI in the loop — `systemd` supervises
 the process.
 
-Two services are deployed this way today, Life-Managment-Dashboard and
-Party-Games, alongside network-level pieces: Pi-hole for DNS filtering,
-Tailscale as a subnet router for remote access into the LAN, and nginx as a
-host-level reverse proxy in front of each web service.
+One service is deployed this way today: Life-Manager, a weekly-sprint todo app,
+in its own container behind nginx as a host-level reverse proxy. Everything
+that ran before was torn down together — the two earlier apps,
+Life-Managment-Dashboard and Party-Games, and the network pieces, Pi-hole for
+DNS filtering and Tailscale as a subnet router into the LAN — so that each can
+come back one at a time in the shape I want, rather than being reshaped in
+place. With Terraform owning the guests that was a single targeted destroy. The
+cost is plain: until Pi-hole and Tailscale return, the LAN has no DNS filtering
+and there is no way in from outside it.
 
 ## Terraform provisions, Ansible configures
 
@@ -94,7 +99,7 @@ changing directory.
 ```sh
 direnv allow
 terraform -chdir=terraform/environments/homelab apply
-ansible-playbook ansible/playbooks/03_SERVICES/pihole.yml -l pihole01
+ansible-playbook ansible/playbooks/03_SERVICES/life-manager.yml -l life-manager01
 ```
 
 The host catalogue lives in `hosts.auto.tfvars` and is rendered into the Ansible
