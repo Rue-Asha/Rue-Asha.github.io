@@ -50,6 +50,37 @@ yet; nothing implemented teardown, so removing a host from the inventory left it
 running forever; and every role reimplemented its own "does this exist, is there
 free space" preflight, which a state file gives for free.
 
+## An agent works on it, behind gates
+
+Most changes to this repository are made with Claude Code, and the rules that
+matter most — lint before committing, never apply Terraform or run a playbook
+against real hosts without asking — used to exist only as prose in its
+instructions file. The model followed them most of the time, which is not the
+same thing as by construction. An earlier commit hook had been written and
+never wired into anything, so for weeks the only thing enforcing those rules was
+the model's attention.
+
+They are hooks now. One script runs whichever checks apply to what changed —
+formatting, validation and tflint on the Terraform side, ansible-lint and a
+syntax check on the Ansible side — and a gate runs it before every commit the
+agent attempts. A failure blocks the commit and hands the output back to the
+agent, which fixes the problem and tries again without me in the loop. A second
+gate stops on anything that would change a real machine, a Terraform apply or a
+playbook run without `--check`, and asks me first. It is the same idea as
+[flow](/writing/the-harness-proves-the-human-judges/): whatever a machine can
+check should not need my approval, and what it cannot check should not happen
+without it.
+
+That second gate asks rather than proves, and that is the trade-off. The
+stronger version would only allow an apply from a saved plan newer than every
+Terraform change, turning my click into evidence. I built the smaller one first
+because it changes nothing about how an apply is run. Its matching is
+deliberately loose: a commit message that merely mentions an apply prompts
+once, which is the right way round for a gate whose miss costs a container.
+
+What it does not cover yet is the other end. A deploy still counts as done when
+the playbook exits cleanly, not when the service answers on its port.
+
 ## Small things that keep it usable
 
 The `NN_` prefix on each playbook category encodes the order a fresh host moves
