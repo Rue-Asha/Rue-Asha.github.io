@@ -1,0 +1,21 @@
+# Shared security baseline from Rue-Asha/ci: workflow lint, secret scan, and
+# dependency review on pull requests. Kept out of publish.yml because that
+# workflow only runs on a push to main, and dependency review needs a PR.
+#
+# Pinned to a commit SHA like every other `uses:` here (publish.yml control 2);
+# Dependabot proposes bumps.
+
+name: Security
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  security-baseline:
+    uses: Rue-Asha/ci/.github/workflows/security-baseline.yml@aab9824cdb27d4d86203a5d7b4785d95f8549cbc # v1.0.0
