@@ -116,7 +116,7 @@ post and project counts come from the content and cannot go stale.
 | `bin/`               | `build.ts` and `check.ts` entry points                                                               |
 | `site.config.ts`     | Site name, base URL, content-security policy, and the editorial copy Home prints                     |
 | `tests/`             | Unit tests, one directory per unit of work                                                           |
-| `.github/workflows/` | The publish workflow                                                                                 |
+| `.github/workflows/` | The publish workflow, and the shared security baseline from `Rue-Asha/ci`                            |
 | `aidlc/`, `.claude/` | The AI-DLC workspace this site was built with — version-controlled, and excluded from the built site |
 
 ## Deployment
@@ -127,6 +127,11 @@ site deploys nothing and the previously live site keeps serving.
 
 This requires the repository's Pages source to be set to **GitHub Actions**
 rather than _Deploy from a branch_.
+
+A separate Security workflow runs the shared baseline from
+[Rue-Asha/ci](https://github.com/Rue-Asha/ci) — workflow lint, secret scan, and
+dependency review on pull requests — pinned to a commit SHA. It reports; it
+does not gate publishing.
 
 To roll back, `git revert` the offending commit and push. After publishing,
 look at the live site — the deploy reporting success is not the same as the URL
