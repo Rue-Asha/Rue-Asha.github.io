@@ -75,7 +75,7 @@ without me in the loop. The agent is also stopped from passing `--no-verify` to
 step around it. A second
 gate stops on anything that would change a real machine, a Terraform apply or a
 playbook run without `--check`, and asks me first. It is the same idea as
-[flow](/writing/the-harness-proves-the-human-judges/): whatever a machine can
+`flow`, my development workflow: whatever a machine can
 check should not need my approval, and what it cannot check should not happen
 without it.
 
