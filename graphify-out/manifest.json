@@ -1,0 +1,3554 @@
+{
+  ".claude/hooks/aidlc-continue-workflow.ts": {
+    "mtime": 1789991037.412867,
+    "seen": 1793867795.1700044,
+    "ast_hash": "6898cbb5d74167a7e4b47f5db5e3be43",
+    "semantic_hash": "6898cbb5d74167a7e4b47f5db5e3be43"
+  },
+  ".claude/hooks/aidlc-deliver-stage-rules.ts": {
+    "mtime": 1789991037.4132423,
+    "seen": 1793867795.170012,
+    "ast_hash": "5a31f202ad38e3927102d43eb4508790",
+    "semantic_hash": "5a31f202ad38e3927102d43eb4508790"
+  },
+  ".claude/hooks/aidlc-fold-usage.ts": {
+    "mtime": 1789991037.4137971,
+    "seen": 1793867795.1700149,
+    "ast_hash": "b72a33b8f7ed9acfdde5edc98be6498a",
+    "semantic_hash": "b72a33b8f7ed9acfdde5edc98be6498a"
+  },
+  ".claude/hooks/aidlc-log-subagent.ts": {
+    "mtime": 1789991037.4140081,
+    "seen": 1793867795.1700165,
+    "ast_hash": "fbf2958f7095b0515bd1450b26a49220",
+    "semantic_hash": "fbf2958f7095b0515bd1450b26a49220"
+  },
+  ".claude/hooks/aidlc-plan-approval-guard.ts": {
+    "mtime": 1789991037.4140437,
+    "seen": 1793867795.1700177,
+    "ast_hash": "1b93459a19bff3685701bb759119da83",
+    "semantic_hash": "1b93459a19bff3685701bb759119da83"
+  },
+  ".claude/hooks/aidlc-rebuild-stage-graph.ts": {
+    "mtime": 1789991037.414318,
+    "seen": 1793867795.170019,
+    "ast_hash": "e955333c357df23ccbf1afe8592cde93",
+    "semantic_hash": "e955333c357df23ccbf1afe8592cde93"
+  },
+  ".claude/hooks/aidlc-record-human-turn.ts": {
+    "mtime": 1789991037.414519,
+    "seen": 1793867795.1700199,
+    "ast_hash": "27815bf2fe141d8b32be29be56522d3f",
+    "semantic_hash": "27815bf2fe141d8b32be29be56522d3f"
+  },
+  ".claude/hooks/aidlc-review-freeze.ts": {
+    "mtime": 1789991037.4147131,
+    "seen": 1793867795.170021,
+    "ast_hash": "8dc668c5167d0d7b3b816ace5188cbeb",
+    "semantic_hash": "8dc668c5167d0d7b3b816ace5188cbeb"
+  },
+  ".claude/hooks/aidlc-reviewer-scope.ts": {
+    "mtime": 1789991037.414971,
+    "seen": 1793867795.1700222,
+    "ast_hash": "33683b741cc3305ccee53dc55f3a8619",
+    "semantic_hash": "33683b741cc3305ccee53dc55f3a8619"
+  },
+  ".claude/hooks/aidlc-run-sensors.ts": {
+    "mtime": 1789991037.415275,
+    "seen": 1793867795.1700234,
+    "ast_hash": "9b72bec607c6e1ddcc19b607ca766af8",
+    "semantic_hash": "9b72bec607c6e1ddcc19b607ca766af8"
+  },
+  ".claude/hooks/aidlc-session-end.ts": {
+    "mtime": 1789991037.4155266,
+    "seen": 1793867795.1700242,
+    "ast_hash": "6afc9073c96de7e9bab66a581e770f17",
+    "semantic_hash": "6afc9073c96de7e9bab66a581e770f17"
+  },
+  ".claude/hooks/aidlc-session-start.ts": {
+    "mtime": 1789991037.4155836,
+    "seen": 1793867795.1700256,
+    "ast_hash": "2b1af366e2a153095c34a680b5a529d4",
+    "semantic_hash": "2b1af366e2a153095c34a680b5a529d4"
+  },
+  ".claude/hooks/aidlc-state-transition-guard.ts": {
+    "mtime": 1789991037.4157405,
+    "seen": 1793867795.1700265,
+    "ast_hash": "6cefaeea2f440ee03020a185197661cb",
+    "semantic_hash": "6cefaeea2f440ee03020a185197661cb"
+  },
+  ".claude/hooks/aidlc-statusline.ts": {
+    "mtime": 1789991037.4160142,
+    "seen": 1793867795.1700273,
+    "ast_hash": "caf0d1cb06137ab02132f9e6d592542f",
+    "semantic_hash": "caf0d1cb06137ab02132f9e6d592542f"
+  },
+  ".claude/hooks/aidlc-sync-workflow-state.ts": {
+    "mtime": 1789991037.416232,
+    "seen": 1793867795.1700282,
+    "ast_hash": "fdd2e8b25646fa3dd032d9100cda0449",
+    "semantic_hash": "fdd2e8b25646fa3dd032d9100cda0449"
+  },
+  ".claude/hooks/aidlc-validate-state.ts": {
+    "mtime": 1789991037.4163682,
+    "seen": 1793867795.1700294,
+    "ast_hash": "bd046fb842c709b0f70877026d382bf7",
+    "semantic_hash": "bd046fb842c709b0f70877026d382bf7"
+  },
+  ".claude/hooks/aidlc-write-audit-log.ts": {
+    "mtime": 1789991037.416415,
+    "seen": 1793867795.1700306,
+    "ast_hash": "281006e3b5c60231aa262eb6b2e0c107",
+    "semantic_hash": "281006e3b5c60231aa262eb6b2e0c107"
+  },
+  ".claude/hooks/review-freeze-command.ts": {
+    "mtime": 1789991037.4165552,
+    "seen": 1793867795.1700313,
+    "ast_hash": "404118ccc2d62f5ba54aa44790896fef",
+    "semantic_hash": "404118ccc2d62f5ba54aa44790896fef"
+  },
+  ".claude/settings.json": {
+    "mtime": 1789991166.3668575,
+    "seen": 1793867795.170032,
+    "ast_hash": "f8fb08b25e5d1765c85786d2ed5732e9",
+    "semantic_hash": "f8fb08b25e5d1765c85786d2ed5732e9"
+  },
+  ".claude/tools/aidlc-archive.ts": {
+    "mtime": 1789991037.4282396,
+    "seen": 1793867795.1700335,
+    "ast_hash": "6e95093297df3872c988bb9c2a30ec7f",
+    "semantic_hash": "6e95093297df3872c988bb9c2a30ec7f"
+  },
+  ".claude/tools/aidlc-artifact-resolution.ts": {
+    "mtime": 1789991037.4292395,
+    "seen": 1793867795.1700344,
+    "ast_hash": "5d1c9d01c5d732aca796309d488a2209",
+    "semantic_hash": "5d1c9d01c5d732aca796309d488a2209"
+  },
+  ".claude/tools/aidlc-artifact-vocabulary.ts": {
+    "mtime": 1789991037.4297788,
+    "seen": 1793867795.1700351,
+    "ast_hash": "2e72703c7ca2acee241c5d9986b6b689",
+    "semantic_hash": "2e72703c7ca2acee241c5d9986b6b689"
+  },
+  ".claude/tools/aidlc-attest.ts": {
+    "mtime": 1789991037.4298365,
+    "seen": 1793867795.1700363,
+    "ast_hash": "0e5afcd094e8e3bf61da29edfb5dd0e0",
+    "semantic_hash": "0e5afcd094e8e3bf61da29edfb5dd0e0"
+  },
+  ".claude/tools/aidlc-audit.ts": {
+    "mtime": 1789991037.430231,
+    "seen": 1793867795.1700373,
+    "ast_hash": "993fc18ba62f61b0642ebfba8b3a9a01",
+    "semantic_hash": "993fc18ba62f61b0642ebfba8b3a9a01"
+  },
+  ".claude/tools/aidlc-bolt.ts": {
+    "mtime": 1789991037.4302394,
+    "seen": 1793867795.170038,
+    "ast_hash": "94559360f190924683e8da912ceabbd1",
+    "semantic_hash": "94559360f190924683e8da912ceabbd1"
+  },
+  ".claude/tools/aidlc-channel.ts": {
+    "mtime": 1789991037.431014,
+    "seen": 1793867795.1700387,
+    "ast_hash": "3e7edd7dda391fc116c1d5df17d4a44a",
+    "semantic_hash": "3e7edd7dda391fc116c1d5df17d4a44a"
+  },
+  ".claude/tools/aidlc-color.ts": {
+    "mtime": 1789991037.4312127,
+    "seen": 1793867795.17004,
+    "ast_hash": "945c8e7a716ed75d98639e92629dd839",
+    "semantic_hash": "945c8e7a716ed75d98639e92629dd839"
+  },
+  ".claude/tools/aidlc-command.ts": {
+    "mtime": 1789991037.4312441,
+    "seen": 1793867795.1700408,
+    "ast_hash": "169fe8d136a7513a6fd86578b9d507c4",
+    "semantic_hash": "169fe8d136a7513a6fd86578b9d507c4"
+  },
+  ".claude/tools/aidlc-completions.ts": {
+    "mtime": 1789991037.431377,
+    "seen": 1793867795.1700418,
+    "ast_hash": "c0adaf7bf0c360cad4dbaaef421b3448",
+    "semantic_hash": "c0adaf7bf0c360cad4dbaaef421b3448"
+  },
+  ".claude/tools/aidlc-config-diagnostics.ts": {
+    "mtime": 1789991037.4315639,
+    "seen": 1793867795.1700425,
+    "ast_hash": "e8c0a811ef92b92ca5b44de417b497e3",
+    "semantic_hash": "e8c0a811ef92b92ca5b44de417b497e3"
+  },
+  ".claude/tools/aidlc-directive.ts": {
+    "mtime": 1789991037.432025,
+    "seen": 1793867795.1700435,
+    "ast_hash": "9a616d1eadde342b47cd03026568dd68",
+    "semantic_hash": "9a616d1eadde342b47cd03026568dd68"
+  },
+  ".claude/tools/aidlc-distribution.ts": {
+    "mtime": 1789991037.4323955,
+    "seen": 1793867795.1700444,
+    "ast_hash": "56d1dae9034b6c8c2a1f78f1cf70f485",
+    "semantic_hash": "56d1dae9034b6c8c2a1f78f1cf70f485"
+  },
+  ".claude/tools/aidlc-doctor-bundle.ts": {
+    "mtime": 1789991037.432578,
+    "seen": 1793867795.1700451,
+    "ast_hash": "b683400ee673f6f0ab2b3e39921eac86",
+    "semantic_hash": "b683400ee673f6f0ab2b3e39921eac86"
+  },
+  ".claude/tools/aidlc-doctor.ts": {
+    "mtime": 1789991037.4331167,
+    "seen": 1793867795.170046,
+    "ast_hash": "cceb184f637d101d7131db328dddba53",
+    "semantic_hash": "cceb184f637d101d7131db328dddba53"
+  },
+  ".claude/tools/aidlc-documentkb-schema.ts": {
+    "mtime": 1789991037.4332664,
+    "seen": 1793867795.1700473,
+    "ast_hash": "982cb49b38f87d0bee48db0b6d0e391f",
+    "semantic_hash": "982cb49b38f87d0bee48db0b6d0e391f"
+  },
+  ".claude/tools/aidlc-graph.ts": {
+    "mtime": 1789991037.433495,
+    "seen": 1793867795.170048,
+    "ast_hash": "cc603b0982a5550a970f72ef4069097e",
+    "semantic_hash": "cc603b0982a5550a970f72ef4069097e"
+  },
+  ".claude/tools/aidlc-includes.ts": {
+    "mtime": 1789991037.4339287,
+    "seen": 1793867795.1700487,
+    "ast_hash": "61d8ca4e68ffb1cd7b11737912b64c56",
+    "semantic_hash": "61d8ca4e68ffb1cd7b11737912b64c56"
+  },
+  ".claude/tools/aidlc-init.ts": {
+    "mtime": 1789991037.4341297,
+    "seen": 1793867795.17005,
+    "ast_hash": "a526892238c353043d2a6b23fba681a7",
+    "semantic_hash": "a526892238c353043d2a6b23fba681a7"
+  },
+  ".claude/tools/aidlc-install-paths.ts": {
+    "mtime": 1789991037.4342387,
+    "seen": 1793867795.1700509,
+    "ast_hash": "1324696c38b99832229c8dd0e41dd98d",
+    "semantic_hash": "1324696c38b99832229c8dd0e41dd98d"
+  },
+  ".claude/tools/aidlc-jump.ts": {
+    "mtime": 1789991037.4349813,
+    "seen": 1793867795.1700516,
+    "ast_hash": "c960d17d23109c768dc6873948064917",
+    "semantic_hash": "c960d17d23109c768dc6873948064917"
+  },
+  ".claude/tools/aidlc-knowledge.ts": {
+    "mtime": 1789991037.4351742,
+    "seen": 1793867795.1700525,
+    "ast_hash": "a383f60fe65b76c20cb35abf18704a3b",
+    "semantic_hash": "a383f60fe65b76c20cb35abf18704a3b"
+  },
+  ".claude/tools/aidlc-learnings.ts": {
+    "mtime": 1789991037.4352384,
+    "seen": 1793867795.1700537,
+    "ast_hash": "d0fa723e4c0d99d12566be0524b11afb",
+    "semantic_hash": "d0fa723e4c0d99d12566be0524b11afb"
+  },
+  ".claude/tools/aidlc-lib.ts": {
+    "mtime": 1789991037.4361012,
+    "seen": 1793867795.1700547,
+    "ast_hash": "284701822d87d99d8f39b1ed15bf52ad",
+    "semantic_hash": "284701822d87d99d8f39b1ed15bf52ad"
+  },
+  ".claude/tools/aidlc-lifecycle.ts": {
+    "mtime": 1789991037.4372382,
+    "seen": 1793867795.170056,
+    "ast_hash": "b78f4f31b93ead0f0b41f231c23d0d97",
+    "semantic_hash": "b78f4f31b93ead0f0b41f231c23d0d97"
+  },
+  ".claude/tools/aidlc-log.ts": {
+    "mtime": 1789991037.438338,
+    "seen": 1793867795.1700573,
+    "ast_hash": "0122ec378720271d1a017999156a9e6a",
+    "semantic_hash": "0122ec378720271d1a017999156a9e6a"
+  },
+  ".claude/tools/aidlc-machine-config.ts": {
+    "mtime": 1789991037.4388356,
+    "seen": 1793867795.1700583,
+    "ast_hash": "27970eae503b1ecf17ece1d91db36aaf",
+    "semantic_hash": "27970eae503b1ecf17ece1d91db36aaf"
+  },
+  ".claude/tools/aidlc-metrics.ts": {
+    "mtime": 1789991037.438974,
+    "seen": 1793867795.170059,
+    "ast_hash": "c6b2b1f4e3582d946409c6f06268ffce",
+    "semantic_hash": "c6b2b1f4e3582d946409c6f06268ffce"
+  },
+  ".claude/tools/aidlc-model-policy.ts": {
+    "mtime": 1789991037.4391203,
+    "seen": 1793867795.1700597,
+    "ast_hash": "8a47c796990ceb0e779aec77d4332ff9",
+    "semantic_hash": "8a47c796990ceb0e779aec77d4332ff9"
+  },
+  ".claude/tools/aidlc-orchestrate.ts": {
+    "mtime": 1789991037.4393132,
+    "seen": 1793867795.1700609,
+    "ast_hash": "d69c409365ccc05de3b44834f95702db",
+    "semantic_hash": "d69c409365ccc05de3b44834f95702db"
+  },
+  ".claude/tools/aidlc-plugin-build.ts": {
+    "mtime": 1789991037.4399874,
+    "seen": 1793867795.1700616,
+    "ast_hash": "fa6706a39b5b7668ffa9abda7ea6e960",
+    "semantic_hash": "fa6706a39b5b7668ffa9abda7ea6e960"
+  },
+  ".claude/tools/aidlc-plugin-create.ts": {
+    "mtime": 1789991037.4401174,
+    "seen": 1793867795.1700625,
+    "ast_hash": "ba1906220c702667e888b9a0a99c7b9e",
+    "semantic_hash": "ba1906220c702667e888b9a0a99c7b9e"
+  },
+  ".claude/tools/aidlc-plugin-emit.ts": {
+    "mtime": 1789991037.4402637,
+    "seen": 1793867795.1700637,
+    "ast_hash": "58d34f0c5dfca110afd0b4774042f399",
+    "semantic_hash": "58d34f0c5dfca110afd0b4774042f399"
+  },
+  ".claude/tools/aidlc-plugin-test.ts": {
+    "mtime": 1789991037.4404676,
+    "seen": 1793867795.1700644,
+    "ast_hash": "598c0640b1421430dcc72d364a544138",
+    "semantic_hash": "598c0640b1421430dcc72d364a544138"
+  },
+  ".claude/tools/aidlc-plugin-validate.ts": {
+    "mtime": 1789991037.4406323,
+    "seen": 1793867795.1700654,
+    "ast_hash": "bf74eee7c1c3ffe2e4762cfd0158adbb",
+    "semantic_hash": "bf74eee7c1c3ffe2e4762cfd0158adbb"
+  },
+  ".claude/tools/aidlc-plugin.ts": {
+    "mtime": 1789991037.4409099,
+    "seen": 1793867795.170066,
+    "ast_hash": "b27b20f30c3ad78713ff4acdfac13c1e",
+    "semantic_hash": "b27b20f30c3ad78713ff4acdfac13c1e"
+  },
+  ".claude/tools/aidlc-release.ts": {
+    "mtime": 1789991037.4411685,
+    "seen": 1793867795.1700668,
+    "ast_hash": "7d413c2ac64e2f604e2aed138185bc2c",
+    "semantic_hash": "7d413c2ac64e2f604e2aed138185bc2c"
+  },
+  ".claude/tools/aidlc-review-brief.ts": {
+    "mtime": 1789991037.441396,
+    "seen": 1793867795.1700678,
+    "ast_hash": "4641fa0958f4431b695d9346dd1cb73d",
+    "semantic_hash": "4641fa0958f4431b695d9346dd1cb73d"
+  },
+  ".claude/tools/aidlc-rule-schema.ts": {
+    "mtime": 1789991037.441697,
+    "seen": 1793867795.1700687,
+    "ast_hash": "aaa14ce98b0330e8fb94e1785f70cd47",
+    "semantic_hash": "aaa14ce98b0330e8fb94e1785f70cd47"
+  },
+  ".claude/tools/aidlc-runner-gen.ts": {
+    "mtime": 1789991037.4418483,
+    "seen": 1793867795.1700697,
+    "ast_hash": "f86edc38991e4317a4bcf8c7f8db0792",
+    "semantic_hash": "f86edc38991e4317a4bcf8c7f8db0792"
+  },
+  ".claude/tools/aidlc-runtime-paths.ts": {
+    "mtime": 1789991037.4420898,
+    "seen": 1793867795.1700704,
+    "ast_hash": "0f92b7d4faa081483ddcdb0c81eae64f",
+    "semantic_hash": "0f92b7d4faa081483ddcdb0c81eae64f"
+  },
+  ".claude/tools/aidlc-runtime.ts": {
+    "mtime": 1789991037.4422193,
+    "seen": 1793867795.1700716,
+    "ast_hash": "706a7c337cbd49ad2f6e652b0e198187",
+    "semantic_hash": "706a7c337cbd49ad2f6e652b0e198187"
+  },
+  ".claude/tools/aidlc-sensor-claim-sources.ts": {
+    "mtime": 1789991037.4422371,
+    "seen": 1793867795.1700723,
+    "ast_hash": "0d774ef7726a56553d9b325aae458c82",
+    "semantic_hash": "0d774ef7726a56553d9b325aae458c82"
+  },
+  ".claude/tools/aidlc-sensor-linter.ts": {
+    "mtime": 1789991037.4429727,
+    "seen": 1793867795.170073,
+    "ast_hash": "c5d8890faddf0def9444a3a7358a91be",
+    "semantic_hash": "c5d8890faddf0def9444a3a7358a91be"
+  },
+  ".claude/tools/aidlc-sensor-required-sections.ts": {
+    "mtime": 1789991037.443183,
+    "seen": 1793867795.1700742,
+    "ast_hash": "b7a06c091aab173944a350b350a37520",
+    "semantic_hash": "b7a06c091aab173944a350b350a37520"
+  },
+  ".claude/tools/aidlc-sensor-schema.ts": {
+    "mtime": 1789991037.4433763,
+    "seen": 1793867795.170075,
+    "ast_hash": "608c8a1685e611e9c38a38ead5d1def7",
+    "semantic_hash": "608c8a1685e611e9c38a38ead5d1def7"
+  },
+  ".claude/tools/aidlc-sensor-traceability.ts": {
+    "mtime": 1789991037.443539,
+    "seen": 1793867795.1700757,
+    "ast_hash": "eee7e1afbae45f514cd500638cfef6ca",
+    "semantic_hash": "eee7e1afbae45f514cd500638cfef6ca"
+  },
+  ".claude/tools/aidlc-sensor-type-check.ts": {
+    "mtime": 1789991037.4437392,
+    "seen": 1793867795.1700766,
+    "ast_hash": "b114db56175a8fcdb643e26d02ff2392",
+    "semantic_hash": "b114db56175a8fcdb643e26d02ff2392"
+  },
+  ".claude/tools/aidlc-sensor-upstream-coverage.ts": {
+    "mtime": 1789991037.4439318,
+    "seen": 1793867795.1700778,
+    "ast_hash": "63fa05e4ae44bb655dfcd60f8054ba69",
+    "semantic_hash": "63fa05e4ae44bb655dfcd60f8054ba69"
+  },
+  ".claude/tools/aidlc-sensor.ts": {
+    "mtime": 1789991037.4440594,
+    "seen": 1793867795.1700785,
+    "ast_hash": "4668527721cefa5f6b58376022a9c082",
+    "semantic_hash": "4668527721cefa5f6b58376022a9c082"
+  },
+  ".claude/tools/aidlc-settings.ts": {
+    "mtime": 1789991037.444296,
+    "seen": 1793867795.1700792,
+    "ast_hash": "66e5e6a0a70ef1747b47d61c2f3da76c",
+    "semantic_hash": "66e5e6a0a70ef1747b47d61c2f3da76c"
+  },
+  ".claude/tools/aidlc-stage-schema.ts": {
+    "mtime": 1789991037.4444556,
+    "seen": 1793867795.1700802,
+    "ast_hash": "0febeb040d5267fdbdd8640aaa1532aa",
+    "semantic_hash": "0febeb040d5267fdbdd8640aaa1532aa"
+  },
+  ".claude/tools/aidlc-state.ts": {
+    "mtime": 1789991037.4446795,
+    "seen": 1793867795.1700811,
+    "ast_hash": "b0ae91984e7476fb7e48890c0e86b0ac",
+    "semantic_hash": "b0ae91984e7476fb7e48890c0e86b0ac"
+  },
+  ".claude/tools/aidlc-steering.ts": {
+    "mtime": 1789991037.4451916,
+    "seen": 1793867795.170082,
+    "ast_hash": "1f1b0a24d179452fb1cf70e1a87315ab",
+    "semantic_hash": "1f1b0a24d179452fb1cf70e1a87315ab"
+  },
+  ".claude/tools/aidlc-swarm.ts": {
+    "mtime": 1789991037.4453862,
+    "seen": 1793867795.1700828,
+    "ast_hash": "de73208ff6669f8be7a62ab52c222536",
+    "semantic_hash": "de73208ff6669f8be7a62ab52c222536"
+  },
+  ".claude/tools/aidlc-testing-posture.ts": {
+    "mtime": 1789991037.445901,
+    "seen": 1793867795.1700835,
+    "ast_hash": "62cd35650675f55091f924b3dfd8ac8c",
+    "semantic_hash": "62cd35650675f55091f924b3dfd8ac8c"
+  },
+  ".claude/tools/aidlc-tiers.ts": {
+    "mtime": 1789991037.4463756,
+    "seen": 1793867795.1700847,
+    "ast_hash": "3f8b4a72ddd8437d2fa8317d869a8ccd",
+    "semantic_hash": "3f8b4a72ddd8437d2fa8317d869a8ccd"
+  },
+  ".claude/tools/aidlc-transaction.ts": {
+    "mtime": 1789991037.4465802,
+    "seen": 1793867795.1700854,
+    "ast_hash": "0412a845f46649b285dc059716981802",
+    "semantic_hash": "0412a845f46649b285dc059716981802"
+  },
+  ".claude/tools/aidlc-unit.ts": {
+    "mtime": 1789991037.446777,
+    "seen": 1793867795.1700864,
+    "ast_hash": "fffa199bcde76a955e946465ce950803",
+    "semantic_hash": "fffa199bcde76a955e946465ce950803"
+  },
+  ".claude/tools/aidlc-update.ts": {
+    "mtime": 1789991037.4474607,
+    "seen": 1793867795.170087,
+    "ast_hash": "6b3c6f59e8d45d2e3cc20701a97bec69",
+    "semantic_hash": "6b3c6f59e8d45d2e3cc20701a97bec69"
+  },
+  ".claude/tools/aidlc-usage.ts": {
+    "mtime": 1789991037.447716,
+    "seen": 1793867795.170088,
+    "ast_hash": "527c7adcd2e78c62151aab348c94ad8f",
+    "semantic_hash": "527c7adcd2e78c62151aab348c94ad8f"
+  },
+  ".claude/tools/aidlc-utility.ts": {
+    "mtime": 1789991037.4482298,
+    "seen": 1793867795.170089,
+    "ast_hash": "cc7c15ae72837472a2e59ffcf07e9e12",
+    "semantic_hash": "cc7c15ae72837472a2e59ffcf07e9e12"
+  },
+  ".claude/tools/aidlc-validate.ts": {
+    "mtime": 1789991037.4482362,
+    "seen": 1793867795.1700897,
+    "ast_hash": "fc765220898d3a4397198a1550347753",
+    "semantic_hash": "fc765220898d3a4397198a1550347753"
+  },
+  ".claude/tools/aidlc-validity.ts": {
+    "mtime": 1789991037.4490612,
+    "seen": 1793867795.1700904,
+    "ast_hash": "c63fc11ad17b980f9b8110d0ce7228ec",
+    "semantic_hash": "c63fc11ad17b980f9b8110d0ce7228ec"
+  },
+  ".claude/tools/aidlc-version.ts": {
+    "mtime": 1789991037.4492245,
+    "seen": 1793867795.1700916,
+    "ast_hash": "990bba1898cf24663412078e945521a1",
+    "semantic_hash": "990bba1898cf24663412078e945521a1"
+  },
+  ".claude/tools/aidlc-windows-uninstall.ts": {
+    "mtime": 1789991037.4492617,
+    "seen": 1793867795.1700923,
+    "ast_hash": "03367b54e6ace384f11da00a42c75b33",
+    "semantic_hash": "03367b54e6ace384f11da00a42c75b33"
+  },
+  ".claude/tools/aidlc-workspace-doctor.ts": {
+    "mtime": 1789991037.4493942,
+    "seen": 1793867795.170093,
+    "ast_hash": "70aa945cb8226a2b1f1d328c70d47ac2",
+    "semantic_hash": "70aa945cb8226a2b1f1d328c70d47ac2"
+  },
+  ".claude/tools/aidlc-workspace-manifest.ts": {
+    "mtime": 1789991037.4495218,
+    "seen": 1793867795.170095,
+    "ast_hash": "fd1c0cfe9b8e4236328fd01eecc077d8",
+    "semantic_hash": "fd1c0cfe9b8e4236328fd01eecc077d8"
+  },
+  ".claude/tools/aidlc-workspace-sync.ts": {
+    "mtime": 1789991037.4496503,
+    "seen": 1793867795.1700957,
+    "ast_hash": "d21222e53dde7a9b0f5dc0c2cb706745",
+    "semantic_hash": "d21222e53dde7a9b0f5dc0c2cb706745"
+  },
+  ".claude/tools/aidlc-worktree.ts": {
+    "mtime": 1789991037.449877,
+    "seen": 1793867795.1700966,
+    "ast_hash": "5da7aea959a2b900102f73c73d45be2b",
+    "semantic_hash": "5da7aea959a2b900102f73c73d45be2b"
+  },
+  ".claude/tools/aidlc.ts": {
+    "mtime": 1789991037.4504132,
+    "seen": 1793867795.1700974,
+    "ast_hash": "d745183cffb01a576b4aff987473c18c",
+    "semantic_hash": "d745183cffb01a576b4aff987473c18c"
+  },
+  ".claude/tools/data/agent-tiers.json": {
+    "mtime": 1789991037.4504132,
+    "seen": 1793867795.1700985,
+    "ast_hash": "17ac41b1e285a4f5f89d9ffe5cbdd60e",
+    "semantic_hash": "17ac41b1e285a4f5f89d9ffe5cbdd60e"
+  },
+  ".claude/tools/data/aidlc-manifest.json": {
+    "mtime": 1789991037.4530811,
+    "seen": 1793867795.1700995,
+    "ast_hash": "691fe1534e7bfba905a3feaad4ca6fa9",
+    "semantic_hash": "691fe1534e7bfba905a3feaad4ca6fa9"
+  },
+  ".claude/tools/data/aidlc-projection.json": {
+    "mtime": 1789991037.4508862,
+    "seen": 1793867795.1701002,
+    "ast_hash": "19d541dc68b8ce4f29a2a5d76978a6e0",
+    "semantic_hash": "19d541dc68b8ce4f29a2a5d76978a6e0"
+  },
+  ".claude/tools/data/aidlc-settings.schema.json": {
+    "mtime": 1789991037.4510317,
+    "seen": 1793867795.1701012,
+    "ast_hash": "05b233a8ebf756c73c2179cfb353365e",
+    "semantic_hash": "05b233a8ebf756c73c2179cfb353365e"
+  },
+  ".claude/tools/data/aidlc-stamp.json": {
+    "mtime": 1789991037.4511478,
+    "seen": 1793867795.1701021,
+    "ast_hash": "954b2e25ceade274d74be37400368016",
+    "semantic_hash": "954b2e25ceade274d74be37400368016"
+  },
+  ".claude/tools/data/ars-priors.json": {
+    "mtime": 1789991037.45118,
+    "seen": 1793867795.1701028,
+    "ast_hash": "f7aa644c4a99058c8bd593819cc71301",
+    "semantic_hash": "f7aa644c4a99058c8bd593819cc71301"
+  },
+  ".claude/tools/data/harness.json": {
+    "mtime": 1789991037.451303,
+    "seen": 1793867795.1701038,
+    "ast_hash": "1d654bd344652030939c504cc88f24a3",
+    "semantic_hash": "1d654bd344652030939c504cc88f24a3"
+  },
+  ".claude/tools/data/model-rates.json": {
+    "mtime": 1789991037.4517014,
+    "seen": 1793867795.1701047,
+    "ast_hash": "ceada8d36adb9ed39804ecafe6f8ac2b",
+    "semantic_hash": "ceada8d36adb9ed39804ecafe6f8ac2b"
+  },
+  ".claude/tools/data/plugin-authoring-context.json": {
+    "mtime": 1789991037.4518063,
+    "seen": 1793867795.1701057,
+    "ast_hash": "40e5f4472e03e9540a1970fae268fc9b",
+    "semantic_hash": "40e5f4472e03e9540a1970fae268fc9b"
+  },
+  ".claude/tools/data/plugin-hooks-template/aidlc-plugin-compose.ts": {
+    "mtime": 1789991037.4518063,
+    "seen": 1793867795.1701064,
+    "ast_hash": "8b1818f50f4f2a32f2aa8f74fd822e80",
+    "semantic_hash": "8b1818f50f4f2a32f2aa8f74fd822e80"
+  },
+  ".claude/tools/data/plugin-hooks-template/compose.ts": {
+    "mtime": 1789991037.4519024,
+    "seen": 1793867795.1701074,
+    "ast_hash": "eb46d815f4d11113eaf37aefad0a19f8",
+    "semantic_hash": "eb46d815f4d11113eaf37aefad0a19f8"
+  },
+  ".claude/tools/data/plugin-targets.json": {
+    "mtime": 1789991037.4519024,
+    "seen": 1793867795.170108,
+    "ast_hash": "79bf889aabad15c6c86f26073a5dfb61",
+    "semantic_hash": "79bf889aabad15c6c86f26073a5dfb61"
+  },
+  ".claude/tools/data/scope-grid.json": {
+    "mtime": 1789991037.452265,
+    "seen": 1793867795.1701093,
+    "ast_hash": "1df5caedfb4639a2ebff2904521e59d6",
+    "semantic_hash": "1df5caedfb4639a2ebff2904521e59d6"
+  },
+  ".claude/tools/data/stage-graph.json": {
+    "mtime": 1789991037.452382,
+    "seen": 1793867795.17011,
+    "ast_hash": "7bb0a2f77101ad540b675167849ff06f",
+    "semantic_hash": "7bb0a2f77101ad540b675167849ff06f"
+  },
+  ".github/dependabot.yml": {
+    "mtime": 1791129504.1390777,
+    "seen": 1793867795.170111,
+    "ast_hash": "dcc5a91dd00cd74d9a5ddcde9b959c9d",
+    "semantic_hash": "dcc5a91dd00cd74d9a5ddcde9b959c9d"
+  },
+  ".github/workflows/publish.yml": {
+    "mtime": 1791129504.1390777,
+    "seen": 1793867795.1701117,
+    "ast_hash": "1160dcecefd218b1518b5f5007c81946",
+    "semantic_hash": "1160dcecefd218b1518b5f5007c81946"
+  },
+  ".github/workflows/security.yml": {
+    "mtime": 1791129504.1390777,
+    "seen": 1793867795.1701126,
+    "ast_hash": "44b0c5813ba31873cdf2015676a0bdbe",
+    "semantic_hash": "44b0c5813ba31873cdf2015676a0bdbe"
+  },
+  ".prettierrc.json": {
+    "mtime": 1790180595.9988666,
+    "seen": 1793867795.1701136,
+    "ast_hash": "108529b497bd0a515b01226dda18c3b0",
+    "semantic_hash": "108529b497bd0a515b01226dda18c3b0"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/code-generation/source-manifest.json": {
+    "mtime": 1790282019.7196674,
+    "seen": 1793867795.1701145,
+    "ast_hash": "ec72b561851a494ce9a973cf4b746c5f",
+    "semantic_hash": "ec72b561851a494ce9a973cf4b746c5f"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/code-generation/traceability.json": {
+    "mtime": 1790271742.8718612,
+    "seen": 1793867795.1701152,
+    "ast_hash": "a4cec412ff1191f235c331665861772f",
+    "semantic_hash": "a4cec412ff1191f235c331665861772f"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/functional-design/traceability.json": {
+    "mtime": 1790207244.261418,
+    "seen": 1793867795.1701162,
+    "ast_hash": "47d255d6f7cdabbe21d31fb79f2a5d4f",
+    "semantic_hash": "47d255d6f7cdabbe21d31fb79f2a5d4f"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/code-generation/source-manifest.json": {
+    "mtime": 1790273127.6861463,
+    "seen": 1793867795.1701171,
+    "ast_hash": "0837b40fe852d4999c0a20c6b5dcd16d",
+    "semantic_hash": "0837b40fe852d4999c0a20c6b5dcd16d"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/code-generation/traceability.json": {
+    "mtime": 1790183770.0784,
+    "seen": 1793867795.1701179,
+    "ast_hash": "5be74063fa296a1a2c5958382f5fd6bd",
+    "semantic_hash": "5be74063fa296a1a2c5958382f5fd6bd"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/functional-design/traceability.json": {
+    "mtime": 1790171306.4995878,
+    "seen": 1793867795.1701186,
+    "ast_hash": "a9a7404dec91b47fecf57b8ac7c8bce7",
+    "semantic_hash": "a9a7404dec91b47fecf57b8ac7c8bce7"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u3-projects/code-generation/source-manifest.json": {
+    "mtime": 1790274072.935795,
+    "seen": 1793867795.1701198,
+    "ast_hash": "f0cceeceebe8fc9962795df8c9fdd3c9",
+    "semantic_hash": "f0cceeceebe8fc9962795df8c9fdd3c9"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u3-projects/code-generation/traceability.json": {
+    "mtime": 1790274067.6588023,
+    "seen": 1793867795.1701207,
+    "ast_hash": "47f468116950bae6194bcb399012e410",
+    "semantic_hash": "47f468116950bae6194bcb399012e410"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u3-projects/functional-design/traceability.json": {
+    "mtime": 1790172711.210661,
+    "seen": 1793867795.1701214,
+    "ast_hash": "d2ddccb40754075c1618e6151f8e9ee3",
+    "semantic_hash": "d2ddccb40754075c1618e6151f8e9ee3"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u4-about-page/code-generation/source-manifest.json": {
+    "mtime": 1790275519.5171978,
+    "seen": 1793867795.1701221,
+    "ast_hash": "74a0378dd486099f1704fa9d42be48d4",
+    "semantic_hash": "74a0378dd486099f1704fa9d42be48d4"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u4-about-page/code-generation/traceability.json": {
+    "mtime": 1790275697.362319,
+    "seen": 1793867795.1701233,
+    "ast_hash": "1cf5511f8284e91515f1a46ce6961af0",
+    "semantic_hash": "1cf5511f8284e91515f1a46ce6961af0"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u4-about-page/functional-design/traceability.json": {
+    "mtime": 1790172727.3848836,
+    "seen": 1793867795.170124,
+    "ast_hash": "b6510c33a64c782dc3cf6f01c1948f87",
+    "semantic_hash": "b6510c33a64c782dc3cf6f01c1948f87"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u5-visual-direction/code-generation/source-manifest.json": {
+    "mtime": 1790277489.5615366,
+    "seen": 1793867795.170125,
+    "ast_hash": "6f194de2dc3b8c19f4032ae77e5b276d",
+    "semantic_hash": "6f194de2dc3b8c19f4032ae77e5b276d"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u5-visual-direction/code-generation/traceability.json": {
+    "mtime": 1790277539.8116407,
+    "seen": 1793867795.170126,
+    "ast_hash": "b6fbfc7ddfa8213e0245ccc3a564ccd9",
+    "semantic_hash": "b6fbfc7ddfa8213e0245ccc3a564ccd9"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u5-visual-direction/functional-design/traceability.json": {
+    "mtime": 1790206647.816703,
+    "seen": 1793867795.170127,
+    "ast_hash": "3a7b09261ef0a923e6f5819779b96273",
+    "semantic_hash": "3a7b09261ef0a923e6f5819779b96273"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u6-launch-content/code-generation/source-manifest.json": {
+    "mtime": 1790278698.7218504,
+    "seen": 1793867795.1701279,
+    "ast_hash": "6b7cd73323ea31a6e06101290e57ece0",
+    "semantic_hash": "6b7cd73323ea31a6e06101290e57ece0"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u6-launch-content/code-generation/traceability.json": {
+    "mtime": 1790278747.3199568,
+    "seen": 1793867795.1701286,
+    "ast_hash": "9fd92750961a3eed5fcbc4d5f799d407",
+    "semantic_hash": "9fd92750961a3eed5fcbc4d5f799d407"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u6-launch-content/functional-design/traceability.json": {
+    "mtime": 1790168588.9314702,
+    "seen": 1793867795.1701298,
+    "ast_hash": "335eaacfbe2b0ead8a09dc7e068b02da",
+    "semantic_hash": "335eaacfbe2b0ead8a09dc7e068b02da"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/domain-design/traceability.json": {
+    "mtime": 1790159107.8953836,
+    "seen": 1793867795.1701305,
+    "ast_hash": "e7da752631c8b8e8520aecb768626aab",
+    "semantic_hash": "e7da752631c8b8e8520aecb768626aab"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/units-generation/traceability.json": {
+    "mtime": 1790160228.3065872,
+    "seen": 1793867795.1701312,
+    "ast_hash": "eca2a7a295d7cc3b9b3a7fcc65bcaaa1",
+    "semantic_hash": "eca2a7a295d7cc3b9b3a7fcc65bcaaa1"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/project-description.json": {
+    "mtime": 1789991523.244455,
+    "seen": 1793867795.1701322,
+    "ast_hash": "9adae310ca3ac11348d94baa4b52a4c0",
+    "semantic_hash": "9adae310ca3ac11348d94baa4b52a4c0"
+  },
+  "aidlc/spaces/default/intents/intents.json": {
+    "mtime": 1790288457.0664577,
+    "seen": 1793867795.1701329,
+    "ast_hash": "0ba4aea5490ac7d749220a221b975c26",
+    "semantic_hash": "0ba4aea5490ac7d749220a221b975c26"
+  },
+  "bin/build.ts": {
+    "mtime": 1790607017.878087,
+    "seen": 1793867795.170134,
+    "ast_hash": "6e2af5e309aed8b297e7500f6e446f5a",
+    "semantic_hash": "6e2af5e309aed8b297e7500f6e446f5a"
+  },
+  "bin/check.ts": {
+    "mtime": 1790607017.878087,
+    "seen": 1793867795.1701374,
+    "ast_hash": "727dbc7ca9e35ff8913092a864fd1e7c",
+    "semantic_hash": "727dbc7ca9e35ff8913092a864fd1e7c"
+  },
+  "eslint.config.js": {
+    "mtime": 1790183435.3107502,
+    "seen": 1793867795.1701384,
+    "ast_hash": "ddb524588e2511a4c2263dad21bc5472",
+    "semantic_hash": "ddb524588e2511a4c2263dad21bc5472"
+  },
+  "package.json": {
+    "mtime": 1790283179.1988664,
+    "seen": 1793867795.170139,
+    "ast_hash": "1f80d56c2b740ccad5cce09f508390bf",
+    "semantic_hash": "1f80d56c2b740ccad5cce09f508390bf"
+  },
+  "site.config.ts": {
+    "mtime": 1790608183.746737,
+    "seen": 1793867795.1701403,
+    "ast_hash": "a42f5bd2a0d798ca4ce282dce4b792e8",
+    "semantic_hash": "a42f5bd2a0d798ca4ce282dce4b792e8"
+  },
+  "src/check-runner.ts": {
+    "mtime": 1790180621.8117998,
+    "seen": 1793867795.170141,
+    "ast_hash": "cf3a1dc5f40e5f4cd315ace65cfa7bfa",
+    "semantic_hash": "cf3a1dc5f40e5f4cd315ace65cfa7bfa"
+  },
+  "src/content-source.ts": {
+    "mtime": 1790180621.8397996,
+    "seen": 1793867795.170142,
+    "ast_hash": "f7274a1c73f52e7e29a84da80846b717",
+    "semantic_hash": "f7274a1c73f52e7e29a84da80846b717"
+  },
+  "src/content-transforms.ts": {
+    "mtime": 1790183244.7534695,
+    "seen": 1793867795.1701427,
+    "ast_hash": "1ed03d2607a8eac7f5172ce43900ced5",
+    "semantic_hash": "1ed03d2607a8eac7f5172ce43900ced5"
+  },
+  "src/errors.ts": {
+    "mtime": 1790180621.8617995,
+    "seen": 1793867795.1701438,
+    "ast_hash": "e9b4844bfe10626763b7a97a3fad1ca7",
+    "semantic_hash": "e9b4844bfe10626763b7a97a3fad1ca7"
+  },
+  "src/markup-renderer.ts": {
+    "mtime": 1790607017.8792424,
+    "seen": 1793867795.1701448,
+    "ast_hash": "3859c28cf12534ac4efac5826cbe4d7d",
+    "semantic_hash": "3859c28cf12534ac4efac5826cbe4d7d"
+  },
+  "src/page-renderer/pages.ts": {
+    "mtime": 1790614155.7028346,
+    "seen": 1793867795.1701455,
+    "ast_hash": "ceef562d0ab260ec40f357cec46b9b2a",
+    "semantic_hash": "ceef562d0ab260ec40f357cec46b9b2a"
+  },
+  "src/page-renderer/shell.ts": {
+    "mtime": 1790612315.0906546,
+    "seen": 1793867795.1701465,
+    "ast_hash": "a06751492466a519857eb8c1ce0328ec",
+    "semantic_hash": "a06751492466a519857eb8c1ce0328ec"
+  },
+  "src/post-catalog.ts": {
+    "mtime": 1790607017.8792424,
+    "seen": 1793867795.1701474,
+    "ast_hash": "515e9d7dd7fbb6b9bed8a4f9a95e8466",
+    "semantic_hash": "515e9d7dd7fbb6b9bed8a4f9a95e8466"
+  },
+  "src/project-catalog.ts": {
+    "mtime": 1790180621.9387994,
+    "seen": 1793867795.1701481,
+    "ast_hash": "bad47475f40c15d5c84a9efa9f6d815a",
+    "semantic_hash": "bad47475f40c15d5c84a9efa9f6d815a"
+  },
+  "src/site-builder.ts": {
+    "mtime": 1790609202.8418555,
+    "seen": 1793867795.170149,
+    "ast_hash": "b9c07a0208e3d6cf3179dd1f1b478a82",
+    "semantic_hash": "b9c07a0208e3d6cf3179dd1f1b478a82"
+  },
+  "src/types.ts": {
+    "mtime": 1790607017.8792424,
+    "seen": 1793867795.1701498,
+    "ast_hash": "a02ba013fefcc0e7c8813a5f31c68f84",
+    "semantic_hash": "a02ba013fefcc0e7c8813a5f31c68f84"
+  },
+  "tests/u1/check-runner.test.ts": {
+    "mtime": 1790180621.9767992,
+    "seen": 1793867795.1701508,
+    "ast_hash": "6003f43b0cc620f51ece9c16cca34ccd",
+    "semantic_hash": "6003f43b0cc620f51ece9c16cca34ccd"
+  },
+  "tests/u1/content-source.test.ts": {
+    "mtime": 1790180621.988799,
+    "seen": 1793867795.1701517,
+    "ast_hash": "b2e5bc3b4a4a660e44c3e765f0a0d7ec",
+    "semantic_hash": "b2e5bc3b4a4a660e44c3e765f0a0d7ec"
+  },
+  "tests/u1/content-transforms.test.ts": {
+    "mtime": 1790180621.995799,
+    "seen": 1793867795.1701524,
+    "ast_hash": "3b1181432417f4d0804b0646edd5f2cf",
+    "semantic_hash": "3b1181432417f4d0804b0646edd5f2cf"
+  },
+  "tests/u1/helpers.ts": {
+    "mtime": 1790607017.8792424,
+    "seen": 1793867795.1701531,
+    "ast_hash": "07c32dea83904e13cf66216a22cc0624",
+    "semantic_hash": "07c32dea83904e13cf66216a22cc0624"
+  },
+  "tests/u1/integration.test.ts": {
+    "mtime": 1790180705.0814788,
+    "seen": 1793867795.1701543,
+    "ast_hash": "956c45e5b0efc237c48c84438aaab0c6",
+    "semantic_hash": "956c45e5b0efc237c48c84438aaab0c6"
+  },
+  "tests/u1/markup-renderer.test.ts": {
+    "mtime": 1790607017.8792424,
+    "seen": 1793867795.1701553,
+    "ast_hash": "f154b7f2be7c84348cfddcb0b9b9102f",
+    "semantic_hash": "f154b7f2be7c84348cfddcb0b9b9102f"
+  },
+  "tests/u1/page-renderer.test.ts": {
+    "mtime": 1790610809.090914,
+    "seen": 1793867795.170156,
+    "ast_hash": "3f5ba761b5844ab00966bac54723b660",
+    "semantic_hash": "3f5ba761b5844ab00966bac54723b660"
+  },
+  "tests/u1/post-catalog.test.ts": {
+    "mtime": 1790607017.8792424,
+    "seen": 1793867795.170157,
+    "ast_hash": "1b7084d003b0f0597f12f53a11547627",
+    "semantic_hash": "1b7084d003b0f0597f12f53a11547627"
+  },
+  "tests/u1/project-catalog.test.ts": {
+    "mtime": 1790180622.0547988,
+    "seen": 1793867795.170158,
+    "ast_hash": "38a094c1f457af8f76378bf9e97d39fc",
+    "semantic_hash": "38a094c1f457af8f76378bf9e97d39fc"
+  },
+  "tests/u1/site-builder.test.ts": {
+    "mtime": 1790180705.1304786,
+    "seen": 1793867795.1701589,
+    "ast_hash": "a8da02fa2cc0b8ac0746553bde93b495",
+    "semantic_hash": "a8da02fa2cc0b8ac0746553bde93b495"
+  },
+  "tests/u2/feed.test.ts": {
+    "mtime": 1790183446.3117073,
+    "seen": 1793867795.1701598,
+    "ast_hash": "e801e592c2f4da4e050ca8c133dbfac6",
+    "semantic_hash": "e801e592c2f4da4e050ca8c133dbfac6"
+  },
+  "tests/u2/helpers.ts": {
+    "mtime": 1790183446.3267071,
+    "seen": 1793867795.170161,
+    "ast_hash": "8f2a9bcc90fcdcbd43af531c69567629",
+    "semantic_hash": "8f2a9bcc90fcdcbd43af531c69567629"
+  },
+  "tests/u2/integration.test.ts": {
+    "mtime": 1790607017.8792424,
+    "seen": 1793867795.1701617,
+    "ast_hash": "08616f6cc25ee024699ff961516cff35",
+    "semantic_hash": "08616f6cc25ee024699ff961516cff35"
+  },
+  "tests/u2/markup-renderer.test.ts": {
+    "mtime": 1790607017.8792424,
+    "seen": 1793867795.1701627,
+    "ast_hash": "9b713aae4f5f46dc0053d5bb3c72093a",
+    "semantic_hash": "9b713aae4f5f46dc0053d5bb3c72093a"
+  },
+  "tests/u2/page-renderer.test.ts": {
+    "mtime": 1790607017.8792424,
+    "seen": 1793867795.1701634,
+    "ast_hash": "e631aeff8d0a33172ca670017ebcbe41",
+    "semantic_hash": "e631aeff8d0a33172ca670017ebcbe41"
+  },
+  "tests/u3/heading-order.test.ts": {
+    "mtime": 1790607017.8792424,
+    "seen": 1793867795.170164,
+    "ast_hash": "1d936c8934807b24b1f5cf068bb1c288",
+    "semantic_hash": "1d936c8934807b24b1f5cf068bb1c288"
+  },
+  "tests/u3/helpers.ts": {
+    "mtime": 1790613146.8925261,
+    "seen": 1793867795.1701653,
+    "ast_hash": "6f5b1888fb5a2d15fb90a0aa0cdaeeb1",
+    "semantic_hash": "6f5b1888fb5a2d15fb90a0aa0cdaeeb1"
+  },
+  "tests/u3/integration.test.ts": {
+    "mtime": 1790607017.8792424,
+    "seen": 1793867795.1701667,
+    "ast_hash": "14bd533cab0ddc9845b81e560d1beca0",
+    "semantic_hash": "14bd533cab0ddc9845b81e560d1beca0"
+  },
+  "tests/u3/ordering-parity.test.ts": {
+    "mtime": 1790607017.8792424,
+    "seen": 1793867795.170168,
+    "ast_hash": "4c73b00ece5b3432aaf9133f8fdaab47",
+    "semantic_hash": "4c73b00ece5b3432aaf9133f8fdaab47"
+  },
+  "tests/u3/page-renderer.test.ts": {
+    "mtime": 1790614168.9718113,
+    "seen": 1793867795.1701686,
+    "ast_hash": "450f6f3f05b4e2fdfec6f74b7fe5d76e",
+    "semantic_hash": "450f6f3f05b4e2fdfec6f74b7fe5d76e"
+  },
+  "tests/u4/about.test.ts": {
+    "mtime": 1790610809.090914,
+    "seen": 1793867795.1701696,
+    "ast_hash": "4d6d9992934baf7153384d16c23222ad",
+    "semantic_hash": "4d6d9992934baf7153384d16c23222ad"
+  },
+  "tests/u4/helpers.ts": {
+    "mtime": 1790610809.090914,
+    "seen": 1793867795.1701703,
+    "ast_hash": "38fc8b0be7593522213e650399968c8f",
+    "semantic_hash": "38fc8b0be7593522213e650399968c8f"
+  },
+  "tests/u4/integration.test.ts": {
+    "mtime": 1790607017.8792424,
+    "seen": 1793867795.170171,
+    "ast_hash": "7ad36e8453051306f2be6589a4f5d5ac",
+    "semantic_hash": "7ad36e8453051306f2be6589a4f5d5ac"
+  },
+  "tests/u5/head.test.ts": {
+    "mtime": 1790607017.8792424,
+    "seen": 1793867795.1701722,
+    "ast_hash": "dbb9c40cb64daa10d44cf4b2fd6a6c6e",
+    "semantic_hash": "dbb9c40cb64daa10d44cf4b2fd6a6c6e"
+  },
+  "tests/u5/helpers.ts": {
+    "mtime": 1790607017.880087,
+    "seen": 1793867795.170173,
+    "ast_hash": "753970ad351a97f7f3fbf012ca00501b",
+    "semantic_hash": "753970ad351a97f7f3fbf012ca00501b"
+  },
+  "tests/u5/integration.test.ts": {
+    "mtime": 1790607017.880087,
+    "seen": 1793867795.1701744,
+    "ast_hash": "4fc627d13e2a9f260f0e90121db52fa5",
+    "semantic_hash": "4fc627d13e2a9f260f0e90121db52fa5"
+  },
+  "tests/u5/stylesheet.test.ts": {
+    "mtime": 1790610809.087914,
+    "seen": 1793867795.1701756,
+    "ast_hash": "f775cc1a22cd905851cdd4a33909506e",
+    "semantic_hash": "f775cc1a22cd905851cdd4a33909506e"
+  },
+  "tsconfig.json": {
+    "mtime": 1790180622.0707989,
+    "seen": 1793867795.1701765,
+    "ast_hash": "08e699d461929760c0173f50327fc6ae",
+    "semantic_hash": "08e699d461929760c0173f50327fc6ae"
+  },
+  "vitest.config.ts": {
+    "mtime": 1790180622.073799,
+    "seen": 1793867795.1701772,
+    "ast_hash": "eb266986e58e53ca9e0f599cc73792c1",
+    "semantic_hash": "eb266986e58e53ca9e0f599cc73792c1"
+  },
+  ".claude/CLAUDE.md": {
+    "mtime": 1789991037.4012444,
+    "seen": 1793867795.170178,
+    "ast_hash": "ae1b0299de193bfa367a6571b5aa6be4",
+    "semantic_hash": "ae1b0299de193bfa367a6571b5aa6be4"
+  },
+  ".claude/agents/aidlc-architect-agent.md": {
+    "mtime": 1789991037.4012444,
+    "seen": 1793867795.1701791,
+    "ast_hash": "fefb741d73c49fad2577a521fd7d33c8",
+    "semantic_hash": "fefb741d73c49fad2577a521fd7d33c8"
+  },
+  ".claude/agents/aidlc-architecture-reviewer-agent.md": {
+    "mtime": 1789991037.4022443,
+    "seen": 1793867795.1701798,
+    "ast_hash": "f7753a9ab994ecadd5be23f8b116f677",
+    "semantic_hash": "f7753a9ab994ecadd5be23f8b116f677"
+  },
+  ".claude/agents/aidlc-aws-platform-agent.md": {
+    "mtime": 1789991037.4028616,
+    "seen": 1793867795.1701806,
+    "ast_hash": "55261621ff9a2989ace11e405878470f",
+    "semantic_hash": "55261621ff9a2989ace11e405878470f"
+  },
+  ".claude/agents/aidlc-compliance-agent.md": {
+    "mtime": 1789991037.4031224,
+    "seen": 1793867795.1701815,
+    "ast_hash": "70e5b4c50d57d27b4c7753e6d5d36ef6",
+    "semantic_hash": "70e5b4c50d57d27b4c7753e6d5d36ef6"
+  },
+  ".claude/agents/aidlc-composer-agent.md": {
+    "mtime": 1789991037.403338,
+    "seen": 1793867795.1701825,
+    "ast_hash": "7cf0108be348f62ffb07bfd1b2b00e48",
+    "semantic_hash": "7cf0108be348f62ffb07bfd1b2b00e48"
+  },
+  ".claude/agents/aidlc-delivery-agent.md": {
+    "mtime": 1789991037.4038904,
+    "seen": 1793867795.1701834,
+    "ast_hash": "1e5d0c36e3313dd837c4ba486ae96542",
+    "semantic_hash": "1e5d0c36e3313dd837c4ba486ae96542"
+  },
+  ".claude/agents/aidlc-design-agent.md": {
+    "mtime": 1789991037.4041348,
+    "seen": 1793867795.1701841,
+    "ast_hash": "8c9911f869bd1f95fab39de622809161",
+    "semantic_hash": "8c9911f869bd1f95fab39de622809161"
+  },
+  ".claude/agents/aidlc-developer-agent.md": {
+    "mtime": 1789991037.4043703,
+    "seen": 1793867795.1701849,
+    "ast_hash": "fc84b8f2f041d842f0ab2737fc24709d",
+    "semantic_hash": "fc84b8f2f041d842f0ab2737fc24709d"
+  },
+  ".claude/agents/aidlc-devsecops-agent.md": {
+    "mtime": 1789991037.4046218,
+    "seen": 1793867795.170186,
+    "ast_hash": "66c061253b305fa1b2767c707e069e34",
+    "semantic_hash": "66c061253b305fa1b2767c707e069e34"
+  },
+  ".claude/agents/aidlc-operations-agent.md": {
+    "mtime": 1789991037.4048069,
+    "seen": 1793867795.1701868,
+    "ast_hash": "99292b2eb96d7d17bebbe3f374c3b3c4",
+    "semantic_hash": "99292b2eb96d7d17bebbe3f374c3b3c4"
+  },
+  ".claude/agents/aidlc-pipeline-deploy-agent.md": {
+    "mtime": 1789991037.405058,
+    "seen": 1793867795.1701877,
+    "ast_hash": "c2b45d27ab37e09bd05cbf4c42f47411",
+    "semantic_hash": "c2b45d27ab37e09bd05cbf4c42f47411"
+  },
+  ".claude/agents/aidlc-product-agent.md": {
+    "mtime": 1789991037.405223,
+    "seen": 1793867795.1701884,
+    "ast_hash": "b51aefed7a43a0272013b879806d5c1a",
+    "semantic_hash": "b51aefed7a43a0272013b879806d5c1a"
+  },
+  ".claude/agents/aidlc-product-lead-agent.md": {
+    "mtime": 1789991037.4053664,
+    "seen": 1793867795.1701896,
+    "ast_hash": "ad2be35e70dbbf28bbbc47c9f0f21113",
+    "semantic_hash": "ad2be35e70dbbf28bbbc47c9f0f21113"
+  },
+  ".claude/agents/aidlc-quality-agent.md": {
+    "mtime": 1789991037.4055407,
+    "seen": 1793867795.1701903,
+    "ast_hash": "322c45f1f57dba8069ff2d302247e97f",
+    "semantic_hash": "322c45f1f57dba8069ff2d302247e97f"
+  },
+  ".claude/aidlc-common/conductor.md": {
+    "mtime": 1789991037.4055407,
+    "seen": 1793867795.170191,
+    "ast_hash": "54e1bb3ea835b88b80e0f819c4e64b87",
+    "semantic_hash": "54e1bb3ea835b88b80e0f819c4e64b87"
+  },
+  ".claude/aidlc-common/protocols/stage-definition.md": {
+    "mtime": 1789991037.4055407,
+    "seen": 1793867795.1701918,
+    "ast_hash": "208e0bee76dd3caa44b788971beed444",
+    "semantic_hash": "208e0bee76dd3caa44b788971beed444"
+  },
+  ".claude/aidlc-common/protocols/stage-protocol-construction.md": {
+    "mtime": 1789991037.4063022,
+    "seen": 1793867795.170193,
+    "ast_hash": "9f5162d7a8e085d758e4b551257993d4",
+    "semantic_hash": "9f5162d7a8e085d758e4b551257993d4"
+  },
+  ".claude/aidlc-common/protocols/stage-protocol-ensemble.md": {
+    "mtime": 1789991037.406779,
+    "seen": 1793867795.170194,
+    "ast_hash": "8021cb1dfca5efb3ba2939731195e058",
+    "semantic_hash": "8021cb1dfca5efb3ba2939731195e058"
+  },
+  ".claude/aidlc-common/protocols/stage-protocol-governance.md": {
+    "mtime": 1789991037.4071023,
+    "seen": 1793867795.1701946,
+    "ast_hash": "c04b0c2524d492ff32ee5821fb610812",
+    "semantic_hash": "c04b0c2524d492ff32ee5821fb610812"
+  },
+  ".claude/aidlc-common/protocols/stage-protocol-learnings.md": {
+    "mtime": 1789991037.4071598,
+    "seen": 1793867795.1701958,
+    "ast_hash": "3b870bb7673392cfca5c54933453787e",
+    "semantic_hash": "3b870bb7673392cfca5c54933453787e"
+  },
+  ".claude/aidlc-common/protocols/stage-protocol-recovery.md": {
+    "mtime": 1789991037.4073734,
+    "seen": 1793867795.1701968,
+    "ast_hash": "17e3a71c29daa9364ab490a70b2d7bac",
+    "semantic_hash": "17e3a71c29daa9364ab490a70b2d7bac"
+  },
+  ".claude/aidlc-common/protocols/stage-protocol-reviewer.md": {
+    "mtime": 1789991037.4076045,
+    "seen": 1793867795.1701975,
+    "ast_hash": "400a2335e60d416368186e149bf760b0",
+    "semantic_hash": "400a2335e60d416368186e149bf760b0"
+  },
+  ".claude/aidlc-common/protocols/stage-protocol-swarm.md": {
+    "mtime": 1789991037.4079201,
+    "seen": 1793867795.1701982,
+    "ast_hash": "f8b4fee576ffac3e527d9724d277ed8f",
+    "semantic_hash": "f8b4fee576ffac3e527d9724d277ed8f"
+  },
+  ".claude/aidlc-common/protocols/stage-protocol.md": {
+    "mtime": 1789991037.4081655,
+    "seen": 1793867795.1701992,
+    "ast_hash": "2cf08c0a3e628b5e1aacd2144638245e",
+    "semantic_hash": "2cf08c0a3e628b5e1aacd2144638245e"
+  },
+  ".claude/aidlc-common/stages/construction/build-and-test.md": {
+    "mtime": 1789991037.4082432,
+    "seen": 1793867795.1702,
+    "ast_hash": "b1205ab3ea87b3143bcc85ad8b91eb8b",
+    "semantic_hash": "b1205ab3ea87b3143bcc85ad8b91eb8b"
+  },
+  ".claude/aidlc-common/stages/construction/ci-pipeline.md": {
+    "mtime": 1789991037.40879,
+    "seen": 1793867795.1702008,
+    "ast_hash": "e1d1e1b9f902930e159e4d5075d42799",
+    "semantic_hash": "e1d1e1b9f902930e159e4d5075d42799"
+  },
+  ".claude/aidlc-common/stages/construction/code-generation.md": {
+    "mtime": 1789991037.4089875,
+    "seen": 1793867795.1702015,
+    "ast_hash": "24d137771bcd123e7f427c629c83f4b2",
+    "semantic_hash": "24d137771bcd123e7f427c629c83f4b2"
+  },
+  ".claude/aidlc-common/stages/construction/functional-design.md": {
+    "mtime": 1789991037.4093277,
+    "seen": 1793867795.1702027,
+    "ast_hash": "fc8a328e6ab9ac7cac470f63009f9b6f",
+    "semantic_hash": "fc8a328e6ab9ac7cac470f63009f9b6f"
+  },
+  ".claude/aidlc-common/stages/construction/infrastructure-design.md": {
+    "mtime": 1789991037.4094892,
+    "seen": 1793867795.1702034,
+    "ast_hash": "51f7c9dd0cfc48246df88a6edf78ec95",
+    "semantic_hash": "51f7c9dd0cfc48246df88a6edf78ec95"
+  },
+  ".claude/aidlc-common/stages/construction/nfr-design.md": {
+    "mtime": 1789991037.409684,
+    "seen": 1793867795.1702042,
+    "ast_hash": "016ad047faa31b3d9d032d055597203f",
+    "semantic_hash": "016ad047faa31b3d9d032d055597203f"
+  },
+  ".claude/aidlc-common/stages/construction/nfr-requirements.md": {
+    "mtime": 1789991037.4098914,
+    "seen": 1793867795.1702049,
+    "ast_hash": "654c650934f5248d9aa67094b23a59a6",
+    "semantic_hash": "654c650934f5248d9aa67094b23a59a6"
+  },
+  ".claude/aidlc-common/stages/ideation/approval-handoff.md": {
+    "mtime": 1789991037.4098914,
+    "seen": 1793867795.170206,
+    "ast_hash": "f03c0858c45a0bfc7a9e68273d71e643",
+    "semantic_hash": "f03c0858c45a0bfc7a9e68273d71e643"
+  },
+  ".claude/aidlc-common/stages/ideation/feasibility.md": {
+    "mtime": 1789991037.4102397,
+    "seen": 1793867795.1702068,
+    "ast_hash": "8f529cbd810f72992555cf9cccddbf8f",
+    "semantic_hash": "8f529cbd810f72992555cf9cccddbf8f"
+  },
+  ".claude/aidlc-common/stages/ideation/intent-capture.md": {
+    "mtime": 1789991037.41029,
+    "seen": 1793867795.1702075,
+    "ast_hash": "e950a2e9e1f1cb74ae37aac181806f69",
+    "semantic_hash": "e950a2e9e1f1cb74ae37aac181806f69"
+  },
+  ".claude/aidlc-common/stages/ideation/market-research.md": {
+    "mtime": 1789991037.4105868,
+    "seen": 1793867795.1702082,
+    "ast_hash": "fefbef89feb4b63babb525b33b20d613",
+    "semantic_hash": "fefbef89feb4b63babb525b33b20d613"
+  },
+  ".claude/aidlc-common/stages/ideation/rough-mockups.md": {
+    "mtime": 1789991037.4106581,
+    "seen": 1793867795.1702092,
+    "ast_hash": "01b1b77486605f42126cb272210bb46d",
+    "semantic_hash": "01b1b77486605f42126cb272210bb46d"
+  },
+  ".claude/aidlc-common/stages/ideation/scope-definition.md": {
+    "mtime": 1789991037.410696,
+    "seen": 1793867795.1702101,
+    "ast_hash": "1054ccda97f330207ae41a774418c8ee",
+    "semantic_hash": "1054ccda97f330207ae41a774418c8ee"
+  },
+  ".claude/aidlc-common/stages/ideation/team-formation.md": {
+    "mtime": 1789991037.4107318,
+    "seen": 1793867795.1702108,
+    "ast_hash": "3f43090ab976290b6aa61a47bb345c42",
+    "semantic_hash": "3f43090ab976290b6aa61a47bb345c42"
+  },
+  ".claude/aidlc-common/stages/inception/contract-design.md": {
+    "mtime": 1789991037.4107318,
+    "seen": 1793867795.1702118,
+    "ast_hash": "421c0477154f52d618bd502c370be03f",
+    "semantic_hash": "421c0477154f52d618bd502c370be03f"
+  },
+  ".claude/aidlc-common/stages/inception/delivery-planning.md": {
+    "mtime": 1789991037.4109051,
+    "seen": 1793867795.1702125,
+    "ast_hash": "defed148cca6feaf6ad1435f87538bc0",
+    "semantic_hash": "defed148cca6feaf6ad1435f87538bc0"
+  },
+  ".claude/aidlc-common/stages/inception/domain-design.md": {
+    "mtime": 1789991037.4110944,
+    "seen": 1793867795.1702137,
+    "ast_hash": "30c067f71d3e10f1a9c32e62777604f3",
+    "semantic_hash": "30c067f71d3e10f1a9c32e62777604f3"
+  },
+  ".claude/aidlc-common/stages/inception/practices-discovery.md": {
+    "mtime": 1789991037.4112284,
+    "seen": 1793867795.1702144,
+    "ast_hash": "85ee246853f7dc816c8580c08478a3a6",
+    "semantic_hash": "85ee246853f7dc816c8580c08478a3a6"
+  },
+  ".claude/aidlc-common/stages/inception/refined-mockups.md": {
+    "mtime": 1789991037.411412,
+    "seen": 1793867795.1702151,
+    "ast_hash": "6df09c837dea9da00414327d6f34dd44",
+    "semantic_hash": "6df09c837dea9da00414327d6f34dd44"
+  },
+  ".claude/aidlc-common/stages/inception/requirements-analysis.md": {
+    "mtime": 1789991037.4114466,
+    "seen": 1793867795.1702158,
+    "ast_hash": "a9abc8fc5ca4ab5b7564837dcd58c71f",
+    "semantic_hash": "a9abc8fc5ca4ab5b7564837dcd58c71f"
+  },
+  ".claude/aidlc-common/stages/inception/reverse-engineering.md": {
+    "mtime": 1789991037.4115918,
+    "seen": 1793867795.170217,
+    "ast_hash": "ce79823262f8309dcd0ee4c92522a623",
+    "semantic_hash": "ce79823262f8309dcd0ee4c92522a623"
+  },
+  ".claude/aidlc-common/stages/inception/units-generation.md": {
+    "mtime": 1789991037.4118004,
+    "seen": 1793867795.1702178,
+    "ast_hash": "169e658fa6e7ad0871fcf447056fbfb3",
+    "semantic_hash": "169e658fa6e7ad0871fcf447056fbfb3"
+  },
+  ".claude/aidlc-common/stages/inception/user-stories.md": {
+    "mtime": 1789991037.4119723,
+    "seen": 1793867795.1702187,
+    "ast_hash": "665002f0a628e1e050a2ca34710609b0",
+    "semantic_hash": "665002f0a628e1e050a2ca34710609b0"
+  },
+  ".claude/aidlc-common/stages/initialization/state-init.md": {
+    "mtime": 1789991037.4119723,
+    "seen": 1793867795.1702194,
+    "ast_hash": "bd1051d24e27ec28d7fc9bffb8589678",
+    "semantic_hash": "bd1051d24e27ec28d7fc9bffb8589678"
+  },
+  ".claude/aidlc-common/stages/initialization/workspace-detection.md": {
+    "mtime": 1789991037.412261,
+    "seen": 1793867795.1702204,
+    "ast_hash": "2c670955e021a077f856ae6652e0014e",
+    "semantic_hash": "2c670955e021a077f856ae6652e0014e"
+  },
+  ".claude/aidlc-common/stages/initialization/workspace-scaffold.md": {
+    "mtime": 1789991037.4123888,
+    "seen": 1793867795.170221,
+    "ast_hash": "7cac6b79b767f7a428027a781cc0625d",
+    "semantic_hash": "7cac6b79b767f7a428027a781cc0625d"
+  },
+  ".claude/aidlc-common/stages/operation/deployment-execution.md": {
+    "mtime": 1789991037.4123888,
+    "seen": 1793867795.170222,
+    "ast_hash": "405f4d4a627e7d0287c11ac543f39213",
+    "semantic_hash": "405f4d4a627e7d0287c11ac543f39213"
+  },
+  ".claude/aidlc-common/stages/operation/deployment-pipeline.md": {
+    "mtime": 1789991037.4126954,
+    "seen": 1793867795.1702228,
+    "ast_hash": "ad2985fb1f8ba1df6d0f9c4d34cedb33",
+    "semantic_hash": "ad2985fb1f8ba1df6d0f9c4d34cedb33"
+  },
+  ".claude/aidlc-common/stages/operation/environment-provisioning.md": {
+    "mtime": 1789991037.412732,
+    "seen": 1793867795.170224,
+    "ast_hash": "d428c279b7fc8d012c15ed140f3a6428",
+    "semantic_hash": "d428c279b7fc8d012c15ed140f3a6428"
+  },
+  ".claude/aidlc-common/stages/operation/feedback-optimization.md": {
+    "mtime": 1789991037.412764,
+    "seen": 1793867795.1702247,
+    "ast_hash": "ac95c4d1e1fc19fdfdfc1f7f45ef664a",
+    "semantic_hash": "ac95c4d1e1fc19fdfdfc1f7f45ef664a"
+  },
+  ".claude/aidlc-common/stages/operation/incident-response.md": {
+    "mtime": 1789991037.4127972,
+    "seen": 1793867795.1702254,
+    "ast_hash": "9870715b2142e03db3249d90fe0e8f11",
+    "semantic_hash": "9870715b2142e03db3249d90fe0e8f11"
+  },
+  ".claude/aidlc-common/stages/operation/observability-setup.md": {
+    "mtime": 1789991037.412832,
+    "seen": 1793867795.170226,
+    "ast_hash": "6ee30ba2e8d505b2c0defcbb483cc763",
+    "semantic_hash": "6ee30ba2e8d505b2c0defcbb483cc763"
+  },
+  ".claude/aidlc-common/stages/operation/performance-validation.md": {
+    "mtime": 1789991037.412867,
+    "seen": 1793867795.1702273,
+    "ast_hash": "17312da430ec55953cb64ac390f6da0a",
+    "semantic_hash": "17312da430ec55953cb64ac390f6da0a"
+  },
+  ".claude/knowledge/aidlc-architect-agent/adr-template.md": {
+    "mtime": 1789991037.4165552,
+    "seen": 1793867795.1702282,
+    "ast_hash": "14dd5f2db9839684d3384b63811ef3c9",
+    "semantic_hash": "14dd5f2db9839684d3384b63811ef3c9"
+  },
+  ".claude/knowledge/aidlc-architect-agent/architecture-guide.md": {
+    "mtime": 1789991037.416936,
+    "seen": 1793867795.170229,
+    "ast_hash": "1221f2aecef5a57c9207e750ee1d3b9c",
+    "semantic_hash": "1221f2aecef5a57c9207e750ee1d3b9c"
+  },
+  ".claude/knowledge/aidlc-architect-agent/architecture-patterns.md": {
+    "mtime": 1789991037.416991,
+    "seen": 1793867795.1702297,
+    "ast_hash": "0f40772c4ec6be3fb67257fa8c401b76",
+    "semantic_hash": "0f40772c4ec6be3fb67257fa8c401b76"
+  },
+  ".claude/knowledge/aidlc-architect-agent/ddd-patterns.md": {
+    "mtime": 1789991037.417133,
+    "seen": 1793867795.1702309,
+    "ast_hash": "0ffe8a073403a946a345e8a7d4e60d23",
+    "semantic_hash": "0ffe8a073403a946a345e8a7d4e60d23"
+  },
+  ".claude/knowledge/aidlc-architect-agent/nfr-design-guide.md": {
+    "mtime": 1789991037.417266,
+    "seen": 1793867795.1702316,
+    "ast_hash": "6c30118683e14cba4641494a5434e011",
+    "semantic_hash": "6c30118683e14cba4641494a5434e011"
+  },
+  ".claude/knowledge/aidlc-architect-agent/nfr-design-patterns.md": {
+    "mtime": 1789991037.417393,
+    "seen": 1793867795.1702323,
+    "ast_hash": "22257fa4e22cbe276496a05f389e8d89",
+    "semantic_hash": "22257fa4e22cbe276496a05f389e8d89"
+  },
+  ".claude/knowledge/aidlc-architecture-reviewer-agent/reviewing.md": {
+    "mtime": 1789991037.417393,
+    "seen": 1793867795.1702332,
+    "ast_hash": "e804422f677eb2336556f60e19eb4a70",
+    "semantic_hash": "e804422f677eb2336556f60e19eb4a70"
+  },
+  ".claude/knowledge/aidlc-aws-platform-agent/cdk-best-practices.md": {
+    "mtime": 1789991037.417393,
+    "seen": 1793867795.1702342,
+    "ast_hash": "c735f79b400964c70988bffa549e0a8a",
+    "semantic_hash": "c735f79b400964c70988bffa549e0a8a"
+  },
+  ".claude/knowledge/aidlc-aws-platform-agent/cost-optimization-patterns.md": {
+    "mtime": 1789991037.4178398,
+    "seen": 1793867795.170235,
+    "ast_hash": "53199b85b48082960586a3f8cbf78bc6",
+    "semantic_hash": "53199b85b48082960586a3f8cbf78bc6"
+  },
+  ".claude/knowledge/aidlc-aws-platform-agent/infrastructure-guide.md": {
+    "mtime": 1789991037.4179764,
+    "seen": 1793867795.1702359,
+    "ast_hash": "9a167ffc70dea1c3d3dbb033f8b7cf45",
+    "semantic_hash": "9a167ffc70dea1c3d3dbb033f8b7cf45"
+  },
+  ".claude/knowledge/aidlc-aws-platform-agent/well-architected-framework.md": {
+    "mtime": 1789991037.4181426,
+    "seen": 1793867795.1702366,
+    "ast_hash": "47d1714cb66432c15c4d9f03acda111b",
+    "semantic_hash": "47d1714cb66432c15c4d9f03acda111b"
+  },
+  ".claude/knowledge/aidlc-compliance-agent/regulatory-frameworks.md": {
+    "mtime": 1789991037.4181426,
+    "seen": 1793867795.1702375,
+    "ast_hash": "bb76afbf528931493227a969fe2ec487",
+    "semantic_hash": "bb76afbf528931493227a969fe2ec487"
+  },
+  ".claude/knowledge/aidlc-composer-agent/composing.md": {
+    "mtime": 1789991037.4181426,
+    "seen": 1793867795.1702385,
+    "ast_hash": "266fd5255a730b76574257e94eeb76b1",
+    "semantic_hash": "266fd5255a730b76574257e94eeb76b1"
+  },
+  ".claude/knowledge/aidlc-delivery-agent/mob-programming-guide.md": {
+    "mtime": 1789991037.4182415,
+    "seen": 1793867795.1702392,
+    "ast_hash": "e2a22236062e87109c9b532038cb135d",
+    "semantic_hash": "e2a22236062e87109c9b532038cb135d"
+  },
+  ".claude/knowledge/aidlc-delivery-agent/team-topologies.md": {
+    "mtime": 1789991037.4187248,
+    "seen": 1793867795.1702402,
+    "ast_hash": "bd2153fc55e5588833cf4f3915698b22",
+    "semantic_hash": "bd2153fc55e5588833cf4f3915698b22"
+  },
+  ".claude/knowledge/aidlc-delivery-agent/workflow-planning-guide.md": {
+    "mtime": 1789991037.418867,
+    "seen": 1793867795.170241,
+    "ast_hash": "0f76a09cd286da55a072287370a788e7",
+    "semantic_hash": "0f76a09cd286da55a072287370a788e7"
+  },
+  ".claude/knowledge/aidlc-design-agent/accessibility-wcag.md": {
+    "mtime": 1789991037.418867,
+    "seen": 1793867795.1702418,
+    "ast_hash": "b9ec1587ef5561b05c1d5b8c117b6785",
+    "semantic_hash": "b9ec1587ef5561b05c1d5b8c117b6785"
+  },
+  ".claude/knowledge/aidlc-design-agent/component-spec-template.md": {
+    "mtime": 1789991037.41915,
+    "seen": 1793867795.1702428,
+    "ast_hash": "21264a1b963244c77a096ec93796e5e2",
+    "semantic_hash": "21264a1b963244c77a096ec93796e5e2"
+  },
+  ".claude/knowledge/aidlc-design-agent/interaction-design-patterns.md": {
+    "mtime": 1789991037.4191957,
+    "seen": 1793867795.1702435,
+    "ast_hash": "c6cadb97440e2abaf72e821d83146e64",
+    "semantic_hash": "c6cadb97440e2abaf72e821d83146e64"
+  },
+  ".claude/knowledge/aidlc-design-agent/ux-guide.md": {
+    "mtime": 1789991037.419344,
+    "seen": 1793867795.1702447,
+    "ast_hash": "cd97030f77f59bd15c1e9c20b6b13acd",
+    "semantic_hash": "cd97030f77f59bd15c1e9c20b6b13acd"
+  },
+  ".claude/knowledge/aidlc-design-agent/wireframing-guide.md": {
+    "mtime": 1789991037.4195075,
+    "seen": 1793867795.1702454,
+    "ast_hash": "95a2b7c6cff1144a65d7511914a3e29d",
+    "semantic_hash": "95a2b7c6cff1144a65d7511914a3e29d"
+  },
+  ".claude/knowledge/aidlc-developer-agent/api-design-guide.md": {
+    "mtime": 1789991037.4195075,
+    "seen": 1793867795.1702461,
+    "ast_hash": "1326434bced9980bbcfc1a0da8070e68",
+    "semantic_hash": "1326434bced9980bbcfc1a0da8070e68"
+  },
+  ".claude/knowledge/aidlc-developer-agent/code-analysis-guide.md": {
+    "mtime": 1789991037.4196885,
+    "seen": 1793867795.170247,
+    "ast_hash": "b8af99a093d4d9e0403aac17b6edc830",
+    "semantic_hash": "b8af99a093d4d9e0403aac17b6edc830"
+  },
+  ".claude/knowledge/aidlc-developer-agent/code-generation-guide.md": {
+    "mtime": 1789991037.4198105,
+    "seen": 1793867795.170248,
+    "ast_hash": "5f6eb1262e9ac78ee8123fe8927b76ab",
+    "semantic_hash": "5f6eb1262e9ac78ee8123fe8927b76ab"
+  },
+  ".claude/knowledge/aidlc-developer-agent/code-generation-patterns.md": {
+    "mtime": 1789991037.4199677,
+    "seen": 1793867795.1702487,
+    "ast_hash": "0058c732a572ad9783dbc315454a0d2e",
+    "semantic_hash": "0058c732a572ad9783dbc315454a0d2e"
+  },
+  ".claude/knowledge/aidlc-developer-agent/data-modelling-patterns.md": {
+    "mtime": 1789991037.4201088,
+    "seen": 1793867795.1702497,
+    "ast_hash": "23fe09a5cd111f413b347068d71f5f3d",
+    "semantic_hash": "23fe09a5cd111f413b347068d71f5f3d"
+  },
+  ".claude/knowledge/aidlc-developer-agent/re-artifacts.md": {
+    "mtime": 1789991037.4202535,
+    "seen": 1793867795.1702504,
+    "ast_hash": "4a781c2643ee7ec454deeb719dc448d9",
+    "semantic_hash": "4a781c2643ee7ec454deeb719dc448d9"
+  },
+  ".claude/knowledge/aidlc-devsecops-agent/devsecops-pipeline-patterns.md": {
+    "mtime": 1789991037.4202535,
+    "seen": 1793867795.1702514,
+    "ast_hash": "8254c1280c0b754a5163dae659188f18",
+    "semantic_hash": "8254c1280c0b754a5163dae659188f18"
+  },
+  ".claude/knowledge/aidlc-devsecops-agent/nfr-requirements-guide.md": {
+    "mtime": 1789991037.420574,
+    "seen": 1793867795.170252,
+    "ast_hash": "d5d67c7ff00fb107190a96ce7f8ead6b",
+    "semantic_hash": "d5d67c7ff00fb107190a96ce7f8ead6b"
+  },
+  ".claude/knowledge/aidlc-devsecops-agent/security-guide.md": {
+    "mtime": 1789991037.4208405,
+    "seen": 1793867795.170253,
+    "ast_hash": "d9244505dbe18ffd7a6cd68832d3116a",
+    "semantic_hash": "d9244505dbe18ffd7a6cd68832d3116a"
+  },
+  ".claude/knowledge/aidlc-devsecops-agent/threat-modelling-stride.md": {
+    "mtime": 1789991037.4210584,
+    "seen": 1793867795.1702538,
+    "ast_hash": "ac2026996595ad3823438613cde2423e",
+    "semantic_hash": "ac2026996595ad3823438613cde2423e"
+  },
+  ".claude/knowledge/aidlc-operations-agent/incident-response-guide.md": {
+    "mtime": 1789991037.4210584,
+    "seen": 1793867795.1702547,
+    "ast_hash": "cde651e2add586e8c2ad5ca038949ccb",
+    "semantic_hash": "cde651e2add586e8c2ad5ca038949ccb"
+  },
+  ".claude/knowledge/aidlc-operations-agent/nfr-performance-guide.md": {
+    "mtime": 1789991037.42148,
+    "seen": 1793867795.1702554,
+    "ast_hash": "df85a9df41df392f73cbefa4fa97392c",
+    "semantic_hash": "df85a9df41df392f73cbefa4fa97392c"
+  },
+  ".claude/knowledge/aidlc-operations-agent/observability-patterns.md": {
+    "mtime": 1789991037.4215412,
+    "seen": 1793867795.1702564,
+    "ast_hash": "35c42974059abd25299be9373310acb9",
+    "semantic_hash": "35c42974059abd25299be9373310acb9"
+  },
+  ".claude/knowledge/aidlc-operations-agent/slo-sli-patterns.md": {
+    "mtime": 1789991037.4217403,
+    "seen": 1793867795.170257,
+    "ast_hash": "7ee9f0f1bf8bf77018a4a63b147b4b91",
+    "semantic_hash": "7ee9f0f1bf8bf77018a4a63b147b4b91"
+  },
+  ".claude/knowledge/aidlc-pipeline-deploy-agent/branching-strategies.md": {
+    "mtime": 1789991037.4217403,
+    "seen": 1793867795.1702578,
+    "ast_hash": "10d7cd463a80b30f8d1aeac2c78a4723",
+    "semantic_hash": "10d7cd463a80b30f8d1aeac2c78a4723"
+  },
+  ".claude/knowledge/aidlc-pipeline-deploy-agent/cicd-patterns.md": {
+    "mtime": 1789991037.4221764,
+    "seen": 1793867795.170259,
+    "ast_hash": "3afa5aff1856f72f25b99529bde827d7",
+    "semantic_hash": "3afa5aff1856f72f25b99529bde827d7"
+  },
+  ".claude/knowledge/aidlc-pipeline-deploy-agent/deployment-strategies.md": {
+    "mtime": 1789991037.42232,
+    "seen": 1793867795.1702597,
+    "ast_hash": "21bd549d22a8559cd26d95874a693379",
+    "semantic_hash": "21bd549d22a8559cd26d95874a693379"
+  },
+  ".claude/knowledge/aidlc-product-agent/functional-design-guide.md": {
+    "mtime": 1789991037.42232,
+    "seen": 1793867795.1702607,
+    "ast_hash": "802be77eac12aa46a1e57ee4fb19ccd0",
+    "semantic_hash": "802be77eac12aa46a1e57ee4fb19ccd0"
+  },
+  ".claude/knowledge/aidlc-product-agent/market-research-methods.md": {
+    "mtime": 1789991037.4226265,
+    "seen": 1793867795.1702616,
+    "ast_hash": "abfac50087146a94d75a21ed6582c669",
+    "semantic_hash": "abfac50087146a94d75a21ed6582c669"
+  },
+  ".claude/knowledge/aidlc-product-agent/prioritization-frameworks.md": {
+    "mtime": 1789991037.422759,
+    "seen": 1793867795.1702623,
+    "ast_hash": "e12a42d6b4d202ebeaa028ce945a92c5",
+    "semantic_hash": "e12a42d6b4d202ebeaa028ce945a92c5"
+  },
+  ".claude/knowledge/aidlc-product-agent/product-guide.md": {
+    "mtime": 1789991037.4228973,
+    "seen": 1793867795.1702633,
+    "ast_hash": "3ba01c276c14c4861fc3cf76fc25443e",
+    "semantic_hash": "3ba01c276c14c4861fc3cf76fc25443e"
+  },
+  ".claude/knowledge/aidlc-product-agent/requirements-elicitation.md": {
+    "mtime": 1789991037.4229782,
+    "seen": 1793867795.170264,
+    "ast_hash": "1e873467e847cb080283e03442c8954f",
+    "semantic_hash": "1e873467e847cb080283e03442c8954f"
+  },
+  ".claude/knowledge/aidlc-product-agent/requirements-guide.md": {
+    "mtime": 1789991037.4231012,
+    "seen": 1793867795.1702647,
+    "ast_hash": "27374d37f5d1721c475e0498d3a7f8c3",
+    "semantic_hash": "27374d37f5d1721c475e0498d3a7f8c3"
+  },
+  ".claude/knowledge/aidlc-product-agent/user-story-patterns.md": {
+    "mtime": 1789991037.4231522,
+    "seen": 1793867795.1702657,
+    "ast_hash": "8b5be53f593905004fa8176b20a29bfb",
+    "semantic_hash": "8b5be53f593905004fa8176b20a29bfb"
+  },
+  ".claude/knowledge/aidlc-product-lead-agent/reviewing.md": {
+    "mtime": 1789991037.4231522,
+    "seen": 1793867795.1702666,
+    "ast_hash": "7a87bc89b133503f41f14a4d6953ee0d",
+    "semantic_hash": "7a87bc89b133503f41f14a4d6953ee0d"
+  },
+  ".claude/knowledge/aidlc-quality-agent/nfr-reliability-guide.md": {
+    "mtime": 1789991037.4231522,
+    "seen": 1793867795.1702673,
+    "ast_hash": "d5301fb6e8d9f1ac3cd56dbe6317f698",
+    "semantic_hash": "d5301fb6e8d9f1ac3cd56dbe6317f698"
+  },
+  ".claude/knowledge/aidlc-quality-agent/nfr-validation-methods.md": {
+    "mtime": 1789991037.4232407,
+    "seen": 1793867795.170268,
+    "ast_hash": "417e4012d85fecdc22a77b8a46a48310",
+    "semantic_hash": "417e4012d85fecdc22a77b8a46a48310"
+  },
+  ".claude/knowledge/aidlc-quality-agent/test-strategy-patterns.md": {
+    "mtime": 1789991037.4237123,
+    "seen": 1793867795.1702693,
+    "ast_hash": "aa958a8b6bcca2b7a61dc1f65a0177ca",
+    "semantic_hash": "aa958a8b6bcca2b7a61dc1f65a0177ca"
+  },
+  ".claude/knowledge/aidlc-quality-agent/testing-guide.md": {
+    "mtime": 1789991037.4238536,
+    "seen": 1793867795.17027,
+    "ast_hash": "e87fa7091d6eb183e268bd812d8ac8f7",
+    "semantic_hash": "e87fa7091d6eb183e268bd812d8ac8f7"
+  },
+  ".claude/knowledge/aidlc-shared/ai-dlc-principles.md": {
+    "mtime": 1789991037.4238536,
+    "seen": 1793867795.1702707,
+    "ast_hash": "ca5e1ee6b1c90d280ca4b3058b7d6e46",
+    "semantic_hash": "ca5e1ee6b1c90d280ca4b3058b7d6e46"
+  },
+  ".claude/knowledge/aidlc-shared/audit-format.md": {
+    "mtime": 1789991037.4240615,
+    "seen": 1793867795.1702716,
+    "ast_hash": "154b195b831359b5b60d3928560e9add",
+    "semantic_hash": "154b195b831359b5b60d3928560e9add"
+  },
+  ".claude/knowledge/aidlc-shared/brownfield.md": {
+    "mtime": 1789991037.424414,
+    "seen": 1793867795.1702726,
+    "ast_hash": "22857ac9fe4dc05d35a518c543959174",
+    "semantic_hash": "22857ac9fe4dc05d35a518c543959174"
+  },
+  ".claude/knowledge/aidlc-shared/knowledge-readme-template.md": {
+    "mtime": 1789991037.4244585,
+    "seen": 1793867795.1702733,
+    "ast_hash": "9b6ae46d1caf8a32eeae546d804a8623",
+    "semantic_hash": "9b6ae46d1caf8a32eeae546d804a8623"
+  },
+  ".claude/knowledge/aidlc-shared/memory-template.md": {
+    "mtime": 1789991037.4245036,
+    "seen": 1793867795.1702743,
+    "ast_hash": "090d8dc1a552a96c15d7dcf86bee941e",
+    "semantic_hash": "090d8dc1a552a96c15d7dcf86bee941e"
+  },
+  ".claude/knowledge/aidlc-shared/rules-reading.md": {
+    "mtime": 1789991037.424549,
+    "seen": 1793867795.170275,
+    "ast_hash": "ae48695a3b15eb40de4a07595742931e",
+    "semantic_hash": "ae48695a3b15eb40de4a07595742931e"
+  },
+  ".claude/knowledge/aidlc-shared/state-template.md": {
+    "mtime": 1789991037.4246984,
+    "seen": 1793867795.1702762,
+    "ast_hash": "4f53f71aa7623baa55ec150dca2e2c1e",
+    "semantic_hash": "4f53f71aa7623baa55ec150dca2e2c1e"
+  },
+  ".claude/knowledge/aidlc-shared/verification.md": {
+    "mtime": 1789991037.4248388,
+    "seen": 1793867795.1702769,
+    "ast_hash": "95e032ae3d205e880fe708eab4a0fc03",
+    "semantic_hash": "95e032ae3d205e880fe708eab4a0fc03"
+  },
+  ".claude/knowledge/aidlc-shared/worktree-info-schema.md": {
+    "mtime": 1789991037.424891,
+    "seen": 1793867795.1702776,
+    "ast_hash": "770660be43e6f695fe5b7ea8f607e2f0",
+    "semantic_hash": "770660be43e6f695fe5b7ea8f607e2f0"
+  },
+  ".claude/rules/aidlc.md": {
+    "mtime": 1789991037.424891,
+    "seen": 1793867795.1702785,
+    "ast_hash": "66210ed52a168b10aee8b9aa9ef513b8",
+    "semantic_hash": "66210ed52a168b10aee8b9aa9ef513b8"
+  },
+  ".claude/scopes/aidlc-bugfix.md": {
+    "mtime": 1789991037.424891,
+    "seen": 1793867795.1702795,
+    "ast_hash": "7d1008991e47cf74ede6db6a7eba9be2",
+    "semantic_hash": "7d1008991e47cf74ede6db6a7eba9be2"
+  },
+  ".claude/scopes/aidlc-classic.md": {
+    "mtime": 1789991037.4251494,
+    "seen": 1793867795.1702802,
+    "ast_hash": "d9a564cf7daf671ad33d6372183485d2",
+    "semantic_hash": "d9a564cf7daf671ad33d6372183485d2"
+  },
+  ".claude/scopes/aidlc-enterprise.md": {
+    "mtime": 1789991037.4251962,
+    "seen": 1793867795.1702812,
+    "ast_hash": "9d608a85b69a8814e3974ff93cfdfed5",
+    "semantic_hash": "9d608a85b69a8814e3974ff93cfdfed5"
+  },
+  ".claude/scopes/aidlc-express.md": {
+    "mtime": 1789991037.4252672,
+    "seen": 1793867795.1702821,
+    "ast_hash": "8ccc2b5442c3c63095d71bf962c1cba7",
+    "semantic_hash": "8ccc2b5442c3c63095d71bf962c1cba7"
+  },
+  ".claude/scopes/aidlc-feature.md": {
+    "mtime": 1789991037.4253263,
+    "seen": 1793867795.170283,
+    "ast_hash": "a2daf1272854ba0c5acb2e76477f0500",
+    "semantic_hash": "a2daf1272854ba0c5acb2e76477f0500"
+  },
+  ".claude/scopes/aidlc-infra.md": {
+    "mtime": 1789991037.4253924,
+    "seen": 1793867795.1702838,
+    "ast_hash": "136fd7e21448544170a79d3e5f9022f5",
+    "semantic_hash": "136fd7e21448544170a79d3e5f9022f5"
+  },
+  ".claude/scopes/aidlc-mvp.md": {
+    "mtime": 1789991037.4254417,
+    "seen": 1793867795.1702847,
+    "ast_hash": "9234c2cea2c7ef998750859647ae4a9a",
+    "semantic_hash": "9234c2cea2c7ef998750859647ae4a9a"
+  },
+  ".claude/scopes/aidlc-poc.md": {
+    "mtime": 1789991037.4254844,
+    "seen": 1793867795.1702855,
+    "ast_hash": "2bcb9777ce815e0038f637499886a557",
+    "semantic_hash": "2bcb9777ce815e0038f637499886a557"
+  },
+  ".claude/scopes/aidlc-refactor.md": {
+    "mtime": 1789991037.4255326,
+    "seen": 1793867795.1702864,
+    "ast_hash": "f30aaffe797d6ad41261948e2b421379",
+    "semantic_hash": "f30aaffe797d6ad41261948e2b421379"
+  },
+  ".claude/scopes/aidlc-security-patch.md": {
+    "mtime": 1789991037.4255762,
+    "seen": 1793867795.1702871,
+    "ast_hash": "b72ee80aab0a76d8462d87f95b89f600",
+    "semantic_hash": "b72ee80aab0a76d8462d87f95b89f600"
+  },
+  ".claude/scopes/aidlc-workshop.md": {
+    "mtime": 1789991037.425617,
+    "seen": 1793867795.170288,
+    "ast_hash": "ff9ba71cf6e74330ee970383f86300dd",
+    "semantic_hash": "ff9ba71cf6e74330ee970383f86300dd"
+  },
+  ".claude/sensors/aidlc-claim-sources.md": {
+    "mtime": 1789991037.425617,
+    "seen": 1793867795.1702888,
+    "ast_hash": "d2f3bfca0f374f648f814ebced6eee28",
+    "semantic_hash": "d2f3bfca0f374f648f814ebced6eee28"
+  },
+  ".claude/sensors/aidlc-linter.md": {
+    "mtime": 1789991037.4257095,
+    "seen": 1793867795.17029,
+    "ast_hash": "57524ae8bf608cee031b8de7c9628a1c",
+    "semantic_hash": "57524ae8bf608cee031b8de7c9628a1c"
+  },
+  ".claude/sensors/aidlc-required-sections.md": {
+    "mtime": 1789991037.4257557,
+    "seen": 1793867795.1702907,
+    "ast_hash": "5e37ad86496823c1be6acfa2cb56aae1",
+    "semantic_hash": "5e37ad86496823c1be6acfa2cb56aae1"
+  },
+  ".claude/sensors/aidlc-traceability.md": {
+    "mtime": 1789991037.4257987,
+    "seen": 1793867795.1702917,
+    "ast_hash": "d563ebb48a2dbe9f215227586535de91",
+    "semantic_hash": "d563ebb48a2dbe9f215227586535de91"
+  },
+  ".claude/sensors/aidlc-type-check.md": {
+    "mtime": 1789991037.4258363,
+    "seen": 1793867795.1702924,
+    "ast_hash": "1d4c971f86a2a9ec4a626a283a4c29cb",
+    "semantic_hash": "1d4c971f86a2a9ec4a626a283a4c29cb"
+  },
+  ".claude/sensors/aidlc-upstream-coverage.md": {
+    "mtime": 1789991037.4258735,
+    "seen": 1793867795.1702933,
+    "ast_hash": "2eb11f6b787aa68bacddae0117850a1e",
+    "semantic_hash": "2eb11f6b787aa68bacddae0117850a1e"
+  },
+  ".claude/skills/aidlc-approval-handoff/SKILL.md": {
+    "mtime": 1789991037.42624,
+    "seen": 1793867795.1702943,
+    "ast_hash": "221f1e6dc4a8096c437cd8e8f0510014",
+    "semantic_hash": "221f1e6dc4a8096c437cd8e8f0510014"
+  },
+  ".claude/skills/aidlc-bugfix/SKILL.md": {
+    "mtime": 1789991037.42624,
+    "seen": 1793867795.170295,
+    "ast_hash": "902c7dd746fcd6b7d983837cdba37901",
+    "semantic_hash": "902c7dd746fcd6b7d983837cdba37901"
+  },
+  ".claude/skills/aidlc-build-and-test/SKILL.md": {
+    "mtime": 1789991037.42624,
+    "seen": 1793867795.1702957,
+    "ast_hash": "537621404e286e2aa9f8a158fea8a91f",
+    "semantic_hash": "537621404e286e2aa9f8a158fea8a91f"
+  },
+  ".claude/skills/aidlc-ci-pipeline/SKILL.md": {
+    "mtime": 1789991037.42624,
+    "seen": 1793867795.1702967,
+    "ast_hash": "3cc7f0cf77866ef6578dafa2ea9e87bb",
+    "semantic_hash": "3cc7f0cf77866ef6578dafa2ea9e87bb"
+  },
+  ".claude/skills/aidlc-code-generation/SKILL.md": {
+    "mtime": 1789991037.42624,
+    "seen": 1793867795.1702976,
+    "ast_hash": "9ec055eee7939f10e987647f2b0ba61c",
+    "semantic_hash": "9ec055eee7939f10e987647f2b0ba61c"
+  },
+  ".claude/skills/aidlc-compose/SKILL.md": {
+    "mtime": 1789991037.42624,
+    "seen": 1793867795.1702983,
+    "ast_hash": "669186611a445dfcf5acfa8b55a97810",
+    "semantic_hash": "669186611a445dfcf5acfa8b55a97810"
+  },
+  ".claude/skills/aidlc-contract-design/SKILL.md": {
+    "mtime": 1789991037.42624,
+    "seen": 1793867795.170299,
+    "ast_hash": "5ea284a903c94357ab80aaba44cd3413",
+    "semantic_hash": "5ea284a903c94357ab80aaba44cd3413"
+  },
+  ".claude/skills/aidlc-delivery-planning/SKILL.md": {
+    "mtime": 1789991037.42624,
+    "seen": 1793867795.1703002,
+    "ast_hash": "2d861ee43a171645f95dda8133709ad9",
+    "semantic_hash": "2d861ee43a171645f95dda8133709ad9"
+  },
+  ".claude/skills/aidlc-deployment-execution/SKILL.md": {
+    "mtime": 1789991037.42624,
+    "seen": 1793867795.170301,
+    "ast_hash": "c613040cf40ff37c604d16fbc9022b35",
+    "semantic_hash": "c613040cf40ff37c604d16fbc9022b35"
+  },
+  ".claude/skills/aidlc-deployment-pipeline/SKILL.md": {
+    "mtime": 1789991037.42624,
+    "seen": 1793867795.1703017,
+    "ast_hash": "abb88597523b7a9096d47a45743f9a92",
+    "semantic_hash": "abb88597523b7a9096d47a45743f9a92"
+  },
+  ".claude/skills/aidlc-domain-design/SKILL.md": {
+    "mtime": 1789991037.42624,
+    "seen": 1793867795.1703026,
+    "ast_hash": "9a68c65756157c3fccca1567e8de3c6e",
+    "semantic_hash": "9a68c65756157c3fccca1567e8de3c6e"
+  },
+  ".claude/skills/aidlc-environment-provisioning/SKILL.md": {
+    "mtime": 1789991037.42724,
+    "seen": 1793867795.1703038,
+    "ast_hash": "f533806f06f87accaaa942fecc32e827",
+    "semantic_hash": "f533806f06f87accaaa942fecc32e827"
+  },
+  ".claude/skills/aidlc-express/SKILL.md": {
+    "mtime": 1789991037.42724,
+    "seen": 1793867795.1703045,
+    "ast_hash": "e72ac7faaa9c04afa00cf792ac4b37a7",
+    "semantic_hash": "e72ac7faaa9c04afa00cf792ac4b37a7"
+  },
+  ".claude/skills/aidlc-feasibility/SKILL.md": {
+    "mtime": 1789991037.42724,
+    "seen": 1793867795.1703055,
+    "ast_hash": "56b7ee5dfa04ab57d78abb39de16c0f3",
+    "semantic_hash": "56b7ee5dfa04ab57d78abb39de16c0f3"
+  },
+  ".claude/skills/aidlc-feature/SKILL.md": {
+    "mtime": 1789991037.42724,
+    "seen": 1793867795.1703062,
+    "ast_hash": "fa83cd62c0662591642ab8d244f560f8",
+    "semantic_hash": "fa83cd62c0662591642ab8d244f560f8"
+  },
+  ".claude/skills/aidlc-feedback-optimization/SKILL.md": {
+    "mtime": 1789991037.42724,
+    "seen": 1793867795.1703074,
+    "ast_hash": "74e8fc0c9ad6548779b2284e46a75ada",
+    "semantic_hash": "74e8fc0c9ad6548779b2284e46a75ada"
+  },
+  ".claude/skills/aidlc-functional-design/SKILL.md": {
+    "mtime": 1789991037.42724,
+    "seen": 1793867795.170308,
+    "ast_hash": "44a7c564bd5c917ecc64107b12548085",
+    "semantic_hash": "44a7c564bd5c917ecc64107b12548085"
+  },
+  ".claude/skills/aidlc-incident-response/SKILL.md": {
+    "mtime": 1789991037.42724,
+    "seen": 1793867795.1703088,
+    "ast_hash": "9b7585742a3bc8acbb27d0739634cca0",
+    "semantic_hash": "9b7585742a3bc8acbb27d0739634cca0"
+  },
+  ".claude/skills/aidlc-infrastructure-design/SKILL.md": {
+    "mtime": 1789991037.42724,
+    "seen": 1793867795.1703098,
+    "ast_hash": "afa4ea3dd9718eba97197b1a6500b342",
+    "semantic_hash": "afa4ea3dd9718eba97197b1a6500b342"
+  },
+  ".claude/skills/aidlc-init/SKILL.md": {
+    "mtime": 1789991037.42724,
+    "seen": 1793867795.1703107,
+    "ast_hash": "ead0043c65fb401cc67bf1658fba02b9",
+    "semantic_hash": "ead0043c65fb401cc67bf1658fba02b9"
+  },
+  ".claude/skills/aidlc-intent-capture/SKILL.md": {
+    "mtime": 1789991037.42724,
+    "seen": 1793867795.1703117,
+    "ast_hash": "c1990ce19f2b25e2aa8a615c235cd4b2",
+    "semantic_hash": "c1990ce19f2b25e2aa8a615c235cd4b2"
+  },
+  ".claude/skills/aidlc-knowledge/SKILL.md": {
+    "mtime": 1789991037.42724,
+    "seen": 1793867795.1703124,
+    "ast_hash": "72f893cf5ae1cd309cd6b473191ff18c",
+    "semantic_hash": "72f893cf5ae1cd309cd6b473191ff18c"
+  },
+  ".claude/skills/aidlc-market-research/SKILL.md": {
+    "mtime": 1789991037.42724,
+    "seen": 1793867795.1703134,
+    "ast_hash": "c04f77df7868745a661575c3609b607b",
+    "semantic_hash": "c04f77df7868745a661575c3609b607b"
+  },
+  ".claude/skills/aidlc-mvp/SKILL.md": {
+    "mtime": 1789991037.42724,
+    "seen": 1793867795.1703146,
+    "ast_hash": "23a49b59ad96e6fb092da4e4d0b83b3c",
+    "semantic_hash": "23a49b59ad96e6fb092da4e4d0b83b3c"
+  },
+  ".claude/skills/aidlc-nfr-design/SKILL.md": {
+    "mtime": 1789991037.4282396,
+    "seen": 1793867795.1703153,
+    "ast_hash": "ffd42bc74eaca7c954ee263d2741b90f",
+    "semantic_hash": "ffd42bc74eaca7c954ee263d2741b90f"
+  },
+  ".claude/skills/aidlc-nfr-requirements/SKILL.md": {
+    "mtime": 1789991037.4282396,
+    "seen": 1793867795.170316,
+    "ast_hash": "2546290b592dda5e9b414ab96cfadfee",
+    "semantic_hash": "2546290b592dda5e9b414ab96cfadfee"
+  },
+  ".claude/skills/aidlc-observability-setup/SKILL.md": {
+    "mtime": 1789991037.4282396,
+    "seen": 1793867795.1703172,
+    "ast_hash": "5ac01a2271fb9403920575fbb1bfd00d",
+    "semantic_hash": "5ac01a2271fb9403920575fbb1bfd00d"
+  },
+  ".claude/skills/aidlc-outcomes-pack/SKILL.md": {
+    "mtime": 1789991037.4282396,
+    "seen": 1793867795.170318,
+    "ast_hash": "3cb961cac460f28831dd9cd7f778f56c",
+    "semantic_hash": "3cb961cac460f28831dd9cd7f778f56c"
+  },
+  ".claude/skills/aidlc-performance-validation/SKILL.md": {
+    "mtime": 1789991037.4282396,
+    "seen": 1793867795.1703188,
+    "ast_hash": "53e2a727e54162bdf04ca7ed62e22818",
+    "semantic_hash": "53e2a727e54162bdf04ca7ed62e22818"
+  },
+  ".claude/skills/aidlc-practices-discovery/SKILL.md": {
+    "mtime": 1789991037.4282396,
+    "seen": 1793867795.1703196,
+    "ast_hash": "40f1bceb7f3da4b0a09b33cc18429168",
+    "semantic_hash": "40f1bceb7f3da4b0a09b33cc18429168"
+  },
+  ".claude/skills/aidlc-refined-mockups/SKILL.md": {
+    "mtime": 1789991037.4282396,
+    "seen": 1793867795.1703203,
+    "ast_hash": "15c0d127bb1e37c99b81c6d6da374991",
+    "semantic_hash": "15c0d127bb1e37c99b81c6d6da374991"
+  },
+  ".claude/skills/aidlc-replay/SKILL.md": {
+    "mtime": 1789991037.4282396,
+    "seen": 1793867795.1703215,
+    "ast_hash": "9f206056c779d2fb21506274deff0b7e",
+    "semantic_hash": "9f206056c779d2fb21506274deff0b7e"
+  },
+  ".claude/skills/aidlc-requirements-analysis/SKILL.md": {
+    "mtime": 1789991037.4282396,
+    "seen": 1793867795.1703236,
+    "ast_hash": "27c13e45461e9586f9cb694674e5e8b8",
+    "semantic_hash": "27c13e45461e9586f9cb694674e5e8b8"
+  },
+  ".claude/skills/aidlc-reverse-engineering/SKILL.md": {
+    "mtime": 1789991037.4282396,
+    "seen": 1793867795.1703248,
+    "ast_hash": "5a39802168175a8be99247393ead529f",
+    "semantic_hash": "5a39802168175a8be99247393ead529f"
+  },
+  ".claude/skills/aidlc-rough-mockups/SKILL.md": {
+    "mtime": 1789991037.4282396,
+    "seen": 1793867795.1703255,
+    "ast_hash": "e116fb97c2979bfa4e05c1d47fe1ae23",
+    "semantic_hash": "e116fb97c2979bfa4e05c1d47fe1ae23"
+  },
+  ".claude/skills/aidlc-scope-definition/SKILL.md": {
+    "mtime": 1789991037.4282396,
+    "seen": 1793867795.1703262,
+    "ast_hash": "3cb249beca54e09aba4eb726dcb4ebe9",
+    "semantic_hash": "3cb249beca54e09aba4eb726dcb4ebe9"
+  },
+  ".claude/skills/aidlc-security-patch/SKILL.md": {
+    "mtime": 1789991037.4282396,
+    "seen": 1793867795.1703272,
+    "ast_hash": "24420c644fddd57354382da3df62e9a5",
+    "semantic_hash": "24420c644fddd57354382da3df62e9a5"
+  },
+  ".claude/skills/aidlc-session-cost/SKILL.md": {
+    "mtime": 1789991037.4282396,
+    "seen": 1793867795.1703281,
+    "ast_hash": "b26f42a28c539bfb26b6bd92962d0bfd",
+    "semantic_hash": "b26f42a28c539bfb26b6bd92962d0bfd"
+  },
+  ".claude/skills/aidlc-team-formation/SKILL.md": {
+    "mtime": 1789991037.4282396,
+    "seen": 1793867795.1703289,
+    "ast_hash": "63c5261262cc83bae6dd5dc0c05a60f5",
+    "semantic_hash": "63c5261262cc83bae6dd5dc0c05a60f5"
+  },
+  ".claude/skills/aidlc-units-generation/SKILL.md": {
+    "mtime": 1789991037.4282396,
+    "seen": 1793867795.1703298,
+    "ast_hash": "8c77cfb76f668a5165c6023941cceedf",
+    "semantic_hash": "8c77cfb76f668a5165c6023941cceedf"
+  },
+  ".claude/skills/aidlc-user-stories/SKILL.md": {
+    "mtime": 1789991037.4282396,
+    "seen": 1793867795.1703305,
+    "ast_hash": "438975b963ecfd5d10cea4711250bf85",
+    "semantic_hash": "438975b963ecfd5d10cea4711250bf85"
+  },
+  ".claude/skills/aidlc/SKILL.md": {
+    "mtime": 1789991037.4260669,
+    "seen": 1793867795.1703315,
+    "ast_hash": "74b0f0af810154452aceee67a07d5563",
+    "semantic_hash": "74b0f0af810154452aceee67a07d5563"
+  },
+  ".claude/skills/aidlc/question-rendering.md": {
+    "mtime": 1789991037.42624,
+    "seen": 1793867795.1703324,
+    "ast_hash": "fb19529080a59335db31e116df2e8885",
+    "semantic_hash": "fb19529080a59335db31e116df2e8885"
+  },
+  ".claude/tools/data/memory-seed/org.md": {
+    "mtime": 1789991037.451303,
+    "seen": 1793867795.1703331,
+    "ast_hash": "96b7c2ad2a2d75ad5deed538655a40d1",
+    "semantic_hash": "96b7c2ad2a2d75ad5deed538655a40d1"
+  },
+  ".claude/tools/data/memory-seed/phases/construction.md": {
+    "mtime": 1789991037.451303,
+    "seen": 1793867795.170334,
+    "ast_hash": "bfb9e9c37b5ab591b5c5c765c3750848",
+    "semantic_hash": "bfb9e9c37b5ab591b5c5c765c3750848"
+  },
+  ".claude/tools/data/memory-seed/phases/ideation.md": {
+    "mtime": 1789991037.451568,
+    "seen": 1793867795.170335,
+    "ast_hash": "9dd4d0b0b84ad2ff043d25030fd298ab",
+    "semantic_hash": "9dd4d0b0b84ad2ff043d25030fd298ab"
+  },
+  ".claude/tools/data/memory-seed/phases/inception.md": {
+    "mtime": 1789991037.4516006,
+    "seen": 1793867795.1703358,
+    "ast_hash": "8270023289d6e7d820604dd1590b30ef",
+    "semantic_hash": "8270023289d6e7d820604dd1590b30ef"
+  },
+  ".claude/tools/data/memory-seed/phases/operation.md": {
+    "mtime": 1789991037.4516342,
+    "seen": 1793867795.1703365,
+    "ast_hash": "6f0e137deb5a8ac532ae7c2fedd627a9",
+    "semantic_hash": "6f0e137deb5a8ac532ae7c2fedd627a9"
+  },
+  ".claude/tools/data/memory-seed/project.md": {
+    "mtime": 1789991037.4516342,
+    "seen": 1793867795.1703374,
+    "ast_hash": "6e9b1b4ef71afd191369d2598c960fee",
+    "semantic_hash": "6e9b1b4ef71afd191369d2598c960fee"
+  },
+  ".claude/tools/data/memory-seed/team.md": {
+    "mtime": 1789991037.4517014,
+    "seen": 1793867795.1703384,
+    "ast_hash": "8f99aa1e83086efcbdcee0b331ca27ce",
+    "semantic_hash": "8f99aa1e83086efcbdcee0b331ca27ce"
+  },
+  "README.md": {
+    "mtime": 1791129540.223585,
+    "seen": 1793867795.170339,
+    "ast_hash": "7e7cc8b30e3069d6cd8c2bd585d0e82e",
+    "semantic_hash": "7e7cc8b30e3069d6cd8c2bd585d0e82e"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/aidlc-state.md": {
+    "mtime": 1790288457.0664577,
+    "seen": 1793867795.1703398,
+    "ast_hash": "49890878101615b64e7275268c2aae9e",
+    "semantic_hash": "49890878101615b64e7275268c2aae9e"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/build-and-test/build-and-test-questions.md": {
+    "mtime": 1790284271.2247655,
+    "seen": 1793867795.1703417,
+    "ast_hash": "6be772a66aee269f126d8c14a312dd35",
+    "semantic_hash": "6be772a66aee269f126d8c14a312dd35"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/build-and-test/build-and-test-summary.md": {
+    "mtime": 1790284513.0373952,
+    "seen": 1793867795.1703424,
+    "ast_hash": "1ad01f62d1ffe98f5737311519aa66aa",
+    "semantic_hash": "1ad01f62d1ffe98f5737311519aa66aa"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/build-and-test/build-instructions.md": {
+    "mtime": 1790284292.4707386,
+    "seen": 1793867795.1703434,
+    "ast_hash": "3675ec08089c35a3eae9ec7ff9b415a6",
+    "semantic_hash": "3675ec08089c35a3eae9ec7ff9b415a6"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/build-and-test/cross-unit-traceability.md": {
+    "mtime": 1790284489.406437,
+    "seen": 1793867795.170344,
+    "ast_hash": "b90a936d3ff6a8eb63e1c78f3d6b39df",
+    "semantic_hash": "b90a936d3ff6a8eb63e1c78f3d6b39df"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/build-and-test/integration-test-instructions.md": {
+    "mtime": 1790284308.5787175,
+    "seen": 1793867795.1703453,
+    "ast_hash": "47801d6b6810089913d217df1428531e",
+    "semantic_hash": "47801d6b6810089913d217df1428531e"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/build-and-test/memory.md": {
+    "mtime": 1790287010.262552,
+    "seen": 1793867795.170346,
+    "ast_hash": "108473a88e3255978aa22703e79a2106",
+    "semantic_hash": "108473a88e3255978aa22703e79a2106"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/build-and-test/performance-test-instructions.md": {
+    "mtime": 1790284320.2067018,
+    "seen": 1793867795.1703467,
+    "ast_hash": "0f1d01b301a089497ea9ab096a0a5a2c",
+    "semantic_hash": "0f1d01b301a089497ea9ab096a0a5a2c"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/build-and-test/security-test-instructions.md": {
+    "mtime": 1790284345.3826666,
+    "seen": 1793867795.1703477,
+    "ast_hash": "7265392c07bcd7f005e9c0725659de20",
+    "semantic_hash": "7265392c07bcd7f005e9c0725659de20"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/build-and-test/test-results.md": {
+    "mtime": 1790284469.8554707,
+    "seen": 1793867795.1703486,
+    "ast_hash": "e1233d1a35062654e66fc9df0e1d84f8",
+    "semantic_hash": "e1233d1a35062654e66fc9df0e1d84f8"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/ci-pipeline/ci-config.md": {
+    "mtime": 1790288071.642984,
+    "seen": 1793867795.1703496,
+    "ast_hash": "159c4a81778ea35c5a092a1e4650b978",
+    "semantic_hash": "159c4a81778ea35c5a092a1e4650b978"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/ci-pipeline/ci-pipeline-questions.md": {
+    "mtime": 1790288029.4148116,
+    "seen": 1793867795.1703503,
+    "ast_hash": "e38f9db5418404ccfab7dea5dd4db547",
+    "semantic_hash": "e38f9db5418404ccfab7dea5dd4db547"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/ci-pipeline/memory.md": {
+    "mtime": 1790288415.727953,
+    "seen": 1793867795.170351,
+    "ast_hash": "6a4bef63e83f27ee65ebcf5a587aee21",
+    "semantic_hash": "6a4bef63e83f27ee65ebcf5a587aee21"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/ci-pipeline/quality-gates.md": {
+    "mtime": 1790288399.2870042,
+    "seen": 1793867795.1703522,
+    "ast_hash": "6606c7825b395bc4a4c6f22c5c51c3ae",
+    "semantic_hash": "6606c7825b395bc4a4c6f22c5c51c3ae"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/code-generation/memory.md": {
+    "mtime": 1790279224.085813,
+    "seen": 1793867795.170353,
+    "ast_hash": "df14ed6bc27b0598e76226e8dc1e2103",
+    "semantic_hash": "df14ed6bc27b0598e76226e8dc1e2103"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/functional-design/memory.md": {
+    "mtime": 1790172855.6426651,
+    "seen": 1793867795.1703537,
+    "ast_hash": "f836c6d60c7b24b5bdf5f02b4625f7eb",
+    "semantic_hash": "f836c6d60c7b24b5bdf5f02b4625f7eb"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/code-generation/code-generation-plan.md": {
+    "mtime": 1790271761.3837967,
+    "seen": 1793867795.1703546,
+    "ast_hash": "dbeecb3c1272ef9859fc2f99e1f853f5",
+    "semantic_hash": "dbeecb3c1272ef9859fc2f99e1f853f5"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/code-generation/code-generation-questions.md": {
+    "mtime": 1790271232.484454,
+    "seen": 1793867795.1703556,
+    "ast_hash": "ecc9bcb35045dcc21f28baf9145c1bc2",
+    "semantic_hash": "ecc9bcb35045dcc21f28baf9145c1bc2"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/code-generation/code-summary.md": {
+    "mtime": 1790271729.9479072,
+    "seen": 1793867795.1703563,
+    "ast_hash": "f870173a82c5b06b946fe90590ca2732",
+    "semantic_hash": "f870173a82c5b06b946fe90590ca2732"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/code-generation/reviews/review-01.md": {
+    "mtime": 1790184362.7103226,
+    "seen": 1793867795.170357,
+    "ast_hash": "af05d679fc74414ef3e5469fe82fad36",
+    "semantic_hash": "af05d679fc74414ef3e5469fe82fad36"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/code-generation/reviews/review-02.md": {
+    "mtime": 1790187482.486724,
+    "seen": 1793867795.170358,
+    "ast_hash": "fea6ea938abffad2407dba55f095b031",
+    "semantic_hash": "fea6ea938abffad2407dba55f095b031"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/code-generation/reviews/review-03.md": {
+    "mtime": 1790193814.1513863,
+    "seen": 1793867795.1703591,
+    "ast_hash": "1b6a315f0c9b572f956994cdce18119d",
+    "semantic_hash": "1b6a315f0c9b572f956994cdce18119d"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/code-generation/reviews/review-04.md": {
+    "mtime": 1790194369.1818454,
+    "seen": 1793867795.1703598,
+    "ast_hash": "e68c4f748bf0513499d26844d7297f90",
+    "semantic_hash": "e68c4f748bf0513499d26844d7297f90"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/code-generation/reviews/review-05.md": {
+    "mtime": 1790249650.7576592,
+    "seen": 1793867795.1703606,
+    "ast_hash": "0e1d953ab02156e3287f310440aa2fc5",
+    "semantic_hash": "0e1d953ab02156e3287f310440aa2fc5"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/code-generation/reviews/review-06.md": {
+    "mtime": 1790272026.3970044,
+    "seen": 1793867795.1703615,
+    "ast_hash": "011832c2b1e2e2f92e81cc81c4878572",
+    "semantic_hash": "011832c2b1e2e2f92e81cc81c4878572"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/code-generation/reviews/review-07.md": {
+    "mtime": 1790280876.4522915,
+    "seen": 1793867795.1703625,
+    "ast_hash": "e07c6c15ed6c0412fac3e11269b10a0b",
+    "semantic_hash": "e07c6c15ed6c0412fac3e11269b10a0b"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/code-generation/unit-test-instructions.md": {
+    "mtime": 1790271062.721869,
+    "seen": 1793867795.1703634,
+    "ast_hash": "3a824b62760ef1cb039aa9074f2eac32",
+    "semantic_hash": "3a824b62760ef1cb039aa9074f2eac32"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/functional-design/entities.md": {
+    "mtime": 1790206838.6546488,
+    "seen": 1793867795.1703641,
+    "ast_hash": "9ee1bc82e7097fa643df267d638c781b",
+    "semantic_hash": "9ee1bc82e7097fa643df267d638c781b"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/functional-design/frontend-components.md": {
+    "mtime": 1790207277.4574537,
+    "seen": 1793867795.1703649,
+    "ast_hash": "cd6dad314b7fbfc241a39bb8de92a1bd",
+    "semantic_hash": "cd6dad314b7fbfc241a39bb8de92a1bd"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/functional-design/functional-design-questions.md": {
+    "mtime": 1790199115.2002046,
+    "seen": 1793867795.1703658,
+    "ast_hash": "85829cb370f556cfa0262ddf3d1ddc93",
+    "semantic_hash": "85829cb370f556cfa0262ddf3d1ddc93"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/functional-design/functional-spec.md": {
+    "mtime": 1790207308.7004774,
+    "seen": 1793867795.1703665,
+    "ast_hash": "92c0b41ac0a906727b00c44baf5ebd23",
+    "semantic_hash": "92c0b41ac0a906727b00c44baf5ebd23"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/functional-design/memory.md": {
+    "mtime": 1790161273.6095297,
+    "seen": 1793867795.1703675,
+    "ast_hash": "adbbce007cc3fdd788a0d6c9fa71fad3",
+    "semantic_hash": "adbbce007cc3fdd788a0d6c9fa71fad3"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/functional-design/reviews/review-01.md": {
+    "mtime": 1790162034.5794284,
+    "seen": 1793867795.1703682,
+    "ast_hash": "cb9a39f397f4a70521f7793f8f5751b8",
+    "semantic_hash": "cb9a39f397f4a70521f7793f8f5751b8"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/functional-design/reviews/review-02.md": {
+    "mtime": 1790170518.9426277,
+    "seen": 1793867795.170369,
+    "ast_hash": "572dd10bdc8cecd3015945c985fef570",
+    "semantic_hash": "572dd10bdc8cecd3015945c985fef570"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/functional-design/reviews/review-03.md": {
+    "mtime": 1790171691.390935,
+    "seen": 1793867795.17037,
+    "ast_hash": "72119808709dbf5343a28e4d5eb0cf4c",
+    "semantic_hash": "72119808709dbf5343a28e4d5eb0cf4c"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/functional-design/reviews/review-04.md": {
+    "mtime": 1790173477.100085,
+    "seen": 1793867795.1703708,
+    "ast_hash": "c6b7d5630e9c74b271976be57a0d5b10",
+    "semantic_hash": "c6b7d5630e9c74b271976be57a0d5b10"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/functional-design/reviews/review-05.md": {
+    "mtime": 1790199421.3559132,
+    "seen": 1793867795.1703718,
+    "ast_hash": "624a366ab8c750440989121d0d361aec",
+    "semantic_hash": "624a366ab8c750440989121d0d361aec"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/functional-design/reviews/review-06.md": {
+    "mtime": 1790207042.5249252,
+    "seen": 1793867795.1703727,
+    "ast_hash": "94a609db564947fd2baf7e9df9da00af",
+    "semantic_hash": "94a609db564947fd2baf7e9df9da00af"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/functional-design/reviews/review-07.md": {
+    "mtime": 1790207885.7617452,
+    "seen": 1793867795.1703734,
+    "ast_hash": "754a544353ba575667cab4c4e2640dd0",
+    "semantic_hash": "754a544353ba575667cab4c4e2640dd0"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/functional-design/rules.md": {
+    "mtime": 1790207223.0703895,
+    "seen": 1793867795.1703744,
+    "ast_hash": "23f0a653663cbf2ab747eacf6110fe06",
+    "semantic_hash": "23f0a653663cbf2ab747eacf6110fe06"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/code-generation/code-generation-plan.md": {
+    "mtime": 1790273164.4690907,
+    "seen": 1793867795.170375,
+    "ast_hash": "8eee2c61b873be8038bfe6c2174ed4e1",
+    "semantic_hash": "8eee2c61b873be8038bfe6c2174ed4e1"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/code-generation/code-generation-questions.md": {
+    "mtime": 1790272621.0149713,
+    "seen": 1793867795.1703763,
+    "ast_hash": "504df80466d5bf69e46122edb7495aef",
+    "semantic_hash": "504df80466d5bf69e46122edb7495aef"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/code-generation/code-summary.md": {
+    "mtime": 1790273161.2620955,
+    "seen": 1793867795.170377,
+    "ast_hash": "ec20396d719ac0c696a00d2f8f9bec48",
+    "semantic_hash": "ec20396d719ac0c696a00d2f8f9bec48"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/code-generation/reviews/review-01.md": {
+    "mtime": 1790183973.9750998,
+    "seen": 1793867795.1703777,
+    "ast_hash": "abd3fb685190ab5904f573707e1802a2",
+    "semantic_hash": "abd3fb685190ab5904f573707e1802a2"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/code-generation/reviews/review-02.md": {
+    "mtime": 1790187780.9521174,
+    "seen": 1793867795.1703787,
+    "ast_hash": "6a3caf27ff18b182acc554ee13f0a25b",
+    "semantic_hash": "6a3caf27ff18b182acc554ee13f0a25b"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/code-generation/reviews/review-03.md": {
+    "mtime": 1790194714.094952,
+    "seen": 1793867795.1703796,
+    "ast_hash": "7d4628e2b82dedc05f69e143583f1dac",
+    "semantic_hash": "7d4628e2b82dedc05f69e143583f1dac"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/code-generation/reviews/review-04.md": {
+    "mtime": 1790250413.0755036,
+    "seen": 1793867795.1703806,
+    "ast_hash": "2f70217c88bb8f69cf29b3b319891df8",
+    "semantic_hash": "2f70217c88bb8f69cf29b3b319891df8"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/code-generation/reviews/review-05.md": {
+    "mtime": 1790273447.862674,
+    "seen": 1793867795.1703813,
+    "ast_hash": "132d922b270c7bc2a64fb287bf3079c0",
+    "semantic_hash": "132d922b270c7bc2a64fb287bf3079c0"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/code-generation/unit-test-instructions.md": {
+    "mtime": 1790182651.9192166,
+    "seen": 1793867795.1703823,
+    "ast_hash": "02b552d46695104e8818cfa8e725a01c",
+    "semantic_hash": "02b552d46695104e8818cfa8e725a01c"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/functional-design/frontend-components.md": {
+    "mtime": 1790162975.082458,
+    "seen": 1793867795.1703832,
+    "ast_hash": "fc4d01f941f427abcf27d82038a31140",
+    "semantic_hash": "fc4d01f941f427abcf27d82038a31140"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/functional-design/functional-design-questions.md": {
+    "mtime": 1790202859.4032896,
+    "seen": 1793867795.170384,
+    "ast_hash": "8c15da23f81e863e0cbf848092441c9e",
+    "semantic_hash": "8c15da23f81e863e0cbf848092441c9e"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/functional-design/functional-spec.md": {
+    "mtime": 1790206709.6633587,
+    "seen": 1793867795.170385,
+    "ast_hash": "7f50ad8c85cfdf92a116010656c2064d",
+    "semantic_hash": "7f50ad8c85cfdf92a116010656c2064d"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/functional-design/memory.md": {
+    "mtime": 1790162539.106868,
+    "seen": 1793867795.1703856,
+    "ast_hash": "a2eefd0ba0647eeab803dfd398990e1c",
+    "semantic_hash": "a2eefd0ba0647eeab803dfd398990e1c"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/functional-design/reviews/review-01.md": {
+    "mtime": 1790162903.8487756,
+    "seen": 1793867795.1703863,
+    "ast_hash": "7df935afdff81f7cb57fd8f93e835c3b",
+    "semantic_hash": "7df935afdff81f7cb57fd8f93e835c3b"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/functional-design/reviews/review-02.md": {
+    "mtime": 1790163245.886958,
+    "seen": 1793867795.1703875,
+    "ast_hash": "15ee2416f413473eec85d73cb19271d1",
+    "semantic_hash": "15ee2416f413473eec85d73cb19271d1"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/functional-design/reviews/review-03.md": {
+    "mtime": 1790170898.7765667,
+    "seen": 1793867795.1703882,
+    "ast_hash": "71751e7232866d570396eccd3dfc9fa8",
+    "semantic_hash": "71751e7232866d570396eccd3dfc9fa8"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/functional-design/reviews/review-04.md": {
+    "mtime": 1790171509.8709004,
+    "seen": 1793867795.170389,
+    "ast_hash": "9aca4f44368cecab3b370a4e0f631017",
+    "semantic_hash": "9aca4f44368cecab3b370a4e0f631017"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/functional-design/reviews/review-05.md": {
+    "mtime": 1790173803.6658354,
+    "seen": 1793867795.1703901,
+    "ast_hash": "bd129dad1a679d4a5bf4dfef2ba5e4be",
+    "semantic_hash": "bd129dad1a679d4a5bf4dfef2ba5e4be"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/functional-design/reviews/review-06.md": {
+    "mtime": 1790204495.1172059,
+    "seen": 1793867795.1703908,
+    "ast_hash": "e62c6110716912370f6d9c66dbfc6223",
+    "semantic_hash": "e62c6110716912370f6d9c66dbfc6223"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/functional-design/reviews/review-07.md": {
+    "mtime": 1790208086.2431788,
+    "seen": 1793867795.1703916,
+    "ast_hash": "e6a92cd7ac47a301a10b7cf06c735ae4",
+    "semantic_hash": "e6a92cd7ac47a301a10b7cf06c735ae4"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u3-projects/code-generation/code-generation-plan.md": {
+    "mtime": 1790274079.0887864,
+    "seen": 1793867795.1703925,
+    "ast_hash": "e10f1df135faf4f610868679ec8a1e7b",
+    "semantic_hash": "e10f1df135faf4f610868679ec8a1e7b"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u3-projects/code-generation/code-generation-questions.md": {
+    "mtime": 1790273642.547396,
+    "seen": 1793867795.1703932,
+    "ast_hash": "b76c510259a449d67008b451344891d0",
+    "semantic_hash": "b76c510259a449d67008b451344891d0"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u3-projects/code-generation/code-summary.md": {
+    "mtime": 1790274061.0858114,
+    "seen": 1793867795.1703944,
+    "ast_hash": "b13a7e7efa569f76050809c4108dfe69",
+    "semantic_hash": "b13a7e7efa569f76050809c4108dfe69"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u3-projects/code-generation/reviews/review-01.md": {
+    "mtime": 1790188123.9124904,
+    "seen": 1793867795.1703954,
+    "ast_hash": "9755a0022dc1c4fec67b1336b8f5b2be",
+    "semantic_hash": "9755a0022dc1c4fec67b1336b8f5b2be"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u3-projects/code-generation/reviews/review-02.md": {
+    "mtime": 1790195324.8093162,
+    "seen": 1793867795.170396,
+    "ast_hash": "29fa3424a666cc64c5f9500b8696dcf9",
+    "semantic_hash": "29fa3424a666cc64c5f9500b8696dcf9"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u3-projects/code-generation/reviews/review-03.md": {
+    "mtime": 1790252253.9913385,
+    "seen": 1793867795.170397,
+    "ast_hash": "e5ec1d767df0fb4291c2523d84bdf5c2",
+    "semantic_hash": "e5ec1d767df0fb4291c2523d84bdf5c2"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u3-projects/code-generation/reviews/review-04.md": {
+    "mtime": 1790274345.1964202,
+    "seen": 1793867795.170398,
+    "ast_hash": "37c198f2e2913f8797ccaced887db9cd",
+    "semantic_hash": "37c198f2e2913f8797ccaced887db9cd"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u3-projects/code-generation/unit-test-instructions.md": {
+    "mtime": 1790184590.8494194,
+    "seen": 1793867795.1703987,
+    "ast_hash": "95c87e3dc150be41c08c313ce5188a4e",
+    "semantic_hash": "95c87e3dc150be41c08c313ce5188a4e"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u3-projects/functional-design/frontend-components.md": {
+    "mtime": 1790169587.0681605,
+    "seen": 1793867795.1703994,
+    "ast_hash": "3f68d2ef25cd3208f195b800da132a74",
+    "semantic_hash": "3f68d2ef25cd3208f195b800da132a74"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u3-projects/functional-design/functional-design-questions.md": {
+    "mtime": 1790203711.5995445,
+    "seen": 1793867795.1704006,
+    "ast_hash": "ec80a687f6905031950b2a4a9050d083",
+    "semantic_hash": "ec80a687f6905031950b2a4a9050d083"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u3-projects/functional-design/functional-spec.md": {
+    "mtime": 1790206719.178306,
+    "seen": 1793867795.1704013,
+    "ast_hash": "ae0999c79976408bc7ce76631e742518",
+    "semantic_hash": "ae0999c79976408bc7ce76631e742518"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u3-projects/functional-design/memory.md": {
+    "mtime": 1790166038.1460977,
+    "seen": 1793867795.170402,
+    "ast_hash": "73defeb86b706dcdfcc5e7bd071c5dba",
+    "semantic_hash": "73defeb86b706dcdfcc5e7bd071c5dba"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u3-projects/functional-design/reviews/review-01.md": {
+    "mtime": 1790166370.5434499,
+    "seen": 1793867795.1704028,
+    "ast_hash": "79337dce7b430ceb672d687ce783aca9",
+    "semantic_hash": "79337dce7b430ceb672d687ce783aca9"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u3-projects/functional-design/reviews/review-02.md": {
+    "mtime": 1790170069.6745856,
+    "seen": 1793867795.170404,
+    "ast_hash": "edd50ab2cf563bde4fa034c94fcf0c2f",
+    "semantic_hash": "edd50ab2cf563bde4fa034c94fcf0c2f"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u3-projects/functional-design/reviews/review-03.md": {
+    "mtime": 1790171884.9665766,
+    "seen": 1793867795.1704047,
+    "ast_hash": "ffb12bda3292f612a0744fb58300ca71",
+    "semantic_hash": "ffb12bda3292f612a0744fb58300ca71"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u3-projects/functional-design/reviews/review-04.md": {
+    "mtime": 1790174095.1740618,
+    "seen": 1793867795.1704056,
+    "ast_hash": "7f54ebb76ba76cc85e5ac2af5ea8824d",
+    "semantic_hash": "7f54ebb76ba76cc85e5ac2af5ea8824d"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u3-projects/functional-design/reviews/review-05.md": {
+    "mtime": 1790205161.0033705,
+    "seen": 1793867795.1704063,
+    "ast_hash": "d9b3f2b7a406dea77a201346603cf609",
+    "semantic_hash": "d9b3f2b7a406dea77a201346603cf609"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u3-projects/functional-design/reviews/review-06.md": {
+    "mtime": 1790245847.6367965,
+    "seen": 1793867795.1704075,
+    "ast_hash": "d08a010bd4bd36a644f058365da4b278",
+    "semantic_hash": "d08a010bd4bd36a644f058365da4b278"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u4-about-page/code-generation/code-generation-plan.md": {
+    "mtime": 1790275073.0145724,
+    "seen": 1793867795.1704082,
+    "ast_hash": "fdb0344948d0a98dc8cf7d028b7bedf7",
+    "semantic_hash": "fdb0344948d0a98dc8cf7d028b7bedf7"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u4-about-page/code-generation/code-generation-questions.md": {
+    "mtime": 1790274659.0490892,
+    "seen": 1793867795.170409,
+    "ast_hash": "b8d5002e79a35c19ca34c542b349ab71",
+    "semantic_hash": "b8d5002e79a35c19ca34c542b349ab71"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u4-about-page/code-generation/code-summary.md": {
+    "mtime": 1790275683.52959,
+    "seen": 1793867795.1704097,
+    "ast_hash": "cd0c07dd75e8334a89f763015c60e950",
+    "semantic_hash": "cd0c07dd75e8334a89f763015c60e950"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u4-about-page/code-generation/reviews/review-01.md": {
+    "mtime": 1790189453.3047776,
+    "seen": 1793867795.1704106,
+    "ast_hash": "28b3708c313bb593c816e0ae85c16be5",
+    "semantic_hash": "28b3708c313bb593c816e0ae85c16be5"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u4-about-page/code-generation/reviews/review-02.md": {
+    "mtime": 1790253859.4372213,
+    "seen": 1793867795.1704116,
+    "ast_hash": "ce5400a416ea56aabbfe2dac4101e8f4",
+    "semantic_hash": "ce5400a416ea56aabbfe2dac4101e8f4"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u4-about-page/code-generation/reviews/review-03.md": {
+    "mtime": 1790254098.5826483,
+    "seen": 1793867795.1704125,
+    "ast_hash": "c4001d19f35de121fc542a5ff6b935c2",
+    "semantic_hash": "c4001d19f35de121fc542a5ff6b935c2"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u4-about-page/code-generation/reviews/review-04.md": {
+    "mtime": 1790275395.1395173,
+    "seen": 1793867795.1704133,
+    "ast_hash": "27157bd4cbc0d8590a355460ccffb171",
+    "semantic_hash": "27157bd4cbc0d8590a355460ccffb171"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u4-about-page/code-generation/reviews/review-05.md": {
+    "mtime": 1790276101.4043503,
+    "seen": 1793867795.170414,
+    "ast_hash": "6da7c31d56c3d6d23dca79e696a4b265",
+    "semantic_hash": "6da7c31d56c3d6d23dca79e696a4b265"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u4-about-page/code-generation/unit-test-instructions.md": {
+    "mtime": 1790188685.3351226,
+    "seen": 1793867795.1704152,
+    "ast_hash": "95b86af335fb4fe70a3a4a3f749cf2cc",
+    "semantic_hash": "95b86af335fb4fe70a3a4a3f749cf2cc"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u4-about-page/functional-design/frontend-components.md": {
+    "mtime": 1790172748.87618,
+    "seen": 1793867795.1704159,
+    "ast_hash": "d824f6ddbef34193e86b14222de4da3d",
+    "semantic_hash": "d824f6ddbef34193e86b14222de4da3d"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u4-about-page/functional-design/functional-design-questions.md": {
+    "mtime": 1790203935.190694,
+    "seen": 1793867795.1704168,
+    "ast_hash": "aec13dd5a5d5ccb798851b070b19861f",
+    "semantic_hash": "aec13dd5a5d5ccb798851b070b19861f"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u4-about-page/functional-design/functional-spec.md": {
+    "mtime": 1790206602.2719588,
+    "seen": 1793867795.170418,
+    "ast_hash": "2996a6c92892e563db92f53f607b2412",
+    "semantic_hash": "2996a6c92892e563db92f53f607b2412"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u4-about-page/functional-design/memory.md": {
+    "mtime": 1790166497.223075,
+    "seen": 1793867795.1704187,
+    "ast_hash": "fb054d8657e8816d5a31416905c7f0ce",
+    "semantic_hash": "fb054d8657e8816d5a31416905c7f0ce"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u4-about-page/functional-design/reviews/review-01.md": {
+    "mtime": 1790166820.4493072,
+    "seen": 1793867795.1704195,
+    "ast_hash": "685c2e78d5b6f634ab3e79fa68a4f464",
+    "semantic_hash": "685c2e78d5b6f634ab3e79fa68a4f464"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u4-about-page/functional-design/reviews/review-02.md": {
+    "mtime": 1790170353.1352649,
+    "seen": 1793867795.1704202,
+    "ast_hash": "e35866dc85447c1d28f91675a956e776",
+    "semantic_hash": "e35866dc85447c1d28f91675a956e776"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u4-about-page/functional-design/reviews/review-03.md": {
+    "mtime": 1790172092.3947582,
+    "seen": 1793867795.1704214,
+    "ast_hash": "ccf230892d8ff88268a79bf5a60e423e",
+    "semantic_hash": "ccf230892d8ff88268a79bf5a60e423e"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u4-about-page/functional-design/reviews/review-04.md": {
+    "mtime": 1790174348.3833063,
+    "seen": 1793867795.170422,
+    "ast_hash": "0032fc0524e67cea5a82560a27fe94ca",
+    "semantic_hash": "0032fc0524e67cea5a82560a27fe94ca"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u4-about-page/functional-design/reviews/review-05.md": {
+    "mtime": 1790205443.658575,
+    "seen": 1793867795.1704228,
+    "ast_hash": "d2a0b29f5e6729be903df0a4db61bacf",
+    "semantic_hash": "d2a0b29f5e6729be903df0a4db61bacf"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u4-about-page/functional-design/reviews/review-06.md": {
+    "mtime": 1790246099.4648025,
+    "seen": 1793867795.1704235,
+    "ast_hash": "42e4eaa0a0c3ac2c6ed6989e3ac7be2a",
+    "semantic_hash": "42e4eaa0a0c3ac2c6ed6989e3ac7be2a"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u5-visual-direction/code-generation/code-generation-plan.md": {
+    "mtime": 1790277551.2712314,
+    "seen": 1793867795.1704245,
+    "ast_hash": "3595b26333de983ce282b7e5ab5863ef",
+    "semantic_hash": "3595b26333de983ce282b7e5ab5863ef"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u5-visual-direction/code-generation/code-generation-questions.md": {
+    "mtime": 1790277182.6090684,
+    "seen": 1793867795.1704254,
+    "ast_hash": "1e1a36d35bed600b0a2324afb843fe4e",
+    "semantic_hash": "1e1a36d35bed600b0a2324afb843fe4e"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u5-visual-direction/code-generation/code-summary.md": {
+    "mtime": 1790277485.7174523,
+    "seen": 1793867795.1704264,
+    "ast_hash": "9dd1b192e77c2828397ade4c31a69f23",
+    "semantic_hash": "9dd1b192e77c2828397ade4c31a69f23"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u5-visual-direction/code-generation/reviews/review-01.md": {
+    "mtime": 1790191136.6690807,
+    "seen": 1793867795.170427,
+    "ast_hash": "58c4b2dd9e629aec085bb1b0c6e8c86f",
+    "semantic_hash": "58c4b2dd9e629aec085bb1b0c6e8c86f"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u5-visual-direction/code-generation/reviews/review-02.md": {
+    "mtime": 1790265072.8862998,
+    "seen": 1793867795.1704278,
+    "ast_hash": "c35a030212bbada63bbbdd1ed6f6410d",
+    "semantic_hash": "c35a030212bbada63bbbdd1ed6f6410d"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u5-visual-direction/code-generation/reviews/review-03.md": {
+    "mtime": 1790278017.139355,
+    "seen": 1793867795.170429,
+    "ast_hash": "11a3e0d814bf8e72ff5e3e117142845c",
+    "semantic_hash": "11a3e0d814bf8e72ff5e3e117142845c"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u5-visual-direction/code-generation/unit-test-instructions.md": {
+    "mtime": 1790276894.6380692,
+    "seen": 1793867795.1704297,
+    "ast_hash": "0ff17c1c8707db9729b7aebb10cf0e9e",
+    "semantic_hash": "0ff17c1c8707db9729b7aebb10cf0e9e"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u5-visual-direction/functional-design/frontend-components.md": {
+    "mtime": 1790169669.7525883,
+    "seen": 1793867795.1704304,
+    "ast_hash": "6b8c34a240802ae017319a39aacbfdcf",
+    "semantic_hash": "6b8c34a240802ae017319a39aacbfdcf"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u5-visual-direction/functional-design/functional-design-questions.md": {
+    "mtime": 1790204127.8575635,
+    "seen": 1793867795.1704311,
+    "ast_hash": "5e57cbeafe46b5760297c6e02e4c4e11",
+    "semantic_hash": "5e57cbeafe46b5760297c6e02e4c4e11"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u5-visual-direction/functional-design/functional-spec.md": {
+    "mtime": 1790206635.89377,
+    "seen": 1793867795.1704323,
+    "ast_hash": "7b3c2ef4fb4564be1b99ded90449fc8c",
+    "semantic_hash": "7b3c2ef4fb4564be1b99ded90449fc8c"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u5-visual-direction/functional-design/memory.md": {
+    "mtime": 1790167036.7216997,
+    "seen": 1793867795.170433,
+    "ast_hash": "d0988ec421d8594f6bc91847746cff61",
+    "semantic_hash": "d0988ec421d8594f6bc91847746cff61"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u5-visual-direction/functional-design/reviews/review-01.md": {
+    "mtime": 1790167441.326534,
+    "seen": 1793867795.1704338,
+    "ast_hash": "36125d858589ecc97ea70beadfb9ed5d",
+    "semantic_hash": "36125d858589ecc97ea70beadfb9ed5d"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u5-visual-direction/functional-design/reviews/review-02.md": {
+    "mtime": 1790167779.6386917,
+    "seen": 1793867795.1704347,
+    "ast_hash": "0fd4be1edfdcd6d079a508b065fc5591",
+    "semantic_hash": "0fd4be1edfdcd6d079a508b065fc5591"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u5-visual-direction/functional-design/reviews/review-03.md": {
+    "mtime": 1790169949.8257298,
+    "seen": 1793867795.1704357,
+    "ast_hash": "68c8880bbae1199a2277d76b8a983b4c",
+    "semantic_hash": "68c8880bbae1199a2277d76b8a983b4c"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u5-visual-direction/functional-design/reviews/review-04.md": {
+    "mtime": 1790172366.9420807,
+    "seen": 1793867795.1704364,
+    "ast_hash": "4330a804758e637b825001fa35b55b7a",
+    "semantic_hash": "4330a804758e637b825001fa35b55b7a"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u5-visual-direction/functional-design/reviews/review-05.md": {
+    "mtime": 1790174703.0664506,
+    "seen": 1793867795.1704373,
+    "ast_hash": "c9fc88dfdb317b457880cebd24718ee9",
+    "semantic_hash": "c9fc88dfdb317b457880cebd24718ee9"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u5-visual-direction/functional-design/reviews/review-06.md": {
+    "mtime": 1790205743.7834902,
+    "seen": 1793867795.170438,
+    "ast_hash": "14025a908c4ed148e84c028f44d3d6a8",
+    "semantic_hash": "14025a908c4ed148e84c028f44d3d6a8"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u5-visual-direction/functional-design/reviews/review-07.md": {
+    "mtime": 1790246369.9587202,
+    "seen": 1793867795.1704392,
+    "ast_hash": "459a6b98cfcf61d82e55206bc07eb819",
+    "semantic_hash": "459a6b98cfcf61d82e55206bc07eb819"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u6-launch-content/code-generation/code-generation-plan.md": {
+    "mtime": 1790278635.0614011,
+    "seen": 1793867795.1704402,
+    "ast_hash": "fde8404581da6102a9c445e5affe59cb",
+    "semantic_hash": "fde8404581da6102a9c445e5affe59cb"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u6-launch-content/code-generation/code-generation-questions.md": {
+    "mtime": 1790278477.1978083,
+    "seen": 1793867795.170441,
+    "ast_hash": "9e53a18f0e990c221a0580d47d9e0c37",
+    "semantic_hash": "9e53a18f0e990c221a0580d47d9e0c37"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u6-launch-content/code-generation/code-summary.md": {
+    "mtime": 1790278690.0206523,
+    "seen": 1793867795.1704416,
+    "ast_hash": "f7f1e5577e08c3941c8735e7ff035d00",
+    "semantic_hash": "f7f1e5577e08c3941c8735e7ff035d00"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u6-launch-content/code-generation/reviews/review-01.md": {
+    "mtime": 1790267426.4781077,
+    "seen": 1793867795.1704426,
+    "ast_hash": "6568e64586e9591f2bf35fd6332d2791",
+    "semantic_hash": "6568e64586e9591f2bf35fd6332d2791"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u6-launch-content/code-generation/reviews/review-02.md": {
+    "mtime": 1790279125.1255593,
+    "seen": 1793867795.1704433,
+    "ast_hash": "eca67a89ff630ac2cd02f20a008fa2ce",
+    "semantic_hash": "eca67a89ff630ac2cd02f20a008fa2ce"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u6-launch-content/code-generation/unit-test-instructions.md": {
+    "mtime": 1790278338.5946553,
+    "seen": 1793867795.1704443,
+    "ast_hash": "f95b58c927063453e4e9c3440cbec4c6",
+    "semantic_hash": "f95b58c927063453e4e9c3440cbec4c6"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u6-launch-content/functional-design/entities.md": {
+    "mtime": 1790168624.9629614,
+    "seen": 1793867795.170445,
+    "ast_hash": "b9c8d60c63aa93d4e9d3cfa47a854d0e",
+    "semantic_hash": "b9c8d60c63aa93d4e9d3cfa47a854d0e"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u6-launch-content/functional-design/functional-design-questions.md": {
+    "mtime": 1790204142.249915,
+    "seen": 1793867795.170446,
+    "ast_hash": "5816c34fa78b56fab0b0c5eb63ee0167",
+    "semantic_hash": "5816c34fa78b56fab0b0c5eb63ee0167"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u6-launch-content/functional-design/functional-spec.md": {
+    "mtime": 1790206653.6986701,
+    "seen": 1793867795.1704469,
+    "ast_hash": "e3fcd884fe6059ae62c928c3bab56c28",
+    "semantic_hash": "e3fcd884fe6059ae62c928c3bab56c28"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u6-launch-content/functional-design/memory.md": {
+    "mtime": 1790168678.3051965,
+    "seen": 1793867795.1704476,
+    "ast_hash": "d9dfed6680c06adc96740cb13d8cf239",
+    "semantic_hash": "d9dfed6680c06adc96740cb13d8cf239"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u6-launch-content/functional-design/reviews/review-01.md": {
+    "mtime": 1790168470.4688783,
+    "seen": 1793867795.1704485,
+    "ast_hash": "bd222886c12886c40c3251d614161e44",
+    "semantic_hash": "bd222886c12886c40c3251d614161e44"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u6-launch-content/functional-design/reviews/review-02.md": {
+    "mtime": 1790168858.6225095,
+    "seen": 1793867795.1704495,
+    "ast_hash": "a28e399d8dfbf7db8ad72d86d7f0c3fa",
+    "semantic_hash": "a28e399d8dfbf7db8ad72d86d7f0c3fa"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u6-launch-content/functional-design/reviews/review-03.md": {
+    "mtime": 1790171112.3055077,
+    "seen": 1793867795.1704502,
+    "ast_hash": "d1751641c367d32738ace1643123485d",
+    "semantic_hash": "d1751641c367d32738ace1643123485d"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u6-launch-content/functional-design/reviews/review-04.md": {
+    "mtime": 1790172572.882781,
+    "seen": 1793867795.1704512,
+    "ast_hash": "86e860f072188aca153e1bf41d8aaf40",
+    "semantic_hash": "86e860f072188aca153e1bf41d8aaf40"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u6-launch-content/functional-design/reviews/review-05.md": {
+    "mtime": 1790174939.1531687,
+    "seen": 1793867795.170452,
+    "ast_hash": "54b38fc220841110737329f2f3e07a15",
+    "semantic_hash": "54b38fc220841110737329f2f3e07a15"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u6-launch-content/functional-design/reviews/review-06.md": {
+    "mtime": 1790205930.600472,
+    "seen": 1793867795.170453,
+    "ast_hash": "ed56b7906b44c65d854941e781b7c95a",
+    "semantic_hash": "ed56b7906b44c65d854941e781b7c95a"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u6-launch-content/functional-design/reviews/review-07.md": {
+    "mtime": 1790246481.4772713,
+    "seen": 1793867795.170454,
+    "ast_hash": "508610bbc67dc641107d0c9022835688",
+    "semantic_hash": "508610bbc67dc641107d0c9022835688"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u6-launch-content/functional-design/rules.md": {
+    "mtime": 1790168630.412566,
+    "seen": 1793867795.170455,
+    "ast_hash": "ffd3ef313d1c75225327405be97ba6a5",
+    "semantic_hash": "ffd3ef313d1c75225327405be97ba6a5"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/ideation/approval-handoff/approval-handoff-questions.md": {
+    "mtime": 1790151960.765341,
+    "seen": 1793867795.1704557,
+    "ast_hash": "cc94b684b93033d845d87d8bc0d017e7",
+    "semantic_hash": "cc94b684b93033d845d87d8bc0d017e7"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/ideation/approval-handoff/decision-log.md": {
+    "mtime": 1790152049.13191,
+    "seen": 1793867795.170457,
+    "ast_hash": "f59d536e82f7f87fb842898d758397d6",
+    "semantic_hash": "f59d536e82f7f87fb842898d758397d6"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/ideation/approval-handoff/initiative-brief.md": {
+    "mtime": 1790152010.5714073,
+    "seen": 1793867795.1704576,
+    "ast_hash": "3af7c27542111c146cc53445de5110c3",
+    "semantic_hash": "3af7c27542111c146cc53445de5110c3"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/ideation/approval-handoff/memory.md": {
+    "mtime": 1790152107.98506,
+    "seen": 1793867795.1704586,
+    "ast_hash": "08d6c46645b75a27056f4e5730fffe13",
+    "semantic_hash": "08d6c46645b75a27056f4e5730fffe13"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/ideation/intent-capture/intent-capture-questions.md": {
+    "mtime": 1790149206.8376162,
+    "seen": 1793867795.1704595,
+    "ast_hash": "cc49f12c43228a3be65a112ec5e308e8",
+    "semantic_hash": "cc49f12c43228a3be65a112ec5e308e8"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/ideation/intent-capture/intent-statement.md": {
+    "mtime": 1790149123.5337436,
+    "seen": 1793867795.1704602,
+    "ast_hash": "12a79e831a5e11283e62240a06bdd256",
+    "semantic_hash": "12a79e831a5e11283e62240a06bdd256"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/ideation/intent-capture/memory.md": {
+    "mtime": 1790149154.892231,
+    "seen": 1793867795.1704612,
+    "ast_hash": "d2a269719734d4bce65912c928781ff4",
+    "semantic_hash": "d2a269719734d4bce65912c928781ff4"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/ideation/intent-capture/reviews/review-01.md": {
+    "mtime": 1790149309.0669174,
+    "seen": 1793867795.170462,
+    "ast_hash": "bafa74821cb345fc017f1dc34430092f",
+    "semantic_hash": "bafa74821cb345fc017f1dc34430092f"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/ideation/intent-capture/stakeholder-map.md": {
+    "mtime": 1790149135.4519536,
+    "seen": 1793867795.170463,
+    "ast_hash": "d69ff34957ecd112276c7e79ec9a4413",
+    "semantic_hash": "d69ff34957ecd112276c7e79ec9a4413"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/ideation/rough-mockups/memory.md": {
+    "mtime": 1790151126.7847173,
+    "seen": 1793867795.1704638,
+    "ast_hash": "2766321138a56615fa91ad33a7aae99e",
+    "semantic_hash": "2766321138a56615fa91ad33a7aae99e"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/ideation/rough-mockups/reviews/review-01.md": {
+    "mtime": 1790151251.076162,
+    "seen": 1793867795.1704648,
+    "ast_hash": "5b5947291e4e5e17c1577c6e4374d92b",
+    "semantic_hash": "5b5947291e4e5e17c1577c6e4374d92b"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/ideation/rough-mockups/rough-mockups-questions.md": {
+    "mtime": 1790151007.1623585,
+    "seen": 1793867795.1704655,
+    "ast_hash": "c78a606d9fc075df696180367852ddf1",
+    "semantic_hash": "c78a606d9fc075df696180367852ddf1"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/ideation/rough-mockups/user-flow.md": {
+    "mtime": 1790151114.7181857,
+    "seen": 1793867795.1704664,
+    "ast_hash": "065e7db70d5497126611c0e5f705339e",
+    "semantic_hash": "065e7db70d5497126611c0e5f705339e"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/ideation/rough-mockups/wireframes.md": {
+    "mtime": 1790151076.6716619,
+    "seen": 1793867795.1704671,
+    "ast_hash": "eb98bab71063e9fc99c46effa363d7e1",
+    "semantic_hash": "eb98bab71063e9fc99c46effa363d7e1"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/ideation/scope-definition/intent-backlog.md": {
+    "mtime": 1790150163.884859,
+    "seen": 1793867795.170468,
+    "ast_hash": "f62ba58478fac40173b055edab9132bb",
+    "semantic_hash": "f62ba58478fac40173b055edab9132bb"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/ideation/scope-definition/memory.md": {
+    "mtime": 1790150172.022551,
+    "seen": 1793867795.170469,
+    "ast_hash": "153b771c0475dcd38a331a05f369d5eb",
+    "semantic_hash": "153b771c0475dcd38a331a05f369d5eb"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/ideation/scope-definition/scope-definition-questions.md": {
+    "mtime": 1790150094.0824902,
+    "seen": 1793867795.17047,
+    "ast_hash": "0c738bec3b1ff70eb348b42a2dd2ae50",
+    "semantic_hash": "0c738bec3b1ff70eb348b42a2dd2ae50"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/ideation/scope-definition/scope-document.md": {
+    "mtime": 1790150134.1969807,
+    "seen": 1793867795.1704707,
+    "ast_hash": "12bc18e7f209f253c777458506efed62",
+    "semantic_hash": "12bc18e7f209f253c777458506efed62"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/domain-design/components.md": {
+    "mtime": 1790197042.8463273,
+    "seen": 1793867795.1704717,
+    "ast_hash": "623b39869d2b60a4c327f8a86308b84c",
+    "semantic_hash": "623b39869d2b60a4c327f8a86308b84c"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/domain-design/decisions.md": {
+    "mtime": 1790197105.360251,
+    "seen": 1793867795.1704724,
+    "ast_hash": "871ab6020d3ea683e989c3046e0ea545",
+    "semantic_hash": "871ab6020d3ea683e989c3046e0ea545"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/domain-design/domain-design-questions.md": {
+    "mtime": 1790196873.7415454,
+    "seen": 1793867795.170473,
+    "ast_hash": "2743e59bd70e099500e999c392c18e2e",
+    "semantic_hash": "2743e59bd70e099500e999c392c18e2e"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/domain-design/memory.md": {
+    "mtime": 1790197165.3561795,
+    "seen": 1793867795.170474,
+    "ast_hash": "0b3032d25c7c560cacf86498f1344e3f",
+    "semantic_hash": "0b3032d25c7c560cacf86498f1344e3f"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/domain-design/reviews/review-01.md": {
+    "mtime": 1790159232.6766045,
+    "seen": 1793867795.170475,
+    "ast_hash": "4de4ea793991fa70bf7e4b75245ec42f",
+    "semantic_hash": "4de4ea793991fa70bf7e4b75245ec42f"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/domain-design/reviews/review-02.md": {
+    "mtime": 1790197376.2539392,
+    "seen": 1793867795.1704757,
+    "ast_hash": "8ab3dd236e70c61b4025b36eebf23e74",
+    "semantic_hash": "8ab3dd236e70c61b4025b36eebf23e74"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/practices-discovery/contributions/aidlc-developer-agent.md": {
+    "mtime": 1790153098.4902654,
+    "seen": 1793867795.1704764,
+    "ast_hash": "e764905cead68b0b6b9bc8b7f6e01a08",
+    "semantic_hash": "e764905cead68b0b6b9bc8b7f6e01a08"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/practices-discovery/contributions/aidlc-devsecops-agent.md": {
+    "mtime": 1790153202.9109542,
+    "seen": 1793867795.1704776,
+    "ast_hash": "0eb2cb0cd9e2355f1296660e9482680e",
+    "semantic_hash": "0eb2cb0cd9e2355f1296660e9482680e"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/practices-discovery/contributions/aidlc-quality-agent.md": {
+    "mtime": 1790153123.38996,
+    "seen": 1793867795.1704783,
+    "ast_hash": "99dda4d803e9ba6ca311015842ba3345",
+    "semantic_hash": "99dda4d803e9ba6ca311015842ba3345"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/practices-discovery/discovered-rules.md": {
+    "mtime": 1790154058.9639213,
+    "seen": 1793867795.170479,
+    "ast_hash": "bdc3bee5d0c998c0575b2df5a47d87fa",
+    "semantic_hash": "bdc3bee5d0c998c0575b2df5a47d87fa"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/practices-discovery/evidence.md": {
+    "mtime": 1790154140.9540775,
+    "seen": 1793867795.17048,
+    "ast_hash": "7c589e6d3541d96f1e97f04586ed7b82",
+    "semantic_hash": "7c589e6d3541d96f1e97f04586ed7b82"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/practices-discovery/memory.md": {
+    "mtime": 1790153768.7085364,
+    "seen": 1793867795.170481,
+    "ast_hash": "80994081bf170d549a874a70871bb426",
+    "semantic_hash": "80994081bf170d549a874a70871bb426"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/practices-discovery/practices-discovery-questions.md": {
+    "mtime": 1790153740.5403416,
+    "seen": 1793867795.1704817,
+    "ast_hash": "9c86aee6b7743fa032e60122cd0ec127",
+    "semantic_hash": "9c86aee6b7743fa032e60122cd0ec127"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/practices-discovery/practices-discovery-timestamp.md": {
+    "mtime": 1790154145.5690742,
+    "seen": 1793867795.1704826,
+    "ast_hash": "b55e358aeec28d4988015a88639b7c97",
+    "semantic_hash": "b55e358aeec28d4988015a88639b7c97"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/practices-discovery/team-practices.md": {
+    "mtime": 1790154033.6038375,
+    "seen": 1793867795.1704838,
+    "ast_hash": "674e2a59023823b4c1177ab828623b17",
+    "semantic_hash": "674e2a59023823b4c1177ab828623b17"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/refined-mockups/accessibility-checklist.md": {
+    "mtime": 1790157986.8934422,
+    "seen": 1793867795.1704845,
+    "ast_hash": "f78dca373a2a06b6c16292167bc47a99",
+    "semantic_hash": "f78dca373a2a06b6c16292167bc47a99"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/refined-mockups/design-system-mapping.md": {
+    "mtime": 1790157233.3459978,
+    "seen": 1793867795.1704855,
+    "ast_hash": "6a1fc256581f843871a7c8a2f9d9602f",
+    "semantic_hash": "6a1fc256581f843871a7c8a2f9d9602f"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/refined-mockups/interaction-spec.md": {
+    "mtime": 1790157395.8676353,
+    "seen": 1793867795.1704865,
+    "ast_hash": "7a70f5cdfd9762738c0d351dabf29e86",
+    "semantic_hash": "7a70f5cdfd9762738c0d351dabf29e86"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/refined-mockups/memory.md": {
+    "mtime": 1790157996.0044246,
+    "seen": 1793867795.1704874,
+    "ast_hash": "2b573826c2369d15cbe363b92a93e43e",
+    "semantic_hash": "2b573826c2369d15cbe363b92a93e43e"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/refined-mockups/mockups.md": {
+    "mtime": 1790157327.2567856,
+    "seen": 1793867795.170488,
+    "ast_hash": "ce86e1ce1ec3a0ff13e0b0f9a99b1057",
+    "semantic_hash": "ce86e1ce1ec3a0ff13e0b0f9a99b1057"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/refined-mockups/refined-mockups-questions.md": {
+    "mtime": 1790158044.390527,
+    "seen": 1793867795.170489,
+    "ast_hash": "2d4472bfc66a83363550e2bd3b14efc7",
+    "semantic_hash": "2d4472bfc66a83363550e2bd3b14efc7"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/refined-mockups/reviews/review-01.md": {
+    "mtime": 1790157661.4096212,
+    "seen": 1793867795.1704898,
+    "ast_hash": "b4c0c5c78d96645af63824a913312364",
+    "semantic_hash": "b4c0c5c78d96645af63824a913312364"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/refined-mockups/reviews/review-02.md": {
+    "mtime": 1790158136.9021568,
+    "seen": 1793867795.170491,
+    "ast_hash": "85721bdf8b58671738cc795ed5c89549",
+    "semantic_hash": "85721bdf8b58671738cc795ed5c89549"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/requirements-analysis/memory.md": {
+    "mtime": 1790154950.4982657,
+    "seen": 1793867795.1704917,
+    "ast_hash": "e3102f2fef5c82243b42d9216b099e84",
+    "semantic_hash": "e3102f2fef5c82243b42d9216b099e84"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/requirements-analysis/requirements-analysis-questions.md": {
+    "mtime": 1790155059.004125,
+    "seen": 1793867795.1704926,
+    "ast_hash": "ebf824be56b7237803fa4efd6a0b5a27",
+    "semantic_hash": "ebf824be56b7237803fa4efd6a0b5a27"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/requirements-analysis/requirements.md": {
+    "mtime": 1790155183.5709734,
+    "seen": 1793867795.1704934,
+    "ast_hash": "04d8f25c26e74fc2e77deee4c7fa9191",
+    "semantic_hash": "04d8f25c26e74fc2e77deee4c7fa9191"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/requirements-analysis/reviews/review-01.md": {
+    "mtime": 1790155273.5710013,
+    "seen": 1793867795.1704946,
+    "ast_hash": "5e5001322caea49827745aa5f85f980a",
+    "semantic_hash": "5e5001322caea49827745aa5f85f980a"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/units-generation/memory.md": {
+    "mtime": 1790198146.8901424,
+    "seen": 1793867795.1704953,
+    "ast_hash": "ea0c58effda6e31955027acaf55cdd07",
+    "semantic_hash": "ea0c58effda6e31955027acaf55cdd07"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/units-generation/reviews/review-01.md": {
+    "mtime": 1790160373.5675035,
+    "seen": 1793867795.170496,
+    "ast_hash": "fdebd4bd2c31c908636668e0a4fc9d36",
+    "semantic_hash": "fdebd4bd2c31c908636668e0a4fc9d36"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/units-generation/reviews/review-02.md": {
+    "mtime": 1790198283.8100073,
+    "seen": 1793867795.1704967,
+    "ast_hash": "03025ae8ef24eb5990d67a492441d888",
+    "semantic_hash": "03025ae8ef24eb5990d67a492441d888"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/units-generation/reviews/review-03.md": {
+    "mtime": 1790198618.3626807,
+    "seen": 1793867795.170498,
+    "ast_hash": "64bb4d30c1c27ef82ebd9f173b5cebfc",
+    "semantic_hash": "64bb4d30c1c27ef82ebd9f173b5cebfc"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/units-generation/reviews/review-04.md": {
+    "mtime": 1790198855.4664514,
+    "seen": 1793867795.1704986,
+    "ast_hash": "085c13078fb1ca03b51ea3a26cd7eaa4",
+    "semantic_hash": "085c13078fb1ca03b51ea3a26cd7eaa4"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/units-generation/unit-of-work-dependency.md": {
+    "mtime": 1790198108.6891804,
+    "seen": 1793867795.1704996,
+    "ast_hash": "1a7a056b10a7eb187d3d213fac751b00",
+    "semantic_hash": "1a7a056b10a7eb187d3d213fac751b00"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/units-generation/unit-of-work-story-map.md": {
+    "mtime": 1790198121.5441675,
+    "seen": 1793867795.1705003,
+    "ast_hash": "cded243f08054cd1862da1084d973ccc",
+    "semantic_hash": "cded243f08054cd1862da1084d973ccc"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/units-generation/unit-of-work.md": {
+    "mtime": 1790198659.9026403,
+    "seen": 1793867795.1705012,
+    "ast_hash": "1da3a6c1d9d7473a9b26fcc3871be759",
+    "semantic_hash": "1da3a6c1d9d7473a9b26fcc3871be759"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/inception/units-generation/units-generation-questions.md": {
+    "mtime": 1790198058.4842303,
+    "seen": 1793867795.170502,
+    "ast_hash": "b66da6460fa0328d30a09b5e45231aff",
+    "semantic_hash": "b66da6460fa0328d30a09b5e45231aff"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/verification/phase-check-construction.md": {
+    "mtime": 1790288407.2039795,
+    "seen": 1793867795.170503,
+    "ast_hash": "6390af458052a1e427d64db500f5958d",
+    "semantic_hash": "6390af458052a1e427d64db500f5958d"
+  },
+  "aidlc/spaces/default/intents/260921-portfolio-blog-site/verification/phase-check-ideation.md": {
+    "mtime": 1790152085.703815,
+    "seen": 1793867795.1705036,
+    "ast_hash": "1dfc9bd1fb0d3a57f9f1f626cf809ef3",
+    "semantic_hash": "1dfc9bd1fb0d3a57f9f1f626cf809ef3"
+  },
+  "aidlc/spaces/default/memory/org.md": {
+    "mtime": 1789991037.452382,
+    "seen": 1793867795.1705048,
+    "ast_hash": "96b7c2ad2a2d75ad5deed538655a40d1",
+    "semantic_hash": "96b7c2ad2a2d75ad5deed538655a40d1"
+  },
+  "aidlc/spaces/default/memory/phases/construction.md": {
+    "mtime": 1789991037.452382,
+    "seen": 1793867795.1705055,
+    "ast_hash": "bfb9e9c37b5ab591b5c5c765c3750848",
+    "semantic_hash": "bfb9e9c37b5ab591b5c5c765c3750848"
+  },
+  "aidlc/spaces/default/memory/phases/ideation.md": {
+    "mtime": 1789991037.452946,
+    "seen": 1793867795.1705062,
+    "ast_hash": "9dd4d0b0b84ad2ff043d25030fd298ab",
+    "semantic_hash": "9dd4d0b0b84ad2ff043d25030fd298ab"
+  },
+  "aidlc/spaces/default/memory/phases/inception.md": {
+    "mtime": 1789991037.452981,
+    "seen": 1793867795.170507,
+    "ast_hash": "8270023289d6e7d820604dd1590b30ef",
+    "semantic_hash": "8270023289d6e7d820604dd1590b30ef"
+  },
+  "aidlc/spaces/default/memory/phases/operation.md": {
+    "mtime": 1789991037.453017,
+    "seen": 1793867795.1705081,
+    "ast_hash": "6f0e137deb5a8ac532ae7c2fedd627a9",
+    "semantic_hash": "6f0e137deb5a8ac532ae7c2fedd627a9"
+  },
+  "aidlc/spaces/default/memory/project.md": {
+    "mtime": 1790279508.9394982,
+    "seen": 1793867795.1705089,
+    "ast_hash": "ba40e9a014db18aaf7133c25f1636b53",
+    "semantic_hash": "ba40e9a014db18aaf7133c25f1636b53"
+  },
+  "aidlc/spaces/default/memory/team.md": {
+    "mtime": 1790154368.2558858,
+    "seen": 1793867795.1705096,
+    "ast_hash": "043ab5d9a4119e23d50c18aa73c010d4",
+    "semantic_hash": "043ab5d9a4119e23d50c18aa73c010d4"
+  },
+  "content/posts/my-own-ai-workflow/index.md": {
+    "mtime": 1792225029.4618132,
+    "seen": 1793867795.1705105,
+    "ast_hash": "53b6ac8cfd00c137fa675006052a4b6f",
+    "semantic_hash": "53b6ac8cfd00c137fa675006052a4b6f"
+  },
+  "content/posts/tailscale-subnet-router/index.md": {
+    "mtime": 1792410858.5379424,
+    "seen": 1793867795.1705112,
+    "ast_hash": "35e0876642e1f61f5cc66bacc20708e0",
+    "semantic_hash": "35e0876642e1f61f5cc66bacc20708e0"
+  },
+  "content/posts/who-am-i-and-what-is-this/index.md": {
+    "mtime": 1792008057.5814092,
+    "seen": 1793867795.1705122,
+    "ast_hash": "a0b08476f53229433b440bb20302a7ea",
+    "semantic_hash": "a0b08476f53229433b440bb20302a7ea"
+  },
+  "content/projects/homelab/index.md": {
+    "mtime": 1792411237.8047733,
+    "seen": 1793867795.1705132,
+    "ast_hash": "82c4897bf9ba0517d461152dc586b8cc",
+    "semantic_hash": "82c4897bf9ba0517d461152dc586b8cc"
+  },
+  "content/projects/rue-asha-github-io/index.md": {
+    "mtime": 1790608183.746737,
+    "seen": 1793867795.1705139,
+    "ast_hash": "826c23f286515315b7a4f969a4b39e8b",
+    "semantic_hash": "826c23f286515315b7a4f969a4b39e8b"
+  },
+  "src/assets/fonts/LICENSE-ibm-plex.txt": {
+    "mtime": 1790607017.878087,
+    "seen": 1793867795.1705146,
+    "ast_hash": "db2f2b797f32bff7f427ab7bf5bae8f1",
+    "semantic_hash": "db2f2b797f32bff7f427ab7bf5bae8f1"
+  },
+  "tests/u1/fixtures/broken-post/content/posts/bad-date/index.md": {
+    "mtime": 1790179828.2317915,
+    "seen": 1793867795.1705158,
+    "ast_hash": "06c3222c5352b2d124bfb03d69fd0e38",
+    "semantic_hash": "06c3222c5352b2d124bfb03d69fd0e38"
+  },
+  "tests/u1/fixtures/broken-post/content/posts/no-date/index.md": {
+    "mtime": 1790179828.2303793,
+    "seen": 1793867795.1705167,
+    "ast_hash": "80a14b964e833886b95e75f19376972f",
+    "semantic_hash": "80a14b964e833886b95e75f19376972f"
+  },
+  "tests/u1/fixtures/broken-project/content/projects/thin-project/index.md": {
+    "mtime": 1790179828.2324464,
+    "seen": 1793867795.1705174,
+    "ast_hash": "4ffd8353bb5220da5c20e1f3e684d09d",
+    "semantic_hash": "4ffd8353bb5220da5c20e1f3e684d09d"
+  },
+  "tests/u1/fixtures/dead-link/content/posts/linking-post/index.md": {
+    "mtime": 1790179828.2347207,
+    "seen": 1793867795.1705186,
+    "ast_hash": "02a016340a513c47f2b399ddda42d795",
+    "semantic_hash": "02a016340a513c47f2b399ddda42d795"
+  },
+  "tests/u1/fixtures/malformed-structure/content/posts/Bad_Slug/index.md": {
+    "mtime": 1790179843.1333609,
+    "seen": 1793867795.1705194,
+    "ast_hash": "6e5f42d91d7d0e6c5139dec1eaa445d2",
+    "semantic_hash": "6e5f42d91d7d0e6c5139dec1eaa445d2"
+  },
+  "tests/u1/fixtures/malformed-structure/content/posts/coerced-draft/index.md": {
+    "mtime": 1790179843.135723,
+    "seen": 1793867795.17052,
+    "ast_hash": "1aa1168155a8d6af54e460af46b6fecc",
+    "semantic_hash": "1aa1168155a8d6af54e460af46b6fecc"
+  },
+  "tests/u1/fixtures/malformed-structure/content/posts/no-index-here/notes.txt": {
+    "mtime": 1790179843.132361,
+    "seen": 1793867795.170521,
+    "ast_hash": "41de3a20ec426bff59ecc2674218188f",
+    "semantic_hash": "41de3a20ec426bff59ecc2674218188f"
+  },
+  "tests/u1/fixtures/malformed-structure/content/posts/unparseable-front-matter/index.md": {
+    "mtime": 1790179843.1343608,
+    "seen": 1793867795.170522,
+    "ast_hash": "ae95ec5f9fc1d7323a0bb2fac87f6c57",
+    "semantic_hash": "ae95ec5f9fc1d7323a0bb2fac87f6c57"
+  },
+  "tests/u1/fixtures/valid-site/content/posts/first-post/index.md": {
+    "mtime": 1790179828.229465,
+    "seen": 1793867795.170523,
+    "ast_hash": "0fb177c840d5b822b9a4ebe506decc66",
+    "semantic_hash": "0fb177c840d5b822b9a4ebe506decc66"
+  },
+  "tests/u1/fixtures/valid-site/content/projects/first-project/index.md": {
+    "mtime": 1790179828.2302759,
+    "seen": 1793867795.170524,
+    "ast_hash": "0fb44824d0179609e5606255fcc0d945",
+    "semantic_hash": "0fb44824d0179609e5606255fcc0d945"
+  },
+  "tests/u1/fixtures/with-assets/content/posts/illustrated-post/index.md": {
+    "mtime": 1790179828.2355938,
+    "seen": 1793867795.1705246,
+    "ast_hash": "871ff8a4ce731a26f32f520b3822d5ad",
+    "semantic_hash": "871ff8a4ce731a26f32f520b3822d5ad"
+  },
+  "tests/u1/fixtures/with-draft/content/posts/hidden-post/index.md": {
+    "mtime": 1790179828.2336998,
+    "seen": 1793867795.1705258,
+    "ast_hash": "e249b98a82d0a80d604abbde12823d23",
+    "semantic_hash": "e249b98a82d0a80d604abbde12823d23"
+  },
+  "tests/u1/fixtures/with-draft/content/posts/published-post/index.md": {
+    "mtime": 1790179828.2330916,
+    "seen": 1793867795.1705265,
+    "ast_hash": "b6108fc7ab4a789b105b25662988c1e6",
+    "semantic_hash": "b6108fc7ab4a789b105b25662988c1e6"
+  },
+  "tests/u2/fixtures/feed-site/content/posts/hidden-post/index.md": {
+    "mtime": 1790183388.4529312,
+    "seen": 1793867795.1705275,
+    "ast_hash": "acbdf51b0917539d1cb254e730f8cb02",
+    "semantic_hash": "acbdf51b0917539d1cb254e730f8cb02"
+  },
+  "tests/u2/fixtures/feed-site/content/posts/newer-post/index.md": {
+    "mtime": 1790183385.2309434,
+    "seen": 1793867795.1705282,
+    "ast_hash": "5e3f80f9a7bfa337bc8e4fe9679f3300",
+    "semantic_hash": "5e3f80f9a7bfa337bc8e4fe9679f3300"
+  },
+  "tests/u2/fixtures/feed-site/content/posts/older-post/index.md": {
+    "mtime": 1790183386.900937,
+    "seen": 1793867795.1705294,
+    "ast_hash": "f8cf9bdccd37107489dc447195cd2a1c",
+    "semantic_hash": "f8cf9bdccd37107489dc447195cd2a1c"
+  },
+  "tests/u2/fixtures/rich-post/content/posts/rich-post/index.md": {
+    "mtime": 1790183396.1809015,
+    "seen": 1793867795.17053,
+    "ast_hash": "209604d98a5dc28564024230a729e127",
+    "semantic_hash": "209604d98a5dc28564024230a729e127"
+  },
+  "tests/u2/fixtures/unknown-fence/content/posts/typo-fence/index.md": {
+    "mtime": 1790183390.9509215,
+    "seen": 1793867795.170531,
+    "ast_hash": "3a76b3a6a506b5edd59087bddaf27321",
+    "semantic_hash": "3a76b3a6a506b5edd59087bddaf27321"
+  },
+  "tests/u3/fixtures/no-projects/content/posts/only-a-post/index.md": {
+    "mtime": 1790185504.6475153,
+    "seen": 1793867795.1705317,
+    "ast_hash": "9fcff8ba1eb85a99c19b51a791a46cf7",
+    "semantic_hash": "9fcff8ba1eb85a99c19b51a791a46cf7"
+  },
+  "tests/u3/fixtures/projects-site/content/posts/a-note/index.md": {
+    "mtime": 1790185502.3035183,
+    "seen": 1793867795.170533,
+    "ast_hash": "07560819396bafae823f7e369db7d30b",
+    "semantic_hash": "07560819396bafae823f7e369db7d30b"
+  },
+  "tests/u3/fixtures/projects-site/content/projects/almanac/index.md": {
+    "mtime": 1790185499.995521,
+    "seen": 1793867795.1705337,
+    "ast_hash": "87df60823df4dfe01b007ccda772747e",
+    "semantic_hash": "87df60823df4dfe01b007ccda772747e"
+  },
+  "tests/u3/fixtures/projects-site/content/projects/beacon/index.md": {
+    "mtime": 1790185494.7235277,
+    "seen": 1793867795.1705346,
+    "ast_hash": "11d4e7d82fce9164e16cb97c36458eab",
+    "semantic_hash": "11d4e7d82fce9164e16cb97c36458eab"
+  },
+  "tests/u3/fixtures/projects-site/content/projects/cartograph/index.md": {
+    "mtime": 1790185497.4055243,
+    "seen": 1793867795.1705353,
+    "ast_hash": "7fc38fcf9bea3a753c3678278ed3e725",
+    "semantic_hash": "7fc38fcf9bea3a753c3678278ed3e725"
+  },
+  "tests/u4/fixtures/minimal-site/content/posts/a-post/index.md": {
+    "mtime": 1790189062.3896554,
+    "seen": 1793867795.1705365,
+    "ast_hash": "3da5ff2d4de14dc2dde82900d104e1c3",
+    "semantic_hash": "3da5ff2d4de14dc2dde82900d104e1c3"
+  },
+  "content/posts/my-own-ai-workflow/flow.svg": {
+    "mtime": 1792225029.4608934,
+    "seen": 1793867795.1705372,
+    "ast_hash": "a55d866483ffd3d4ac21f062b603a19a",
+    "semantic_hash": "a55d866483ffd3d4ac21f062b603a19a"
+  },
+  "content/posts/tailscale-subnet-router/vpn.svg": {
+    "mtime": 1792410854.045591,
+    "seen": 1793867795.1705382,
+    "ast_hash": "37d7e615bc673f6ea2a98e08752268cd",
+    "semantic_hash": "37d7e615bc673f6ea2a98e08752268cd"
+  },
+  "tests/u1/fixtures/with-assets/content/posts/illustrated-post/diagram.png": {
+    "mtime": 1790179828.2355938,
+    "seen": 1793867795.170539,
+    "ast_hash": "e9dd2797018cad79186e03e8c5aec8dc",
+    "semantic_hash": "e9dd2797018cad79186e03e8c5aec8dc"
+  },
+  "tests/u2/fixtures/rich-post/content/posts/rich-post/diagram.png": {
+    "mtime": 1790183381.4929578,
+    "seen": 1793867795.17054,
+    "ast_hash": "2cd8bde463f5d82aae0f0cec061d6b8f",
+    "semantic_hash": "2cd8bde463f5d82aae0f0cec061d6b8f"
+  },
+  "package-lock.json": {
+    "mtime": 1790180649.3797088,
+    "seen": 1793868152.822464,
+    "ast_hash": "5a2d1d5b893fcf62301a8fb2596e5d9b",
+    "semantic_hash": ""
+  }
+}

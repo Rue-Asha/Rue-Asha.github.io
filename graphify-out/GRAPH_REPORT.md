@@ -1,0 +1,1354 @@
+# Graph Report - Rue-Asha.github.io  (2026-11-05)
+
+## Corpus Check
+- 585 files · ~1,147,587 words
+- Verdict: corpus is large enough that graph structure adds value.
+- Unclassified: 37 file(s) not represented in the graph (top: .tsv 21, (none) 8, .woff2 6)
+
+## Summary
+- 7562 nodes · 22171 edges · 280 communities (236 shown, 44 thin omitted)
+- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 805 edges (avg confidence: 0.87)
+- Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `93a7756a`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
+
+## Community Hubs (Navigation)
+- AIDLC Core Library
+- AIDLC Init & Setup
+- Workflow State Store
+- Testing Posture & Plan Approval
+- PageRenderer component
+- Install & Lifecycle Paths
+- aidlc-utility.ts
+- ref_node_fs
+- Page Renderer & Shell
+- Config Diagnostics
+- Stage Graph Compiler
+- Ideation Wireframes & Decisions
+- Orchestrator Skill & Protocol
+- aidlc-orchestrate.ts
+- Agents & Stage Ownership
+- Directive Validation
+- Markup Renderer & U1 Codegen
+- Review Freeze & Bolt DAG
+- U2 Blog Design & Code
+- Release & Update Tooling
+- Audit Log Review Handling
+- Plugin Hook Composition
+- Model Policy & Tiers
+- aidlc-doctor.ts
+- Swarm Worktree Records
+- Audit Shard Reading
+- Audit Append API
+- Worktree Merge Handling
+- U4 About Page Tests
+- errorMessage
+- Attestation & Anchors
+- Workspace Sync & Doctor
+- Plugin Sync & Pruning
+- Content Source & Transforms
+- Directive Marker & Continuation
+- Knowledge Tool CLI
+- listIntents
+- Sensor Claim Sources
+- prepareChoiceSection
+- aidlc-record-human-turn.ts
+- Stage Jump & Scope Mapping
+- U3 Projects Tests
+- U4 About Page Design
+- Reviewer Scope Hook
+- Review Brief Builder
+- Public Command Router
+- Sensor Firing Engine
+- Transaction Executor
+- Learnings Persistence
+- Plugin Validation
+- Package Scripts & Deps
+- AIDLC Settings Resolution
+- Lock Leak Detection
+- Runner Skill Generator
+- Learnings Protocol Module (stage-protocol-learnings.md)
+- Bolt Tool
+- Business Rules — U1 Publishable Site Shell
+- site-builder.ts
+- Construction & Swarm Protocols
+- Statusline Hook
+- Runtime Event Compiler
+- aidlc-unit.ts
+- aidlc-usage.ts
+- aidlc-command.ts
+- markup-renderer.ts
+- U6 Launch Content Codegen
+- filesystemSourceIdentity
+- Plan Approval Guard Hook
+- Knowledge Document Sync
+- isPlainObject
+- Reviewer & Ensemble Protocols
+- content-transforms.ts
+- Plugin Composition Tests
+- Audit Event Registry
+- u3/helpers.ts
+- AI Workflow Flow Diagram
+- Entity Model — U1 Publishable Site Shell
+- Learnings & Recovery Protocols
+- Traceability Sensor
+- Operation Stage Definitions
+- Design Agent UX Knowledge
+- Team Practices Discovery
+- Team-Level Rules Memory
+- Plugin Projection Emitter
+- DocumentKB Schema
+- Memory Change Control
+- DevSecOps Pipeline Knowledge
+- Stage Validity Receipts
+- Doctor Bundle Types
+- gitHeadOid
+- Functional Specification — U1 Publishable Site Shell
+- README & Project Overview
+- State Transition Guard Hook
+- showDocument
+- Domain Design ADRs
+- Review Freeze Command Parsing
+- Runtime Path Resolution
+- Domain Components Catalogue
+- Security & CSP Requirements
+- Developer API & A11y Guides
+- Functional Design Questions — U1
+- Stage Frontmatter Schema
+- NFR & SLO Knowledge
+- AI Workflow Blog Post
+- listIntentDirs
+- Practices Discovery Evidence
+- Stage Definition Format
+- Requirements & Stories Stages
+- aggregateUsageAuditFields
+- Audit Metrics
+- DevSecOps Pipeline Patterns
+- TypeScript Config
+- aidlc-includes.ts
+- U3 Projects Functional Spec
+- Refined Mockups Design Tokens
+- U1 Publishing Requirements
+- Unit Phase Requirements
+- NFR Design Patterns
+- aidlc-sensor-required-sections.ts
+- Unit Source Snapshots
+- handleFork
+- W2 Run the three blocking checks
+- Requirements Guide
+- U2 Blog Codegen Plan
+- U5 Visual Direction Spec
+- Units Generation & Dependencies
+- Testing & Quality Gates Guides
+- Dispatcher Adapter Execution
+- Command Noun Routing
+- Plugin Scaffolding
+- AskDirectiveBase
+- Stage Rules Delivery Hook
+- Compliance & CDK Knowledge
+- Dispatcher Failure Rendering
+- isTeamUnitOwnership
+- readUnitSourceManifest
+- Tailscale Subnet Router Post
+- Single-Stage Runner Skills
+- DevSecOps Practices Contribution
+- Requirements Analysis Questions
+- Accessibility Checklist
+- Plan Approval & Confirmation
+- SLO & Incident Knowledge
+- User Story Knowledge
+- Knowledge Skill
+- Shell Completions
+- Doctor Analysis Runner
+- Linter Sensor
+- Org Rules Memory Seed
+- Homelab Project Page
+- Homelab VPN Diagram
+- aidlc-sensor-schema.ts
+- AWS Well-Architected Knowledge
+- CHANGE_CONTROL_SET / CHANGE_ACCEPTED Events
+- Project Rules & Corrections
+- Domain Design Stage
+- Product Prioritization Knowledge
+- Scopes & Brownfield Safeguards
+- loadSensors
+- Build & Test Summary
+- Workspace Detection Stages
+- Architecture Patterns Knowledge
+- Attest Ownership Index
+- Output Validation
+- Publish Workflow Jobs
+- Interaction Spec & Focus Ring
+- Quality Practices Contribution
+- Delivery Planning & Bolts
+- Doctor Bundle Builder
+- Session PID Ancestry
+- Type-Check Sensor
+- CI Quality Gates
+- BR11.7 Styling never moves focusable elements or removes focus indicator
+- Scope Document
+- Developer Practices Contribution
+- U3 Projects Unit of Work
+- Reverse Engineering Stage
+- DDD Patterns Knowledge
+- Team Topologies Knowledge
+- AI-DLC Principles
+- Security Workflow
+- ADR-005: Publish through a GitHub Actions workflow in this repository
+- Practices Discovery Questions
+- Contract & Units Stages
+- Plugin Build
+- Upstream Coverage Sensor
+- ref_node_child_process
+- workspaceHasWork
+- publicCommandGrammarError
+- This Site Project Page
+- Publish Workflow Steps
+- Operation Phase Memory Seed
+- Inception Phase Memory Seed
+- Code Generation Knowledge
+- Functional Design Knowledge
+- NFR Validation Knowledge
+- Archive Tar Tool
+- readAuditSafely
+- Publish Workflow Triggers
+- U6 Traceability Review
+- Refined Mockup Frames
+- Infrastructure Knowledge
+- Architecture Review Knowledge
+- Workflow Planning Knowledge
+- Data Modelling Knowledge
+- STRIDE Threat Modelling
+- Deployment Strategies Knowledge
+- Domain Design Stage Memory
+- Phase Boundary Verification Protocol (stage-protocol-governance.md)
+- claim-sources sensor (Intent Capture provenance check)
+- Security Test Instructions
+- U6 Not-Applicable Spec
+- Functional Design Coverage Gates
+- Practices Discovery Stage
+- Workflow Composing Knowledge
+- Requirements Elicitation Knowledge
+- Rules Reading Protocol
+- Doctor Timeline Reconstruction
+- Subagent Inflight Tracking
+- Rich Post Fixture
+- CI Config & Rollback
+- U3 Frontend Components
+- U5 Font Choices
+- U5 List Row Review
+- Operation Rollback Memory
+- Security Guide Knowledge
+- Market Research Knowledge
+- Verification & Phase Checks
+- Outcomes & Replay Skills
+- Doctor Report Rendering
+- About & AI Workflow Posts
+- Dependabot Config
+- Integration Test Instructions
+- Build & Test Results
+- U5 Review Findings
+- Reverse Engineering Artifacts
+- Product Review Knowledge
+- Worktree Info Schema
+- Doctor Export Merge
+- assertNoSymlinkInChainOrThrow
+- No-Projects Fixture
+- BR9.3 Projects page uses Home's total project order
+- Renderer Library Choices
+- Ideation Phase Check
+- Security Patch Skill
+- Session Cost Skill
+- Construction Memory Seed
+- Draft Post Fixtures
+- Projects Fixture Schema
+- U5 Code Theme Review
+- Bolts & Units Glossary
+- Fold Usage Hook
+- U5 Stylesheet Register
+- U5 Target Sizing
+- IBM Plex Font License
+- Monitoring Design Artifacts
+- Prettier Config
+- Valid Site Fixture
+- About Empty State Note
+- About Prose Requirement
+- About Reach Requirement
+- U5 Performance Targets
+- U5 Testing Contract
+- U5 Contrast Question
+- U1 404 Finding
+- Source Manifest
+- Illustrated Post Image
+- Co-located Asset Fixture
+- Rich Post Image
+
+## God Nodes (most connected - your core abstractions)
+1. `errorMessage()` - 168 edges
+2. `getField()` - 159 edges
+3. `resolveProjectDir()` - 129 edges
+4. `auditBlockField()` - 112 edges
+5. `readStateFile()` - 102 edges
+6. `collectDoctorReport()` - 102 edges
+7. `isoTimestamp()` - 81 edges
+8. `resolveWorkflowSelection()` - 77 edges
+9. `withAuditLock()` - 77 edges
+10. `readAuditShardEvents()` - 62 edges
+
+## Surprising Connections (you probably didn't know these)
+- `Atom, Summary-Only Feed` --rationale_for--> `buildAtomFeed()`  [INFERRED]
+  aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/functional-design/memory.md → src/content-transforms.ts
+- `U2CA4 Feed not read by check 3; its discovery link is` --references--> `htmlPages()`  [INFERRED]
+  aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u2-blog/code-generation/code-generation-plan.md → src/check-runner.ts
+- `isExternalLink()` --implements--> `BR6.4 External links never checked`  [INFERRED]
+  src/check-runner.ts → aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/functional-design/rules.md
+- `runPageCoverage()` --implements--> `BR6.2 Check 2: every non-draft item produced a page`  [INFERRED]
+  src/check-runner.ts → aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/functional-design/rules.md
+- `runInternalLinks()` --implements--> `BR6.3 Check 3: internal links resolve`  [INFERRED]
+  src/check-runner.ts → aidlc/spaces/default/intents/260921-portfolio-blog-site/construction/u1-publishable-site-shell/functional-design/rules.md
+
+## Import Cycles
+- 2-file cycle: `.claude/tools/aidlc-orchestrate.ts -> .claude/tools/aidlc-state.ts -> .claude/tools/aidlc-orchestrate.ts`
+
+## Hyperedges (group relationships)
+- **AIDLC Branching Strategy Menu mapped to aidlc-worktree** — claude_knowledge_aidlc_pipeline_deploy_agent_branching_strategies_trunk_based_development, claude_knowledge_aidlc_pipeline_deploy_agent_branching_strategies_github_flow, claude_knowledge_aidlc_pipeline_deploy_agent_branching_strategies_gitflow, claude_knowledge_aidlc_pipeline_deploy_agent_branching_strategies_release_branches, claude_knowledge_aidlc_pipeline_deploy_agent_branching_strategies_monorepo [EXTRACTED 1.00]
+- **Deterministic AI-DLC sensors (aidlc engine sensor-*, advisory, SENSOR_FAILED)** — claude_sensors_aidlc_claim_sources, claude_sensors_aidlc_linter, claude_sensors_aidlc_required_sections, claude_sensors_aidlc_traceability, claude_sensors_aidlc_type_check, claude_sensors_aidlc_upstream_coverage [EXTRACTED 1.00]
+- **aidlc-runner-gen single-stage runner skills (/aidlc --stage <slug> --single)** — claude_skills_aidlc_approval_handoff_skill, claude_skills_aidlc_build_and_test_skill, claude_skills_aidlc_ci_pipeline_skill, claude_skills_aidlc_code_generation_skill, claude_skills_aidlc_contract_design_skill, claude_skills_aidlc_delivery_planning_skill, claude_skills_aidlc_deployment_execution_skill, claude_skills_aidlc_deployment_pipeline_skill, claude_skills_aidlc_domain_design_skill, claude_skills_aidlc_environment_provisioning_skill [EXTRACTED 1.00]
+- **Initialization phase chain (scaffold -> detection -> state-init)** — claude_aidlc_common_stages_initialization_workspace_scaffold_workspace_scaffold, claude_aidlc_common_stages_initialization_workspace_detection_workspace_detection, claude_aidlc_common_stages_initialization_state_init_state_initialization [EXTRACTED 1.00]
+- **Document knowledge catalog lifecycle (onboard, sync, rebind, summarize)** — claude_skills_aidlc_knowledge_skill_onboard_verb, claude_skills_aidlc_knowledge_skill_sync_verb, claude_skills_aidlc_knowledge_skill_rebind_verb, claude_skills_aidlc_knowledge_skill_summarize_verb, claude_skills_aidlc_knowledge_skill_document_catalog [EXTRACTED 1.00]
+- **Layered Memory Rule Chain (org/team/project/phase)** — claude_tools_data_memory_seed_org, claude_tools_data_memory_seed_team, claude_tools_data_memory_seed_project, claude_tools_data_memory_seed_phases_construction, claude_tools_data_memory_seed_phases_ideation, claude_tools_data_memory_seed_phases_inception, claude_tools_data_memory_seed_phases_operation, claude_tools_data_memory_seed_org_layered_rule_resolution [EXTRACTED 1.00]
+- **AI-DLC Scope Grid (scopes selecting EXECUTE/SKIP stages)** — claude_scopes_aidlc_bugfix_bugfix_scope, claude_scopes_aidlc_classic_classic_scope, claude_scopes_aidlc_enterprise_enterprise_scope, claude_scopes_aidlc_express_express_scope, claude_scopes_aidlc_feature_feature_scope, claude_scopes_aidlc_infra_infra_scope, claude_scopes_aidlc_mvp_mvp_scope, claude_scopes_aidlc_poc_poc_scope, claude_scopes_aidlc_refactor_refactor_scope [EXTRACTED 1.00]
+- **Generated scope-baked AI-DLC runner skills (express, feature, mvp)** — claude_skills_aidlc_express_skill, claude_skills_aidlc_feature_skill, claude_skills_aidlc_mvp_skill [EXTRACTED 1.00]
+- **AI-DLC Single-Stage Runner Skills** — claude_skills_aidlc_rough_mockups_skill, claude_skills_aidlc_scope_definition_skill, claude_skills_aidlc_team_formation_skill, claude_skills_aidlc_units_generation_skill, claude_skills_aidlc_user_stories_skill, claude_skills_aidlc_rough_mockups_skill_single_stage_runner [EXTRACTED 1.00]
+- **Generated single-stage AI-DLC runner skills (one template, stage/phase substituted)** — claude_skills_aidlc_feasibility_skill, claude_skills_aidlc_feedback_optimization_skill, claude_skills_aidlc_functional_design_skill, claude_skills_aidlc_incident_response_skill, claude_skills_aidlc_infrastructure_design_skill, claude_skills_aidlc_intent_capture_skill, claude_skills_aidlc_market_research_skill, claude_skills_aidlc_nfr_design_skill, claude_skills_aidlc_nfr_requirements_skill, claude_skills_aidlc_observability_setup_skill, claude_skills_aidlc_performance_validation_skill, claude_skills_aidlc_practices_discovery_skill, claude_skills_aidlc_refined_mockups_skill, claude_skills_aidlc_requirements_analysis_skill, claude_skills_aidlc_reverse_engineering_skill [EXTRACTED 1.00]
+- **Atomic stage ritual: summary stop, reviewer, learnings, approval gate** — claude_skills_aidlc_skill_pre_generation_summary_stop, claude_skills_aidlc_skill_approval_gate_sequence, claude_skills_aidlc_skill_learnings_ritual, claude_skills_aidlc_skill_stage_ritual_atomic, claude_skills_aidlc_question_rendering_consolidated_summary_checkpoint [EXTRACTED 1.00]
+- **Composer ARS-driven stage selection flow** — claude_agents_aidlc_composer_agent_ars, claude_agents_aidlc_composer_agent_ars_components, claude_agents_aidlc_composer_agent_codekb_first_evidence, claude_agents_aidlc_composer_agent_economy_discipline_fold, claude_agents_aidlc_composer_agent_validate_grid, claude_agents_aidlc_composer_agent_proposal_schema [EXTRACTED 1.00]
+- **Per-unit traceability.json chain (NFR/BR/AC coverage)** — claude_aidlc_common_stages_construction_functional_design, claude_aidlc_common_stages_construction_nfr_requirements, claude_aidlc_common_stages_construction_nfr_design, claude_aidlc_common_stages_construction_infrastructure_design, claude_aidlc_common_stages_construction_code_generation_traceability_json, claude_aidlc_common_stages_construction_build_and_test_cross_unit_coverage_gate, claude_aidlc_common_stages_construction_ci_pipeline_construction_phase_boundary_verification [EXTRACTED 1.00]
+- **Three human approval gates** — content_posts_my_own_ai_workflow_flow_gate_0, content_posts_my_own_ai_workflow_flow_gate_1, content_posts_my_own_ai_workflow_flow_gate_2 [EXTRACTED 1.00]
+- **On-disk state read back by flow-status** — content_posts_my_own_ai_workflow_flow_flow_yaml, content_posts_my_own_ai_workflow_flow_scope_md, content_posts_my_own_ai_workflow_flow_proposal_md, content_posts_my_own_ai_workflow_flow_specs_dir, content_posts_my_own_ai_workflow_flow_tasks_md, content_posts_my_own_ai_workflow_flow_change_branch, content_posts_my_own_ai_workflow_flow_verification_md, content_posts_my_own_ai_workflow_flow_openspec_specs, content_posts_my_own_ai_workflow_flow_learnings, content_posts_my_own_ai_workflow_flow_pull_request, content_posts_my_own_ai_workflow_flow_flow_status [EXTRACTED 1.00]
+- **Triage tracks (feature, tweak, fix, chore)** — content_posts_my_own_ai_workflow_flow_track_feature, content_posts_my_own_ai_workflow_flow_track_tweak, content_posts_my_own_ai_workflow_flow_track_fix, content_posts_my_own_ai_workflow_flow_track_chore [EXTRACTED 1.00]
+- **Data path: device to home LAN via direct WireGuard or DERP fallback** — content_posts_tailscale_subnet_router_vpn_tailscale_client_devices, content_posts_tailscale_subnet_router_vpn_wireguard_direct_tunnel, content_posts_tailscale_subnet_router_vpn_derp_relay, content_posts_tailscale_subnet_router_vpn_subnet_router, content_posts_tailscale_subnet_router_vpn_home_lan [EXTRACTED 1.00]
+- **Signalling path: devices log in, control plane distributes routes to subnet router** — content_posts_tailscale_subnet_router_vpn_tailscale_client_devices, content_posts_tailscale_subnet_router_vpn_control_plane, content_posts_tailscale_subnet_router_vpn_subnet_router, content_posts_tailscale_subnet_router_vpn_github_login [EXTRACTED 1.00]
+- **DevSecOps Scanning Gates across the Pipeline** — claude_knowledge_aidlc_devsecops_agent_devsecops_pipeline_patterns_sast, claude_knowledge_aidlc_devsecops_agent_devsecops_pipeline_patterns_dast, claude_knowledge_aidlc_devsecops_agent_devsecops_pipeline_patterns_dependency_vulnerability_scanning, claude_knowledge_aidlc_devsecops_agent_devsecops_pipeline_patterns_iac_security_scanning, claude_knowledge_aidlc_devsecops_agent_devsecops_pipeline_patterns_secret_detection, claude_knowledge_aidlc_devsecops_agent_devsecops_pipeline_patterns_container_image_scanning, claude_knowledge_aidlc_devsecops_agent_devsecops_pipeline_patterns_security_gates_in_ci_cd [EXTRACTED 1.00]
+- **Ensemble Topology Modes** — claude_aidlc_common_protocols_stage_protocol_ensemble_mode_inline, claude_aidlc_common_protocols_stage_protocol_ensemble_mode_subagent, claude_aidlc_common_protocols_stage_protocol_ensemble_mode_pipeline, claude_aidlc_common_protocols_stage_protocol_ensemble_mode_mob [EXTRACTED 1.00]
+- **Ideation Open Items Handed to Inception** — aidlc_spaces_default_intents_260921_portfolio_blog_site_ideation_intent_capture_intent_statement_unconfirmed_reader_pain, aidlc_spaces_default_intents_260921_portfolio_blog_site_ideation_approval_handoff_initiative_brief_projects_one_or_two_capabilities, aidlc_spaces_default_intents_260921_portfolio_blog_site_ideation_rough_mockups_wireframes_about_frame_contradiction, aidlc_spaces_default_intents_260921_portfolio_blog_site_ideation_approval_handoff_initiative_brief_open_items_handed_to_inception [EXTRACTED 1.00]
+- **Inception traceability chain audited at phase boundary** — claude_aidlc_common_stages_inception_requirements_analysis_fr_nfr_ids, claude_aidlc_common_stages_inception_user_stories_traceability_json, claude_aidlc_common_stages_inception_domain_design_traceability_json, claude_aidlc_common_stages_inception_units_generation_traceability_json, claude_aidlc_common_stages_inception_delivery_planning_phase_boundary_verification [EXTRACTED 1.00]
+- **Learnings Ritual Flow (diary -> surface -> question -> admission -> persist)** — claude_aidlc_common_protocols_stage_protocol_learnings_stage_memory_diary, claude_aidlc_common_protocols_stage_protocol_learnings_learnings_surface, claude_aidlc_common_protocols_stage_protocol_learnings_anything_to_add_question, claude_aidlc_common_protocols_stage_protocol_learnings_admission_conflict_check, claude_aidlc_common_protocols_stage_protocol_learnings_learnings_persist [EXTRACTED 1.00]
+- **Must-Have Proto-Units in Skeleton-First Build Order** — aidlc_spaces_default_intents_260921_portfolio_blog_site_ideation_scope_definition_intent_backlog_pu_1_publishable_site_shell, aidlc_spaces_default_intents_260921_portfolio_blog_site_ideation_scope_definition_intent_backlog_pu_2_blog, aidlc_spaces_default_intents_260921_portfolio_blog_site_ideation_scope_definition_intent_backlog_pu_3_projects, aidlc_spaces_default_intents_260921_portfolio_blog_site_ideation_scope_definition_intent_backlog_pu_4_about_page, aidlc_spaces_default_intents_260921_portfolio_blog_site_ideation_scope_definition_intent_backlog_pu_5_visual_direction, aidlc_spaces_default_intents_260921_portfolio_blog_site_ideation_scope_definition_intent_backlog_pu_6_launch_content, aidlc_spaces_default_intents_260921_portfolio_blog_site_ideation_scope_definition_scope_definition_questions_skeleton_first_build_order [EXTRACTED 1.00]
+- **Portfolio & Blog User Flows** — aidlc_spaces_default_intents_260921_portfolio_blog_site_ideation_rough_mockups_user_flow_flow_1_recruiter_assessing_work, aidlc_spaces_default_intents_260921_portfolio_blog_site_ideation_rough_mockups_user_flow_flow_2_developer_from_search, aidlc_spaces_default_intents_260921_portfolio_blog_site_ideation_rough_mockups_user_flow_flow_3_publishing_a_post, aidlc_spaces_default_intents_260921_portfolio_blog_site_ideation_rough_mockups_user_flow_flow_4_browsing_without_goal, aidlc_spaces_default_intents_260921_portfolio_blog_site_ideation_rough_mockups_user_flow_keyboard_flow [EXTRACTED 1.00]
+- **Six-unit DAG of the portfolio site** — aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_units_generation_unit_of_work_u1_publishable_site_shell, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_units_generation_unit_of_work_u2_blog, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_units_generation_unit_of_work_u3_projects, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_units_generation_unit_of_work_u4_about_page, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_units_generation_unit_of_work_u5_visual_direction, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_units_generation_unit_of_work_u6_launch_content [EXTRACTED 1.00]
+- **Practice resolution flow (rules chain, empty detection, topic matching, fallback, defaults)** — claude_knowledge_aidlc_shared_rules_reading_five_layer_rules_chain, claude_knowledge_aidlc_shared_rules_reading_empty_template_detection, claude_knowledge_aidlc_shared_rules_reading_semantic_topic_matching, claude_knowledge_aidlc_shared_rules_reading_fallback_chain, claude_knowledge_aidlc_shared_rules_reading_hardcoded_defaults, claude_knowledge_aidlc_shared_rules_reading_read_practice [EXTRACTED 1.00]
+- **projects-site fixture content tree** — tests_u3_fixtures_projects_site_content_posts_a_note_index, tests_u3_fixtures_projects_site_content_projects_almanac_index, tests_u3_fixtures_projects_site_content_projects_beacon_index, tests_u3_fixtures_projects_site_content_projects_cartograph_index [EXTRACTED 1.00]
+- **Refined Mockups Visual Style Decisions Q1-Q9** — aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_refined_mockups_refined_mockups_questions_q1_editorial_technical_spine, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_refined_mockups_refined_mockups_questions_q2_hybrid_font_hosting, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_refined_mockups_refined_mockups_questions_q3_dark_only, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_refined_mockups_refined_mockups_questions_q4_accent_links_only, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_refined_mockups_refined_mockups_questions_q5_two_spacing_scales, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_refined_mockups_refined_mockups_questions_q6_hover_tint_focus_ring, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_refined_mockups_refined_mockups_questions_q7_restrained_code_theme, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_refined_mockups_refined_mockups_questions_q8_lifted_reading_surface, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_refined_mockups_refined_mockups_questions_q9_self_host_serif [EXTRACTED 1.00]
+- **Out-of-scope exclusions enforced as Forbidden rules** — aidlc_spaces_default_intents_260921_portfolio_blog_site_ideation_scope_definition_scope_document_out_of_scope_exclusions, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_practices_discovery_discovered_rules_never_comments, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_practices_discovery_discovered_rules_never_newsletter, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_practices_discovery_discovered_rules_never_analytics, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_practices_discovery_discovered_rules_never_cms, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_practices_discovery_discovered_rules_never_hooks_for_exclusions [EXTRACTED 1.00]
+- **Eight build-time components of the self-written site build** — aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_domain_design_components_contentsource, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_domain_design_components_postcatalog, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_domain_design_components_projectcatalog, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_domain_design_components_contenttransforms, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_domain_design_components_markuprenderer, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_domain_design_components_pagerenderer, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_domain_design_components_sitebuilder, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_domain_design_components_checkrunner [EXTRACTED 1.00]
+- **Swarm Referee Loop (prepare, check, review, finalize, land)** — claude_aidlc_common_protocols_stage_protocol_swarm_swarm_prepare, claude_aidlc_common_protocols_stage_protocol_swarm_swarm_check, claude_aidlc_common_protocols_stage_protocol_swarm_autonomous_reviewer_boundary, claude_aidlc_common_protocols_stage_protocol_swarm_swarm_finalize, claude_aidlc_common_protocols_stage_protocol_swarm_post_finalize_source_landing [EXTRACTED 1.00]
+- **Tailscale connectivity: control plane, WireGuard data plane, NAT traversal, DERP fallback** — content_posts_tailscale_subnet_router_index_control_plane, content_posts_tailscale_subnet_router_index_wireguard_data_plane, content_posts_tailscale_subnet_router_index_nat_hole_punching, content_posts_tailscale_subnet_router_index_derp_relay, content_posts_tailscale_subnet_router_index_tailnet [EXTRACTED 1.00]
+- **Fail-loudly contract: collect all field errors, write nothing, keep previous site** — aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_functional_design_rules_field_error, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_functional_design_rules_br4_2, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_functional_design_rules_br4_3, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_functional_design_rules_br4_4, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_functional_design_rules_br4_5, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_functional_design_rules_br7_3, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_functional_design_functional_spec_w7 [EXTRACTED 1.00]
+- **Three blocking checks reported together** — aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_functional_design_rules_br6_1, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_functional_design_rules_br6_2, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_functional_design_rules_br6_3, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_functional_design_rules_br6_5, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_functional_design_functional_spec_checkrunner, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_functional_design_entities_checkreport, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_functional_design_functional_spec_w2 [EXTRACTED 1.00]
+- **W1 build pipeline across the eight components** — aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_functional_design_functional_spec_contentsource, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_functional_design_functional_spec_postcatalog, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_functional_design_functional_spec_projectcatalog, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_functional_design_functional_spec_sitebuilder, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_functional_design_functional_spec_pagerenderer, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_functional_design_functional_spec_markuprenderer, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_functional_design_functional_spec_contenttransforms, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_functional_design_functional_spec_w1 [EXTRACTED 1.00]
+- **Atom feed construction and discovery** — aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u2_blog_functional_design_functional_design_questions_q1_atom_summary_feed, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u2_blog_functional_design_functional_spec_br8_3, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u2_blog_functional_design_functional_spec_w4_construct_feed, src_content_transforms_buildatomfeed, src_content_transforms_feed_output_path, src_page_renderer_shell_postpath, src_page_renderer_shell_renderhead, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u2_blog_code_generation_code_summary_autodiscovery_link_verification [EXTRACTED 1.00]
+- **U2 Blog business rules BR8.1–BR8.7** — aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u2_blog_functional_design_functional_spec_br8_1, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u2_blog_functional_design_functional_spec_br8_2, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u2_blog_functional_design_functional_spec_br8_3, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u2_blog_functional_design_functional_spec_br8_4, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u2_blog_functional_design_functional_spec_br8_5, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u2_blog_functional_design_functional_spec_br8_6, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u2_blog_functional_design_functional_spec_br8_7 [EXTRACTED 1.00]
+- **Unknown fence-language build-failure flow** — aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u2_blog_functional_design_functional_design_questions_q2_unknown_fence_language, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u2_blog_functional_design_functional_spec_br8_2, src_markup_renderer_isknownfencelanguage, src_markup_renderer_unknownfencelanguages, src_site_builder_fencelanguageerrors, src_markup_renderer_rendercode, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u2_blog_code_generation_code_summary_fence_check_in_validate_phase [EXTRACTED 1.00]
+- **U3 Projects rule set BR9.1–BR9.5 enforced by PageRenderer/ProjectCatalog** — aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u3_projects_functional_design_functional_spec_br9_1, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u3_projects_functional_design_functional_spec_br9_2, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u3_projects_functional_design_functional_spec_br9_3, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u3_projects_functional_design_functional_spec_br9_4, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u3_projects_functional_design_functional_spec_br9_5 [EXTRACTED 1.00]
+- **U4 About page rules covering FR4.1** — aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u4_about_page_functional_design_functional_spec_br10_1, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u4_about_page_functional_design_functional_spec_br10_2, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u4_about_page_functional_design_functional_spec_br10_3 [EXTRACTED 1.00]
+- **U5 second-pass Mobbin re-entry outcomes** — aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u5_visual_direction_code_generation_code_generation_plan_mobbin_consultation, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u5_visual_direction_code_generation_code_generation_plan_rail_link_underline_at_rest, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u5_visual_direction_code_generation_code_generation_plan_prose_overflow_wrap, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u5_visual_direction_code_generation_code_generation_plan_rail_left_position_finding, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u5_visual_direction_code_generation_unit_test_instructions_stylesheet_tests [EXTRACTED 1.00]
+- **U5 44px touch-target floor (NFR7) reconciliation** — aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u5_visual_direction_functional_design_functional_spec_br11_1, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u5_visual_direction_functional_design_functional_spec_br11_8, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u5_visual_direction_functional_design_functional_spec_br11_6, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u5_visual_direction_functional_design_reviews_review_01_r_01_clear_space_conflict, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u5_visual_direction_functional_design_reviews_review_04_r_08_nfr7_list_rows_uncovered [EXTRACTED 1.00]
+- **U6 draft-mark correction and its challenge** — aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u6_launch_content_code_generation_code_generation_questions_no_draft_state_claim, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u6_launch_content_code_generation_code_generation_questions_q2_draft_mechanism, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u6_launch_content_code_generation_code_generation_plan_draft_correction, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u6_launch_content_code_generation_code_summary_draft_word_meaning, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u6_launch_content_code_generation_code_generation_plan_u6ca7, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u6_launch_content_code_generation_reviews_review_02_r_02_draft_validation_order_overstated [EXTRACTED 1.00]
+- **Walking skeleton, ladder prompt and autonomy mode govern Construction execution** — claude_aidlc_common_protocols_stage_protocol_walking_skeleton, claude_aidlc_common_protocols_stage_protocol_ladder_prompt, claude_aidlc_common_protocols_stage_protocol_autonomy_mode, claude_aidlc_common_protocols_stage_protocol_bolt, claude_aidlc_common_protocols_stage_protocol_walk_order [EXTRACTED 1.00]
+- **Review findings where traceability overclaimed coverage** — aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u3_projects_code_generation_reviews_review_01_nfr6_marked_ok_finding, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u4_about_page_code_generation_reviews_review_02_nfr1_overclaimed_ok, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u3_projects_functional_design_reviews_review_03_traceability_rows_cite_adjacent_rules, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u3_projects_code_generation_reviews_review_04_fr3_2_trace_targets_test [INFERRED 0.75]
+- **AI-DLC adversarial review loop** — claude_agents_aidlc_architecture_reviewer_agent, claude_agents_aidlc_product_lead_agent, claude_aidlc_common_protocols_stage_definition_reviewer_fields, claude_aidlc_common_conductor_keep_modify_redo [INFERRED 0.85]
+- **Deterministic engine owns lifecycle bookkeeping** — claude_aidlc_common_conductor_forwarding_loop, claude_claude_tools_orchestrate, claude_aidlc_common_protocols_stage_definition_compile_drift_invariant, claude_aidlc_common_protocols_stage_definition_engine_resolved_paths [INFERRED 0.85]
+- **AI-DLC multi-agent stage modes (pipeline, mob, hub-and-spoke)** — claude_aidlc_common_stages_inception_reverse_engineering_pipeline_mode, claude_aidlc_common_stages_inception_user_stories_mob_elaboration, claude_aidlc_common_stages_inception_practices_discovery_hub_and_spoke_ensemble [INFERRED 0.85]
+- **AI-DLC Workspace Public Exposure Controls** — aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_practices_discovery_contributions_aidlc_developer_agent_aidlc_publish_root_hazard, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_practices_discovery_contributions_aidlc_devsecops_agent_aidlc_exclusion_from_site_output, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_practices_discovery_contributions_aidlc_devsecops_agent_public_repo_permanence, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_practices_discovery_contributions_aidlc_devsecops_agent_secret_push_protection [INFERRED 0.85]
+- **Automated compliance and tag enforcement via CDK aspects and config rules** — claude_knowledge_aidlc_aws_platform_agent_cdk_best_practices_cdk_aspects, claude_knowledge_aidlc_compliance_agent_regulatory_frameworks_compliance_as_code, claude_knowledge_aidlc_aws_platform_agent_cost_optimization_patterns_cost_allocation_tagging [INFERRED 0.85]
+- **Strict CSP shapes rendering decisions** — aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_build_and_test_security_test_instructions_content_security_policy_check, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_functional_design_memory_strict_csp_without_unsafe_inline, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_code_generation_code_summary_syntax_colouring_classes_not_inline_styles, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_code_generation_code_summary_escapehtml_skips_apostrophe [INFERRED 0.85]
+- **flow harness: sensors, gates, backpressure and proof** — content_posts_my_own_ai_workflow_index_flow_skill, content_posts_my_own_ai_workflow_index_sensors, content_posts_my_own_ai_workflow_index_harness_gates, content_posts_my_own_ai_workflow_index_backpressure, content_posts_my_own_ai_workflow_index_proof_line, content_posts_my_own_ai_workflow_index_verification_layers, content_posts_my_own_ai_workflow_index_three_gates [INFERRED 0.85]
+- **Human-backed receipts gate authority-bearing actions** — claude_aidlc_common_stages_construction_code_generation_plan_approval_receipt, claude_aidlc_common_protocols_stage_protocol_consolidated_summary_confirmation, claude_aidlc_common_protocols_stage_protocol_blocking_sensor_override, claude_aidlc_common_protocols_stage_protocol_tool_owned_event_emission, claude_aidlc_common_stages_construction_code_generation_break_glass_override [INFERRED 0.85]
+- **No-third-party-request enforcement (rule, CSP tag, PageRenderer, build-time-only libs)** — aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_practices_discovery_discovered_rules_never_third_party_resources, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_practices_discovery_discovered_rules_always_self_host_assets_csp, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_practices_discovery_team_practices_csp_meta_tag, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_domain_design_components_pagerenderer, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_domain_design_components_build_time_only_constraint [INFERRED 0.85]
+- **Publish Gate: check job gates deploy, proven by rollback rehearsal** — aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_ci_pipeline_ci_config_check_job, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_ci_pipeline_ci_config_deploy_job, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_ci_pipeline_quality_gates_eight_blocking_gates, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_build_and_test_test_results_rollback_rehearsal [INFERRED 0.85]
+- **Resilience pattern family (circuit breaker, bulkhead, retry, rate limit, degradation)** — claude_knowledge_aidlc_architect_agent_nfr_design_patterns_circuit_breaker, claude_knowledge_aidlc_architect_agent_nfr_design_patterns_bulkhead, claude_knowledge_aidlc_architect_agent_nfr_design_patterns_retry_exponential_backoff, claude_knowledge_aidlc_architect_agent_nfr_design_patterns_rate_limiting, claude_knowledge_aidlc_architect_agent_nfr_design_patterns_graceful_degradation, claude_knowledge_aidlc_architect_agent_nfr_design_guide_resilience_patterns [INFERRED 0.85]
+- **Reviewer writing build output invalidates review receipt** — aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_code_generation_memory_review_fingerprint_invalidation, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_code_generation_code_generation_plan_how_this_pass_is_reviewed, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_code_generation_reviews_review_06_r02_deleted_coverage_summary_evidence, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u1_publishable_site_shell_code_generation_reviews_review_07_r03_build_manifest_tracked [INFERRED 0.85]
+- **Screen and component state coverage across design guides** — claude_knowledge_aidlc_design_agent_wireframing_guide_five_screen_states, claude_knowledge_aidlc_design_agent_component_spec_template_component_states, claude_knowledge_aidlc_design_agent_ux_guide_feedback_states [INFERRED 0.85]
+- **Defenses Against A Build That Silently Drops A Post** — aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_practices_discovery_contributions_aidlc_developer_agent_build_fails_on_malformed_content, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_practices_discovery_contributions_aidlc_developer_agent_required_field_schema, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_practices_discovery_contributions_aidlc_quality_agent_every_content_file_produced_page_check, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_requirements_analysis_requirements_analysis_questions_q8_check_ignores_drafts [INFERRED 0.85]
+- **SLO / Error Budget Reliability Management** — claude_knowledge_aidlc_operations_agent_slo_sli_patterns_slo_target_setting, claude_knowledge_aidlc_operations_agent_slo_sli_patterns_error_budget_policy, claude_knowledge_aidlc_operations_agent_slo_sli_patterns_burn_rate_alerting, claude_knowledge_aidlc_operations_agent_slo_sli_patterns_slo_based_decision_making, claude_knowledge_aidlc_devsecops_agent_nfr_requirements_guide_sla_slo_sli_hierarchy, claude_knowledge_aidlc_quality_agent_nfr_reliability_guide_sla_slo_sli_hierarchy [INFERRED 0.85]
+- **QA test-strategy knowledge (pyramid, contracts, data, gates)** — claude_knowledge_aidlc_quality_agent_test_strategy_patterns_test_pyramid, claude_knowledge_aidlc_quality_agent_testing_guide_test_pyramid, claude_knowledge_aidlc_quality_agent_test_strategy_patterns_contract_testing, claude_knowledge_aidlc_quality_agent_testing_guide_contract_tests, claude_knowledge_aidlc_quality_agent_test_strategy_patterns_test_data_management, claude_knowledge_aidlc_quality_agent_testing_guide_test_data_strategy, claude_knowledge_aidlc_quality_agent_testing_guide_quality_gate_definitions [INFERRED 0.85]
+- **Content validation failure fixtures** — tests_u1_fixtures_broken_post_content_posts_bad_date_index, tests_u1_fixtures_broken_post_content_posts_no_date_index, tests_u1_fixtures_broken_project_content_projects_thin_project_index, tests_u1_fixtures_malformed_structure_content_posts_bad_slug_index, tests_u1_fixtures_malformed_structure_content_posts_coerced_draft_index, tests_u1_fixtures_malformed_structure_content_posts_no_index_here_notes, tests_u1_fixtures_malformed_structure_content_posts_unparseable_front_matter_index, tests_u1_fixtures_dead_link_content_posts_linking_post_index, content_projects_rue_asha_github_io_index_validate_before_write [INFERRED 0.85]
+- **About contact links derived from one SITE_LINKS source** — src_page_renderer_pages_renderabout, src_page_renderer_shell_site_links, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u4_about_page_code_generation_code_generation_plan_contact_urls_single_home, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u4_about_page_code_generation_code_summary_site_links_field_asymmetry, tests_u4_about_test [INFERRED 0.85]
+- **U6 not-applicable design resolution** — aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u6_launch_content_functional_design_functional_spec, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u6_launch_content_functional_design_entities, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u6_launch_content_functional_design_rules, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u6_launch_content_functional_design_functional_design_questions, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u6_launch_content_code_generation_unit_test_instructions_no_unit_test_rationale, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u6_launch_content_code_generation_code_generation_plan_coverage_floor_na [INFERRED 0.85]
+- **Fail-loudly content validation and pre-push checks** — aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_requirements_analysis_requirements_fr1_5_fail_loudly_build, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_requirements_analysis_requirements_nfr9_three_blocking_checks, aidlc_spaces_default_memory_team_three_check_set, aidlc_spaces_default_memory_team_malformed_content_definition, aidlc_spaces_default_memory_team_pre_push_local_checks [INFERRED 0.95]
+- **No-tracking / no-third-party-request controls** — aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_requirements_analysis_requirements_nothing_about_reader_collected, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_requirements_analysis_requirements_nfr3_no_third_party_resources, aidlc_spaces_default_intents_260921_portfolio_blog_site_inception_requirements_analysis_requirements_nfr4_csp_meta_tag, aidlc_spaces_default_memory_project_forbidden_third_party_resources, aidlc_spaces_default_memory_project_mandated_self_hosted_assets_csp, aidlc_spaces_default_memory_team_csp_no_third_party_at_page_load [INFERRED 0.95]
+- **NFR1 Accessibility Verification Gap** — aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_build_and_test_build_and_test_questions_q1_manual_browser_checks, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_build_and_test_build_and_test_summary_nfr1_unverified, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_build_and_test_memory_failure_ladder_interpretation [INFERRED 0.95]
+- **U4 functional design review iterations 01–06** — aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u4_about_page_functional_design_reviews_review_01_review, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u4_about_page_functional_design_reviews_review_02_review, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u4_about_page_functional_design_reviews_review_03_review, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u4_about_page_functional_design_reviews_review_04_review, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u4_about_page_functional_design_reviews_review_05_review, aidlc_spaces_default_intents_260921_portfolio_blog_site_construction_u4_about_page_functional_design_reviews_review_06_review [INFERRED 0.95]
+
+## Communities (280 total, 44 thin omitted)
+
+### Community 0 - "AIDLC Core Library"
+Cohesion: 0.01
+Nodes (325): ACTIVE_DIRECTIVE_EXIT_HANDLERS, ACTIVE_DIRECTIVE_TRANSACTIONS, ACTIVE_INTENT_POINTER, ACTIVE_SPACE_POINTER, ActiveDirectiveAttempt, ActiveDirectiveGuardRecoveryResponse, ActiveDirectiveGuardRemedy, ActiveDirectiveKind (+317 more)
+
+### Community 1 - "AIDLC Init & Setup"
+Cohesion: 0.03
+Nodes (134): extractTarGz(), VERSION_ID, instructionStates(), managedBlockMarkers(), ownedModelAccessFact(), providerMenuCopy(), workspaceShellRefreshCommand(), assertProjectionPathHasNoSymlinks() (+126 more)
+
+### Community 2 - "Workflow State Store"
+Cohesion: 0.06
+Nodes (129): appendUnderHeading(), countCheckboxes(), effectiveUnitGateRhythm(), escapeRegex(), extractMarkdownSection(), findStageBySlug(), formatReceivedReply(), guardRefusalOutput() (+121 more)
+
+### Community 3 - "Testing Posture & Plan Approval"
+Cohesion: 0.03
+Nodes (140): AcceptedChange, acceptedChangeFields(), acceptedChangeMatchesRow(), changeAlreadyAccepted(), clearPlanApprovalChallenge(), clearPlanApprovalLegacyOffer(), clearPlanApprovalOverrideRequest(), clearPlanApprovalReceipt() (+132 more)
+
+### Community 4 - "PageRenderer component"
+Cohesion: 0.11
+Nodes (24): SiteMetadata entity, Frontend Components — U1 Publishable Site Shell, AboutPage template, AllPostsLink fragment, BaseDocument template, CardTags (Open Graph + Twitter card), EmptyState fragment, Head fragment (+16 more)
+
+### Community 5 - "Install & Lifecycle Paths"
+Cohesion: 0.06
+Nodes (108): VERSION_ID_PATTERN, walkFiles(), executeGlobalSettingsMutation(), activeExecutablePath(), activeVersion(), activeVersionPath(), binRoot(), canonicalPolicyPath() (+100 more)
+
+### Community 6 - "aidlc-utility.ts"
+Cohesion: 0.02
+Nodes (198): continuationReason(), trustedCommand(), redactSecretPatterns(), enabledScopeNames(), frameworkMemorySeedDir(), requireInstalledHarness(), stagesDir(), authoritativeProjectDescription() (+190 more)
+
+### Community 7 - "ref_node_fs"
+Cohesion: 0.09
+Nodes (35): vitest, candidateTargets(), checkBuiltOutput(), CheckRunnerOptions, exists(), extractLinks(), formatCheckReport(), htmlPages() (+27 more)
+
+### Community 8 - "Page Renderer & Shell"
+Cohesion: 0.06
+Nodes (74): Second pass: Mobbin check of Writing and Post page types, Row date short month, post date long month, U2 Code Generation Review 03 (READY), Finding: traceability rows target unmodified pages.ts, RowHeadingLevel fix: projectRow heading 2 on Projects, 3 on Home (U3CA1), U3 Code Generation Review 02, formatDisplayDate(), escapeHtml() (+66 more)
+
+### Community 9 - "Config Diagnostics"
+Cohesion: 0.04
+Nodes (99): applyConfigDiagnosticRecords(), applyProjectFlagsToProjection(), AwsCredentialDiagnostics, BedrockOrientedHarness, binaryProbe(), codexTrustEntries(), codexTrustIssues(), collectPluginNames() (+91 more)
+
+### Community 10 - "Stage Graph Compiler"
+Cohesion: 0.03
+Nodes (101): AGENT_FIELD_ORDER, applyPluginSelection(), ARS_COMPONENTS, ARS_PROJECT_TYPES, ArsBand, ArsComponent, ArsDecision, ArsPriors (+93 more)
+
+### Community 11 - "Ideation Wireframes & Decisions"
+Cohesion: 0.05
+Nodes (83): U6 Functional Design Review 03, aidlc engine sensor-traceability, Traceability Disclosure Overstatement (FR-only upstream_ids check), U6 Inherited Constraints (BR1.x–BR4.x from U1, BR8.1–BR8.2 from U2), U6A1/U6A2 Assumptions (layout capability, launch emptiness), BR8.5–BR8.7 PageRenderer Policy Rules, U6 Functional Design Review 04, U6 Functional Design Review 05 (+75 more)
+
+### Community 12 - "Orchestrator Skill & Protocol"
+Cohesion: 0.03
+Nodes (84): Stage Protocol, workshop scope (facilitated group session), testStrategy: Minimal override, aidlc-approval-handoff stage runner skill (ideation), aidlc-bugfix skill (bugfix scope baked in), aidlc-build-and-test stage runner skill (construction), aidlc-ci-pipeline stage runner skill (construction), aidlc-code-generation stage runner skill (construction) (+76 more)
+
+### Community 13 - "aidlc-orchestrate.ts"
+Cohesion: 0.02
+Nodes (231): subgraphForScope(), ActiveDirectiveMarker, activeDirectiveMarkerPath(), activeDirectiveStorageDir(), BLOCKING_SENSOR_OVERRIDE_CHOICE, BoltDagResolution, CheckboxLine, checkSummaryConfirmationEvidence() (+223 more)
+
+### Community 14 - "Agents & Stage Ownership"
+Cohesion: 0.09
+Nodes (42): Architect Agent, Architecture Decision Records (Context, Decision, Consequences, Alternatives), Component catalogue (components.md), Architecture Reviewer Agent, AWS Platform Agent, Infrastructure as Code (CDK/CloudFormation), AWS Well-Architected Framework pillars, Compliance Agent (+34 more)
+
+### Community 15 - "Directive Validation"
+Cohesion: 0.04
+Nodes (47): ASK_FIELDS, AskDirective, CHANGE_NOTICES_FIELD, DirectiveKind, DirectivePayload, DISPATCH_SUBAGENT_FIELDS, DispatchSubagentDirective, DONE_FIELDS (+39 more)
+
+### Community 16 - "Markup Renderer & U1 Codegen"
+Cohesion: 0.04
+Nodes (40): Code Generation Stage Memory, CA4: Pages Source Switch Is Manual, Review Fingerprint Invalidated by Build Output, U6 'No Draft State' Claim Is Wrong, Functional Design Stage Memory, U1 Code Generation Plan, Mobbin Consultation, Second Pass: Mockup Reconciliation (+32 more)
+
+### Community 17 - "Review Freeze & Bolt DAG"
+Cohesion: 0.08
+Nodes (55): artifactAppliesToUnit(), ArtifactOwnerNode, ArtifactRuntimeUnit, codekbReposFor(), inspectRequiredArtifactInstances(), isCodekbArtifactOwner(), relativeToProject(), RequiredArtifactFailure (+47 more)
+
+### Community 18 - "U2 Blog Design & Code"
+Cohesion: 0.05
+Nodes (47): Code Summary — U2 Blog, Drafts absent from feed by construction, Finding: reference indexes carry per-row tags; not applied, Shiki aliases count as known languages (U2CA3), Two-column date-rail question for Writing/Home, U1 markup-renderer test narrowed to unlabelled-fence half, Unit-scoped coverage exit 1 is a global-threshold artefact, Unknown fence labels deduped per body (+39 more)
+
+### Community 19 - "Release & Update Tooling"
+Cohesion: 0.06
+Nodes (78): BUILD_VERSION_ENV, compareVersions(), isReleaseChannel(), nextPatchVersion(), PARSED_VERSION, ParsedVersion, parseVersion(), PREVIEW_CHANNEL (+70 more)
+
+### Community 20 - "Audit Log Review Handling"
+Cohesion: 0.04
+Nodes (85): assumptionExclusionStart(), clearSummaryAuthorization(), escapeReviewRendererText(), existingReviewAppendixOffset(), FreshReviewReceipts, GuardAttemptState, GuardRefusal, HookLiveness (+77 more)
+
+### Community 21 - "Plugin Hook Composition"
+Cohesion: 0.06
+Nodes (72): compose(), blockYamlListHasValue(), copilotNativeAgentPrecheck(), copyTreeNoClobber(), disallowedToolsValues(), doctorScriptOwnershipPrecheck(), frontmatter(), frontmatterName() (+64 more)
+
+### Community 22 - "Model Policy & Tiers"
+Cohesion: 0.05
+Nodes (83): applyModelsFlags(), cloneModelPolicy(), configInputIsTty(), configPrompt(), effortTradeoff(), groupPolicyEffort(), modelEffortFlag(), modelsPipelineArgv() (+75 more)
+
+### Community 23 - "aidlc-doctor.ts"
+Cohesion: 0.11
+Nodes (43): cmd(), colorEnabled(), ColorStream, configureColor(), decisions, dim(), failVerdict(), fixLabel() (+35 more)
+
+### Community 24 - "Swarm Worktree Records"
+Cohesion: 0.07
+Nodes (59): cleanFilteredRawLines(), filteredRawIndexEntries(), readUnitSourceSnapshot(), ReviewArtifactBytesSnapshot, reviewedSourceRef(), reviewedSourceRefPrefix(), UNBINDABLE_FINGERPRINT, workspaceSourceEmbeddedGitPaths() (+51 more)
+
+### Community 25 - "Audit Shard Reading"
+Cohesion: 0.07
+Nodes (63): DocumentAuditState, activeUnitCheckpoint(), attemptEventIsCrossShardTied(), auditBlockField(), auditBlockFieldNamesOnce(), auditEventIsCrossShardTied(), boltEventUnits(), candidateAttemptEventMatches() (+55 more)
+
+### Community 26 - "Audit Append API"
+Cohesion: 0.09
+Nodes (50): appendAuditBlockAtPath(), AuditAppendExpectation, AuditEntryInput, AuditFileIdentity, AuditForkRecord, CLI_PROTECTED_EVENT_TYPES, CLI_RESERVED_EVENT_TYPES, CompleteAuditBlock (+42 more)
+
+### Community 27 - "Worktree Merge Handling"
+Cohesion: 0.09
+Nodes (71): boltSlugForUnit(), resolveAuditWorktreePath(), validateUnitName(), workspaceSourceFailureSuffix(), worktreePath(), allWorktreeAuditRows(), assertAggregateSourceBeforeMerge(), assertConvergedSourceUnchanged() (+63 more)
+
+### Community 28 - "U4 About Page Tests"
+Cohesion: 0.06
+Nodes (44): Vitest Configuration (80% Lines Threshold), U3 Code Generation Review 04, Rail tools as one <dd> per tool (U3OQ2) vs U5 site.css spacing, Code Generation Plan — U4 About Page, About page keyboard walkthrough (manual, author-owned, Step 9), Contact URLs read from SITE_LINKS (one home per URL), Labelled elsewhere rows — finding not applied (About redraw), Mobbin consultation for the About page (Harvest, GitHub ReadME, Maze) (+36 more)
+
+### Community 29 - "errorMessage"
+Cohesion: 0.05
+Nodes (129): allowStop(), blockCap(), blockStop(), currentStageSlug(), decideBlock(), defaultBlockCap(), EngineDirective, guardFilePath() (+121 more)
+
+### Community 30 - "Attestation & Anchors"
+Cohesion: 0.07
+Nodes (59): ANCHOR_FLAGS, AnchorOptions, AnchorReport, byteFormWarning(), changedPaths(), classifyPath(), commitHarnessShellDirs(), commitParentage() (+51 more)
+
+### Community 31 - "Workspace Sync & Doctor"
+Cohesion: 0.08
+Nodes (61): REPO_NAME_REGEX, DoctorCheck, isObject(), parseWorkspaceManifest(), stripWorkspaceManifestComments(), WORKSPACE_GITIGNORE_GATE_BEGIN, WORKSPACE_GITIGNORE_GATE_END, WORKSPACE_RECOVERY_GITIGNORE (+53 more)
+
+### Community 32 - "Plugin Sync & Pruning"
+Cohesion: 0.07
+Nodes (60): absolute(), allSurfaceFiles(), assertOwnedPath(), claudeInventory(), codexInventory(), comparePluginState(), COMPOSE_DIRS, composeEnvironment() (+52 more)
+
+### Community 33 - "Content Source & Transforms"
+Cohesion: 0.07
+Nodes (56): collectAssets(), CONTENT_ROOT, ContentSourceResult, describeCause(), findDuplicateSlugs(), isNotFound(), itemsOfKind(), KIND_DIRECTORIES (+48 more)
+
+### Community 34 - "Directive Marker & Continuation"
+Cohesion: 0.07
+Nodes (69): activeDirectiveContext(), advanceContinuationCursor(), claimCopilotCommand(), clearKiroIdeLegacyPlanApprovalHost(), clearPlanApprovalLegacyRecovery(), clearPlanApprovalLegacyWindow(), clearPlanApprovalLegacyWindowsForMarker(), clearPlanApprovalViolation() (+61 more)
+
+### Community 35 - "Knowledge Tool CLI"
+Cohesion: 0.04
+Nodes (67): ExtractionRecord, isCanonicalUuid(), AssociateOutcome, BINARY_MAGICS_FIXED_OFFSET, configuredTimeoutFor(), decodesAsUtf8(), DEFAULT_PDF_ARGV, detectMimeFromRow() (+59 more)
+
+### Community 36 - "listIntents"
+Cohesion: 0.14
+Nodes (30): activeIntent(), appendIntentToRegistry(), clearActiveIntentCursor(), createIntent(), dateStamp(), intentDirNameBase(), intentsDir(), intentsRegistryPath() (+22 more)
+
+### Community 37 - "Sensor Claim Sources"
+Cohesion: 0.07
+Nodes (58): ACTIVE_MEMORY_FILES, ActiveListContainer, activeSpaceFor(), answerIsFilled(), canContinueReference(), ClaimBlock, claimBlocks(), ContainerLine (+50 more)
+
+### Community 38 - "prepareChoiceSection"
+Cohesion: 0.10
+Nodes (46): emitResult(), failure(), globalOptions(), success(), usage(), valueAfter(), valuesAfter(), main() (+38 more)
+
+### Community 39 - "aidlc-record-human-turn.ts"
+Cohesion: 0.11
+Nodes (26): extractResponseText(), run(), consumeSharedDirectiveAsk(), engineDir(), engineTouchMarkerPath(), guardRecoveryAskForRefusal(), guardRecoveryTextSha256(), guardRefusalPath() (+18 more)
+
+### Community 40 - "Stage Jump & Scope Mapping"
+Cohesion: 0.07
+Nodes (59): keywordCollisions(), effectiveAction(), emitAudit(), error(), existingStageArtifactPaths(), handleExecute(), handleResolve(), main() (+51 more)
+
+### Community 41 - "U3 Projects Tests"
+Cohesion: 0.09
+Nodes (26): U2 fixtures: feed-site, unknown-fence, rich-post, Code Generation Plan — U3 Projects, Four of five testable layers not applicable for U3, U3 Testing Contract (test-after, standard, feature), Finding: references lead with project thumbnails; not applied, U3CA1 — h2 rows are a defect fix, not a design change, U3CA2 — heading-order property test beats element assertions, U3CA3 — Project type needs no controlled vocabulary (+18 more)
+
+### Community 42 - "U4 About Page Design"
+Cohesion: 0.05
+Nodes (42): AboutPage template (U4 final signature), AboutProse, ContactLink (label, href), ContactLinks, About page keyboard walkthrough, No contact form on About (form-action 'none'), ContentFile.kind limited to post and project, BR10.1 — About prose lives in its template; ContentFile.kind stays post|project (+34 more)
+
+### Community 43 - "Reviewer Scope Hook"
+Cohesion: 0.11
+Nodes (48): blockReason(), candidateStrings(), canonicalSuffix(), commandBasename(), constructionIndex(), containsPath(), evaluateReviewerScope(), exemptSuffixOf() (+40 more)
+
+### Community 44 - "Review Brief Builder"
+Cohesion: 0.10
+Nodes (50): aidlc-review-brief.ts does not export main(argv) helper failure, aidlc-review-brief.ts helper failure (summary presented inline), attemptEventAfterFrontier(), attemptEventDefinitelyBefore(), maximalAttemptEvents(), parseReviewSection(), recordDir(), resolveAuditProjectPath() (+42 more)
+
+### Community 45 - "Public Command Router"
+Cohesion: 0.05
+Nodes (50): Action, ADAPTER_HARNESS_LEAF, AdapterHarness, Alias, Classification, dispatcherWorkspaceUtilityArgv(), COMMAND_HELP_USAGE, parseDispatcherPluginCommand() (+42 more)
+
+### Community 46 - "Sensor Firing Engine"
+Cohesion: 0.15
+Nodes (24): templateEligibleArtifacts(), buildDetailBody(), BUNDLED_SENSOR_IDS, comparisonKey(), consumeWithProducer(), decideOutcome(), dispatchError(), emitTerminal() (+16 more)
+
+### Community 47 - "Transaction Executor"
+Cohesion: 0.18
+Nodes (28): snapshotFirstRunMutationPaths(), projectDiffPlan(), acquireLock(), canonicalRoot(), clearStaleLock(), enforceRouteMutationPlan(), executePlan(), failpoint() (+20 more)
+
+### Community 48 - "Learnings Persistence"
+Cohesion: 0.11
+Nodes (32): bindSensorToStage(), cidMarker(), contentHash(), ensureHeading(), escapeRegex(), findStageFile(), handlePersist(), isFrameworkDistributionPath() (+24 more)
+
+### Community 49 - "Plugin Validation"
+Cohesion: 0.11
+Nodes (44): frontmatterBlock(), listField(), parseAgentFrontmatter(), parseStageFrontmatter(), scalarField(), addError(), addWarning(), assertPluginContentHasNoSymlinks() (+36 more)
+
+### Community 50 - "Package Scripts & Deps"
+Cohesion: 0.06
+Nodes (44): dependencies, gray-matter@^4.0.3, js-yaml@^4.3.2, markdown-it@^15.0.2, shiki@^4.4.3, description, devDependencies, eslint@^10.11.0 (+36 more)
+
+### Community 51 - "AIDLC Settings Resolution"
+Cohesion: 0.07
+Nodes (48): flagFiles(), settingsDoctorChecks(), firstRunMutationPaths(), AIDLC_SETTINGS_SCHEMA, AidlcSettingsFile, CacheEntry, HarnessModelMap, isRecord() (+40 more)
+
+### Community 52 - "Lock Leak Detection"
+Cohesion: 0.07
+Nodes (56): abandonUnstampedUnderGate(), acquireActiveDirectiveLock(), acquireNativeGateMutex(), acquireOwnerStampedLock(), acquireReapClaim(), ActiveDirectiveLockContendedError, auditLockDir(), auditLockIdentity() (+48 more)
+
+### Community 53 - "Runner Skill Generator"
+Cohesion: 0.11
+Nodes (42): readShippedHarnessData(), runnerFrontmatterAdditions(), shippedRulesSubdir(), defaultScopeBatch(), defaultSkillsDir(), discoverScopes(), generatedRunnerSlugForPrune(), handleCheck() (+34 more)
+
+### Community 54 - "Learnings Protocol Module (stage-protocol-learnings.md)"
+Cohesion: 0.10
+Nodes (30): Architecture verdict rules (Critical/Major/Minor), Delivery Agent, Initiative brief & phase handoff, Product Agent, INVEST user stories with acceptance criteria, Prioritization frameworks (MoSCoW, WSJF, RICE, Kano), Requirements traceability matrix, Product Lead Agent (+22 more)
+
+### Community 55 - "Bolt Tool"
+Cohesion: 0.21
+Nodes (28): BOOLEAN_FLAGS, emitAudit(), error(), failBolt(), failJson(), forkedStateFilePath(), handleAbort(), handleComplete() (+20 more)
+
+### Community 56 - "Business Rules — U1 Publishable Site Shell"
+Cohesion: 0.16
+Nodes (8): Build lifecycle state machine, ContentSource component, MarkupRenderer component, PostCatalog component, ProjectCatalog component, SiteBuilder component, Business Rules — U1 Publishable Site Shell, Rules governing U6 files (borrowed from U1/U2)
+
+### Community 57 - "site-builder.ts"
+Cohesion: 0.11
+Nodes (28): main(), REPO_ROOT, ADR-0001, REPO_ROOT, homeIntro, profile, site, formatFieldError() (+20 more)
+
+### Community 58 - "Construction & Swarm Protocols"
+Cohesion: 0.10
+Nodes (6): Autonomy mode (gated / autonomous), Construction Protocol Module (stage-protocol-construction.md), Ladder prompt, Swarm Protocol Module (stage-protocol-swarm.md), Walking skeleton, Recorded swarm choice (AIDLC_USE_SWARM / flags.swarm)
+
+### Community 59 - "Statusline Hook"
+Cohesion: 0.11
+Nodes (38): abbreviateModel(), activeIntent(), activeSpace(), agentDisplayMap(), agentsDir(), buildRightSide(), contextColor(), costSegment() (+30 more)
+
+### Community 60 - "Runtime Event Compiler"
+Cohesion: 0.08
+Nodes (42): findAllEvents(), latestMainWorkflowStageStarted(), memoryFilePath(), parseMemoryHeadings(), runtimeGraphPath(), worktreeRuntimeGraphPath(), BoltDag, BoltInstance (+34 more)
+
+### Community 61 - "aidlc-unit.ts"
+Cohesion: 0.05
+Nodes (126): CachedUnitClaim, clearUnitScopeStamp(), computeBatches(), ensureCloneId(), extractYamlUnitsBlock(), humanPresenceGuardDisabled(), invalidateLiveClaimPayloadCache(), isNonAnswer() (+118 more)
+
+### Community 62 - "aidlc-usage.ts"
+Cohesion: 0.07
+Nodes (51): addInto(), attributeAgents(), BARE_ALIASES, ChunkRead, countsFromUsage(), CURRENT_SCHEMA_VERSION, cursorsLackByteOffset(), dedupeByMessageId() (+43 more)
+
+### Community 63 - "aidlc-command.ts"
+Cohesion: 0.07
+Nodes (32): cleanInvocationToken(), CommandResult, DISPATCHER_INTENT_VERBS, DISPATCHER_RESERVED_FUTURE, DISPATCHER_SPACE_VERBS, DispatcherIntentLifecycleVerb, DispatcherPluginCommand, DispatcherWorkspaceCommand (+24 more)
+
+### Community 64 - "markup-renderer.ts"
+Cohesion: 0.14
+Nodes (21): Feed appears in sitemap.xml under literal BR5.11, U2 Code Generation Review 01 (READY), Finding: case-insensitive BR8.2 reading needs rule-owner confirmation, U2 Code Generation Review 02 (READY), BodyHeading, classifyScopes(), createMarkupRenderer(), createParser() (+13 more)
+
+### Community 65 - "U6 Launch Content Codegen"
+Cohesion: 0.08
+Nodes (30): U6 Launch Content Code Generation Plan, Coverage floor N/A (no instrumentable lines), Homelab project write-up (content/projects/homelab), Post: implementing-a-methodology-paper, Phase A verification against the finished site (A1-A5), Testing Contract (test-after, standard strategy), U6CA1 Homelab has no live URL; rail row omitted, U6CA2 Homelab slug is homelab (+22 more)
+
+### Community 66 - "filesystemSourceIdentity"
+Cohesion: 0.17
+Nodes (20): clearSourceFailure(), deriveHarnessDir(), filesystemSourceIdentity(), isAidlcSensorCachePath(), isHarnessDirName(), isHarnessShellManifest(), isSourceHarnessShellDir(), multiRepoRoofExcludedTopLevel() (+12 more)
+
+### Community 67 - "Plan Approval Guard Hook"
+Cohesion: 0.10
+Nodes (38): appendixBlockReason(), approvalEvidenceIsCurrent(), authorityBlockReason(), blockReason(), DISPATCH_TOOLS, evaluatePlanApprovalDispatch(), gatherApprovalEvidence(), gatherUnitEvidence() (+30 more)
+
+### Community 68 - "Knowledge Document Sync"
+Cohesion: 0.18
+Nodes (39): appendAuditEntryAtPathUnlocked(), isTombstoned(), applyDocumentAuditEvent(), assertKnowledgeRootTrusted(), assertPublishable(), buildRow(), deleteDerivedText(), documentAuditState() (+31 more)
+
+### Community 69 - "isPlainObject"
+Cohesion: 0.16
+Nodes (28): checkCeremony(), checkEnum(), checkGate(), checkGuardRemedies(), checkOptionalBoolean(), checkOptionalConsumesAbsent(), checkOptionalLegacyPlanApprovalChoices(), checkOptionalNullableString() (+20 more)
+
+### Community 71 - "content-transforms.ts"
+Cohesion: 0.13
+Nodes (20): R-03: ContentSource validates slug rather than generating it, RFC-3339, buildAtomFeed(), buildSitemap(), escapeXml(), FEED_OUTPUT_PATH, FeedPost, generateSlug() (+12 more)
+
+### Community 72 - "Plugin Composition Tests"
+Cohesion: 0.11
+Nodes (33): addTestError(), CANDIDATE_PATH_ENV_KEYS, candidateProcessEnv(), copyInstallRoots(), detectHarness(), directComposeEnv(), expectedPluginContent(), formatPluginTest() (+25 more)
+
+### Community 73 - "Audit Event Registry"
+Cohesion: 0.13
+Nodes (19): Audit Event Taxonomy, Construction Bolt Events (BOLT_*, AUTONOMY_MODE_SET), DOCUMENT_* Events (space-level shard), Emitter-Owned Timestamp/Event Fields, Audit Event Registry (99 events, 25 categories), GATE_APPROVED / GATE_REJECTED Events, HUMAN_TURN Event, Learning Loop Events (MEMORY_EMPTY, RULE_LEARNED, SENSOR_PROPOSED) (+11 more)
+
+### Community 74 - "u3/helpers.ts"
+Cohesion: 0.12
+Nodes (23): U3 Code Generation Review 01, Finding: NFR6 marked OK though only structural precondition tested, Finding: ProjectRow headingLevel prop missing from frontend-components contract, Finding: data-testid attributes on project anchors mostly unused, U3 Code Generation Review 03, anchorTags(), fixture(), HERE (+15 more)
+
+### Community 75 - "AI Workflow Flow Diagram"
+Cohesion: 0.18
+Nodes (30): Archive & ship step, Build step, flow/<change> branch (a commit per task), flow workflow diagram: one change, from idea to merge, Explore step, flow-status, flow.yaml, Gate 0: approve the scope (+22 more)
+
+### Community 76 - "Entity Model — U1 Publishable Site Shell"
+Cohesion: 0.18
+Nodes (15): Entity Model — U1 Publishable Site Shell, BuildManifest entity, CheckReport entity, ContentFile entity, Post entity, Project entity, Project.liveUrl optional attribute, BuildManifest.sourceToOutput rows (+7 more)
+
+### Community 78 - "Traceability Sensor"
+Cohesion: 0.14
+Nodes (30): addSource(), CoverageEntry, emit(), extractIds(), extractUnitName(), fail(), failedResult(), Flags (+22 more)
+
+### Community 79 - "Operation Stage Definitions"
+Cohesion: 0.11
+Nodes (29): Deployment Execution stage, deployment-log.md, health-check-report.md, smoke-test-results.md, cd-config.md, Deployment Pipeline Configuration stage, deployment-strategy.md (blue/green, canary, rolling), rollback-runbook.md (+21 more)
+
+### Community 80 - "Design Agent UX Knowledge"
+Cohesion: 0.07
+Nodes (15): POUR Principles, Component Specification Template, Component Accessibility Requirements, Component States Table, Props / Inputs Table, Responsive Behaviour Breakpoints, Interaction Design Patterns, UX Guide (+7 more)
+
+### Community 81 - "Team Practices Discovery"
+Cohesion: 0.11
+Nodes (14): Team Practices, Automated accessibility scan declined (cost recorded), Content-Security-Policy meta tag (headers not settable on Pages), Formatter never touches post text, Keyboard walkthrough per page type verifies WCAG rule, Linting is a quality tool, not a security control, Malformed content definition (Post/Project required fields), Named reusable includes for presentation capabilities (+6 more)
+
+### Community 82 - "Team-Level Rules Memory"
+Cohesion: 0.09
+Nodes (23): C1 GitHub Pages user site: one site, one repo, main is production, C3 Built-in Pages build is fixed Jekyll, no user steps, NFR11 External links never build-blocking, NFR12 80% line-coverage floor or explicit N/A, NFR1 WCAG 2.1 AA keyboard and landmark structure, Exception 1: NFR1 unverified (scan and walkthrough declined), Code style deferred to project formatter/linter config, Conversation language resolution, stability, localization, preserved tokens (+15 more)
+
+### Community 83 - "Plugin Projection Emitter"
+Cohesion: 0.13
+Nodes (27): TRUSTED_ROUTE_NAMESPACE, runWithOwnerStampedLock(), absorbPluginReviewerKnowledge(), assertBuildPathHasNoSymlinks(), assertPluginBuildOutput(), buildPluginProjection(), BuildPluginProjectionOptions, canonicalOutputPath() (+19 more)
+
+### Community 84 - "DocumentKB Schema"
+Cohesion: 0.12
+Nodes (27): DocumentIndex, DOCUMENTKB_SCHEMA_VERSION, DocumentMetadata, DocumentRow, DocumentSource, EXTRACTION_STATES, ExtractionState, ExtractorIdentity (+19 more)
+
+### Community 85 - "Memory Change Control"
+Cohesion: 0.13
+Nodes (24): inlineCodeSpanEnd(), isEscapedAt(), isMarkdownAngleLinkDestination(), isMarkdownBlockBoundary(), markdownContainerContinuation(), markdownContainerLine(), markdownIndentWidth(), memorySectionBody() (+16 more)
+
+### Community 86 - "DevSecOps Pipeline Knowledge"
+Cohesion: 0.15
+Nodes (13): Branching Strategies, GitFlow, GitHub Flow, Monorepo Branching, Branching Quick Decision Matrix, Release Branches, Worktree Response Contract (WORKTREE_CREATED/MERGED/DISCARDED), CI/CD Pipeline Patterns (+5 more)
+
+### Community 87 - "Stage Validity Receipts"
+Cohesion: 0.08
+Nodes (40): ArtifactInstance, ArtifactResolutionOptions, aggregateArtifactBasis(), ArtifactBasis, artifactBasisChanges(), artifactBasisKey(), canonicalJson(), canonicalValue() (+32 more)
+
+### Community 88 - "Doctor Bundle Types"
+Cohesion: 0.07
+Nodes (26): AUDIT_EVENT_ALLOWLIST, AUDIT_FIELD_ALLOWLIST, AuditEvent, BUNDLE_SCHEMA_VERSION, BundleResult, DiagnosisInput, DoctorAnalysis, DoctorFinding (+18 more)
+
+### Community 89 - "gitHeadOid"
+Cohesion: 0.16
+Nodes (20): boundedGitMetadataText(), copySyncBufferedBytes(), gitCommonDirectory(), gitHeadOid(), gitMetadataDirectory(), gitObjectDirectories(), gitObjectTypeByOid(), gitOidFromRef() (+12 more)
+
+### Community 91 - "README & Project Overview"
+Cohesion: 0.05
+Nodes (35): Composer Agent, Autonomy Risk Score (ARS), ARS components (IAE, CSU, VE, R, UA) with LOW/MED/HIGH bands, Change control (strict | relaxed), Stage cost priors (tools/data/ars-priors.json), Gate tables (ARS scores, stage decisions), In-flight ARS re-estimation from completed-stage evidence, Composer proposal JSON (mode, scopeName, ars, grid, changes) (+27 more)
+
+### Community 92 - "State Transition Guard Hook"
+Cohesion: 0.16
+Nodes (26): assignment(), BLOCKED_STATE_TRANSITIONS, bunScriptInvocation(), commandBasename(), commandSubstitutionEnd(), DELEGATED_STATE_MUTATIONS, delegatedDispatcherCommand(), delegatedLifecycleCommand() (+18 more)
+
+### Community 93 - "showDocument"
+Cohesion: 0.27
+Nodes (12): derivativeIsCurrent(), effectiveExtractionState(), effectiveSummaryState(), summaryIsCurrent(), availabilityOf(), describeFileKind(), listDocuments(), showDocument() (+4 more)
+
+### Community 94 - "Domain Design ADRs"
+Cohesion: 0.14
+Nodes (16): Option block 2: whether ContentSource is its own component, Architecture Decision Record (decisions.md), Requirements OQ3 (which generator) — closed as 'none', Domain Design Questions, Q1 — Own the build or adopt one (answer: write it), Q10 — Static assets folded into existing components (no AssetPipeline), Q11 — Record library names and pin build-time-only constraint, Q12 — Keep and extend the Later additions annex (+8 more)
+
+### Community 95 - "Review Freeze Command Parsing"
+Cohesion: 0.14
+Nodes (25): attachedPathOptionValues(), changesExecutableResolution(), consumeWrapperOptions(), findTraversalRoots(), invocationMayMutate(), normalizeShellTarget(), ParsedShellArgs, parseShellArgs() (+17 more)
+
+### Community 96 - "Runtime Path Resolution"
+Cohesion: 0.16
+Nodes (21): rulesDir(), distributionFor(), explicitHarnessRoot(), explicitRuntimeProjectDir(), HARNESS_PRECEDENCE, harnessIdentity(), HarnessLocation, isAidlcHarnessRoot() (+13 more)
+
+### Community 97 - "Domain Components Catalogue"
+Cohesion: 0.17
+Nodes (25): U6 Entity Model (not applicable, empty), Component Catalogue (components.md), BuildManifest entity, CheckReport entity, CheckRunner component, ContentFile entity, ContentSource component, ContentTransforms component (+17 more)
+
+### Community 98 - "Security & CSP Requirements"
+Cohesion: 0.12
+Nodes (23): A1 Information hierarchy assumed to serve both audiences, A5 Build-time highlighting possible without client script, C4 GitHub Pages sets no headers and offers no redirects, C6 Client-side rendering stack disqualified, C8 Construction chooses the site generator, Deferred: topic navigation (tags, categories, search), NFR2 Pages served complete, no client assembly, NFR3 No third-party resource loads (+15 more)
+
+### Community 99 - "Developer API & A11y Guides"
+Cohesion: 0.09
+Nodes (14): Accessibility: WCAG 2.1 AA Guide, ARIA Landmarks, REST API Design Guide, HATEOAS, HTTP Method Semantics, OpenAPI and AsyncAPI Specs, Code Analysis Guide, API Endpoint Inventory (+6 more)
+
+### Community 101 - "Stage Frontmatter Schema"
+Cohesion: 0.12
+Nodes (23): UNIT_KINDS, PluginValidationOptions, checkEnum(), checkPositiveInteger(), checkSlugPattern(), checkString(), checkStringArray(), describe() (+15 more)
+
+### Community 102 - "NFR & SLO Knowledge"
+Cohesion: 0.16
+Nodes (16): NFR Requirements Guide, Alerting Requirements Template, Availability Targets (nines), Observability Anti-Patterns, Observability Requirements (Three Pillars), Recovery Objectives (RTO/RPO/MTTR/MTBF), RTO/RPO Targets by Tier, Three Pillars of Observability (Metrics, Logs, Traces) (+8 more)
+
+### Community 103 - "AI Workflow Blog Post"
+Cohesion: 0.13
+Nodes (7): Agent failure modes (long feedback loops, false done, session amnesia, unable to start repo), flow (Claude Code workflow skill), Living specs, Mob Elaboration, OpenSpec (spec-driven development tool), Per-repo fast and full check commands in CLAUDE.md, Session amnesia
+
+### Community 104 - "listIntentDirs"
+Cohesion: 0.24
+Nodes (13): assertActiveStage(), fail(), handleSurface(), isRecord(), main(), narrowSelection(), parseFlags(), parseSelectionsFile() (+5 more)
+
+### Community 105 - "Practices Discovery Evidence"
+Cohesion: 0.17
+Nodes (11): Practices Discovery Evidence, DevSecOps agent: trust boundary, secret push protection, CSP meta tag, Lead: aidlc-pipeline-deploy-agent — workspace carries no practice evidence, Not-applicable controls (DAST, SAST, clickjacking, HTTP headers), Open: 80% coverage floor has no determined scope; per unit at Build and Test, Open: pre-push checks erode via --no-verify, Quality agent: silent post-drop failure and before-merge contradiction, Trust boundary: anything that can push to main or runs in the build changes what the public sees (+3 more)
+
+### Community 106 - "Stage Definition Format"
+Cohesion: 0.11
+Nodes (18): Units of work and dependency DAG, Review findings table (R-NN stable IDs, Location, Required action, Status), Bolt planning & build-order sequencing, Worktree branch lifecycle at Bolt boundaries (aidlc engine worktree), Conductor's Craft (execution quality), [Answer]: tagged question files and tri-mode flow, Keep/Modify/Redo intra-stage loop, Stage observation diary (memory.md) (+10 more)
+
+### Community 107 - "Requirements & Stories Stages"
+Cohesion: 0.14
+Nodes (22): Inception-to-Construction phase boundary verification (phase-check-inception.md), accessibility-checklist.md, design-system-mapping.md, interaction-spec.md, mockups.md (mid-to-high fidelity), Refined Mockups & UX Design stage, Six-dimension completeness analysis, Consolidated Summary Confirmation (+14 more)
+
+### Community 108 - "aggregateUsageAuditFields"
+Cohesion: 0.19
+Nodes (13): aggregateUsageAuditFields(), coercePriceRow(), computeCost(), fmtTokensCompact(), formatByCost(), formatByTokens(), formatModelCost(), hasAnyTokens() (+5 more)
+
+### Community 109 - "Audit Metrics"
+Cohesion: 0.16
+Nodes (21): buildMagnitudeLines(), buildStatsdLine(), buildTagString(), emitMetricForAuditEvent(), extraHeaderLines(), _host, isMetricDispatchEnvelope(), MetricContext (+13 more)
+
+### Community 110 - "DevSecOps Pipeline Patterns"
+Cohesion: 0.31
+Nodes (9): DevSecOps Pipeline Patterns, Container Image Scanning, DAST (Dynamic Application Security Testing), Dependency Vulnerability Scanning / SBOM, IaC Security Scanning (cfn-nag, Checkov, cdk-nag), SAST (Static Application Security Testing), Secret Detection, CI Pipeline Stages (Lint, Build, Unit, Scan, Integration, Package) (+1 more)
+
+### Community 111 - "TypeScript Config"
+Cohesion: 0.09
+Nodes (21): compilerOptions, allowImportingTsExtensions, exactOptionalPropertyTypes, forceConsistentCasingInFileNames, isolatedModules, lib, module, moduleResolution (+13 more)
+
+### Community 112 - "aidlc-includes.ts"
+Cohesion: 0.44
+Nodes (10): readSafe(), repointClaudeStub(), repointCodexConfig(), repointFile(), repointHarnessIncludes(), repointKiroAgentResources(), repointKiroSteeringReferences(), repointOpencodeAgentMemory() (+2 more)
+
+### Community 113 - "U3 Projects Functional Spec"
+Cohesion: 0.16
+Nodes (18): Finding: FR3.2 traceability targets test file instead of renderProject, Functional Specification — U3 Projects, BR9.1 Fixed metadata rail row order, BR9.2 Projects row carries exactly two targets, BR9.4 Every project listed once with name, summary, tools, repo, BR9.5 Project page carries rail beside author-chosen body, Projects screen-state transitions (empty, populated, project page, off-site), U3OQ1 Dead repository links go undetected (NFR11 deliberate exclusion) (+10 more)
+
+### Community 114 - "Refined Mockups Design Tokens"
+Cohesion: 0.16
+Nodes (4): Design System Mapping (Token Vocabulary), Mobbin References Consulted, Refined Mockups Questions, Refined Mockups Review 2 (READY)
+
+### Community 115 - "U1 Publishing Requirements"
+Cohesion: 0.12
+Nodes (20): C2 Repo is both Pages publish root and AI-DLC workspace, FR1.3 Drafts excluded from built site, FR1.5 Build fails naming file and missing field, FR1.6 Exclude aidlc/ and .claude/ from published output, FR1.7 Previous site keeps serving on incomplete build, FR1 — Publishing, FR4.3 Home with equally treated recent posts and selected projects, FR5.1 RSS/Atom feed of published posts (+12 more)
+
+### Community 116 - "Unit Phase Requirements"
+Cohesion: 0.16
+Nodes (21): FR2.2 Writing list ordered by front-matter date, never mtime, FR2.7 Build-time syntax colouring, FR2 — Blog, FR4.4 404 page with global shell, FR4 — Site Structure, NFR6 Desktop and phone layouts, no hamburger, NFR7 44px minimum touch targets, R-01 NFR6 omits nav wrap-to-second-row fallback (+13 more)
+
+### Community 117 - "NFR Design Patterns"
+Cohesion: 0.13
+Nodes (3): NFR Design Guide, Non-Functional Requirement Design Patterns, Status Code Usage
+
+### Community 118 - "aidlc-sensor-required-sections.ts"
+Cohesion: 0.39
+Nodes (7): fail(), Flags, main(), parseFlags(), parseH2Headings(), resolveTemplatePath(), Result
+
+### Community 119 - "Unit Source Snapshots"
+Cohesion: 0.12
+Nodes (23): engineDirFor(), engineReadDirFor(), hasDurableSourceBindingEvidence(), hasModernSourceBindingEvidence(), readBaselineSourceSnapshot(), readSourceSnapshot(), readWorkspaceSourceSnapshot(), renderSourcePathKeys() (+15 more)
+
+### Community 120 - "handleFork"
+Cohesion: 0.35
+Nodes (11): appendSlug(), emitRefsList(), parseRefsList(), removeSlug(), setFieldStrict(), errorWithSlug(), handleFork(), handleMerge() (+3 more)
+
+### Community 122 - "Requirements Guide"
+Cohesion: 0.25
+Nodes (8): Scalability Assessment (Capacity Planning, Scaling Decision Matrix), NFR Performance and Scalability Guide, Performance Requirement Benchmarking, Scalability Assessment (Capacity Planning, Scaling Decision Matrix), Requirements Guide, Completeness Analysis Checklist, AI-DLC Elicitation Techniques Order, Requirement Types (FR, NFR, Constraints, Assumptions)
+
+### Community 123 - "U2 Blog Codegen Plan"
+Cohesion: 0.19
+Nodes (3): ContentTransforms component, Code Generation Plan — U2 Blog, Code Generation Questions — U2 Blog
+
+### Community 124 - "U5 Visual Direction Spec"
+Cohesion: 0.16
+Nodes (16): U5 Visual Direction Functional Spec, Editorial and technical registers, Font loading states (FallbackFont -> RealFont), No BR11 rule verified by the pre-push check set, Self-hosted variable font (Latin subset), Stylesheet (single site stylesheet), U5A1 Metric-close fallback stack exists, U5A3 One breakpoint enough for every page type (+8 more)
+
+### Community 125 - "Units Generation & Dependencies"
+Cohesion: 0.13
+Nodes (15): aidlc-review-brief.ts does not export main(argv), Delivery Planning SKIP: build order not revisited with DAG, Units Generation stage memory diary, R-02 U5 edge rationale blends cost and verification, Units Generation review 01 (READY), Unit DAG edge block (U1 root; U5→U2,U3,U4; U6→U2,U3), Integration points: component interfaces, no inter-unit API, Parallel set A: U2, U3, U4 mutually independent (+7 more)
+
+### Community 126 - "Testing & Quality Gates Guides"
+Cohesion: 0.15
+Nodes (19): CI Integration for Tests, Contract Testing (Pact), Coverage Metrics and Targets, Ice Cream Cone Anti-Pattern, Mutation Testing, Property-Based Testing, Test Data Management, Test Doubles (Mock, Stub, Fake, Spy) (+11 more)
+
+### Community 127 - "Dispatcher Adapter Execution"
+Cohesion: 0.23
+Nodes (15): bunExecutable(), delegatedProjectDir(), errorMessage(), execute(), readStdin(), readStdinWithTimeout(), renderAllHelp(), runAdapter() (+7 more)
+
+### Community 128 - "Command Noun Routing"
+Cohesion: 0.24
+Nodes (13): handleRouteOnly(), isAdapterHarness(), isSafeName(), resolveActionWithoutGlobalFlags(), resolveAlias(), resolveEngine(), resolveNoun(), resolvePublicNoun() (+5 more)
+
+### Community 129 - "Plugin Scaffolding"
+Cohesion: 0.20
+Nodes (18): agent(), createPluginScaffold(), displayPath(), formatResult(), main(), manifest(), pluginCreateJson(), PluginCreateResult (+10 more)
+
+### Community 130 - "AskDirectiveBase"
+Cohesion: 0.22
+Nodes (9): AskDirectiveBase, Directive, GuardRecoveryAskDirective, LegacyPlanApprovalRecoveryAskDirective, NewWorkRoutingAskDirective, ReportAskDirective, UnitClaimAskDirective, GuardRemedy (+1 more)
+
+### Community 131 - "Stage Rules Delivery Hook"
+Cohesion: 0.11
+Nodes (29): augmentDispatchRules(), augmentSingleDispatch(), augmentText(), bundleBlock(), currentStage(), DISPATCH_TOOLS, dispatchHookOutput(), DispatchRuleResult (+21 more)
+
+### Community 132 - "Compliance & CDK Knowledge"
+Cohesion: 0.11
+Nodes (6): AWS CDK Best Practices, Regulatory Frameworks, GDPR, HIPAA, PCI-DSS, SOC 2 (Type I / Type II)
+
+### Community 133 - "Dispatcher Failure Rendering"
+Cohesion: 0.19
+Nodes (21): adapterFile(), basicPolicyError(), canonicalizeLegacyCopilotHookArgv(), errorLabel(), tipLabel(), dispatcherProjectDirFrom(), dispatchPinnedVersion(), editDistance() (+13 more)
+
+### Community 134 - "isTeamUnitOwnership"
+Cohesion: 0.10
+Nodes (47): activeIntentUuid(), activeSpace(), applicableTeamUnitScopeStamp(), auditShardName(), cachedClaimFanoutActive(), canonicalPathKey(), claimGenerationKey(), claimGenerationsPath() (+39 more)
+
+### Community 135 - "readUnitSourceManifest"
+Cohesion: 0.10
+Nodes (29): currentGitPathMode(), discoverSiblingRepos(), gitCommitSourceListing(), ignoredSourceClaimReason(), isGitRepoDir(), isValidRepoName(), manifestClaimSymlinkPaths(), parseSourceListing() (+21 more)
+
+### Community 136 - "Tailscale Subnet Router Post"
+Cohesion: 0.22
+Nodes (8): Post: Getting into my homelab from anywhere (Tailscale), Tailscale control plane (coordination server), Exit node (not set up), Headscale (self-hosted coordination server), Tailnet (nodes in 100.64.0.0/10, identity via GitHub), Tailnet policy: tagOwners and autoApprovers, Tailscale mesh VPN, WireGuard data plane (end-to-end between nodes)
+
+### Community 137 - "Single-Stage Runner Skills"
+Cohesion: 0.14
+Nodes (16): Portfolio Blog Site AI-DLC State, feature Scope Configuration (16 stages executed), Portfolio Blog Site Intent (GitHub.io, Mobbin UX), aidlc-rough-mockups Skill, rough-mockups Stage (ideation), STAGE_STARTED/STAGE_COMPLETED Synthetic-ID Pair, aidlc-scope-definition Skill, scope-definition Stage (ideation) (+8 more)
+
+### Community 140 - "Accessibility Checklist"
+Cohesion: 0.15
+Nodes (3): Accessibility Checklist (WCAG 2.1 AA), Refined Mockups Stage Memory, Refined Mockups Review 1 (NOT-READY)
+
+### Community 142 - "SLO & Incident Knowledge"
+Cohesion: 0.17
+Nodes (10): Incident Response Guide, Escalation Matrix, Incident Communication (Internal/External), Incident Severity Levels (SEV1-SEV4), On-Call Rotation, SSM Automation Runbooks, SLO, SLI, and Error Budget Patterns, SLO-Based Decision Making (+2 more)
+
+### Community 143 - "User Story Knowledge"
+Cohesion: 0.20
+Nodes (11): INVEST Criteria, Story Decomposition Patterns, Story Mapping Layout, Given/When/Then Acceptance Criteria, User Story Patterns, Definition of Ready Checklist, Given/When/Then Acceptance Criteria, INVEST Criteria (+3 more)
+
+### Community 144 - "Knowledge Skill"
+Cohesion: 0.20
+Nodes (15): aidlc-knowledge skill, knowledge associate / dissociate, Per-space document knowledge catalog, Document extraction states (extracted, tombstoned, source_unavailable, present_but_refused, ...), knowledge/documentkb/ (tool-owned catalog, index.json + metadata.json), knowledge/documents/ (user-owned originals), Onboarding and extraction caps (32 MiB/doc, 20 docs or 256 MiB per sweep, 50 PDF pages / 200k chars), Document intent scoping (space-wide, active intent, named slug, --allow-inactive) (+7 more)
+
+### Community 145 - "Shell Completions"
+Cohesion: 0.21
+Nodes (16): bash(), bashCase(), CompletionInventory, fish(), GLOBAL_OPTIONS, inventory(), powershell(), powershellSwitch() (+8 more)
+
+### Community 146 - "Doctor Analysis Runner"
+Cohesion: 0.18
+Nodes (15): extractStateFields(), newestAuditMs(), newRedactionContext(), readGraphStages(), readHookHealth(), readMarkers(), readShippedStageGraph(), runDoctorAnalysis() (+7 more)
+
+### Community 147 - "Linter Sensor"
+Cohesion: 0.19
+Nodes (16): Args, buildViolations(), configFilePresent(), ESLintMessage, ESLintResult, findProjectRoot(), firstNonEmptyLine(), main() (+8 more)
+
+### Community 148 - "Org Rules Memory Seed"
+Cohesion: 0.19
+Nodes (15): Org-Level Rules Seed (org.md), Code Style Deference to Project Linter Config, Conversation Language Stability, Deploy on Merge to Staging, Gated Production, Ladder Prompt / Construction Autonomy Mode, Layered Rule Resolution (org → team → project → phase), Learnings Ritual (human-gated Corrections write path), Preserved Tokens (fixed English literals) (+7 more)
+
+### Community 149 - "Homelab Project Page"
+Cohesion: 0.18
+Nodes (6): Project: Homelab, Life-Manager (weekly-sprint todo app), NN_ playbook category ordering, Pi-hole DNS filtering, Rues-Arcade, Tailscale subnet router into the LAN
+
+### Community 150 - "Homelab VPN Diagram"
+Cohesion: 0.18
+Nodes (14): Homelab VPN diagram (Reaching the homelab from anywhere), Tailscale control plane (signalling only), DERP relay (fallback), DNS filter (.22), Embedded IBM Plex Sans/Mono fonts (data URI woff2), GitHub login (identity provider), Home LAN 192.168.10.0/24 (example), Hypervisor (.23) (+6 more)
+
+### Community 151 - "aidlc-sensor-schema.ts"
+Cohesion: 0.31
+Nodes (8): SensorFile, FireContext, REQUIRED_FIELDS, requireEnumValue(), requireExactValue(), requireNonEmptyString(), SensorManifest, validateSensorManifest()
+
+### Community 153 - "CHANGE_CONTROL_SET / CHANGE_ACCEPTED Events"
+Cohesion: 0.25
+Nodes (8): CHANGE_CONTROL_SET / CHANGE_ACCEPTED Events, Unit Lifecycle Events and Run Floor, AI-DLC State Tracking (aidlc-state.md contract), State Scope Configuration (Depth, Test Strategy, Change Control, Sensors, Learnings, Summary Confirmation), Session Resume Point, Stage Progress Checkbox States ([ ] [-] [?] [R] [x] [S]), Unit Progress Table (derived, team unit-major), classic Scope (implicit default, v1-style)
+
+### Community 154 - "Project Rules & Corrections"
+Cohesion: 0.15
+Nodes (15): Open contradiction: dependency alerts off vs team.md, Consult Mobbin before Plan Approval for UI units, Corrections: learnings from stage retrospectives, NEVER require an author action after git push, NEVER load resources from a third-party server, Leave a classification field empty with a stated reason, ALWAYS keep secret push protection on, ALWAYS self-host fonts/icons/styles/scripts, enforced by CSP (+7 more)
+
+### Community 155 - "Domain Design Stage"
+Cohesion: 0.19
+Nodes (15): Component (logical building block), Component-boundary options (trade-off presentation), components.md component catalogue (fenced yaml + mermaid/tables), decisions.md ADR log (Context/Decision/Consequences/Alternatives Rejected), Domain Design stage, Entity ownership (exactly one owning component), domain-design traceability.json, Component catalogue well-formedness rules (+7 more)
+
+### Community 156 - "Product Prioritization Knowledge"
+Cohesion: 0.20
+Nodes (13): Prioritization Frameworks, Weighted Decision Matrix Template, Framework Selection Guide, Handling Ties and Disputes, Kano Model, MoSCoW Method, WSJF (Weighted Shortest Job First), Product Guide (+5 more)
+
+### Community 157 - "Scopes & Brownfield Safeguards"
+Cohesion: 0.30
+Nodes (15): Depth-Aware Test Volume (Minimal/Nyquist, Standard, Comprehensive), Scope System, Blast Radius Analysis, Brownfield Safeguards, Rollback Plan, Brownfield Safeguard Matrix, Test Baseline Protocol, bugfix Scope (Minimal, relaxed, no skeleton) (+7 more)
+
+### Community 158 - "loadSensors"
+Cohesion: 0.29
+Nodes (8): loadSensors(), sensorsDir(), handleDescribe(), handleList(), main(), printHelp(), parseSensorManifest(), sensorHelpSummaries()
+
+### Community 159 - "Build & Test Summary"
+Cohesion: 0.21
+Nodes (12): Build and Test Questions, Q1 Manual Browser Checks (NFR1/NFR6/NFR7, answer C), Q3 Phone-Width Result (answer A), Build and Test Summary, NFR1 WCAG 2.1 AA Unverified, Build/Test/Deployment Readiness Assessment, Target Verification Matrix, Draft Exclusion at Content Boundary (+4 more)
+
+### Community 160 - "Workspace Detection Stages"
+Cohesion: 0.16
+Nodes (14): aidlc engine workspace project-description, aidlc-state.md (full populated state), project-description.json, Brownfield/greenfield routing to first Inception stage, State Initialization stage, Greenfield/brownfield classification rules, Excluded framework directories (.claude/, aidlc/, ...), Nested-project fallback (3-level recursive walk) (+6 more)
+
+### Community 161 - "Architecture Patterns Knowledge"
+Cohesion: 0.24
+Nodes (14): Architectural style selection table, Architecture Guide, Design pattern checklist (Repository, CQRS, Saga, Strategy, Adapter/Port), Infrastructure pattern alignment, Reverse Engineering synthesis checklist, Architecture Patterns, CQRS (Command Query Responsibility Segregation), Architecture decision framework (+6 more)
+
+### Community 162 - "Attest Ownership Index"
+Cohesion: 0.22
+Nodes (7): buildOwnershipIndex(), compareShardEvents(), RecordView, AuditShardEvent, reviewedSourceEvidencePath(), reviewedSourceEvidenceRelPath(), unitStageRecordRelPath()
+
+### Community 163 - "Output Validation"
+Cohesion: 0.28
+Nodes (12): extractBodySection(), findStageFile(), getHeaderField(), handleOutputs(), isOutputReferenced(), isPhase(), jsonError(), jsonSuccess() (+4 more)
+
+### Community 164 - "Publish Workflow Jobs"
+Cohesion: 0.14
+Nodes (14): name, runs-on, environment, name, needs, permissions, runs-on, name (+6 more)
+
+### Community 166 - "Quality Practices Contribution"
+Cohesion: 0.18
+Nodes (3): tj-actions/changed-files Compromise (March 2025), Proposed Eight-Row Check Set, Quality Agent Practices Contribution
+
+### Community 167 - "Delivery Planning & Bolts"
+Cohesion: 0.24
+Nodes (12): Bolt (planned Construction delivery slice), bolt-plan.md, Confidence hypothesis, Construction iteration (stage-major vs unit-major), Delivery Planning stage (2.9), external-dependency-map.md, risk-and-sequencing-rationale.md, team-allocation.md (Bolt-to-mob assignment / Program Board analog) (+4 more)
+
+### Community 168 - "Doctor Bundle Builder"
+Cohesion: 0.21
+Nodes (13): buildBundle(), buildManifest(), enforceTotalBudget(), redactString(), redactValue(), safeIso(), stage(), stageContent() (+5 more)
+
+### Community 169 - "Session PID Ancestry"
+Cohesion: 0.32
+Nodes (13): gcSessionPidEntries(), linuxProcessIdentity(), macProcessIdentity(), processIdentity(), processIsAlive(), readSessionPidEntry(), resolveSessionIdFromAncestryUncached(), sessionPidEntryPath() (+5 more)
+
+### Community 170 - "Type-Check Sensor"
+Cohesion: 0.23
+Nodes (13): sensorsDir(), Args, filterToFilePath(), findTsconfig(), main(), parseArgs(), ParsedError, parseTscOutput() (+5 more)
+
+### Community 171 - "CI Quality Gates"
+Cohesion: 0.23
+Nodes (10): Trigger: Push to main Only, CI Pipeline Questions, Q2: Nothing Runs Before main (C), Q3: Dependency Alerting Left Off (C), Q4: Amend team.md via Learnings (B), Q4 Resolution Not Persisted, Quality Gates, Branch-Feedback Gap (+2 more)
+
+### Community 172 - "BR11.7 Styling never moves focusable elements or removes focus indicator"
+Cohesion: 0.38
+Nodes (6): U5A4 Styling does not reorder visually (promoted to BR11.7), W2 Verify the treatment (keyboard walkthrough), U5 functional design review 2 (NOT-READY), R-05 BR11.6 one-hit-target clause contradicts Projects row two targets, R-06 NFR1 tab order and focus trap backed by no rule, U5 functional design review 3 (READY)
+
+### Community 173 - "Scope Document"
+Cohesion: 0.13
+Nodes (13): Scope Document — Portfolio & Blog Site, About capability (who you are + links), Commit-to-publish workflow, Deferred topic navigation (tags/categories/search), Minimum Viable Scope (Posts, Projects, About), Mobbin-informed visual direction, Out-of-scope exclusions (comments, newsletter, analytics, CMS), Posts capability (list + per-post page) (+5 more)
+
+### Community 175 - "U3 Projects Unit of Work"
+Cohesion: 0.27
+Nodes (11): FR3.4 Omit live-URL rail row when absent, FR3 — Projects, R-01 U3 Boundary omits ContentTransforms, Units Generation review 02 (READY), R-02 U3 overclaims sortProjects test and coverage ownership, Units Generation review 03 (NOT-READY), Units Generation review 04 (READY, both findings resolved), Project.featured field (introduced by U1 Functional Design) (+3 more)
+
+### Community 176 - "Reverse Engineering Stage"
+Cohesion: 0.29
+Nodes (12): codekb-publish (compare-and-swap staged publish), codekb-snapshot (pre-scan compare-and-swap snapshot), CodeKB per-repo store (9 artifacts), Coverage backstop (COVERS / NARROWER compare), developer-scan.md handoff, Focused scan vs full rescan, aidlc engine log link receipts, Multi-repo repo-set resolution (intents.json repos) (+4 more)
+
+### Community 178 - "Team Topologies Knowledge"
+Cohesion: 0.17
+Nodes (6): Mob Programming Guide, mob.sh Tool, Team Topologies, Four Fundamental Team Types, Three Interaction Modes, Team API
+
+### Community 179 - "AI-DLC Principles"
+Cohesion: 0.17
+Nodes (7): AI-DLC Methodology Principles, Five-Phase Structure (Initialization, Ideation, Inception, Construction, Operation), Self-Learning Guardrails, Per-Agent Knowledge Directory Structure, Team Knowledge README Template, Strict-Additive Rules Chain (org → team → project → phase → stage), AIDLC Method @-Import Stub
+
+### Community 180 - "Security Workflow"
+Cohesion: 0.17
+Nodes (11): jobs, security-baseline, name, on, pull_request, push, permissions, contents (+3 more)
+
+### Community 181 - "ADR-005: Publish through a GitHub Actions workflow in this repository"
+Cohesion: 0.24
+Nodes (7): Four required GitHub Actions workflow controls, Q7 — How a self-written build reaches Pages (Actions workflow), Practices Discovery Stage Memory, Open: gating publish forecloses built-in Pages branch build, Tradeoff: Q4 + Q6 jointly recreate silent publish failure, Interpretation: security integrated into existing practice sections, Four controls for a publishing workflow
+
+### Community 182 - "Practices Discovery Questions"
+Cohesion: 0.22
+Nodes (9): Developer agent: aidlc/ served by Jekyll, slug irreversibility, JS-disabled filter, Practices Discovery Questions, Q1 — Two paths to main (answer B), Q11 — Nothing third-party, CSP enforced (A), Q12 — Run checks on author's machine before push (D), Q2 — Exclude AI-DLC workspace from site, prove it (A), Q3 — Three automatic checks, no a11y scan (B), Q4 — Any failed check blocks (C) (+1 more)
+
+### Community 183 - "Contract & Units Stages"
+Cohesion: 0.35
+Nodes (9): Contract Design stage, Contract ownership & versioning rules, contract-summary.md (contracts table + inline OpenAPI/AsyncAPI/shared-schema specs), Inter-unit boundary contract, Public/external API boundary contract, Unit kind (service | spec | ui | packaging | library), unit-of-work.md (U{n} IDs, deployment model, complexity), unit-of-work-dependency.md (dependency DAG + yaml edge block) (+1 more)
+
+### Community 184 - "Plugin Build"
+Cohesion: 0.35
+Nodes (10): bundledPluginHookTemplatesDir(), bundledPluginTargetsPath(), formatBuildResult(), main(), withBuildError(), writeResult(), readPluginTargets(), formatPluginValidation() (+2 more)
+
+### Community 185 - "Upstream Coverage Sensor"
+Cohesion: 0.31
+Nodes (10): Consume, escapeRegex(), fail(), Flags, main(), parseConsume(), parseFlags(), producerDirPattern() (+2 more)
+
+### Community 186 - "ref_node_child_process"
+Cohesion: 0.29
+Nodes (6): aidlc, env, installedProject(), pluginRoot, projectFromPayload(), projectRoot
+
+### Community 187 - "workspaceHasWork"
+Cohesion: 0.33
+Nodes (7): dirHasFile(), git(), gitHasSourceWork(), isGitRepo(), isNonDocPath(), workspaceHasSourceFile(), workspaceHasWork()
+
+### Community 188 - "publicCommandGrammarError"
+Cohesion: 0.47
+Nodes (6): commandHelpRequest(), normalizePublicCommandArgv(), publicCommandFromToken(), publicCommandGrammarError(), validateSimplePublicGrammar(), withoutProjectDirFlag()
+
+### Community 189 - "This Site Project Page"
+Cohesion: 0.18
+Nodes (10): Project: This site (Rue-Asha.github.io), Three blocking pre-push checks (build, every content file produced a page, internal links resolve), Fixture: post with non-ISO date (BR2.3 rejection), Fixture: post missing date, Fixture: project missing three of six required fields, Fixture: post with dead internal link and off-site link, Fixture: post directory with invalid slug (Bad_Slug), Fixture: post with string draft value (no coercion) (+2 more)
+
+### Community 190 - "Publish Workflow Steps"
+Cohesion: 0.20
+Nodes (11): steps, steps, id, name, run, uses, with, cache (+3 more)
+
+### Community 191 - "Operation Phase Memory Seed"
+Cohesion: 0.20
+Nodes (9): Q2 Rollback Rehearsal (FR1.7, answer A), Build Instructions, All-or-Nothing Build Output (FR1.7), Frozen Install via npm ci (supply-chain control), Operation Phase Guardrails, Runbooks and Post-Incident Reviews, Infrastructure Safety Review, Quantified SLOs and Alerting (+1 more)
+
+### Community 192 - "Inception Phase Memory Seed"
+Cohesion: 0.24
+Nodes (10): Cross-Unit Final Coverage Gate, Cross-Unit Coverage Gate Verdict (46/46 PASS), FR/NFR → functional-design → BR → code-generation Traceability Chain, aidlc-user-stories Skill, user-stories Stage (inception), Inception Phase Guardrails, ADR Standards (two alternatives), Testable Requirements Quality (+2 more)
+
+### Community 194 - "Code Generation Knowledge"
+Cohesion: 0.24
+Nodes (3): Code Generation Patterns, Code Generation Checklist, SOLID Principles
+
+### Community 195 - "Functional Design Knowledge"
+Cohesion: 0.29
+Nodes (9): Functional Design Guide, Authorization Rules, Domain Entity Design, Functional Design Document Structure, Logic Decomposition Layers, Rule Conflict Resolution, State Machine Design and Validation, Validation Rules (+1 more)
+
+### Community 196 - "NFR Validation Knowledge"
+Cohesion: 0.29
+Nodes (10): Auto-Scaling Validation, Capacity Planning, Latency Percentiles (p50/p95/p99/p99.9), Load Testing Tools and Methodology (k6, Locust, Artillery, AWS DLT), NFR Target-vs-Actual Matrix, NFR Validation Methods, Performance Test Design Patterns (Ramp-Up, Steady-State, Spike, Soak), SLA Testing (+2 more)
+
+### Community 197 - "Archive Tar Tool"
+Cohesion: 0.36
+Nodes (8): ArchiveEntry, createTarGz(), octal(), readTarGz(), safePath(), tarOctal(), tarPath(), tarString()
+
+### Community 198 - "readAuditSafely"
+Cohesion: 0.40
+Nodes (5): firstLineIsMarker(), isSymlink(), readAuditSafely(), withinProjectRoot(), auditShardDir()
+
+### Community 199 - "Publish Workflow Triggers"
+Cohesion: 0.20
+Nodes (9): concurrency, cancel-in-progress, group, name, on, push, permissions, contents (+1 more)
+
+### Community 200 - "U6 Traceability Review"
+Cohesion: 0.33
+Nodes (8): Traceability check false positives for ui units, How a not-applicable unit is recorded in traceability.json, U6 functional design memory, U6 functional design review 1 (NOT-READY), R-01 traceability.json fails sensor (empty coverage, fabricated BR0.0), R-02 entities.md/rules.md lack fenced yaml source-of-truth block, U6 functional design review 2 (READY), U6 Business Rules (not applicable, empty)
+
+### Community 204 - "Workflow Planning Knowledge"
+Cohesion: 0.31
+Nodes (3): Workflow Planning Guide, Bolt (Construction Delivery Slice), WSJF / Cost of Delay
+
+### Community 205 - "Data Modelling Knowledge"
+Cohesion: 0.31
+Nodes (3): Data Modelling Patterns, Index Design (GSI/LSI, B-tree), Normalization Forms (1NF-BCNF)
+
+### Community 206 - "STRIDE Threat Modelling"
+Cohesion: 0.36
+Nodes (7): Threat Modelling with STRIDE, Attack Surface Analysis, Data Flow Diagram with Trust Boundaries, Likelihood x Impact Risk Scoring, STRIDE-to-AWS Mitigation Mapping, STRIDE Categories, Threat Modelling Process (Scope, DFD, Identify, Assess, Mitigate)
+
+### Community 207 - "Deployment Strategies Knowledge"
+Cohesion: 0.13
+Nodes (12): Observability Patterns, CloudWatch Logs Insights Queries, Four Golden Signals (Google SRE), Log Aggregation and Retention, Synthetic Monitoring (Canaries), X-Ray Distributed Tracing, Deployment Strategies, Blue/Green Deployment (+4 more)
+
+### Community 208 - "Domain Design Stage Memory"
+Cohesion: 0.50
+Nodes (4): Observation: vitest coverage run excludes tests/u3–u5, Domain Design Stage Memory, Interpretation: components are build-time building blocks, not runtime services, Open question: project ordering undefined (later closed)
+
+### Community 210 - "claim-sources sensor (Intent Capture provenance check)"
+Cohesion: 0.50
+Nodes (3): claim-sources sensor (Intent Capture provenance check), Assumption Confirmation (A. Accept assumptions), Inline claim source tags ([desc], [scope], [Q<n>], [memory:<id>], [assumption])
+
+### Community 211 - "Security Test Instructions"
+Cohesion: 0.29
+Nodes (7): Security Test Instructions, Content-Security-Policy Check (NFR4), Dependency Scan (npm audit), Third-Party Request Check (NFR3), Workflow Supply-Chain Check (SHA-pinned actions), Static Verification of Built Output, Four Mandated Workflow Controls
+
+### Community 212 - "U6 Not-Applicable Spec"
+Cohesion: 0.32
+Nodes (6): U6CA5 No presentation capability beyond layout needed, U6 Functional Design Questions (none asked), U6 Functional Spec (not applicable), Constraints U6 files are still bound by, U6A1 Launch content fits existing capabilities, U6A2 One or two posts/projects is enough
+
+### Community 213 - "Functional Design Coverage Gates"
+Cohesion: 0.25
+Nodes (4): Per-unit traceability.json coverage table, Business rule IDs (BRx.y), functional-spec.md (workflows and state machines source of truth), Initiative brief (one-pager, go/no-go)
+
+### Community 214 - "Practices Discovery Stage"
+Cohesion: 0.39
+Nodes (8): Practices affirmation gate, discovered-rules.md (Mandated ALWAYS / Forbidden NEVER), Hub-and-spoke ensemble (lead draft + mutually blind support review), Practices Discovery stage, aidlc engine state practices-promote, team-practices.md (five memory/team.md sections), Testing Posture Methodology/Ordering fields, Mob elaboration (mode: mob)
+
+### Community 217 - "Requirements Elicitation Knowledge"
+Cohesion: 0.43
+Nodes (6): Requirements Elicitation Techniques, Document Analysis, Stakeholder Interviews, Elicitation Technique Selection Guide, Requirements Validation Checklist, Requirements Workshops
+
+### Community 218 - "Rules Reading Protocol"
+Cohesion: 0.43
+Nodes (8): PRACTICES_* Events, Empty-Template Detection, Practice Fallback Chain (project → team → org → hardcoded), Hardcoded Practice Defaults (trunk-based, squash-merge, test-after), Worked Example: pipeline-deploy-agent reading Way of Working, read_practice Protocol, Reading Active-Space Rule Files, Semantic-Topic Heading Matching
+
+### Community 219 - "Doctor Timeline Reconstruction"
+Cohesion: 0.33
+Nodes (6): extractAuditEvents(), gateOutcome(), lastEvent(), lastEventIndex(), parseAuditEvents(), reconstructTimeline()
+
+### Community 220 - "Subagent Inflight Tracking"
+Cohesion: 0.50
+Nodes (8): completeSubagentInflight(), freshSubagentEntries(), markSubagentInflight(), matchSubagentInflight(), readSubagentInflightLedger(), subagentInflightMarkerPath(), subagentSessionIdentity(), writeSubagentInflightLedger()
+
+### Community 221 - "Rich Post Fixture"
+Cohesion: 0.29
+Nodes (7): Rich Post Fixture (whole Markdown set), Build-Time Syntax Highlighting (ts fence), Four Build Phases Diagram Image (diagram.png), Unlabelled Code Fence (renders plain), Typo Fence Fixture (misspelled fence label), BR8.2 Unknown Fence Language Rule, rustlang Fence Label (no grammar)
+
+### Community 222 - "CI Config & Rollback"
+Cohesion: 0.20
+Nodes (9): Rollback Rehearsal (FR1.7), Three Blocking Checks Pass, CI Configuration, check Job, deploy Job (needs: check), Publish Workflow as CI and CD, Q1: Enforce Full Check Set Remotely (A), CI Pipeline Stage Memory (+1 more)
+
+### Community 223 - "U3 Frontend Components"
+Cohesion: 0.48
+Nodes (7): Frontend Components — U3 Projects, EmptyState (Nothing here yet + Writing link), MetadataRail (sibling of body, one live-row branch), ProjectPage template, ProjectRow reusable include, ProjectsListPage template, RepoLink outbound target named for its project
+
+### Community 224 - "U5 Font Choices"
+Cohesion: 0.33
+Nodes (5): Font contingency: Georgia fallback if Source Serif 4 cannot be fetched, Source Serif 4 variable font (Latin subset, SIL OFL), OFL licence file shipped beside the font, U5 head additions: font preload link and stylesheet link, U5 prohibitions: no inline style, third-party request, script, budget or new markup
+
+### Community 225 - "U5 List Row Review"
+Cohesion: 0.43
+Nodes (6): U5 functional design review 4 (READY), R-07 BR11.5 (contrast) cited for NFR1, R-08 NFR7 list-row 44px backed by no U5 rule, R-09 Traceability disclosure overstated (FR ids only), U5 functional design review 5 (READY), R-10 Stylesheet used in applies_to but absent from components catalogue
+
+### Community 226 - "Operation Rollback Memory"
+Cohesion: 0.29
+Nodes (7): OQ2 How does the author learn publishing failed?, Operation Phase Guardrails, SLOs quantified with percentages and windows, Deployments need rollback steps and smoke tests, ALWAYS revoke a leaked credential before touching history, No failure signal by choice; author smoke-checks live URL, Rollback via git revert, rehearsed once
+
+### Community 227 - "Security Guide Knowledge"
+Cohesion: 0.38
+Nodes (7): Security Requirement Templates (Auth, AuthZ, Data, Compliance), Security Guide, Authentication & Authorization Patterns (Session, JWT, OAuth2/PKCE, RBAC, ABAC), Data Protection Classification Tiers, OWASP Top 10 Checklist, Secure Coding Practices Checklist, STRIDE Threat Modeling
+
+### Community 228 - "Market Research Knowledge"
+Cohesion: 0.29
+Nodes (5): Market Research Methods, Competitive Analysis Framework, Porter's Five Forces, SWOT Analysis, Trend Analysis Methods
+
+### Community 229 - "Verification & Phase Checks"
+Cohesion: 0.38
+Nodes (5): Automatic Verification — Element-Level Traceability, Phase Boundary Verification Triggers, Phase Check Report (phase-check-<phase>.md), Stable Traceability ID Prefixes (FR, NFR, US, AC, U, BR), traceability.json Artifact
+
+### Community 230 - "Outcomes & Replay Skills"
+Cohesion: 0.38
+Nodes (5): aidlc-outcomes-pack skill, What to commit vs archive table, OUTCOMES.md handover document, aidlc-replay skill, Session replay narrative (terminal only)
+
+### Community 231 - "Doctor Report Rendering"
+Cohesion: 0.29
+Nodes (7): extractStatus(), fmtMs(), hashSlugForDisplay(), newestStageSourceMtime(), renderReportMd(), runDiagnosis(), safeLstat()
+
+### Community 234 - "About & AI Workflow Posts"
+Cohesion: 0.33
+Nodes (4): Post: My own AI workflow, Something worth deploying (motivation), Vibe coding, Post: Who am I, and what is this?
+
+### Community 235 - "Dependabot Config"
+Cohesion: 0.29
+Nodes (6): interval, updates, directory, package-ecosystem, schedule, version
+
+### Community 236 - "Integration Test Instructions"
+Cohesion: 0.33
+Nodes (4): Six Delivery Units (u1–u6), Integration Test Instructions, Four Cross-Unit Integration Seams, Ordering Parity Test
+
+### Community 237 - "Build & Test Results"
+Cohesion: 0.40
+Nodes (5): Build and Test Results, Coverage Results (96.25% lines), Fresh-Clone Ordering Check (FR2.2), In-Stage Fix: npm test Skipped u3-u5, NFR1 Keyboard Walkthrough Unverified
+
+### Community 238 - "U5 Review Findings"
+Cohesion: 0.47
+Nodes (6): U5A2 44px padding invisible on standalone links, U5 functional design review 6 (READY), R-01 BR11.5 missing from traceability coverage/reverse, R-02 U5A2 vs unstated Outbound Link hover state, U5 functional design review 7 (READY), Outbound link hover is text-colour change only
+
+### Community 239 - "Reverse Engineering Artifacts"
+Cohesion: 0.53
+Nodes (4): Reverse Engineering Artifact Templates, Architecture Synthesis Template, Developer Code Scan Template, Nine Required RE Artifacts
+
+### Community 240 - "Product Review Knowledge"
+Cohesion: 0.32
+Nodes (5): Reviewing Artifacts (Product Lens), Review Severity Levels, Subsequent Review Iterations, Verdict Rules (READY / NOT-READY), Review Checklist (Requirements, Stories, Mockups)
+
+### Community 241 - "Worktree Info Schema"
+Cohesion: 0.22
+Nodes (9): SWARM_* Events (swarm referee), WORKTREE_* / STATE_* / AUDIT_* Fork-Merge Events, aidlc-worktree info Output Schema, info Exit-Code Contract, gitCommonDirHash Repository Provenance, info JSON Output Shape (slug, path, branch_name, audit_timestamp, merge_held), AUQ Long-Path Fallback (not implemented), merge_held flag (hold-merge / release-merge) (+1 more)
+
+### Community 242 - "Doctor Export Merge"
+Cohesion: 0.33
+Nodes (6): adaptLegacyResult(), findingIdFromLabel(), isRecoveryBypass(), mergeFindings(), fsSafeTimestamp(), writeExport()
+
+### Community 243 - "assertNoSymlinkInChainOrThrow"
+Cohesion: 0.12
+Nodes (24): collectStaleJournals(), containedKbDescendant(), isLiveTxnDir(), journalDir(), journalTxnDir(), readDocumentBytes(), readDocumentMetadata(), readSourcesLocal() (+16 more)
+
+### Community 244 - "No-Projects Fixture"
+Cohesion: 0.40
+Nodes (5): No-Projects Site Fixture Post, Projects Page Empty State, U1 BR3.7 / W3, Minimal Site Fixture Post, About Page Emitted Unconditionally (BR10.3)
+
+### Community 245 - "BR9.3 Projects page uses Home's total project order"
+Cohesion: 0.21
+Nodes (9): Functional Design Questions — U3 Projects, Q1 Projects page ordering — answer A: same as Home, BR9.3 Projects page uses Home's total project order, W1 Render the Projects list, U3 Functional Design Stage Memory, U3 Functional Design Review 01, Finding: BR9.3 automation claim contradicted frontend-components, Finding: outbound repo-link 44px sizing mechanism unstated (+1 more)
+
+### Community 247 - "Renderer Library Choices"
+Cohesion: 0.28
+Nodes (6): Markdown renderer library (markdown-it), MarkupRenderer component, Option block 1: where Markdown rendering lives, Syntax highlighter library (shiki), Q5 — Small derived functions in one shared component, Client-side rendering disqualified (JS-disabled test)
+
+### Community 248 - "Ideation Phase Check"
+Cohesion: 0.40
+Nodes (5): Phase Boundary Check — Ideation → Inception, Traceability chain: intent → scope → backlog → concept visuals, Warning 1: project list + detail page sized as one proto-Unit, Warning 2: About drawn inline and as own page, Warning 5: no feasibility backing; de-risked by walking skeleton
+
+### Community 249 - "Security Patch Skill"
+Cohesion: 0.40
+Nodes (4): aidlc-security-patch Skill, Deterministic Engine Forwarding Loop (next/report until done), security-patch Scope (CVE response), Testing Posture Defaults per Scope (80% line floor)
+
+### Community 250 - "Session Cost Skill"
+Cohesion: 0.40
+Nodes (3): aidlc-session-cost Skill, runtime-graph.json Event-Sourced View, aidlc engine runtime summary --json
+
+### Community 251 - "Construction Memory Seed"
+Cohesion: 0.40
+Nodes (5): Construction Phase Guardrails, Code Completeness Guardrail, Integration-Boundary Error Handling, Construction Security Guardrail, Construction Testing Standards
+
+### Community 252 - "Draft Post Fixtures"
+Cohesion: 0.40
+Nodes (5): Fixture: draft post hidden everywhere, Fixture: published post (no draft mark), Feed fixture: draft post excluded from feed, Feed fixture: newer published post, Feed fixture: older published post (order by declared date, never mtime)
+
+### Community 253 - "Projects Fixture Schema"
+Cohesion: 0.60
+Nodes (5): A Note About the Projects (fixture post), Almanac (fixture project), Project Front Matter Schema (name, summary, year, type, tools, repo, liveUrl, featured), Beacon (fixture project, featured), Cartograph (fixture project, no liveUrl)
+
+### Community 254 - "U5 Code Theme Review"
+Cohesion: 0.50
+Nodes (4): Code-theme colours (#9CBF8A string, #A6A0D6 keyword) closing checklist P6, New code-theme colours absent from measured contrast table (R-02), --radius applied to .prose img against 'code blocks only' (R-01), U5 Code Generation Review 01 (READY)
+
+### Community 256 - "Bolts & Units Glossary"
+Cohesion: 0.50
+Nodes (4): Bolt, Unit of Work, Walk order (stage-major / unit-major), Prioritized intent backlog (proto-Units, MoSCoW/WSJF/RICE)
+
+### Community 258 - "Fold Usage Hook"
+Cohesion: 0.83
+Nodes (3): currentStageSlug(), isLifecycleBoundaryToolCall(), run()
+
+### Community 262 - "IBM Plex Font License"
+Cohesion: 1.00
+Nodes (3): IBM Plex Mono font license, IBM Plex Mono (Copyright 2017 IBM Corp.), SIL Open Font License 1.1
+
+## Knowledge Gaps
+- **352 isolated node(s):** `ADR-0001`, `ADR-0004`, `ADR-0007`, `ADR-0003`, `RFC-3339` (+347 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1607 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **44 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+
+## Suggested Questions
+_Questions this graph is uniquely positioned to answer:_
+
+- **Why does `Trunk-Based Development (default)` connect `DevSecOps Pipeline Knowledge` to `Worktree Merge Handling`?**
+  _High betweenness centrality (0.025) - this node is a cross-community bridge._
+- **What connects `ADR-0001`, `ADR-0004`, `ADR-0007` to the rest of the system?**
+  _352 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `AIDLC Core Library` be split into smaller, more focused modules?**
+  _Cohesion score 0.007188876351326757 - nodes in this community are weakly interconnected._
+- **Why does `Feature Flags` connect `DevSecOps Pipeline Knowledge` to `Deployment Strategies Knowledge`?**
+  _High betweenness centrality (0.024) - this node is a cross-community bridge._
+- **Should `AIDLC Init & Setup` be split into smaller, more focused modules?**
+  _Cohesion score 0.03370545298411335 - nodes in this community are weakly interconnected._
+- **Why does `Deployment Strategies` connect `Deployment Strategies Knowledge` to `Data Modelling Knowledge`, `DevSecOps Pipeline Knowledge`?**
+  _High betweenness centrality (0.024) - this node is a cross-community bridge._
+- **Should `Workflow State Store` be split into smaller, more focused modules?**
+  _Cohesion score 0.06451997614788313 - nodes in this community are weakly interconnected._
